@@ -38,8 +38,6 @@ const SideMenu = ({
     return [];
   }, [course]);
 
-  console.log(currentData)
-
   // Group topics by section
   // const groupedTopics = useMemo(() => {
   //   const groups: Record<string, typeof currentData> = {};
@@ -52,7 +50,7 @@ const SideMenu = ({
   // }, [currentData]);
 
   const renderMenu = () => (
-    <div style={{ padding: 15, overflowY: "auto", flex: 1 }}>
+    <div style={{ padding: "12px 10px", overflowY: "auto", flex: 1, background: "#f8fafc" }}>
       {/* {Object.entries(groupedTopics).map(([section, topics]) => (
         <div key={section} style={{ marginBottom: 22 }}>
           {!collapsed && (
@@ -97,31 +95,33 @@ const SideMenu = ({
           const active = location.hash === `#${slug}`;
 
           return (
-            <>
-              <h3>{topic.section}</h3>
+            <div key={slug} style={{ marginBottom: 6 }}>
+              <h3 style={{ margin: "0 0 6px 4px", fontSize: 12, fontWeight: 700, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.04em" }}>
+                {topic.section}
+              </h3>
               <Link
-                key={slug}
                 to={`/notes/${course}#${slug}`}
                 onClick={closeMobile}
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  padding: "10px 14px",
-                  marginBottom: 6,
+                  padding: "10px 12px",
                   borderRadius: 8,
                   textDecoration: "none",
                   background: active ? "#2563eb" : "transparent",
                   color: active ? "#fff" : "#111827",
                   fontWeight: active ? 600 : 500,
-                  transition: ".25s",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
+                  transition: ".2s ease",
+                  whiteSpace: "normal",
+                  overflowWrap: "anywhere",
+                  wordBreak: "break-word",
+                  lineHeight: 1.4,
+                  fontSize: 14,
                 }}
               >
                 {collapsed ? "•" : topic.title}
               </Link>
-            </>
+            </div>
           );
         })
       }
@@ -145,17 +145,18 @@ const SideMenu = ({
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
           transform: isMobile ? (mobileOpen ? "translateX(0)" : "translateX(-320px)") : "none",
           transition: ".3s",
-          background: "#fff",
+          background: "#ffffff",
           zIndex: 1000,
           display: "flex",
           flexDirection: "column",
           boxShadow: isMobile ? "10px 0 30px rgba(0,0,0,.15)" : "6px 0 18px rgba(0,0,0,.08)",
+          borderRight: "1px solid #e2e8f0",
         }}
       >
-        <div style={{ padding: 15, borderBottom: "1px solid #eee", display: "flex", justifyContent: collapsed ? "center" : "space-between", alignItems: "center" }}>
+        <div style={{ padding: "14px 12px", borderBottom: "1px solid #e2e8f0", display: "flex", justifyContent: collapsed ? "center" : "space-between", alignItems: "center", background: "#f8fafc" }}>
           {!collapsed && (
             <div>
-              <div style={{ fontWeight: 700, fontSize: 18 }}>📚 {course ? course.charAt(0).toUpperCase() + course.slice(1) : "Notes"}</div>
+              <div style={{ fontWeight: 700, fontSize: 17, color: "#0f172a" }}>📚 {course ? course.charAt(0).toUpperCase() + course.slice(1) : "Notes"}</div>
             </div>
           )}
           {!isMobile && (

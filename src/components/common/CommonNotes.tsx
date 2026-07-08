@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
+import hljs from "highlight.js";
+import "highlight.js/styles/github-dark.css";
 
 type NoteItem = {
   text1?: string;
@@ -24,6 +27,10 @@ const CommonNotes = ({ data }: CourseComponentProps) => {
   const location = useLocation();
   const hash = location.hash.replace("#", "").toLowerCase();
 
+  useEffect(() => {
+    hljs.highlightAll();
+  }, [hash, data]);
+
   const topics = Array.isArray(data?.javaNote)
     ? data.javaNote
     : Array.isArray(data?.reactNote)
@@ -40,7 +47,7 @@ const CommonNotes = ({ data }: CourseComponentProps) => {
 
   if (!currentTopic) {
     return (
-      <div style={{ padding: "24px", maxWidth: "900px" }}>
+      <div style={{ padding: "24px" }}>
         <div style={{ background: "linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%)", border: "1px solid #e2e8f0", borderRadius: 16, padding: "24px 28px", boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)" }}>
           <h2 style={{ margin: "0 0 8px", color: "#1f2937" }}>Welcome to the {course} documentation.</h2>
           <p style={{ margin: 0, color: "#64748b", lineHeight: 1.6 }}>Please select a topic from the side menu to get started.</p>
@@ -52,7 +59,7 @@ const CommonNotes = ({ data }: CourseComponentProps) => {
   const topicNotes = currentTopic.note ?? [];
 
   return (
-    <div style={{ padding: "24px", maxWidth: "950px" }}>
+    <div style={{ padding: "24px" }}>
       <div style={{ background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)", border: "1px solid #e5e7eb", borderRadius: 18, padding: 24, boxShadow: "0 12px 35px rgba(15, 23, 42, 0.08)" }}>
         <div
           style={{
@@ -67,7 +74,8 @@ const CommonNotes = ({ data }: CourseComponentProps) => {
           <h2 style={{ margin: 0, fontSize: 22 }}>{currentTopic.title ?? "Topic"}</h2>
         </div>
 
-        <div style={{ display: "grid", gap: 16 }}>
+        <div>
+            {/* <div style={{ display: "grid", gap: 16 }}> */}
           {topicNotes.map((item, index) => {
             const isImgExist = item.img ? (
               <img
@@ -107,17 +115,12 @@ const CommonNotes = ({ data }: CourseComponentProps) => {
                   <pre
                     className="code-prre"
                     style={{
-                      background: "#0f172a",
-                      color: "#e2e8f0",
-                      padding: "14px 16px",
-                      borderRadius: 10,
-                      overflowX: "auto",
-                      marginTop: 12,
-                      fontSize: 14,
-                      lineHeight: 1.6,
+                        textAlign: 'left'
                     }}
                   >
-                    <code className="align-code hljs language-javascript py-0 px-2">{item.code1}</code>
+                    <code className="align-code hljs language-javascript py-0 px-2" dangerouslySetInnerHTML={{ __html: item.code1 ?? "" }}></code>
+
+                    {/* <code className="align-code hljs language-javascript py-0 px-2">{item.code1}</code> */}
                   </pre>
                 ) : null}
               </div>
