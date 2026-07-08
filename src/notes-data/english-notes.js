@@ -1,0 +1,5599 @@
+const SubjectList = {
+    Structures: [
+        {
+            id: 1,
+            topic: "Have to (చేయవలసివున్న పనులు)",
+            explain: 'చేయవలసి వున్న ఒక పనిని తెలియజేయడానికి Have to అనే Helping Verb ను ఉపయోగిస్తారు',
+            formation: 'Subject + Helping Verb + Main Verb + Extra Words',
+            content: [
+                {
+                    id: 1,
+                    eng: "I have to go to Movie",
+                    tel: 'నేను సినిమాకి వెళ్ళాలి'
+                },
+                {
+                    id: 2,
+                    eng: "We have to go to Movie",
+                    tel: 'మనం సినిమాకి వెళ్ళాలి'
+                },
+                {
+                    id: 3,
+                    eng: "You Have to go to Movie",
+                    tel: 'మీరు సినిమాకి వెళ్ళాలి'
+                },
+                {
+                    id: 4,
+                    eng: "They Have to go to Movie",
+                    tel: 'వారు సినిమాకి వెళ్ళాలి'
+                },
+                {
+                    id: 5,
+                    eng: "You Have to go to office today",
+                    tel: 'మీరు ఈ రోజు కార్యాలయానికి వెళ్ళాలి'
+                },
+                {
+                    id: 6,
+                    eng: "You Have to try to speak in English",
+                    tel: 'మీరు ఇంగ్లీషులో మాట్లాడటానికి ప్రయత్నించాలి'
+                }
+            ]
+        },
+        {
+            id: 2,
+            topic: "Don't Have to (చేయవలసిన అవసరం లేని పనులు)",
+            explain: 'చేయవలసిన అవసరం లేదు అనే సందర్భం లో Don`t Have to అనే Helping Verb ను ఉపయోగిస్తారు',
+            formation: 'Subject + Helping Verb + Main Verb + Extra Words',
+            content: [
+                {
+                    id: 1,
+                    eng: "I don`t have to go to office today",
+                    tel: 'నేను ఈ రోజు కార్యాలయానికి వెళ్ళవలసిన అవసరం లేదు'
+                },
+                {
+                    id: 2,
+                    eng: "I don`t have to take your permission",
+                    tel: 'నేను మీ అనుమతి తీసుకోవలసిన అవసరం లేదు'
+                },
+                {
+                    id: 3,
+                    eng: "We don't have to watch this movie",
+                    tel: 'మేము ఈ సినిమా చూడవలసిన అవసరం లేదు'
+                },
+                {
+                    id: 4,
+                    eng: "We don't have to go shopping",
+                    tel: 'మేము షాపింగ్ చేయవలసిన అవసరం లేదు'
+                },
+                {
+                    id: 5,
+                    eng: "You don't have to do the project",
+                    tel: 'మీరు ప్రాజెక్ట్ చేయవలసిన అవసరం లేదు'
+                },
+                {
+                    id: 6,
+                    eng: "She doesn't have to wear my T-shirt",
+                    tel: 'ఆమె నా టీ షర్టు ధరించాల్సిన అవసరం లేదు'
+                }
+            ],
+        },
+        {
+            id: 3,
+            topic: "Must / Should (తప్పనిసరిగా చేయాల్సి ఉన్న పనులు)",
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I should go to Movie",
+                    tel: 'నేను సినిమాకి వెళ్ళాలి'
+                },
+                {
+                    id: 2,
+                    eng: "You should try to lose weight",
+                    tel: 'మీరు బరువు తగ్గడానికి ప్రయత్నించాలి'
+                },
+                {
+                    id: 3,
+                    eng: "They should have more staff in this shop",
+                    tel: 'ఈ షాపులో వారికి ఎక్కువ మంది సిబ్బంది ఉండాలి'
+                },
+                {
+                    id: 4,
+                    eng: "I should complain to the manager",
+                    tel: 'నేను మేనేజర్‌కు ఫిర్యాదు చేయాలి'
+                },
+                {
+                    id: 5,
+                    eng: "You should go to office today",
+                    tel: 'మీరు ఈ రోజు కార్యాలయానికి వెళ్ళాలి'
+                },
+                {
+                    id: 6,
+                    eng: "You should try to speak in English",
+                    tel: 'మీరు ఇంగ్లీషులో మాట్లాడటానికి ప్రయత్నించాలి'
+                }
+            ],
+        },
+        {
+            id: 4,
+            topic: "Whether Or",
+            explain: 'Rules and Regulations (బాధ్యత) తెలిపే సందర్భం లో ఉపయోగిస్తారు',
+            formation: 'Whether is used when we have two possibilities or uncertain situations.',
+            content: [
+                {
+                    id: 1,
+                    eng: "I will ask whether he will speack or not",
+                    tel: 'అతను మాట్లాడతాడా లేదా అని నేను అడుగుతాను'
+                },
+                {
+                    id: 2,
+                    eng: "I will not ask whether he will speack or not",
+                    tel: 'అతను మాట్లాడతాడా లేదా అని నేను అడగను'
+                },
+                {
+                    id: 3,
+                    eng: "I don't know whether he came yesterday or not",
+                    tel: 'అతను నిన్న వచ్చాడో లేదో నాకు తెలియదు'
+                },
+                {
+                    id: 4,
+                    eng: "I don't know whether he will come tomorrow or not",
+                    tel: 'అతను రేపు వస్తాడో లేదో నాకు తెలియదు'
+                },
+                {
+                    id: 5,
+                    eng: "We Know whether he can speak or not",
+                    tel: 'అతను మాట్లాడగలడో లేదో మాకు తెలుసు'
+                },
+                {
+                    id: 6,
+                    eng: "I ask him whether they come or not",
+                    tel: 'వారు వస్తారా లేదా అని నేను అతనిని అడుగుతున్నాను',
+                    tense: 'simple Present'
+                },
+                {
+                    id: 7,
+                    eng: "I will ask him whether they will come or not",
+                    tel: 'వారు వస్తారా లేదా అని నేను అతనిని అడుగుతాను',
+                    tense: 'simple Feature'
+                },
+                {
+                    id: 1,
+                    eng: "I don’t know whether to go by bus or train.",
+                    type: "Interrogative Sentence",
+                    tense: "Simple Present / Infinitive",
+                    tel: "నేను బస్సు ద్వారా వెళ్ళాలా లేదా ట్రైన్ ద్వారా వెళ్ళాలా తెలియదు."
+                },
+                {
+                    id: 2,
+                    eng: "She can choose whether to study science or arts.",
+                    type: "Interrogative Sentence",
+                    tense: "Simple Present",
+                    tel: "ఆమె సైన్స్ చదువుకోవాలా లేదా ఆర్ట్స్ చదువుకోవాలా ఎంచుకోవచ్చు."
+                },
+                {
+                    id: 3,
+                    eng: "We are not sure whether he will attend the party or not.",
+                    type: "Interrogative Sentence",
+                    tense: "Simple Future / Present Continuous",
+                    tel: "ఆతను పార్టీకి హాజరుకానో లేదో మనకు నిర్ధారితం కాదు."
+                },
+                {
+                    id: 4,
+                    eng: "Decide whether you want tea or coffee.",
+                    type: "Imperative Sentence",
+                    tense: "Present",
+                    tel: "నువ్వు టీ తాగాలా లేదా కాఫీ తాగాలా నిర్ణయించు."
+                },
+                {
+                    id: 5,
+                    eng: "He asked me whether I would join the meeting or not.",
+                    type: "Interrogative Sentence",
+                    tense: "Past / Future in reported speech",
+                    tel: "అతను నన్ను అడిగాడు నేను సమావేశంలో చేరతానా లేకపోతే కాదు."
+                },
+                {
+                    id: 1,
+                    eng: "I am not sure whether to use React or Angular for this project.",
+                    type: "Interrogative Sentence",
+                    tense: "Present Continuous",
+                    tel: "ఈ ప్రాజెక్ట్ కోసం React ఉపయోగించాలా లేదా Angular ఉపయోగించాలా నాకు ఖచ్చితంగా తెలియదు."
+                },
+                {
+                    id: 2,
+                    eng: "She needs to decide whether to deploy the app on AWS or Azure.",
+                    type: "Interrogative Sentence",
+                    tense: "Simple Present",
+                    tel: "ఆమెకు ఈ యాప్ ను AWS పై డిప్లాయ్ చేయాలా లేదా Azure పై చేయాలా నిర్ణయించాలి."
+                },
+                {
+                    id: 3,
+                    eng: "We are evaluating whether to use REST API or GraphQL for the backend.",
+                    type: "Interrogative Sentence",
+                    tense: "Present Continuous",
+                    tel: "బ్యాక్‌ఎండ్ కోసం REST API ఉపయోగించాలా లేదా GraphQL ఉపయోగించాలా మనం అంచనా వేస్తున్నాము."
+                },
+                {
+                    id: 4,
+                    eng: "The manager asked whether the code was tested or not before deployment.",
+                    type: "Interrogative Sentence",
+                    tense: "Past / Reported Speech",
+                    tel: "మెనేజర్ అడిగాడు కోడ్ డిప్లాయ్ చేయడానికి ముందే టెస్ట్ చేయబడిందా లేదా అన్నది."
+                },
+                {
+                    id: 5,
+                    eng: "Decide whether to store user data in SQL or NoSQL database.",
+                    type: "Imperative Sentence",
+                    tense: "Present",
+                    tel: "యూజర్ డేటా SQL డేటాబేస్‌లో నిల్వ చేయాలా లేదా NoSQL లో నిల్వ చేయాలా నిర్ణయించు."
+                }
+            ],
+        },
+        {
+            id: 5,
+            topic: 'Should not (చేయకూడని పనులు)',
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I shouldn't have come out here",
+                    tel: 'నేను ఇక్కడకు రాకూడదు'
+                },
+                {
+                    id: 2,
+                    eng: "I shouldn't have talked to you that way",
+                    tel: 'నేను మీతో ఆ విధంగా మాట్లాడకూడదు'
+                },
+                {
+                    id: 3,
+                    eng: "You shouldn't have to go through this alone",
+                    tel: 'మీరు ఒంటరిగా వెళ్ళవలసిన అవసరం లేదు'
+                },
+                {
+                    id: 4,
+                    eng: "You should not go to office today",
+                    tel: 'మీరు ఈ రోజు కార్యాలయానికి వెళ్లకూడదు'
+                },
+                {
+                    id: 5,
+                    eng: "She shouldn't have blamed him last night",
+                    tel: 'ఆమె గత రాత్రి అతన్ని నిందించకూడదు'
+                },
+                {
+                    id: 6,
+                    eng: "You shouldn't go to Movie",
+                    tel: 'మీరు సినిమాకి వెళ్లకూడదు'
+                },
+                {
+                    id: 7,
+                    eng: "You shouldn't have asked me",
+                    tel: 'మీరు నన్ను అడగకూడదు'
+                }
+            ],
+        },
+        {
+            id: 6,
+            topic: 'Can (చేయగలిగే పనులు)',
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I can speak English.",
+                    tel: 'నేను ఇంగ్లీష్ మాట్లాడగలను.'
+                },
+                {
+                    id: 1,
+                    eng: "Can you help me?",
+                    tel: 'మీరు నాకు సహాయం చేయగలరా? '
+                },
+                {
+                    id: 1,
+                    eng: "She can dance very well.",
+                    tel: 'ఆమె చాలా బాగా నర్తించగలదు.'
+                },
+                {
+                    id: 1,
+                    eng: "Can we go to the park?",
+                    tel: 'మనం పార్క్ కు వెళ్లవచ్చా?'
+                },
+            ],
+        },
+        {
+            id: 8,
+            topic: 'Can not (చేయలేని పనులు)',
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I cannot speak French.",
+                    tel: 'నేను ఫ్రెంచ్ మాట్లాడలేను.'
+                },
+                {
+                    id: 1,
+                    eng: "She cannot come to the party.",
+                    tel: 'ఆమె పార్టీకి రాలేరు.'
+                },
+                {
+                    id: 1,
+                    eng: "We cannot find the keys.",
+                    tel: 'మనకు చావులను కనుగొనలేము.'
+                },
+                {
+                    id: 1,
+                    eng: "They cannot play cricket today.",
+                    tel: 'వారు ఈ రోజు క్రికెట్ ఆడలేరు.'
+                },
+            ],
+        },
+        {
+            id: 9,
+            topic: 'Could (చేయగలిగిన పనులు)',
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I could swim when I was a child.",
+                    tel: 'నేను చిన్నప్పుడే ఈదగలిగేవాడిని'
+                },
+                {
+                    id: 1,
+                    eng: "She could play the piano very well.",
+                    tel: 'ఆమె పియానో చాలా బాగా వాయించగలిగింది.'
+                },
+                {
+                    id: 1,
+                    eng: "We could go to the beach tomorrow.",
+                    tel: 'మనం రేపు బీచ్ కి వెళ్ళవచ్చు.'
+                },
+                {
+                    id: 1,
+                    eng: "Could you help me with this problem?",
+                    tel: 'మీరు ఈ సమస్యతో నాకు సహాయం చేయగలరా? '
+                },
+                {
+                    id: 1,
+                    eng: "I could understand the instructions clearly.",
+                    tel: 'నేను ఆ సూచనలను స్పష్టంగా అర్థం చేసుకోగలిగాను.'
+                },
+                {
+                    id: 1,
+                    eng: "Could you help me with this problem?",
+                    tel: 'మీరు ఈ సమస్యతో నాకు సహాయం చేయగలరా? '
+                },
+            ],
+        },
+        {
+            id: 10,
+            topic: 'Could not (చేయలేకపోయినా పనులు)',
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I could not finish my homework.",
+                    tel: 'నేను నా హోంవర్క్ ముగించలేకపోయాను.'
+                },
+                {
+                    id: 1,
+                    eng: "She could not attend the meeting.",
+                    tel: 'ఆమె సమావేశానికి హాజరుకావలెను.'
+                },
+                {
+                    id: 1,
+                    eng: "We could not find a solution.",
+                    tel: 'మనం పరిష్కారం కనుగొనలేకపోయాము.'
+                },
+                {
+                    id: 1,
+                    eng: "He could not understand the question.",
+                    tel: 'అతను ప్రశ్నను అర్థం చేసుకోలేకపోయాడు.'
+                },
+                {
+                    id: 1,
+                    eng: "They could not complete the project on time.",
+                    tel: 'వారు ప్రాజెక్ట్ సమయానికి పూర్తి చేయలేకపోయారు.'
+                },
+            ],
+        },
+        {
+            id: 11,
+            topic: 'Want to (చేయాలని అనుకుంటున్న పనులు)',
+
+            content: [
+                {
+                    id: 1,
+                    eng: "<b>want + to see + object + V3 (past participle)</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 1,
+                    eng: "I want to see the cube solved.",
+                    tel: "నేను క్యూబ్ సాల్వ్ చేయబడినది చూడాలనుకుంటున్నాను",
+                    tense: "Present Simple (with infinitive phrase in passive form)"
+                },
+                {
+                    id: 2,
+                    eng: "I want to see the work finished.",
+                    tel: "నేను పని పూర్తయినది చూడాలనుకుంటున్నాను",
+                    tense: "Present Simple (with infinitive phrase in passive form)"
+                },
+                {
+                    id: 3,
+                    eng: "She wants to see the room cleaned.",
+                    tel: "ఆమె గది శుభ్రం చేయబడినది చూడాలనుకుంటుంది",
+                    tense: "Present Simple (with infinitive phrase in passive form)"
+                },
+                {
+                    id: 4,
+                    eng: "We want to see the report prepared.",
+                    tel: "మేము నివేదిక సిద్ధం చేయబడినది చూడాలని కోరుకుంటున్నాము",
+                    tense: "Present Simple (with infinitive phrase in passive form)"
+                },
+                {
+                    id: 5,
+                    eng: "They want to see the house painted.",
+                    tel: "వారు ఇల్లు రంగు చేయబడినది చూడాలని కోరుకుంటున్నారు",
+                    tense: "Present Simple (with infinitive phrase in passive form)"
+                },
+                {
+                    id: 6,
+                    eng: "He wants to see the problem solved.",
+                    tel: "అతను సమస్య పరిష్కరించబడినది చూడాలని కోరుకుంటున్నాడు",
+                    tense: "Present Simple (with infinitive phrase in passive form)"
+                }
+            ],
+        },
+        {
+            id: 12,
+            topic: "Don't Want to (చేయదలచుకోలేదు అనే పనులు)",
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I don't want to go to the party.",
+                    tel: 'నాకు పార్టీకి వెళ్లాలనిపించదు.'
+                },
+                {
+                    id: 1,
+                    eng: "She doesn't want to eat vegetables.",
+                    tel: 'ఆమె కూరగాయలు తినాలనిపించదు.'
+                },
+                {
+                    id: 1,
+                    eng: "We don't want to be late for the meeting.",
+                    tel: 'మేము సమావేశానికి ఆలస్యం కావాలనిపించదు. '
+                },
+                {
+                    id: 1,
+                    eng: "He doesn't want to speak in front of the audience.",
+                    tel: 'అతను ప్రేక్షకుల ముందు మాట్లాడాలనిపించడు.'
+                },
+            ],
+        },
+        {
+            id: 13,
+            topic: "Wanted to (చేయాలని అనుకున్నాను అనే పనులు)",
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I wanted to go to the movies.",
+                    tel: 'నాకు సినిమా చూసేందుకు వెళ్లాలనుకుంది.'
+                },
+                {
+                    id: 1,
+                    eng: "She wanted to become a doctor.",
+                    tel: 'ఆమె డాక్టర్ కావాలని అనుకుంది.'
+                },
+                {
+                    id: 1,
+                    eng: "We wanted to visit our grandparents.",
+                    tel: 'మేము మా అజ్‍జగారిని సందర్శించాలనుకున్నాము.'
+                },
+                {
+                    id: 1,
+                    eng: "He wanted to talk to you.",
+                    tel: 'అతను నిన్ను మాట్లాడాలనుకున్నాడు.'
+                },
+            ],
+        },
+        {
+            id: 14,
+            topic: "Didn't Want to (చేయాలని అనుకోలేదు అనే పనులు)",
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I didn't want to go to the party.",
+                    tel: 'నేను పార్టీకి వెళ్లాలని అనుకోలేదు.'
+                },
+                {
+                    id: 1,
+                    eng: "She didn't want to eat vegetables.",
+                    tel: 'ఆమె కూరగాయలు తినడానికి ఇష్టపడలేదు.'
+                },
+                {
+                    id: 1,
+                    eng: "We didn't want to be late for the meeting.",
+                    tel: 'మేము సమావేశానికి ఆలస్యం చేయకూడదనుకున్నాము.'
+                },
+                {
+                    id: 1,
+                    eng: "He didn't want to speak in front of the audience.",
+                    tel: 'అతను ప్రేక్షకుల ముందు మాట్లాడటానికి ఇష్టపడలేదు.'
+                },
+            ],
+        },
+        {
+            id: 15,
+            topic: "Had to (చేయాల్సి వచ్చిన పనులు)",
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I had to finish my homework.",
+                    tel: 'నేను నా హోంవర్క్ పూర్తి చేయాల్సి వచ్చింది.'
+                },
+                {
+                    id: 1,
+                    eng: "She had to leave early.",
+                    tel: 'ఆమె త్వరగా బయలుదేరవలసి వచ్చింది.'
+                },
+                {
+                    id: 1,
+                    eng: "We had to cancel the meeting.",
+                    tel: 'మేము సమావేశాన్ని రద్దు చేయవలసి వచ్చింది.'
+                },
+                {
+                    id: 1,
+                    eng: "He had to take the test again.",
+                    tel: 'మళ్లీ పరీక్ష రాయాల్సి వచ్చింది.'
+                },
+                {
+                    id: 1,
+                    eng: "They had to move to a new city.",
+                    tel: 'వారికి కొత్త నగరానికి మళ్లీ వెళ్లాల్సి వచ్చింది.'
+                },
+            ],
+        },
+        {
+            id: 16,
+            topic: "Used to (గతంలో అలవాటుగా చేసే పనులు)",
+
+            content: [
+                {
+                    id: 1,
+                    eng: "I used to watch cartoons every morning.",
+                    tel: "నేను ప్రతి ఉదయం కార్టూన్లు చూసేవాడిని.",
+                    tense: "Past Simple (used to = past habitual action)"
+                },
+                {
+                    id: 2,
+                    eng: "She used to drink coffee before work, but now she drinks tea.",
+                    tel: "ఆమె పని మొదలయ్యే ముందు కాఫీ తాగేదాని, ఇప్పుడు టీ తాగుతుంది.",
+                    tense: "Past Simple (used to = past habitual action, contrast with present)"
+                },
+                {
+                    id: 3,
+                    eng: "We used to travel by bus to college.",
+                    tel: "మేము కాలేజీకి బస్సులో వెళ్ళేవాళ్లం.",
+                    tense: "Past Simple (used to = past repeated action)"
+                },
+                {
+                    id: 4,
+                    eng: "He used to live in Hyderabad, now he lives in Bangalore.",
+                    tel: "అతను హైదరాబాద్లో ఉండేవాడు, ఇప్పుడు బెంగళూరులో ఉంటున్నాడు.",
+                    tense: "Past Simple (used to = past state)"
+                },
+                {
+                    id: 5,
+                    eng: "They used to work late nights, but now they finish early.",
+                    tel: "వారు రాత్రి ఆలస్యంగా పని చేసేవారు, ఇప్పుడు తొందరగా పూర్తి చేస్తున్నారు.",
+                    tense: "Past Simple (used to = past repeated action, contrast with present)"
+                },
+                {
+                    id: 6,
+                    eng: "I used to have long hair, but I cut it short.",
+                    tel: "నాకు పొడవాటి జుట్టు ఉండేది, ఇప్పుడు చిన్నగా కత్తిరించుకున్నాను.",
+                    tense: "Past Simple (used to = past state, contrast with present)"
+                },
+                {
+                    id: 7,
+                    eng: "She used to love dancing, but now she prefers singing.",
+                    tel: "ఆమెకు డాన్స్ చేయడం అంటే చాలా ఇష్టం ఉండేది, ఇప్పుడు పాటలు పాడటం ఇష్టం.",
+                    tense: "Past Simple (used to = past state, contrast with present)"
+                },
+                {
+                    id: 8,
+                    eng: "I used to be shy in school.",
+                    tel: "నేను స్కూల్లో సిగ్గు పడేవాడిని.",
+                    tense: "Past Simple (used to = past state)"
+                },
+                {
+                    id: 9,
+                    eng: "I used to write code in Java, but now I work with Python.",
+                    tel: "నేను జావాలో కోడ్ రాసేవాడిని, కానీ ఇప్పుడు పైథాన్‌లో పని చేస్తున్నాను.",
+                    tense: "Past Simple (used to = past habit, contrast with present)"
+                },
+                {
+                    id: 10,
+                    eng: "We used to deploy applications manually, but now we use CI/CD pipelines.",
+                    tel: "మేము అప్లికేషన్లు మాన్యువల్‌గా డిప్లాయ్ చేసేవాళ్లం, కానీ ఇప్పుడు CI/CD పైప్‌లైన్లు వాడుతున్నాము.",
+                    tense: "Past Simple (used to = past repeated action, contrast with present)"
+                },
+                {
+                    id: 11,
+                    eng: "He used to test software with Selenium, now he uses Playwright.",
+                    tel: "అతను ముందు సెలీనియంతో సాఫ్ట్‌వేర్ టెస్ట్ చేసేవాడు, ఇప్పుడు ప్లేఇరైట్ వాడుతున్నాడు.",
+                    tense: "Past Simple (used to = past habit, contrast with present)"
+                },
+                {
+                    id: 12,
+                    eng: "They used to store data in MySQL, but now they use PostgreSQL.",
+                    tel: "వారు డేటాను మైఎస్క్యూఎల్లో నిల్వ చేసేవారు, కానీ ఇప్పుడు పోస్ట్‌గ్రెస్‌క్యూఎల్ వాడుతున్నారు.",
+                    tense: "Past Simple (used to = past state, contrast with present)"
+                },
+                {
+                    id: 13,
+                    eng: "We used to host projects on on-premise servers, now we use cloud services.",
+                    tel: "మేము ప్రాజెక్టులను సొంత సర్వర్లలో హోస్ట్ చేసేవాళ్లం, ఇప్పుడు క్లౌడ్ సర్వీసులు వాడుతున్నాము.",
+                    tense: "Past Simple (used to = past repeated action, contrast with present)"
+                },
+                {
+                    id: 14,
+                    eng: "I used to debug issues with console logs, but now I use proper debuggers.",
+                    tel: "నేను ముందు కాన్సోల్ లాగ్స్‌తో బగ్‌లు ఫిక్స్ చేసేవాడిని, కానీ ఇప్పుడు సరైన డీబగ్గర్స్ వాడుతున్నాను.",
+                    tense: "Past Simple (used to = past habit, contrast with present)"
+                },
+                {
+                    id: 14,
+                    eng: "<b>“used to” examples connected to specific times in the past (school days, college days, last year, etc.)</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 15,
+                    eng: "I used to work night shifts two years ago.",
+                    tel: "రెండు సంవత్సరాల క్రితం నేను నైట్ షిఫ్ట్‌లు చేసేవాడిని.",
+                    tense: "Past Simple (used to = past repeated action, with time reference)"
+                },
+                {
+                    id: 16,
+                    eng: "During college, we used to spend hours in the computer lab.",
+                    tel: "కాలేజీలో ఉన్నప్పుడు మేము గంటల తరబడి కంప్యూటర్ ల్యాబ్‌లో గడిపేవాళ్లం.",
+                    tense: "Past Simple (used to = past habitual action, with time period)"
+                },
+                {
+                    id: 17,
+                    eng: "Last year, he used to travel to office every day, but now he works from home.",
+                    tel: "గత సంవత్సరం అతను ప్రతి రోజు ఆఫీసుకు వెళ్ళేవాడు, కానీ ఇప్పుడు ఇంటి నుండి పని చేస్తున్నాడు.",
+                    tense: "Past Simple (used to = past habit, with specific past time)"
+                },
+                {
+                    id: 18,
+                    eng: "When I was a fresher, I used to ask my seniors for help frequently.",
+                    tel: "నేను ఫ్రెషర్‌గా ఉన్నప్పుడు తరచూ సీనియర్లను సహాయం అడిగేవాడిని.",
+                    tense: "Past Simple (used to = past repeated action, with time condition)"
+                },
+                {
+                    id: 19,
+                    eng: "In school days, I used to participate in coding competitions.",
+                    tel: "స్కూల్ రోజుల్లో నేను కోడింగ్ పోటీల్లో పాల్గొనేవాడిని.",
+                    tense: "Past Simple (used to = past habitual action, with time reference)"
+                },
+                {
+                    id: 20,
+                    eng: "Before the pandemic, we used to work from the office every day.",
+                    tel: "పాండమిక్ కి ముందు మేము ప్రతి రోజు ఆఫీసు నుండి పని చేసేవాళ్లం.",
+                    tense: "Past Simple (used to = past state, with time marker)"
+                }
+            ],
+        },
+        {
+            id: 17,
+            topic: "Supposed to (బాధ్యత కలిగి - చేయవలసివున్న పనులు)",
+            explain: 'Rules and Regulations (బాధ్యత) తెలిపే సందర్భం లో ఉపయోగిస్తారు',
+            formation: 'Subject + am, is, are (was, were - (past tense)) + Supposed to + Verb',
+            content: [
+                {
+                    id: 1,
+                    eng: "I am Supposed to do that work",
+                    tel: 'నేను ఆ పని చేయాలి',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 2,
+                    eng: "I was supposed to be there",
+                    tel: 'నేను అక్కడ ఉండాల్సి ఉంది',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 3,
+                    eng: "You are Supposed to say that what is the truth",
+                    tel: 'నిజం ఏమిటో మీరు చెప్పాలి',
+                    tense: 'Present tense'
+                }, {
+                    id: 4,
+                    eng: "We are Supposed to follow traffic rules",
+                    tel: 'మేము ట్రాఫిక్ నియమాలను పాటించాల్సి ఉంది',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 5,
+                    eng: "We are Supposed to respect our national flag",
+                    tel: 'మేము మా జాతీయ జెండాను గౌరవిచాలి',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 6,
+                    eng: "Why are you late ? You are Supposed to be here at 9am",
+                    tel: 'నువ్వు ఎందుకు ఆలస్యం అయ్యావు ? మీరు ఉదయం 9 గంటలకు ఇక్కడ ఉండాల్సింది',
+                    tense: 'Past tense'
+                },
+                {
+                    id: 7,
+                    eng: "Why are you doing late ? We were Supposed to be in home",
+                    tel: 'ఎందుకు మీరు లారే చేస్తున్నారు? మేము ఇంట్లో ఉండాలి',
+                    tense: 'Past tense'
+                }
+            ],
+        },
+        {
+            id: 18,
+            section: "would usage",
+            topic: 'would like to (కోరుకుంటున్నాను)',
+            explain: '',
+            formation: 'If + Subject + had + past Participle - Subject + would have + past Participle',
+            note: 'Present Tense',
+            content: [
+                {
+                    id: 1,
+                    eng: "I would like to have a coffee",
+                    tel: 'నేను కాఫీ తాగాలనుకుంటున్నాను'
+                },
+                {
+                    id: 2,
+                    eng: "I would like to tell you something (I want to tell you something)",
+                    tel: 'నేను మీకు ఒక విషయం చెప్పాలనుకుంటున్నాను'
+                },
+                {
+                    id: 3,
+                    eng: "I thought she would call me",
+                    tel: 'ఆమె నాకు ఫోన్ చేస్తదని అనుకున్, ఆమె నన్ను పిలుస్తుందని అనుకున్నాను'
+                },
+                {
+                    id: 4,
+                    eng: "I think she will call me",
+                    tel: 'ఆమె నన్ను పిలుస్తుందని నేను అనుకుంటున్నాను'
+                },
+                {
+                    id: 5,
+                    eng: "I thought he would teach english",
+                    tel: 'అతను ఇంగ్లీష్ నేర్పిస్తాడని అనుకున్నాను'
+                },
+                {
+                    id: 6,
+                    eng: "I think he will teach english",
+                    tel: 'అతను ఇంగ్లీష్ నేర్పిస్తాడని నేను అనుకుంటున్నాను'
+                },
+                {
+                    id: 7,
+                    eng: "I thought he would give a party",
+                    tel: 'పార్టీ ఇస్తాడని అనుకున్నాను'
+                },
+                {
+                    id: 8,
+                    eng: "I thought you would eat, you didn't",
+                    tel: 'నువ్వు తింటావని అనుకున్నాను, నువ్వు తినలేదు'
+                },
+            ],
+        },
+        {
+            id: 1,
+            topic: "used to / would (గతంలో జరిగిన విషయాలు)",
+            explain: '',
+            formation: '',
+            note: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "I used to write stories",
+                    tel: 'నేను కథలు రాసేవాడిని',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "we would go to swimming everyday in summer",
+                    tel: 'మేము వేసవిలో ప్రతిరోజూ ఈతకు వెళ్తాము / వెళ్ళేవాలం',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "we would go to relative's place in holidays",
+                    tel: 'సెలవుల్లో బంధువుల ఊరికి వెళ్తాం / వెళ్ళేవాలం',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "I would dance very well when I was a kid",
+                    tel: 'నేను చిన్నప్పుడు చాలా బాగా డాన్స్ చేస్తాను / చేసేవాడిని',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "He would sing when he was in his childhood",
+                    tel: 'అతను చిన్నతనంలో ఉన్నప్పుడు పాడేవాడు',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "I used to eat a lot in my childhood (or) I would eat a lot in my childhood",
+                    tel: 'నేను చిన్నతనంలో చాలా తినేవాడిని',
+                    tense: ''
+                },
+            ],
+        },
+        {
+            id: 1,
+            topic: "will -> would (indirect speech)",
+            explain: '',
+            formation: '',
+            note: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "raghu said i will learn english // ghu said that he would learn english",
+                    tel: 'రఘు ఇంగ్లీష్ నేర్చుకుంటానని చెప్పాడు',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "vinay said, 'we will move to chennai next week'",
+                    tel: 'వినయ్, "మేము వచ్చే వారం చెన్నైకి వెళ్తాము" అన్నాడు',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "vinay said that they would move to chennai next week",
+                    tel: 'వచ్చే వారం చెన్నైకి వెళ్తామని వినయ్ చెప్పారు',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "madhu sri said to us, 'I will try to save the patient'",
+                    tel: 'మధు శ్రీ మాతో అన్నాడు, "నేను రోగిని రక్షించడానికి ప్రయత్నిస్తాను"',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "madhusri told us that she would try to save the patient",
+                    tel: 'రోగిని కాపాడేందుకు ప్రయత్నిస్తానని మధుశ్రీ చెప్పింది',
+                    tense: ''
+                },
+            ],
+        },
+        {
+            id: 1,
+            topic: "would : conditional statements",
+            explain: 'we have to use past verb',
+            formation: '',
+            note: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "if you asked me, i would give you",
+                    tel: 'మీరు నన్ను అడిగితే, నేను మీకు ఇచ్చేవాడిని',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "if i were a doctor, i would save the patient",
+                    tel: 'నేను డాక్టర్ అయితే, నేను రోగిని కాపాడేవాడిని',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "if we played well, we would win the game",
+                    tel: 'మేము బాగా ఆడితే, మేము గేమ్ గెలిచేవాళ్ళం',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "if you had given him, he would have given us",
+                    tel: 'మీరు అతనికి ఇచ్చి ఉంటే, అతను మాకు ఇచ్చిఉండేవాడు',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "if they had saved her, she would have lived now",
+                    tel: 'వారు ఆమెను రక్షించినట్లయితే, ఆమె ఇప్పుడు జీవించి ఉండేది',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "",
+                    tel: '',
+                    tense: ''
+                },
+            ],
+        },
+        {
+            id: 1,
+            topic: "would / could : Polite Request / foral Expressions",
+            explain: 'To ask questions in a very polite way, use: Would you/ Could you (please) + simple verb + ...?',
+            formation: '',
+            note: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "Would you please tell this address",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "Would you please help me to solve the issue",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "Would you please move aside",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "Would you please open the door",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "Would you please explain the topic for me",
+                    tel: '',
+                    tense: ''
+                },
+            ],
+        },
+        {
+            id: 1,
+            section: "Advanced structures and general phrases",
+            topic: "Will have to (వస్తుంది)",
+            explain: 'భవిషత్తులో చేయవలసి వుంటింది / వస్తుంది',
+            formation: '',
+            note: 'Present Tense',
+            content: [
+                {
+                    id: 1,
+                    eng: "You will have to marry him in future",
+                    tel: 'మీరు భవిష్యత్తులో అతనిని వివాహం చేసుకోవలసి ఉంటుంది',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 1,
+                    eng: "I will have to watch that movie tomorrow",
+                    tel: 'నేను రేపు ఆ సినిమా చూడాల్సి వస్తుంది',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 1,
+                    eng: "you will have to pay",
+                    tel: 'మీరు చెల్లించవలసి ఉంటుంది / వస్తుంది',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 1,
+                    eng: "you will have to write it after 45 line",
+                    tel: 'మీరు దానిని 45 లైన్ తర్వాత వ్రాయవలసి ఉంటుంది',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 1,
+                    eng: "He will have to sleep here to night",
+                    tel: 'అతడు ఈ రాత్రికి ఇక్కడే పడుకోవాలి / నిద్రిచాల్సి వస్తుంది',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 1,
+                    eng: "He will have to do what i said",
+                    tel: 'అతను నేను చెప్పినట్టే చేయాల్సి వస్తుంది',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 1,
+                    eng: "We will have to win the match at any cost tomorrow",
+                    tel: 'రేపటి మ్యాచ్‌లో మనం ఎలాగైనా గెలవాల్సి వస్తుంది',
+                    tense: 'Present tense'
+                },
+            ],
+        },
+        {
+            id: 11,
+            topic: "Was మరియు Were",
+            explain: 'అర్థం: ఉన్నాను / ఉన్నాడు / ఉంది (గత కాలంలో). 1. Was – singular subjects (I, He, She, It, singular noun) తో వాడతారు.',
+            formation: 'Subject + come(s) across + as + adjective/noun',
+            content: [
+                {
+                    id: 1,
+                    eng: "<b>Past Simple with was/were</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 1,
+                    eng: "I was at the park yesterday.",
+                    tel: "నేను నిన్న పార్క్‌లో ఉన్నాను.",
+                    tense: "Past simple (was)"
+                },
+                {
+                    id: 2,
+                    eng: "She was very tired after work.",
+                    tel: "ఆమె పని తర్వాత చాలా అలసిపోయింది.",
+                    tense: "Past simple (was)"
+                },
+                {
+                    id: 3,
+                    eng: "We were happy with the results.",
+                    tel: "మేము ఫలితాలతో సంతోషంగా ఉన్నాం.",
+                    tense: "Past simple (were)"
+                },
+                {
+                    id: 4,
+                    eng: "They were in Delhi last week.",
+                    tel: "వారు గత వారం ఢిల్లీలో ఉన్నారు.",
+                    tense: "Past simple (were)"
+                },
+                {
+                    id: 5,
+                    eng: "<b>Past Continuous with was/were</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 5,
+                    eng: "I was reading a book when he called.",
+                    tel: "అతను కాల్ చేసినప్పుడు నేను పుస్తకం చదువుతున్నాను.",
+                    tense: "Past continuous (was + ing)"
+                },
+                {
+                    id: 6,
+                    eng: "She was cooking dinner in the kitchen.",
+                    tel: "ఆమె వంటగదిలో విందు వండుతోంది.",
+                    tense: "Past continuous (was + ing)"
+                },
+                {
+                    id: 7,
+                    eng: "We were playing cricket in the morning.",
+                    tel: "మేము ఉదయం క్రికెట్ ఆడుతున్నాము.",
+                    tense: "Past continuous (were + ing)"
+                },
+                {
+                    id: 8,
+                    eng: "They were watching TV last night.",
+                    tel: "వారు నిన్న రాత్రి టీవీ చూస్తున్నారు.",
+                    tense: "Past continuous (were + ing)"
+                },
+
+            ],
+        },
+        {
+            id: 11,
+            topic: "Was మరియు Were (Positive)",
+            explain: 'Affirmative (Positive) Sentences – పాజిటివ్ వాక్యాలు',
+            formation: 'Subject + was/were + Complement/Adjective/Place/Verb-ing + .',
+            content: [
+                {
+                    id: 1,
+                    eng: "I was tired yesterday.",
+                    tel: "నేను నిన్న అలసిపోయాను.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 2,
+                    eng: "She was at school.",
+                    tel: "ఆమె స్కూల్‌లో ఉంది.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 3,
+                    eng: "We were happy.",
+                    tel: "మేము సంతోషంగా ఉన్నాం.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 4,
+                    eng: "They were playing football.",
+                    tel: "వారు ఫుట్‌బాల్ ఆడుతున్నారు.",
+                    tense: "Past continuous tense"
+                }
+            ],
+        },
+        {
+            id: 11,
+            topic: "Was మరియు Were Negative",
+            explain: 'Negative Sentences – నెగటివ్ వాక్యాలు',
+            formation: 'Subject + was/were + not + Complement + .',
+            content: [
+                {
+                    id: 1,
+                    eng: "I was not at home.",
+                    tel: "నేను ఇంట్లో లేదు.",
+                    tense: "Past negative"
+                },
+                {
+                    id: 2,
+                    eng: "He was not late.",
+                    tel: "అతను ఆలస్యంగా రాలేదు.",
+                    tense: "Past negative"
+                },
+                {
+                    id: 3,
+                    eng: "We were not hungry.",
+                    tel: "మేము ఆకలిగా లేము.",
+                    tense: "Past negative"
+                },
+                {
+                    id: 4,
+                    eng: "They were not at the park.",
+                    tel: "వారు పార్క్‌లో లేరు.",
+                    tense: "Past negative"
+                },
+                {
+                    id: 4,
+                    eng: "You were not sleeping at 7 PM yesterday",
+                    tel: "నువ్వు నిన్న సాయంత్రం 7 గంటలకు నిద్రపోవడం లేదు.",
+                    tense: "Past Continuous Tense (Negative)."
+                },
+            ],
+        },
+        {
+            id: 11,
+            topic: "Was మరియు Were (Interrogative)",
+            explain: 'Interrogative Sentences – ప్రశ్న వాక్యాలు',
+            formation: 'Was/Were + Subject + Complement + ?',
+            content: [
+                {
+                    id: 1,
+                    eng: "Was she at school yesterday?",
+                    tel: "ఆమె నిన్న స్కూల్‌లో ఉందా?",
+                    tense: "Past interrogative"
+                },
+                {
+                    id: 2,
+                    eng: "Were you busy yesterday?",
+                    tel: "నీవు నిన్న బిజీగా ఉన్నావా?",
+                    tense: "Past interrogative"
+                },
+                {
+                    id: 3,
+                    eng: "Were they at the party?",
+                    tel: "వారు పార్టీకి వచ్చారా?",
+                    tense: "Past interrogative"
+                }
+            ],
+        },
+        {
+            id: 11,
+            topic: 'was/were + V3 → Past Simple Passive Tense',
+            explain: "Use → ఎవరు చేశారు అనే దానికన్నా, ఏ పని జరిగింది అనే విషయాన్ని highlight చేయడానికి.",
+            formation: 'Was/Were + Subject + Complement + ?',
+            content: [
+                {
+                    id: 1,
+                    eng: "<b>Passive structure: Object + was/were + V3 + (by Subject)</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 1,
+                    eng: "The letter was written by her yesterday.",
+                    tel: "లేఖ నిన్న ఆమె చేత రాయబడింది.",
+                    tense: "Past simple passive"
+                },
+                {
+                    id: 2,
+                    eng: "The books were given to the students.",
+                    tel: "పుస్తకాలు విద్యార్థులకు ఇవ్వబడ్డాయి.",
+                    tense: "Past simple passive"
+                },
+                {
+                    id: 3,
+                    eng: "The room was cleaned in the morning.",
+                    tel: "గది ఉదయం శుభ్రం చేయబడింది.",
+                    tense: "Past simple passive"
+                },
+                {
+                    id: 4,
+                    eng: "The project was completed last week.",
+                    tel: "ప్రాజెక్ట్ గత వారం పూర్తయింది.",
+                    tense: "Past simple passive"
+                },
+                {
+                    id: 5,
+                    eng: "The thief was arrested by the police.",
+                    tel: "దొంగ పోలీసులచే పట్టుబడ్డాడు.",
+                    tense: "Past simple passive"
+                },
+                {
+                    id: 1,
+                    eng: "Active structure: Subject + Verb (V2) + Object",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 1,
+                    eng: "She wrote the letter yesterday.",
+                    tel: "ఆమె నిన్న లేఖ రాసింది.",
+                    tense: "Past simple"
+                },
+                {
+                    id: 2,
+                    eng: "They gave books to the students.",
+                    tel: "వారు విద్యార్థులకు పుస్తకాలు ఇచ్చారు.",
+                    tense: "Past simple"
+                },
+                {
+                    id: 3,
+                    eng: "He cleaned the room in the morning.",
+                    tel: "అతను ఉదయం గదిని శుభ్రం చేశాడు.",
+                    tense: "Past simple"
+                },
+                {
+                    id: 4,
+                    eng: "We completed the project last week.",
+                    tel: "మేము గత వారం ప్రాజెక్ట్ పూర్తి చేశాము.",
+                    tense: "Past simple"
+                },
+                {
+                    id: 5,
+                    eng: "The police arrested the thief.",
+                    tel: "పోలీసులు దొంగను పట్టుకున్నారు.",
+                    tense: "Past simple"
+                }
+            ],
+        },
+        {
+            id: 1,
+            section: "Common Phrases",
+            topic: "Phrases",
+            explain: '',
+            formation: '',
+            note: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "Everything happens for our good or It's all for our own good",
+                    tel: 'అంతా మన మంచికే',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 1,
+                    eng: "I quit alcohol for my health. (OR) I don't drink alcohol anymore.",
+                    tel: 'నేను నా ఆరోగ్యం కోసం మద్యం తాగడం మానేశాను.',
+                    tense: 'Simple Present tense.'
+                },
+                {
+                    id: 1,
+                    eng: "<b>express your 4-year bonding/tenure in English professionally during an all-hands or team meeting</b>",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    tel: "<b>Simple & professional</b>",
+                    eng: "I’m proud to share that I have completed 4 years with the company. It has been an incredible journey of learning and growth.",
+                    tense: "Present Perfect",
+                    usage: "Expressing tenure and personal growth professionally"
+                },
+                {
+                    id: 2,
+                    tel: "<b>Emphasizing experience & contributions</b>",
+                    eng: "Today marks 4 years since I joined this company. Over these years, I’ve had the opportunity to work on multiple projects, learn from talented colleagues, and contribute to our shared goals.",
+                    tense: "Present Perfect",
+                    usage: "Highlighting experience, contributions, and achievements"
+                },
+                {
+                    id: 3,
+                    tel: "<b>Highlighting team bonding / gratitude</b>",
+                    eng: "I have been part of this amazing organization for 4 years. I’m grateful for the support of my team and mentors who have made this journey fulfilling and enriching.",
+                    tense: "Present Perfect Continuous / Present Perfect",
+                    usage: "Showing gratitude and team bonding"
+                },
+                {
+                    id: 4,
+                    tel: "<b>Emphasizing commitment & vision</b>",
+                    eng: "Having completed 4 years here, I remain committed to contributing my best, collaborating with everyone, and driving impactful results for our organization.",
+                    tense: "Perfect Participle / Present Simple",
+                    usage: "Expressing commitment and forward-looking vision"
+                },
+                {
+                    id: 5,
+                    tel: "<b>Casual / friendly tone</b>",
+                    eng: "Wow, it’s already been 4 years since I joined! Time really flies when you’re learning and growing with such a fantastic team.",
+                    tense: "Present Perfect",
+                    usage: "Casual, friendly reflection for a lighter team meeting"
+                },
+                {
+                    id: 1,
+                    tel: "<b>Elaborated professional speech</b>",
+                    eng: "Good [morning/afternoon] everyone, I’m really happy to share that as of today, I have completed 4 fulfilling years with this company. Over this period, I’ve had the privilege to work on a variety of projects that challenged me, helped me grow, and allowed me to contribute meaningfully to our goals. These 4 years have not just been about projects or deadlines—they have been about learning, collaboration, and building lasting relationships with some truly talented colleagues. I’ve learned so much from my mentors, my teammates, and the cross-functional interactions that shaped my perspective and strengthened my skills. I’m grateful for the opportunities I’ve been given, the support I’ve received, and the culture that encourages innovation and growth. Looking ahead, I remain committed to giving my best, continuing to learn, and contributing to the success of our organization. Thank you all for being a part of this journey with me—it has been an incredible experience so far, and I’m excited for what lies ahead.",
+                    tense: "Present Perfect / Present Perfect Continuous",
+                    usage: "Elaborated professional speech highlighting tenure, experience, learning, gratitude, collaboration, and forward-looking commitment"
+                },
+                {
+                    id: 1,
+                    tel: "<b>Elaborated professional speech</b>",
+                    eng: "I’d like to take a moment to acknowledge the incredible work my team has done over the past quarter. Despite tight deadlines and complex requirements, we not only delivered successfully but also maintained the quality and collaboration that make us strong as a team.This achievement is proof that when we come together with focus and dedication, we can accomplish anything. Thank you to each one of you—it’s a privilege to work alongside such talented people.",
+                    tense: "Present Perfect / Present Perfect Continuous",
+                    usage: "Elaborated professional speech highlighting tenure, experience, learning, gratitude, collaboration, and forward-looking commitment"
+                },
+            ],
+        },
+        {
+            id: 2,
+            topic: "belched - త్రేన్పులు (బెల్చ్డ్ (belchd) / బెల్చ్‌డ్ (belch-ed))",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "<b></b>",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "He belched loudly after drinking soda.",
+                    tel: "అతను సోడా తాగిన తర్వాత గట్టిగా త్రేన్పులు పెట్టాడు.",
+                    tense: "Past Simple"
+                },
+                {
+                    id: 2,
+                    eng: "The baby belched after feeding.",
+                    tel: "పాప పాలు తాగిన తర్వాత త్రేన్పులు పెట్టింది.",
+                    tense: "Past Simple"
+                },
+                {
+                    id: 3,
+                    eng: "She belched quietly in the meeting.",
+                    tel: "ఆమె మీటింగ్‌లో నిశ్శబ్దంగా త్రేన్పులు పెట్టింది.",
+                    tense: "Past Simple"
+                },
+                {
+                    id: 4,
+                    eng: "He has belched three times since lunch.",
+                    tel: "భోజనం చేసిన తర్వాత అతను మూడు సార్లు త్రేన్పులు పెట్టాడు.",
+                    tense: "Present Perfect"
+                },
+                {
+                    id: 5,
+                    eng: "They belched continuously after the spicy food.",
+                    tel: "కారం ఎక్కువగా తిన్న తర్వాత వారు వరుసగా త్రేన్పులు పెట్టారు.",
+                    tense: "Past Simple"
+                },
+                {
+                    id: 6,
+                    eng: "The boy belched when he drank water too fast.",
+                    tel: "అబ్బాయి నీళ్లు వేగంగా తాగినప్పుడు త్రేన్పులు పెట్టాడు.",
+                    tense: "Past Simple"
+                },
+                {
+                    id: 7,
+                    eng: "She belched as soon as she finished her meal.",
+                    tel: "ఆమె భోజనం ముగిసిన వెంటనే త్రేన్పులు పెట్టింది.",
+                    tense: "Past Simple"
+                },
+                {
+                    id: 8,
+                    eng: "I belched because of the soft drink.",
+                    tel: "సాఫ్ట్ డ్రింక్ వల్ల నేను త్రేన్పులు పెట్టాను.",
+                    tense: "Past Simple"
+                },
+                {
+                    id: 9,
+                    eng: "He suddenly belched during the presentation.",
+                    tel: "ప్రెజెంటేషన్ సమయంలో అతను అకస్మాత్తుగా త్రేన్పులు పెట్టాడు.",
+                    tense: "Past Simple"
+                },
+                {
+                    id: 10,
+                    eng: "The baby has belched already.",
+                    tel: "పాప ఇప్పటికే త్రేన్పులు పెట్టింది.",
+                    tense: "Present Perfect"
+                },
+            ],
+        },
+        {
+            id: 2,
+            topic: "(ఎక్సటింక్ట్(extinct) - అంతరించిపోయింది / ఎండేంజర్డ్(Endangered) - అంతరించిపోతున్నాయి - (are disappearing)",
+            explain: '<span>extinct (అంతరించిపోయిన)</span> - The species does not exist anymore. /---/ <span>Endangered (అంతరించిపోవడానికే సిద్ధంగా ఉన్న)</span> - The species still exists, but may disappear soon if not protected.',
+            formation: 'If + Subject + had + past Participle - Subject + would have + past Participle',
+            content: [
+                {
+                    id: 1,
+                    eng: "<b></b>",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "Dinosaurs are extinct species.",
+                    tel: "డైనోసార్లు అంతరించిపోయిన జాతులు.",
+                    tense: "Simple Present"
+                },
+                {
+                    id: 2,
+                    eng: "The dodo bird became extinct hundreds of years ago.",
+                    tel: "డోడో పక్షి వందల ఏళ్ల క్రితం అంతరించిపోయింది.",
+                    tense: "Past Simple"
+                },
+                {
+                    id: 3,
+                    eng: "Many species are in danger of becoming extinct.",
+                    tel: "చాలా జాతులు అంతరించే ప్రమాదంలో ఉన్నాయి.",
+                    tense: "Present Continuous"
+                },
+                {
+                    id: 4,
+                    eng: "The tiger is an endangered species.",
+                    tel: "పులి ఒక సంకటములో ఉన్న జాతి.",
+                    tense: "Simple Present"
+                },
+                {
+                    id: 5,
+                    eng: "Several marine species are endangered due to pollution.",
+                    tel: "కాలుష్యం వల్ల అనేక సముద్ర జాతులు ప్రమాదంలో ఉన్నాయి.",
+                    tense: "Present Simple"
+                },
+                {
+                    id: 6,
+                    eng: "The cheetah has become an endangered species.",
+                    tel: "చిరుతపులి ఒక ప్రమాదంలో ఉన్న జాతిగా మారింది.",
+                    tense: "Present Perfect"
+                },
+                {
+                    id: 7,
+                    eng: "We must protect endangered species.",
+                    tel: "మనము సంకటములో ఉన్న జాతులను రక్షించాలి.",
+                    tense: "Modal (must)"
+                },
+                {
+                    id: 8,
+                    eng: "Some bird species are nearly extinct.",
+                    tel: "కొన్ని పక్షి జాతులు దాదాపు అంతరించిపోయాయి.",
+                    tense: "Present Simple"
+                },
+                {
+                    id: 9,
+                    eng: "Polar bears are becoming endangered due to climate change.",
+                    tel: "వాతావరణ మార్పుల కారణంగా ధ్రువభాలులు ప్రమాదంలోకి వెళ్తున్నాయి.",
+                    tense: "Present Continuous"
+                },
+                {
+                    id: 10,
+                    eng: "Woolly mammoths went extinct thousands of years ago.",
+                    tel: "వూల్లీ మామోతులు వేల ఏళ్ల క్రితం అంతరించిపోయాయి.",
+                    tense: "Past Simple"
+                },
+            ],
+        },
+        {
+            id: 2,
+            topic: "Habitual Sentences",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 5,
+                    eng: "<b></b>",
+                    tel: "",
+                    tense: "",
+                },
+                {
+                    id: 1,
+                    eng: "You always eat what you shouldn’t.",
+                    tel: "నువ్వు ఎప్పుడూ తినకూడనివి తింటావు.",
+                    type: "habit / warning"
+                },
+                {
+                    id: 2,
+                    eng: "You always say what you shouldn’t.",
+                    tel: "నువ్వు ఎప్పుడూ చెప్పకూడనివి చెబుతావు.",
+                    type: "habit / warning"
+                },
+                {
+                    id: 3,
+                    eng: "You always spend money where you shouldn’t.",
+                    tel: "నువ్వు ఎప్పుడూ డబ్బు ఖర్చు చేయకూడని చోట ఖర్చు చేస్తావు.",
+                    type: "habit / warning"
+                },
+                {
+                    id: 4,
+                    eng: "You always trust people you shouldn’t.",
+                    tel: "నువ్వు ఎప్పుడూ నమ్మకూడని వారిని నమ్ముతావు.",
+                    type: "habit / warning"
+                },
+                {
+                    id: 5,
+                    eng: "You always go where you shouldn’t.",
+                    tel: "నువ్వు ఎప్పుడూ వెళ్లకూడని చోట్లకి వెళ్తావు.",
+                    type: "habit / warning"
+                },
+                {
+                    id: 6,
+                    eng: "You always share things you shouldn’t.",
+                    tel: "నువ్వు ఎప్పుడూ పంచకూడనివి పంచుకుంటావు.",
+                    type: "habit / warning"
+                },
+                {
+                    id: 7,
+                    eng: "You always touch what you shouldn’t.",
+                    tel: "నువ్వు ఎప్పుడూ తాకకూడనివి తాకుతావు.",
+                    type: "habit / warning"
+                },
+                {
+                    id: 8,
+                    eng: "You always ask questions you shouldn’t.",
+                    tel: "నువ్వు ఎప్పుడూ అడగకూడని ప్రశ్నలు అడుగుతావు.",
+                    type: "habit / warning"
+                },
+                {
+                    id: 9,
+                    eng: "You always believe what you shouldn’t.",
+                    tel: "నువ్వు ఎప్పుడూ నమ్మకూడనివి నమ్ముతావు.",
+                    type: "habit / warning"
+                },
+                {
+                    id: 10,
+                    eng: "You always do what you shouldn’t.",
+                    tel: "నువ్వు ఎప్పుడూ చేయకూడనివి చేస్తావు.",
+                    type: "habit / warning"
+                }
+            ],
+        },
+        {
+            id: 9,
+            topic: "I remain",
+            explain: '“I remain” ఎక్కువగా formal Englishలో వాడతారు → అంటే నేను అలాగే కొనసాగుతాను / నేను అలాగే ఉంటాను.',
+            formation: '',
+            note: '',
+            content: [
+                {
+                    id: 1,
+                    tel: "నేను ఇక్కడే ఉంటాను.",
+                    eng: "I will stay here.",
+                    note: "సాధారణ future tense"
+                },
+                {
+                    id: 2,
+                    tel: "నేను నీకు తోడుగా ఉంటాను.",
+                    eng: "I will be with you.",
+                    note: "casual promise"
+                },
+                {
+                    id: 3,
+                    tel: "ఎంత కష్టం వచ్చినా నేను ఆశావహంగా ఉంటాను.",
+                    eng: "I remain hopeful no matter the difficulties.",
+                    note: "formal, motivational"
+                },
+                {
+                    id: 4,
+                    tel: "ఈ ప్రాజెక్ట్‌కి నేను అంకితభావంతో ఉంటాను.",
+                    eng: "I remain dedicated to this project.",
+                    note: "formal, professional"
+                },
+                {
+                    id: 5,
+                    tel: "లేఖ చివర ఇలా రాస్తారు: నేను, మీ స్నేహపూర్వకంగా ఉంటాను.",
+                    eng: "In a letter ending: I remain, yours sincerely.",
+                    note: "formal closing"
+                },
+                {
+                    id: 2,
+                    eng: "I remain confident about our success.",
+                    tel: "మన విజయంపై నేను ఇంకా నమ్మకంగా ఉన్నాను.",
+                    type: "confidence"
+                },
+                {
+                    id: 3,
+                    eng: "Even after many challenges, I remain hopeful.",
+                    tel: "చాలా సవాళ్ల తర్వాత కూడా నేను ఆశతోనే ఉన్నాను.",
+                    type: "hope"
+                },
+                {
+                    id: 4,
+                    eng: "After 4 years here, I remain grateful to my mentors.",
+                    tel: "ఇక్కడ 4 సంవత్సరాల తర్వాత కూడా నేను నా మెంటర్లకు కృతజ్ఞతగా ఉన్నాను.",
+                    type: "gratitude"
+                },
+                {
+                    id: 5,
+                    eng: "I remain focused on learning new technologies.",
+                    tel: "కొత్త టెక్నాలజీలు నేర్చుకోవడంపై నేను దృష్టి సారించి ఉన్నాను.",
+                    type: "focus"
+                },
+                {
+                    id: 6,
+                    eng: "I remain, yours sincerely.",
+                    tel: "నేను, మీ స్నేహపూర్వకంగా ఉంటున్నాను.",
+                    type: "formal closing"
+                },
+                {
+                    id: 1,
+                    eng: "I remain committed to supporting this project.",
+                    tel: "ఈ ప్రాజెక్ట్‌కి మద్దతు ఇవ్వడంలో నేను కట్టుబడి ఉంటాను.",
+                    type: "commitment"
+                },
+                {
+                    id: 2,
+                    eng: "I remain confident in our team’s success.",
+                    tel: "మా జట్టు విజయంపై నాకు నమ్మకం ఉంటుంది.",
+                    type: "confidence"
+                },
+                {
+                    id: 3,
+                    eng: "I remain, yours sincerely,",
+                    tel: "నేను ఉంటాను, మీవాడిని విశ్వాసపూర్వకంగా,",
+                    type: "formal_closing"
+                },
+                {
+                    id: 4,
+                    eng: "I remain, faithfully yours,",
+                    tel: "నేను ఉంటాను, మీవాడిని విధేయతతో,",
+                    type: "formal_closing"
+                },
+                {
+                    id: 5,
+                    eng: "Despite the challenges, I remain positive about the outcome.",
+                    tel: "సవాళ్లు ఉన్నప్పటికీ, ఫలితంపై నేను సానుకూలంగా ఉంటాను.",
+                    type: "consistency"
+                },
+                {
+                    id: 6,
+                    eng: "Even after 4 years here, I remain grateful for the opportunities.",
+                    tel: "ఇక్కడ 4 సంవత్సరాలు గడిచినా, అవకాశాల కోసం నేను కృతజ్ఞతతో ఉంటాను.",
+                    type: "gratitude"
+                }
+            ],
+        },
+        {
+            id: 9,
+            topic: "Meaning of Not Entertained",
+            explain: '“not entertained” usually means “not considered / not accepted” (formal usage).',
+            formation: 'Not accepted, not considered, not approved, or not paid attention to.',
+            note: 'Future Tense',
+            content: [
+                {
+                    id: 1,
+                    eng: "Repeated calls will not be entertained.",
+                    tel: "మళ్లీ మళ్లీ చేసే కాల్స్ పరిగణించబడవు.",
+                    type: "communication"
+                },
+                {
+                    id: 2,
+                    eng: "Late submissions will not be entertained.",
+                    tel: "ఆలస్యంగా సమర్పించినవి పరిగణించబడవు.",
+                    type: "rules"
+                },
+                {
+                    id: 3,
+                    eng: "Unauthorized access attempts will not be entertained.",
+                    tel: "అనుమతి లేని యాక్సెస్ ప్రయత్నాలు పరిగణించబడవు.",
+                    type: "security"
+                },
+                {
+                    id: 4,
+                    eng: "Change requests after deployment will not be entertained.",
+                    tel: "డిప్లాయ్‌మెంట్ తర్వాత మార్పు అభ్యర్థనలు పరిగణించబడవు.",
+                    type: "IT_process"
+                },
+                {
+                    id: 5,
+                    eng: "Queries without proper details will not be entertained.",
+                    tel: "సరైన వివరాలు లేని ప్రశ్నలు పరిగణించబడవు.",
+                    type: "support"
+                },
+                {
+                    id: 6,
+                    eng: "Excuses will not be entertained.",
+                    tel: "క్షమాపణలు పరిగణించబడవు.",
+                    type: "general"
+                },
+                {
+                    id: 7,
+                    eng: "Complaints without proof will not be entertained.",
+                    tel: "సాక్ష్యం లేని ఫిర్యాదులు పరిగణించబడవు.",
+                    type: "complaint"
+                },
+                {
+                    id: 8,
+                    eng: "Unscheduled leave requests will not be entertained.",
+                    tel: "ముందస్తు సమాచారం లేకుండా ఇచ్చిన సెలవు అభ్యర్థనలు పరిగణించబడవు.",
+                    type: "HR_policy"
+                },
+                {
+                    id: 9,
+                    eng: "Incomplete forms will not be entertained.",
+                    tel: "అసంపూర్ణమైన ఫారాలు పరిగణించబడవు.",
+                    type: "documentation"
+                },
+                {
+                    id: 10,
+                    eng: "Suggestions without justification will not be entertained.",
+                    tel: "సరైన కారణం లేకుండా ఇచ్చిన సూచనలు పరిగణించబడవు.",
+                    type: "feedback"
+                }
+            ],
+        },
+        {
+            id: 10,
+            topic: "Make sense //--// Doesn’t make sense",
+            explain: 'Make sense → something is clear, logical, understandable. (అర్థమవుతుంది / సరైనదిగా ఉంది) /---/ Doesn’t make sense → something is not clear, illogical, confusing. (అర్థం కావడం లేదు / సరికాదు)',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "Your explanation makes sense.",
+                    tel: "నీ వివరణ అర్థమవుతోంది.",
+                    type: "understanding"
+                },
+                {
+                    id: 2,
+                    eng: "Now it makes sense.",
+                    tel: "ఇప్పుడు అర్థమవుతోంది.",
+                    type: "clarity"
+                },
+                {
+                    id: 3,
+                    eng: "This code doesn’t make sense.",
+                    tel: "ఈ కోడ్ అర్థం కావడం లేదు.",
+                    type: "IT_confusion"
+                },
+                {
+                    id: 4,
+                    eng: "That doesn’t make sense to me.",
+                    tel: "నాకు అది అర్థం కావడం లేదు.",
+                    type: "disagreement"
+                },
+                {
+                    id: 5,
+                    eng: "The document doesn’t make sense without examples.",
+                    tel: "ఉదాహరణలు లేకుండా డాక్యుమెంట్ అర్థం కావడం లేదు.",
+                    type: "documentation"
+                },
+                {
+                    id: 6,
+                    eng: "It doesn’t make sense to deploy without testing.",
+                    tel: "టెస్టింగ్ లేకుండా డిప్లాయ్ చేయడం సరికాదు.",
+                    type: "IT_best_practice"
+                },
+                {
+                    id: 7,
+                    eng: "Your idea makes sense, let’s try it in the next sprint.",
+                    tel: "నీ ఆలోచన అర్థమవుతోంది, దాన్ని వచ్చే స్ప్రింట్‌లో ప్రయత్నిద్దాం.",
+                    type: "teamwork"
+                },
+                {
+                    id: 8,
+                    eng: "The architecture diagram makes sense after the walkthrough.",
+                    tel: "వాక్‌థ్రూ తర్వాత ఆ ఆర్కిటెక్చర్ డయాగ్రామ్ అర్థమైంది.",
+                    type: "IT_design"
+                },
+                {
+                    id: 9,
+                    eng: "It makes sense to start with small tasks first.",
+                    tel: "మొదట చిన్న పనులతో మొదలు పెట్టడం సరిగానే ఉంటుంది.",
+                    type: "planning"
+                },
+                {
+                    id: 10,
+                    eng: "His argument doesn’t make sense at all.",
+                    tel: "అతని వాదన అసలు అర్థం కావడం లేదు.",
+                    type: "discussion"
+                }
+            ],
+        },
+        {
+            id: 10,
+            topic: "words and examples",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "<b>burned vessels</b>",
+                    tel: "<b>దగ్ధమైన వాసెల్స్</b>",
+                },
+                {
+                    eng: "The chef accidentally used burned vessels for cooking.",
+                    tel: "షెఫ్ తప్పుగా దగ్ధమైన వాసెల్స్ లో వంట చేశాడు."
+                },
+                {
+                    eng: "We need to discard the burned vessels from the kitchen.",
+                    tel: "వంటగదిలోని దగ్ధమైన వాసెల్స్ ని త్రోసేయాలి."
+                },
+
+                {
+                    id: 2,
+                    eng: "<b>Subsequent</b>",
+                    tel: "<b>తదుపరి</b>",
+                },
+                {
+                    eng: "The subsequent chapters of the book are more interesting.",
+                    tel: "పుస్తకంలోని తదుపరి అధ్యాయాలు మరింత ఆసక్తికరంగా ఉన్నాయి."
+                },
+                {
+                    eng: "Subsequent meetings will focus on project deadlines.",
+                    tel: "తదుపరి సమావేశాలు ప్రాజెక్ట్ గడువులపై దృష్టి పెట్టతాయి."
+                },
+
+                {
+                    id: 3,
+                    eng: "<b>ancestor</b>",
+                    tel: "<b>పూర్వీకుడు</b>",
+                },
+                {
+                    eng: "I learned about my ancestors through family records.",
+                    tel: "నేను నా పూర్వీకుల గురించి కుటుంబ రికార్డ్స్ ద్వారా తెలుసుకున్నాను."
+                },
+                {
+                    eng: "Our ancestors built this ancient temple.",
+                    tel: "మన పూర్వీకులు ఈ పురాతన దేవాలయాన్ని నిర్మించారు."
+                },
+
+                {
+                    id: 4,
+                    eng: "<b>rather than string</b>",
+                    tel: "<b>స్ట్రింగ్ కాకుండా</b>",
+                },
+                {
+                    eng: "Use an array rather than string for storing multiple values.",
+                    tel: "చాలా విలువలను నిల్వ చేయడానికి స్ట్రింగ్ కాకుండా array ఉపయోగించండి."
+                },
+                {
+                    eng: "It is better to pass objects rather than string in this function.",
+                    tel: "ఈ ఫంక్షన్ లో స్ట్రింగ్ కాకుండా objects ఇవ్వడం మంచిది."
+                },
+
+                {
+                    id: 5,
+                    eng: "<b>syntatic</b>",
+                    tel: "<b>వాక్యనిర్మాణం</b>",
+                },
+                {
+                    eng: "Syntactic errors in code can cause compilation failures.",
+                    tel: "కోడ్ లో వాక్యనిర్మాణ తప్పిదాలు కంపైల్ విఫలమయ్యే కారణం అవుతాయి."
+                },
+                {
+                    eng: "Learning syntactic rules improves sentence formation.",
+                    tel: "వాక్యనిర్మాణ నియమాలను నేర్చుకోవడం వాక్య నిర్మాణాన్ని మెరుగుపరుస్తుంది."
+                },
+
+                {
+                    id: 6,
+                    eng: "<b>hierarchy</b>",
+                    tel: "<b>సోపానక్రమం</b>",
+                },
+                {
+                    eng: "The company has a strict management hierarchy.",
+                    tel: "కంపెనీకి కఠినమైన మేనేజ్‌మెంట్ సోపానక్రమం ఉంది."
+                },
+                {
+                    eng: "Understanding the hierarchy helps in resolving issues quickly.",
+                    tel: "సోపానక్రమాన్ని అర్థం చేసుకోవడం సమస్యలను త్వరగా పరిష్కరించడంలో సహాయపడుతుంది."
+                },
+
+                {
+                    id: 7,
+                    eng: "<b>gentle</b>",
+                    tel: "<b>సౌమ్యుడు, సాధుస్వభావము, సున్నితమైన</b>",
+                },
+                {
+                    eng: "She has a gentle way of speaking that everyone likes.",
+                    tel: "ఆమె మాట్లాడే సౌమ్యమైన శైలి అందరికి నచ్చుతుంది."
+                },
+                {
+                    eng: "The gentle breeze cooled the hot afternoon.",
+                    tel: "సున్నితమైన గాలి వేడైన మధ్యాహ్నం ను చల్లగా చేసింది."
+                },
+
+                {
+                    id: 8,
+                    eng: "<b>Descendants</b>",
+                    tel: "<b>వంశజులు</b>",
+                },
+                {
+                    eng: "The descendants of the king still live in the palace.",
+                    tel: "రాజు వంశజులు ఇంకా మహలనగరంలో ఉంటారు."
+                },
+                {
+                    eng: "Descendants should learn about their family traditions.",
+                    tel: "వంశజులు తమ కుటుంబ సంప్రదాయాలను నేర్చుకోవాలి."
+                },
+
+                {
+                    id: 9,
+                    eng: "<b>phlegm</b>",
+                    tel: "<b>కఫం</b>",
+                },
+                {
+                    eng: "Hot soup can help reduce phlegm in the throat.",
+                    tel: "గర్మ సూప్ గొంతులో కఫాన్ని తగ్గించడంలో సహాయపడుతుంది."
+                },
+                {
+                    eng: "Phlegm tends to accumulate during cold weather.",
+                    tel: "చల్లటి వాతావరణంలో కఫం ఎక్కువగా చేరుతుంది."
+                },
+
+                {
+                    id: 10,
+                    eng: "<b>belched</b>",
+                    tel: "<b>తేపు వచ్చిన</b>",
+                },
+                {
+                    eng: "He belched loudly after drinking the soda.",
+                    tel: "సోడా తాగిన తర్వాత అతను బలంగా తేపు వచ్చింది."
+                },
+                {
+                    eng: "The baby belched after finishing the milk.",
+                    tel: "పాలు తిన్న తర్వాత శిశువు తేపు వచ్చింది."
+                },
+                {
+                    id: 11,
+                    eng: "<b>procession</b>",
+                    tel: "<b>ఊరేగింపు</b>",
+                },
+                {
+                    eng: "The festival ended with a grand procession through the town.",
+                    tel: "పండుగ పట్టణం లో ఒక భव्यమైన ఊరేగింపు తో ముగిసింది."
+                },
+                {
+                    eng: "Police ensured the procession was orderly and safe.",
+                    tel: "పోలీస్ ఊరేగింపు సజావుగా, సురక్షితంగా జరగేలా చూసుకున్నారు."
+                },
+
+                {
+                    id: 12,
+                    eng: "<b>deficiencies</b>",
+                    tel: "<b>లోపాలు</b>",
+                },
+                {
+                    eng: "Vitamin deficiencies can lead to serious health problems.",
+                    tel: "విటమిన్ లోపాలు తీవ్రమైన ఆరోగ్య సమస్యలకు దారితీస్తాయి."
+                },
+                {
+                    eng: "The report highlighted deficiencies in the current system.",
+                    tel: "ప్రస్తుత వ్యవస్థలో లోపాలను నివేదిక ఉద్ఘాటించింది."
+                },
+
+                {
+                    id: 13,
+                    eng: "<b>stubborn</b>",
+                    tel: "<b>మొండి, పట్టుదలగల</b>",
+                },
+                {
+                    eng: "He is stubborn and refuses to admit his mistake.",
+                    tel: "అతను మొండి, తన తప్పును ఒప్పుకోవడానికి సిద్ధంగా లేదు."
+                },
+                {
+                    eng: "The stubborn stain did not come off despite scrubbing.",
+                    tel: "పట్టుదలగల మచ్చ తుడిచినా తొలగలేదు."
+                },
+
+                {
+                    id: 14,
+                    eng: "<b>premises</b>",
+                    tel: "<b>ప్రాంగణంలో</b>",
+                },
+                {
+                    eng: "Smoking is not allowed on the school premises.",
+                    tel: "పాఠశాల ప్రాంగణంలో పొగ త్రాగకూడదు."
+                },
+                {
+                    eng: "The company secured the premises with CCTV cameras.",
+                    tel: "కంపెనీ ప్రాంగణాన్ని సీసీటీవీ కెమెరాలతో రక్షించింది."
+                },
+
+                {
+                    id: 15,
+                    eng: "<b>predictable</b>",
+                    tel: "<b>ఊహించదగినది</b>",
+                },
+                {
+                    eng: "The plot of the movie was predictable.",
+                    tel: "సినిమా కథ ఊహించదగినది."
+                },
+                {
+                    eng: "His reactions are always predictable in stressful situations.",
+                    tel: "మరొక ఒత్తిడివంతమైన సందర్భాల్లో అతని ప్రతిక్రియలు ఎల్లప్పుడూ ఊహించదగినవి."
+                },
+
+                {
+                    id: 16,
+                    eng: "<b>priest</b>",
+                    tel: "<b>పూజారి</b>",
+                },
+                {
+                    eng: "The priest performed the wedding rituals.",
+                    tel: "పూజారి వివాహ కర్మకాండాలు నిర్వహించాడు."
+                },
+                {
+                    eng: "Every morning, the priest lights the temple lamps.",
+                    tel: "ప్రతి ఉదయం పూజారి దేవాలయ దీపాలు వెలిగిస్తాడు."
+                },
+
+                {
+                    id: 17,
+                    eng: "<b>arrogant</b>",
+                    tel: "<b>గర్విష్ఠుడు, అహంభావి, దురాహంకారముగల</b>",
+                },
+                {
+                    eng: "He is too arrogant to listen to anyone's advice.",
+                    tel: "ఎవరి సలహా వినకపోవడం అతను చాలా గర్విష్ఠుడు."
+                },
+                {
+                    eng: "The arrogant student refused to follow the rules.",
+                    tel: "దురాహంకారముగల విద్యార్థి నియమాలను పాటించకపోయాడు."
+                },
+
+                {
+                    id: 18,
+                    eng: "<b>adherence</b>",
+                    tel: "<b>కట్టుబడి, నిబధ్ధత</b>",
+                },
+                {
+                    eng: "Adherence to deadlines is crucial for project success.",
+                    tel: "ప్రాజెక్ట్ విజయానికి గడువులకు కట్టుబడి ఉండటం ముఖ్యము."
+                },
+                {
+                    eng: "The team showed strict adherence to company policies.",
+                    tel: "బృందం కంపెనీ విధానాలకు కఠినంగా కట్టుబడి ఉంది."
+                },
+
+                {
+                    id: 19,
+                    eng: "<b>surveillance</b>",
+                    tel: "<b>నిఘా</b>",
+                },
+                {
+                    eng: "The bank installed cameras for continuous surveillance.",
+                    tel: "బ్యాంక్ నిరంతర నిఘాకు కెమెరాలను ఏర్పాటు చేసింది."
+                },
+                {
+                    eng: "Police kept the suspect under close surveillance.",
+                    tel: "పోలీస్ నిందితుడిని కాస్త దగ్గరగా నిఘా చేసుకున్నారు."
+                },
+
+                {
+                    id: 20,
+                    eng: "<b>persist</b>",
+                    tel: "<b>అంటిపెట్టుకుని ఉంటారు</b>",
+                },
+                {
+                    eng: "Despite failures, she continues to persist with her studies.",
+                    tel: "విఫలాల ఉన్నప్పటికీ, ఆమె తన చదువులో అంటిపెట్టుకుని ఉంది."
+                },
+                {
+                    eng: "We must persist in our efforts to achieve the goal.",
+                    tel: "లక్ష్యం సాధించడానికి మన ప్రయత్నాల్లో అంటిపెట్టుకుని ఉండాలి."
+                },
+
+                {
+                    id: 21,
+                    eng: "<b>The species is becoming extinct</b>",
+                    tel: "<b>ఆ జాతి అంతరించిపోతున్నాయి</b>",
+                },
+                {
+                    eng: "The species is becoming extinct due to habitat loss.",
+                    tel: "ఆ జాతి వాస స్థల నష్టంవల్ల అంతరించిపోతున్నాయి."
+                },
+                {
+                    eng: "Conservation efforts are critical as the species is becoming extinct.",
+                    tel: "ఆ జాతి అంతరించిపోతున్నందున సంరక్షణ ప్రయత్నాలు అత్యంత అవసరం."
+                },
+
+                {
+                    id: 22,
+                    eng: "<b>The olive ridley turtle species is endangered</b>",
+                    tel: "<b>ఆలివ్ రిడ్లె తాబేలు జాతి అంతరించిపోతుంది</b>",
+                },
+                {
+                    eng: "The olive ridley turtle species is endangered due to poaching.",
+                    tel: "తాబేలు వేట కారణంగా ఆలివ్ రిడ్లె తాబేలు జాతి అంతరించిపోతుంది."
+                },
+                {
+                    eng: "Conservation programs help protect the olive ridley turtle species.",
+                    tel: "సంరక్షణ కార్యక్రమాలు ఆలివ్ రిడ్లె తాబేలు జాతిని రక్షించడంలో సహాయపడతాయి."
+                },
+
+                {
+                    id: 23,
+                    eng: "<b>species</b>",
+                    tel: "<b>జాతులు</b>",
+                },
+                {
+                    eng: "Many species are found only in the Amazon rainforest.",
+                    tel: "అమెజాన్ అడవిలో మాత్రమే అనేక జాతులు లభిస్తాయి."
+                },
+                {
+                    eng: "Endangered species require immediate protection.",
+                    tel: "అంతరించబోయే జాతులు తక్షణ రక్షణ అవసరం."
+                },
+
+                {
+                    id: 24,
+                    eng: "<b>eventual</b>",
+                    tel: "<b>చివరికి</b>",
+                },
+                {
+                    eng: "The eventual outcome of the negotiations was positive.",
+                    tel: "చివరికి చర్చల ఫలితం సానుకూలంగా వచ్చింది."
+                },
+                {
+                    eng: "Hard work leads to eventual success.",
+                    tel: "కష్టపడి పనిచేయడం చివరికి విజయానికి దారితీస్తుంది."
+                },
+
+                {
+                    id: 25,
+                    eng: "<b>afford</b>",
+                    tel: "<b>భరించు</b>",
+                },
+                {
+                    eng: "I cannot afford to buy a new car this year.",
+                    tel: "నేను ఈ సంవత్సరం కొత్త కారు కొనడానికి భరించలేను."
+                },
+                {
+                    eng: "They can afford luxury vacations once a year.",
+                    tel: "వారికి ప్రతి సంవత్సరం ఒకసారి విలాసవంతమైన సెలవులు భరించవచ్చు."
+                },
+
+                {
+                    id: 26,
+                    eng: "<b>perhaps</b>",
+                    tel: "<b>బహుశా</b>",
+                },
+                {
+                    eng: "Perhaps we should leave early to avoid traffic.",
+                    tel: "ట్రాఫిక్ నివారించడానికి బహుశా మనం ముందే వెళ్లాలి."
+                },
+                {
+                    eng: "Perhaps he will join us for dinner tonight.",
+                    tel: "బహుశా అతను ఈ రాత్రి మనతో భోజనానికి చేరుతాడు."
+                },
+
+                {
+                    id: 27,
+                    eng: "<b>insurgent</b>",
+                    tel: "<b>తిరుగుబాటుదారుడు</b>",
+                },
+                {
+                    eng: "The insurgent group attacked the military base.",
+                    tel: "తిరుగుబాటుదారుడు బృందం సైన్య స్థావరంపై దాడి చేసింది."
+                },
+                {
+                    eng: "Authorities are tracking the insurgent movements.",
+                    tel: "సాధికారులు తిరుగుబాటుదారుల కదలికలను గమనిస్తున్నారు."
+                },
+
+                {
+                    id: 28,
+                    eng: "<b>allegiant</b>",
+                    tel: "<b>విధేయుడు</b>",
+                },
+                {
+                    eng: "He is allegiant to his country.",
+                    tel: "అతను తన దేశానికి విధేయుడు."
+                },
+                {
+                    eng: "The soldier remained allegiant to his commander.",
+                    tel: "సైనికుడు తన ఆజ్ఞాదారునికి విధేయుడుగా ఉన్నాడు."
+                },
+
+                {
+                    id: 29,
+                    eng: "<b>divergent</b>",
+                    tel: "<b>భిన్నమైన</b>",
+                },
+                {
+                    eng: "They have divergent opinions on the topic.",
+                    tel: "వారి ఆలోచనలు ఆ అంశంపై భిన్నంగా ఉన్నాయి."
+                },
+                {
+                    eng: "Divergent paths can lead to new opportunities.",
+                    tel: "భిన్నమైన మార్గాలు కొత్త అవకాశాలకు దారితీస్తాయి."
+                },
+
+                {
+                    id: 30,
+                    eng: "<b>retaliation</b>",
+                    tel: "<b>ప్రతీకారం</b>",
+                },
+                {
+                    eng: "The country launched attacks in retaliation for the bombing.",
+                    tel: "విమాన దాడికి ప్రతీకారంగా ఆ దేశం దాడులు ప్రారంభించింది."
+                },
+                {
+                    id: 31,
+                    eng: "<b>discrimination</b>",
+                    tel: "<b>వివక్ష, పక్షపాతము</b>",
+                },
+                {
+                    eng: "Discrimination based on gender is illegal.",
+                    tel: "లింగంపై ఆధారపడి వివక్ష చేయడం చట్టవిరుద్ధం."
+                },
+                {
+                    eng: "The company has strict rules against discrimination.",
+                    tel: "కంపెనీకి వివక్షకు కఠినమైన నియమాలు ఉన్నాయి."
+                },
+
+                {
+                    id: 32,
+                    eng: "<b>obscene</b>",
+                    tel: "<b>అసభ్యకరమైన, అసహ్యకరమైన</b>",
+                },
+                {
+                    eng: "The movie contained obscene scenes not suitable for children.",
+                    tel: "చిత్రం అసభ్యకరమైన దృశ్యాలను కలిగి ఉంది, పిల్లలకు అనుకూలం కాదు."
+                },
+                {
+                    eng: "He was fined for using obscene language in public.",
+                    tel: "అతను ప్రజల ముందు అసభ్యకరమైన భాష వాడటానికి జరిమానా చెల్లించాడు."
+                },
+
+                {
+                    id: 33,
+                    eng: "<b>gestures</b>",
+                    tel: "<b>సంజ్ఞలు</b>",
+                },
+                {
+                    eng: "He communicates his ideas using gestures.",
+                    tel: "అతను తన ఆలోచనలను సంజ్ఞల ద్వారా వ్యక్తపరుస్తాడు."
+                },
+                {
+                    eng: "Friendly gestures make people feel welcome.",
+                    tel: "స్నేహపూర్వక సంజ్ఞలు ప్రజలకు ఆహ్వానంగా అనిపిస్తాయి."
+                },
+
+                {
+                    id: 34,
+                    eng: "<b>racist</b>",
+                    tel: "<b>జాతివివక్ష</b>",
+                },
+                {
+                    eng: "He was fired for making racist remarks.",
+                    tel: "జాతివివక్ష వ్యాఖ్యలు చేసినందుకు అతను ఉద్యోగం కోల్పోయాడు."
+                },
+                {
+                    eng: "Racist behavior is condemned worldwide.",
+                    tel: "జాతివివక్ష ప్రవర్తనను ప్రపంచవ్యాప్తంగా నిందిస్తారు."
+                },
+
+                {
+                    id: 35,
+                    eng: "<b>headgear</b>",
+                    tel: "<b>తలపాగా</b>",
+                },
+                {
+                    eng: "Construction workers must wear headgear for safety.",
+                    tel: "కonstruk్షన్ కార్మికులు భద్రత కోసం తలపాగా ధరించాలి."
+                },
+                {
+                    eng: "The soldiers wore ceremonial headgear during the parade.",
+                    tel: "సైనికులు ఊరేగింపులో రివాజు తలపాగా ధరించారు."
+                },
+
+                {
+                    id: 36,
+                    eng: "<b>teases</b>",
+                    tel: "<b>ఆటపట్టిస్తుంది</b>",
+                },
+                {
+                    eng: "He always teases his little brother playfully.",
+                    tel: "అతను ఎల్లప్పుడూ తన చిన్న అన్నను ఆటపట్టిస్తుంది."
+                },
+                {
+                    eng: "The teacher scolded the student who teases others.",
+                    tel: "ఇతరులను ఆటపట్టించే విద్యార్థిని ఉపాధ్యాయుడు తొలగించాడు."
+                },
+
+                {
+                    id: 37,
+                    eng: "<b>victim</b>",
+                    tel: "<b>బాధితుడు</b>",
+                },
+                {
+                    eng: "The victim of the accident was taken to the hospital.",
+                    tel: "దుర్ఘటన బాధితుడు ఆసుపత్రికి తరలించబడ్డాడు."
+                },
+                {
+                    eng: "Support groups help victims of natural disasters.",
+                    tel: "సహాయ సమూహాలు సహజ విపత్తుల బాధితులను సహాయపడతాయి."
+                },
+
+                {
+                    id: 38,
+                    eng: "<b>determined</b>",
+                    tel: "<b>నిర్ణయించారు</b>",
+                },
+                {
+                    eng: "She is determined to finish the marathon.",
+                    tel: "ఆమె మారథాన్ పూర్తి చేయాలని నిర్ణయించుకుంది."
+                },
+                {
+                    eng: "He remained determined despite all the obstacles.",
+                    tel: "అన్ని అవరోధాల ఉన్నప్పటికీ అతను నిర్ణయానికి నిలిచాడు."
+                },
+
+                {
+                    id: 39,
+                    eng: "<b>predominantly</b>",
+                    tel: "<b>ప్రధానంగా</b>",
+                },
+                {
+                    eng: "The population of the city is predominantly young.",
+                    tel: "నగరం జనాభా ప్రధానంగా యువత."
+                },
+                {
+                    eng: "This area is predominantly agricultural.",
+                    tel: "ఈ ప్రాంతం ప్రధానంగా వ్యవసాయ భూభాగం."
+                },
+
+                {
+                    id: 40,
+                    eng: "<b>Graveyard</b>",
+                    tel: "<b>శ్మశానం</b>",
+                },
+                {
+                    eng: "They visited the graveyard to pay respects to their ancestors.",
+                    tel: "వారు తమ పూర్వీకులకు గౌరవం చేకూర్చడానికి శ్మశానాన్ని సందర్శించారు."
+                },
+                {
+                    eng: "The old graveyard is surrounded by tall trees.",
+                    tel: "పాత శ్మశానం ఎత్తైన చెట్లచుట్టూ ఉంది."
+                },
+
+                {
+                    id: 41,
+                    eng: "<b>please do leverage</b>",
+                    tel: "<b>దయచేసి వినియోగించండి / ప్రయోజనం పొందండి</b>",
+                },
+                {
+                    eng: "Please do leverage your network to find a job.",
+                    tel: "జాబ్ కనుగొనడానికి దయచేసి మీ నెట్‌వర్క్‌ను వినియోగించండి."
+                },
+                {
+                    eng: "You should leverage your experience to get better opportunities.",
+                    tel: "మంచి అవకాశాలు పొందడానికి మీ అనుభవాన్ని ఉపయోగించాలి."
+                },
+
+                {
+                    id: 42,
+                    eng: "<b>stumble</b>",
+                    tel: "<b>పొరపాట్లు</b>",
+                },
+                {
+                    eng: "She stumbled while walking on the uneven path.",
+                    tel: "వెనకబడిన మార్గంలో నడుస్తూ ఆమె పొరపాట్లు చేసింది."
+                },
+                {
+                    eng: "He stumbled over a few words during the presentation.",
+                    tel: "ప్రసంగంలో కొన్ని పదాలపై అతను పొరపాట్లు చేశాడు."
+                },
+
+                {
+                    id: 43,
+                    eng: "<b>jeopardize</b>",
+                    tel: "<b>ప్రమాదంలో పడతాయి</b>",
+                },
+                {
+                    eng: "Revealing confidential information may jeopardize the company.",
+                    tel: "గోప్యమైన సమాచారం వెలికి రావడం కంపెనీకి ప్రమాదంలో పడతాయి."
+                },
+                {
+                    eng: "Careless driving can jeopardize your life.",
+                    tel: "అసావధానమైన డ్రైవింగ్ మీ జీవితాన్ని ప్రమాదంలో పడతాయి."
+                },
+
+                {
+                    id: 44,
+                    eng: "<b>procurement team</b>",
+                    tel: "<b>సేకరణ బృందం</b>",
+                },
+                {
+                    eng: "The procurement team is responsible for sourcing raw materials.",
+                    tel: "సేకరణ బృందం కాచా పదార్థాలను పొందడానికి బాధ్యత వహిస్తుంది."
+                },
+                {
+                    eng: "The procurement team negotiated better prices for the equipment.",
+                    tel: "సేకరణ బృందం పరికరాల కొరకు మెరుగైన ధరలను చర్చించింది."
+                },
+
+                {
+                    id: 45,
+                    eng: "<b>mimics</b>",
+                    tel: "<b>అనుకరిస్తుంది</b>",
+                },
+                {
+                    eng: "The parrot mimics human speech perfectly.",
+                    tel: "సరిపోలేని పక్షి మానవ ప్రసంగాన్ని అనుకరిస్తుంది."
+                },
+                {
+                    eng: "Children often mimic the actions of their parents.",
+                    tel: "పిల్లలు తరచుగా తమ తల్లిదండ్రుల చర్యలను అనుకరిస్తారు."
+                },
+
+                {
+                    id: 46,
+                    eng: "<b>significantly</b>",
+                    tel: "<b>గణనీయంగా</b>",
+                },
+                {
+                    eng: "Sales have increased significantly this quarter.",
+                    tel: "ఈ త్రైమాసికంలో అమ్మకాలు గణనీయంగా పెరిగాయి."
+                },
+                {
+                    eng: "Her performance improved significantly after training.",
+                    tel: "ప్రశిక్షణ తరువాత ఆమె ప్రదర్శన గణనీయంగా మెరుగైంది."
+                },
+
+                {
+                    id: 47,
+                    eng: "<b>adulteration</b>",
+                    tel: "<b>కల్తీ</b>",
+                },
+                {
+                    eng: "The food was tested for adulteration before selling.",
+                    tel: "అన్నం అమ్మే ముందు కల్తీ కోసం పరీక్షించబడింది."
+                },
+                {
+                    eng: "Authorities cracked down on milk adulteration in the city.",
+                    tel: "నగరంలో పాల కల్తీపై అధికారులు సడలింపులు పెట్టారు."
+                },
+                {
+                    id: 48,
+                    eng: "<b>Rely</b>",
+                    tel: "<b>నమ్మకంగా ఆధారపడు</b>",
+                },
+                {
+                    eng: "I rely on my team to finish the project on time.",
+                    tel: "ప్రాజెక్ట్‌ను సమయానికి పూర్తి చేయడానికి నేను నా బృందంపై ఆధారపడుతున్నాను."
+                },
+                {
+                    eng: "She relies on public transport to reach her office every day.",
+                    tel: "ప్రతి రోజు తన ఆఫీసుకి చేరడానికి ఆమె పబ్లిక్ ట్రాన్స్‌పోర్ట్‌పై ఆధారపడుతుంది."
+                },
+                {
+                    id: 48,
+                    eng: "<b>matrimonial house</b>",
+                    tel: "<b></b>",
+                },
+                {
+                    eng: "Judge orders wife to remove her parents from her matrimonial house",
+                    tel: ""
+                },
+                {
+                    id: 48,
+                    eng: "<b>adopt</b>",
+                    tel: "<b></b>",
+                },
+                {
+                    id: 48,
+                    eng: "<b>My wife started from surat</b>",
+                    tel: "<b></b>",
+                },
+                {
+                    id: 1,
+                    eng: "My wife and son started from Surat by train yesterday, but in the train app it’s showing a delay. The train will arrive late here. Let me spend some time with you.",
+                    type: "Compound Sentence",
+                    tense: "Simple Past + Present Continuous + Simple Future + Imperative",
+                    tel: "నా భార్య మరియు కుమారుడు నిన్న సూరత్ నుండి రైలు ద్వారా బయలుదేరారు, కానీ రైలు యాప్‌లో ఆలస్యం చూపిస్తోంది. రైలు ఇక్కడ ఆలస్యంగా చేరుతుంది. ఇంతలో నేను నీతో కొంత సమయం గడుపుతాను."
+                },
+                {
+                    id: 48,
+                    eng: "<b>awful (ఆఫుల్)- (Terrible)</b>",
+                    tel: "<b>భయంకరం</b>",
+                },
+                {
+                    eng: "I rely on my team to finish the project on time.",
+                    tel: "ప్రాజెక్ట్‌ను సమయానికి పూర్తి చేయడానికి నేను నా బృందంపై ఆధారపడుతున్నాను."
+                },
+                {
+                    eng: "She relies on public transport to reach her office every day.",
+                    tel: "ప్రతి రోజు తన ఆఫీసుకి చేరడానికి ఆమె పబ్లిక్ ట్రాన్స్‌పోర్ట్‌పై ఆధారపడుతుంది."
+                },
+            ],
+        },
+        {
+            id: 1,
+            topic: "My apologies",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "My apologies for being late to the meeting.",
+                    tel: "మీటింగ్‌కి ఆలస్యంగా వచ్చినందుకు నా క్షమాపణలు.",
+                    tense: "Present tense"
+                },
+                {
+                    id: 2,
+                    eng: "My apologies, I didn’t see your message earlier.",
+                    tel: "నా క్షమాపణలు, నేను మీ మెసేజ్‌ను ముందుగా చూడలేదు.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 3,
+                    eng: "My apologies for the confusion caused.",
+                    tel: "జరిగిన గందరగోళానికి నా క్షమాపణలు.",
+                    tense: "Present perfect tense"
+                },
+                {
+                    id: 4,
+                    eng: "My apologies, it won’t happen again.",
+                    tel: "నా క్షమాపణలు, ఇది మళ్లీ జరగదు.",
+                    tense: "Future tense"
+                },
+                {
+                    id: 5,
+                    eng: "My apologies if I hurt your feelings.",
+                    tel: "మీ భావాలను నొప్పించినట్లయితే నా క్షమాపణలు.",
+                    tense: "Past tense (conditional)"
+                },
+                {
+                    id: 6,
+                    eng: "My apologies for not informing you earlier.",
+                    tel: "ముందుగా మీకు తెలియజేయకపోవడంలో నా క్షమాపణలు.",
+                    tense: "Present perfect tense"
+                },
+                {
+                    id: 7,
+                    eng: "My apologies, I misunderstood your point.",
+                    tel: "నా క్షమాపణలు, నేను మీ పాయింట్‌ను తప్పుగా అర్థం చేసుకున్నాను.",
+                    tense: "Past tense"
+                }
+            ],
+        },
+        {
+            id: 11,
+            topic: "son went to his grandmother’s house",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "My two-year-old son went to his grandmother’s house for the festival. He started back home yesterday, and before he left, he asked us to have a banana ready for him.",
+                    tel: 'నా రెండేళ్ల కుమారుడు పండగ కోసం తన అమ్మమ్మ ఇంటికి వెళ్లాడు. నిన్న ఇంటికి తిరిగి బయలుదేరాడు, బయలుదేరే ముందు ఆయన మాకు “నా కోసం ఒక అరటిపండు సిద్ధం పెట్టండి” అని చెప్పాడు.',
+                    tense: ''
+                },
+                {
+                    id: 6,
+                    eng: "✅ Correct sentence: 👉 He started back home yesterday.",
+                    tel: "అతను నిన్న ఇంటికి తిరిగి బయలుదేరాడు.",
+                    tense: "Present perfect tense"
+                },
+                {
+                    id: 6,
+                    eng: "❌ Incorrect: ✗ He started back to home yesterday.",
+                    tel: "In English, “<b>home</b>” is a special word — it usually <b>does not take the preposition “to”</b> when it means your own house.",
+                    tense: "Present perfect tense"
+                },
+                {
+                    id: 6,
+                    eng: "✅ He went home. ❌ He went to home. ✅ He came back home. ❌ He came back to home.",
+                    tel: "If you mention someone else’s house, you must use “to”: ✅ He went to his grandmother’s house. ✅ She came to my home."
+                },
+            ],
+        },
+        {
+            id: 11,
+            topic: "In terms of",
+            explain: 'In terms of” is used to focus on a particular aspect, category, or perspective of something.',
+            formation: 'In terms of అనేది ఏదో ఒక ప్రత్యేక అంశం, కోణం, లేదా పరంగా దృష్టి పెట్టడానికి వాడతారు. అంటే, మీరు పెద్ద విషయం లో ఒక specific aspect ను చెప్పేటప్పుడు వాడతారు. సాధారణంగా compare, describe, or evaluate లేదా విలువ measurement కోసం వాడుతారు.',
+            content: [
+                {
+                    id: 1,
+                    eng: "In terms of performance, this laptop is better than the previous one.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present",
+                    tel: "పనితనాన్ని దృష్టిలో ఉంచితే, ఈ ల్యాప్‌టాప్ మునుపటి కంటే మెరుగ్గా ఉంది."
+                },
+                {
+                    id: 2,
+                    eng: "The project was successful in terms of cost and time management.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Past",
+                    tel: "ఖర్చు మరియు సమయ నిర్వహణ పరంగా ప్రాజెక్ట్ విజయవంతమైంది."
+                },
+                {
+                    id: 3,
+                    eng: "In terms of security, we need to upgrade our software.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present",
+                    tel: "భద్రత పరంగా, మనం మన సాఫ్ట్‌వేర్‌ను అప్‌డేట్ చేయాలి."
+                },
+                {
+                    id: 4,
+                    eng: "This city is good in terms of job opportunities.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present",
+                    tel: "ఉద్యోగావకాశాల పరంగా ఈ నగరం మంచి స్థానం."
+                },
+                {
+                    id: 5,
+                    eng: "In terms of user experience, our app needs improvement.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present",
+                    tel: "యూజర్ అనుభవం పరంగా, మన యాప్ మెరుగుదల అవసరం."
+                }
+            ],
+        }, {
+            id: 11,
+            topic: "stay consistent",
+            explain: 'To maintain a regular pattern or effort without getting distracted or stopping. Often used in work, study, habits, or routines.',
+            formation: '“Stay consistent” అంటే స్థిరంగా, నిరంతరం ఒక పని లేదా అలవాటును కొనసాగించటం. ఇది ప్రధానంగా పని, చదువు, వ్యాయామం, అలవాట్లు లేదా ప్రాజెక్ట్ రూటీన్స్ కోసం వాడతారు.',
+            content: [
+                {
+                    id: 1,
+                    eng: "If you stay consistent, you will see results.",
+                    type: "Conditional Sentence",
+                    tense: "Simple Present + Simple Future",
+                    tel: "మీరు స్థిరంగా ఉంటే, ఫలితాలు కనిపిస్తాయి."
+                },
+                {
+                    id: 2,
+                    eng: "Stay consistent with your exercise routine.",
+                    type: "Imperative Sentence",
+                    tense: "Present",
+                    tel: "మీ వ్యాయామపు రోజువారీ ప్రణాళికలో స్థిరంగా ఉండండి."
+                },
+                {
+                    id: 3,
+                    eng: "He stayed consistent in submitting his assignments on time.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Past",
+                    tel: "అతను తన అసైన్‌మెంట్‌లను సమయానికి సమర్పించడంలో స్థిరంగా ఉండాడు."
+                },
+                {
+                    id: 4,
+                    eng: "Stay consistent in practicing English every day.",
+                    type: "Imperative Sentence",
+                    tense: "Present",
+                    tel: "ప్రతిరోజూ ఇంగ్లీష్ సాధనలో స్థిరంగా ఉండండి."
+                },
+                {
+                    id: 5,
+                    eng: "They stayed consistent in following the project deadlines.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Past",
+                    tel: "వారు ప్రాజెక్ట్ డెడ్‌లైన్‌లను పాటించడంలో స్థిరంగా ఉండారు."
+                }
+            ],
+        },
+        {
+            id: 11,
+            topic: "“On” – Basic Meaning",
+            explain: 'Refers to surface/contact: something is physically on top of something else. <br/>Refers to specific days/dates. <br/>Refers to about/related to a topic. <br/>Refers to devices or machines.',
+            formation: '=> Physical Surface / Contact => Days / Dates => Devices / Machines => Common Mistakes',
+            content: [
+                {
+                    id: 1,
+                    eng: "The book is on the table.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present",
+                    tel: "పుస్తకం mejauపై ఉంది."
+                },
+                {
+                    id: 2,
+                    eng: "The meeting is on Monday.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present",
+                    tel: "సమావేశం సోమవారం ఉంది."
+                },
+                {
+                    id: 3,
+                    eng: "I read a book on Python programming.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Past",
+                    tel: "నేను Python ప్రోగ్రామింగ్ గురించి ఒక పుస్తకం చదివాను."
+                },
+                {
+                    id: 4,
+                    eng: "I am on my phone right now.",
+                    type: "Affirmative Sentence",
+                    tense: "Present Continuous",
+                    tel: "నేను ఇప్పుడు నా ఫోన్ లో ఉన్నాను."
+                },
+                {
+                    id: 5,
+                    eng: "He gave a lecture on web development.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Past",
+                    tel: "అతను web development పై ఒక లెక్చర్ ఇచ్చాడు."
+                }
+            ],
+        },
+        {
+            id: 11,
+            topic: "accent - (యాస)",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "The book is on the table.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present",
+                    tel: "పుస్తకం mejauపై ఉంది."
+                },
+            ],
+        },
+        {
+            id: 11,
+            topic: "comes across",
+            explain: 'come across = కనిపించడం / అనిపించడం (impression) దీనికి అర్థం → ఎలా కనిపిస్తున్నావో, ఎలా అనిపిస్తున్నావో.',
+            formation: 'Subject + come(s) across + as + adjective/noun',
+            content: [
+                {
+                    id: 1,
+                    eng: "He comes across as confident.",
+                    tel: 'అతను ఆత్మవిశ్వాసంగా కనిపిస్తాడు.',
+                    tense: 'Present tense'
+                },
+
+            ],
+        },
+        {
+            id: 11,
+            topic: "Replicate",
+            explain: 'పునరావృతం చేయడం / అదే విధంగా మళ్లీ సృష్టించడం / కాపీ చేసి తిరిగి తయారు చేయడం <b>దీనికి అర్థం</b> → ఏదైనా విషయం, సమస్య, డేటా, లేదా ఫలితాన్ని అచ్చం అదే విధంగా మళ్లీ రూపొందించడం లేదా తిరిగి జరిగేలా చేయడం.',
+            formation: 'Subject + replicate(s) + object',
+            content: [
+                {
+                    id: 1,
+                    eng: "I can replicate the issue.",
+                    tel: "నేను ఆ సమస్యను మళ్లీ సృష్టించగలుగుతున్నాను.",
+                    tense: "Present tense"
+                },
+                {
+                    id: 2,
+                    eng: "I cannot replicate the issue.",
+                    tel: "నేను ఆ సమస్యను మళ్లీ సృష్టించలేకపోతున్నాను.",
+                    tense: "Present tense"
+                },
+                {
+                    id: 3,
+                    eng: "Please provide steps to replicate.",
+                    tel: "సమస్యను మళ్లీ సృష్టించడానికి కావాల్సిన దశలను ఇవ్వండి.",
+                    tense: "Imperative sentence"
+                },
+                {
+                    id: 4,
+                    eng: "The issue was replicated in the test environment.",
+                    tel: "ఆ సమస్య Test Environment లో కూడా మళ్లీ కనిపించింది.",
+                    tense: "Past tense (Passive Voice)"
+                },
+                {
+                    id: 5,
+                    eng: "I replicated the bug on my local machine.",
+                    tel: "నేను నా లోకల్ మెషీన్‌లో ఆ బగ్‌ను మళ్లీ సృష్టించాను.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 6,
+                    eng: "We replicated the production issue in QA.",
+                    tel: "మేము Production సమస్యను QA లో మళ్లీ సృష్టించాము.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 7,
+                    eng: "Can you replicate the issue?",
+                    tel: "మీరు ఆ సమస్యను మళ్లీ సృష్టించగలరా?",
+                    tense: "Interrogative sentence"
+                },
+                {
+                    id: 8,
+                    eng: "The QA team replicated the issue successfully.",
+                    tel: "QA టీమ్ ఆ సమస్యను విజయవంతంగా మళ్లీ సృష్టించింది.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 9,
+                    eng: "I am trying to replicate the issue.",
+                    tel: "నేను ఆ సమస్యను మళ్లీ సృష్టించడానికి ప్రయత్నిస్తున్నాను.",
+                    tense: "Present Continuous"
+                },
+                {
+                    id: 10,
+                    eng: "We have replicated the issue and started investigating.",
+                    tel: "మేము ఆ సమస్యను మళ్లీ సృష్టించి దర్యాప్తు ప్రారంభించాము.",
+                    tense: "Present Perfect"
+                },
+                {
+                    id: 11,
+                    eng: "To ensure data safety we regularly replicate our entire database to a secondary server.",
+                    tel: "డేటా భద్రత కోసం మేము మా మొత్తం డేటాబేస్‌ను రెగ్యులర్‌గా సెకండరీ సర్వర్‌కు కాపీ చేస్తాము.",
+                    tense: "Present tense"
+                }
+            ]
+        },
+        {
+            id: 11,
+            topic: "Meticulous - (ఎక్కువ శ్రద్ధ పెట్టడం) - మె-టి-క్యూ-లస్",
+            explain: '👉 చాలా చాలా జాగ్రత్తగా, ప్రతి చిన్న detail ని కూడా overlook చేయకుండా చేసే పని 👉 అంటే “perfect accuracy కోసం ఎక్కువ శ్రద్ధ పెట్టడం”',
+            formation: 'అత్యంత జాగ్రత్తగా / సూక్ష్మంగా / ప్రతి చిన్న విషయాన్ని గమనిస్తూ చేసే పని',
+            content: [
+                {
+                    id: 1,
+                    title: "Code Review",
+                    eng: "He is meticulous while reviewing pull requests.",
+                    tel: "అతను PR లో ప్రతి చిన్న bug, naming issue కూడా జాగ్రత్తగా చెక్ చేస్తాడు."
+                },
+                {
+                    id: 2,
+                    title: "Bug Fixing",
+                    eng: "I was meticulous while debugging the production issue.",
+                    tel: "ప్రొడక్షన్ సమస్యను fix చేస్తూ ప్రతి log, API response చాలా జాగ్రత్తగా చూసాను."
+                },
+                {
+                    id: 3,
+                    title: "API Integration",
+                    eng: "She is meticulous in API integration.",
+                    tel: "API response structure, null values, error handling అన్నీ చాలా carefully handle చేస్తుంది."
+                },
+                {
+                    id: 4,
+                    title: "UI Development (React)",
+                    eng: "He meticulously checks UI alignment before release.",
+                    tel: "release ముందు buttons, spacing, responsiveness అన్నీ పర్ఫెక్ట్‌గా ఉందా అని చెక్ చేస్తాడు."
+                },
+                {
+                    id: 5,
+                    title: "Data Handling (Redux / State)",
+                    eng: "I meticulously manage state updates in Redux.",
+                    tel: "state update mistakes రాకుండా ప్రతి action/reducer ని చాలా carefully handle చేస్తాను."
+                },
+                {
+                    id: 6,
+                    title: "Deployment",
+                    eng: "DevOps team meticulously verifies deployment steps.",
+                    tel: "deployment ముందు environment variables, build logs, server configs అన్నీ చాలా carefully check చేస్తారు."
+                },
+                {
+                    id: 7,
+                    title: "Testing (QA / Automation)",
+                    eng: "QA engineer meticulously writes test cases.",
+                    tel: "ప్రతి edge case cover అయ్యేలా test cases చాలా detail గా రాస్తాడు."
+                },
+                {
+                    id: 8,
+                    title: "Logs Analysis",
+                    eng: "I meticulously analyze logs during production issues.",
+                    tel: "error trace, timestamps, request flow అన్నీ deep గా పరిశీలిస్తాను."
+                },
+                {
+                    id: 8,
+                    title: "My colleague is meticulous about his report.",
+                    eng: "నా సహోద్యోగి తన రిపోర్ట్ విషయంలో చాలా జాగ్రత్తగా ఉంటాడు.",
+                    tel: "error trace, timestamps, request flow అన్నీ deep గా పరిశీలిస్తాను."
+                },
+                {
+                    id: 1,
+                    eng: "I have been meticulously reviewing deployment logs during my lunch break to identify the root cause of the production issue.",
+                    tel: "ప్రొడక్షన్ సమస్యకు మూల కారణాన్ని గుర్తించడానికి నేను నా మధ్యాహ్న భోజన విరామ సమయంలో డిప్లాయ్‌మెంట్ లాగ్‌లను చాలా జాగ్రత్తగా పరిశీలిస్తున్నాను.",
+                    tense: "Present Perfect Continuous Tense"
+                },
+                {
+                    id: 5,
+                    eng: "I have been meticulously testing edge cases throughout my lunch hour to prevent unexpected production failures.",
+                    tel: "అనుకోని ప్రొడక్షన్ వైఫల్యాలను నివారించడానికి నేను నా భోజన విరామం మొత్తం ఎడ్జ్ కేసులను చాలా జాగ్రత్తగా పరీక్షిస్తున్నాను.",
+                    tense: "Present Perfect Continuous Tense"
+                },
+                {
+                    id: 3,
+                    eng: "I have been meticulously analyzing GraphQL queries during lunchtime to improve the application's performance.",
+                    tel: "అప్లికేషన్ పనితీరును మెరుగుపరచడానికి నేను మధ్యాహ్న భోజన సమయంలో GraphQL క్వెరీలను చాలా జాగ్రత్తగా విశ్లేషిస్తున్నాను.",
+                    tense: "Present Perfect Continuous Tense"
+                },
+            ],
+        },
+        {
+            id: 11,
+            topic: "Escalate",
+            explain: '👉 ఒక సమస్యను లేదా blocker ను మనం solve చేయలేకపోతే, higher authority లేదా relevant team కి raise చేయడం 👉 అంటే “issue ని next level కి తీసుకెళ్లి సహాయం కోరడం”',
+            formation: 'పై స్థాయికి తీసుకెళ్లడం / మేనేజర్ లేదా సంబంధిత టీమ్‌కి సమస్యను తెలియజేయడం / సహాయం కోసం issue ని raise చేయడం',
+            content: [
+                {
+                    id: 1,
+                    title: "Testing Blocker",
+                    eng: "I escalated the issue because the test environment was unavailable.",
+                    tel: "టెస్ట్ ఎన్విరాన్‌మెంట్ అందుబాటులో లేకపోవడంతో నేను సమస్యను పై స్థాయికి తెలియజేశాను."
+                },
+                {
+                    id: 2,
+                    title: "No Response from Another Team",
+                    eng: "The backend team has not responded for two days, so I escalated the concern.",
+                    tel: "బ్యాక్‌ఎండ్ టీమ్ రెండు రోజులుగా స్పందించకపోవడంతో నేను ఆ సమస్యను పై అధికారుల దృష్టికి తీసుకెళ్లాను."
+                },
+                {
+                    id: 3,
+                    title: "Production Issue",
+                    eng: "We immediately escalated the production issue to the support team.",
+                    tel: "ప్రొడక్షన్ సమస్యను వెంటనే సపోర్ట్ టీమ్‌కి తెలియజేశాము."
+                },
+                {
+                    id: 4,
+                    title: "Sprint Risk",
+                    eng: "I escalated the blocker because it may impact the sprint deadline.",
+                    tel: "ఈ సమస్య స్ప్రింట్ డెడ్‌లైన్‌ను ప్రభావితం చేసే అవకాశం ఉండటంతో నేను దాన్ని పై స్థాయికి తెలియజేశాను."
+                },
+                {
+                    id: 5,
+                    title: "Manager Discussion",
+                    eng: "I escalated the issue to my manager for further guidance.",
+                    tel: "మరింత మార్గదర్శకత్వం కోసం నేను సమస్యను నా మేనేజర్‌కి వివరించాను."
+                },
+                {
+                    id: 6,
+                    title: "Access Issue",
+                    eng: "The required access was not granted, so I escalated the request.",
+                    tel: "అవసరమైన అనుమతి ఇవ్వకపోవడంతో నేను ఆ అభ్యర్థనను పై అధికారుల దృష్టికి తీసుకెళ్లాను."
+                },
+                {
+                    id: 7,
+                    title: "Client Concern",
+                    eng: "The client reported a critical issue, and we escalated it immediately.",
+                    tel: "క్లయింట్ ఒక ముఖ్యమైన సమస్యను తెలియజేయడంతో మేము దాన్ని వెంటనే పై స్థాయికి తెలియజేశాము."
+                },
+                {
+                    id: 8,
+                    title: "Standup Update",
+                    eng: "My task is blocked, and I have already escalated the issue.",
+                    tel: "నా పని నిలిచిపోయింది, మరియు నేను ఇప్పటికే ఆ సమస్యను పై అధికారులకు తెలియజేశాను."
+                },
+                {
+                    id: 9,
+                    title: "Pending Approval",
+                    eng: "The approval is delayed, so I escalated it to the project lead.",
+                    tel: "అనుమతి ఆలస్యం కావడంతో నేను దాన్ని ప్రాజెక్ట్ లీడ్‌కి వివరించాను."
+                },
+                {
+                    id: 10,
+                    title: "Urgent Bug",
+                    eng: "The bug is affecting multiple users, so it has been escalated.",
+                    tel: "ఈ బగ్ చాలా మంది యూజర్లను ప్రభావితం చేస్తుండటంతో దాన్ని పై అధికారుల దృష్టికి తీసుకెళ్లారు."
+                }
+            ],
+        },
+    ],
+
+    Tense: [
+        {
+            id: 1,
+            section: "Tenses",
+            topic: "Simple Present Tense",
+            explain: 'ఎప్పుడూ జరిగే పనులు, అలవాట్లు, సత్యాలు (facts), లేదా రోజువారీ చర్యలు చెప్పడానికి ఉపయోగిస్తారు.',
+            formation: 'Subject + base verb (+ s/es for he/she/it)',
+            note: 'Present Tense',
+            content: [
+                {
+                    id: 1,
+                    eng: "I write code every day.",
+                    tel: "నేను ప్రతి రోజూ కోడ్ రాస్తాను.",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 2,
+                    eng: "She works on React projects.",
+                    tel: "ఆమె React ప్రాజెక్టులపై పని చేస్తుంది.",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 3,
+                    eng: "The sun rises in the east.",
+                    tel: "సూర్యుడు తూర్పున ఉదయిస్తాడు.",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 4,
+                    eng: "We deploy updates every Friday.",
+                    tel: "మేము ప్రతి శుక్రవారం అప్‌డేట్స్ విడుదల చేస్తాము.",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 5,
+                    eng: "He checks GitHub every morning.",
+                    tel: "అతను ప్రతి ఉదయం GitHub చూస్తాడు.",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 6,
+                    eng: "Do you use TypeScript?",
+                    tel: "నువ్వు TypeScript వాడుతావా?",
+                    tense: "Simple Present Tense (Question)"
+                },
+                {
+                    id: 7,
+                    eng: "I don’t push code without testing.",
+                    tel: "టెస్టింగ్ లేకుండా నేను కోడ్ పుష్ చేయను.",
+                    tense: "Simple Present Tense (Negative)"
+                },
+                {
+                    id: 8,
+                    eng: "He doesn’t like bugs.",
+                    tel: "అతనికి బగ్స్ నచ్చవు.",
+                    tense: "Simple Present Tense (Negative)"
+                },
+                {
+                    id: 9,
+                    eng: "The meeting starts at 10 a.m.",
+                    tel: "మీటింగ్ ఉదయం 10 గంటలకు మొదలవుతుంది.",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 10,
+                    eng: "They learn new technologies every week.",
+                    tel: "వారు ప్రతి వారం కొత్త టెక్నాలజీలు నేర్చుకుంటారు.",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 1,
+                    eng: "I want you to come with me.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present Tense",
+                    tel: "నువ్వు నాతో రావాలని నేను కోరుకుంటున్నాను."
+                },
+                {
+                    id: 2,
+                    eng: "I want you to eat biryani.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present Tense",
+                    tel: "నువ్వు బిర్యానీ తినాలని నేను కోరుకుంటున్నాను."
+                },
+                {
+                    id: 1,
+                    eng: "I want you to help me.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present Tense",
+                    tel: "నువ్వు నాకు సహాయం చేయాలని నేను కోరుకుంటున్నాను."
+                },
+                {
+                    id: 2,
+                    eng: "She wants him to study well.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present Tense",
+                    tel: "ఆమె అతను బాగా చదవాలని కోరుకుంటోంది."
+                },
+                {
+                    id: 3,
+                    eng: "They want us to stay here.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Present Tense",
+                    tel: "వారు మేము ఇక్కడ ఉండాలని కోరుకుంటున్నారు."
+                },
+                {
+                    id: 10,
+                    eng: "<b>Negative</b>",
+                    tel: "",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 1,
+                    eng: "I do not play cricket.",
+                    tel: "నేను క్రికెట్ ఆడను.",
+                    tense: "Negative"
+                },
+                {
+                    id: 2,
+                    eng: "She does not like coffee.",
+                    tel: "ఆమె కాఫీ ఇష్టపడదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 3,
+                    eng: "They do not go to school on Sundays.",
+                    tel: "వారు ఆదివారాల్లో పాఠశాలకు వెళ్ళరు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 4,
+                    eng: "He does not watch TV in the morning.",
+                    tel: "అతను ఉదయం టీవీ చూడడు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 5,
+                    eng: "We do not eat junk food.",
+                    tel: "మేము జంక్ ఫుడ్ తినము.",
+                    tense: "Negative"
+                },
+                {
+                    id: 6,
+                    eng: "You do not study at night.",
+                    tel: "నీవు రాత్రి చదవవు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 7,
+                    eng: "It does not rain much here.",
+                    tel: "ఇక్కడ ఎక్కువగా వర్షం పడదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 8,
+                    eng: "Ravi does not work on weekends.",
+                    tel: "రవీ వీకెండ్లలో పని చేయడు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 9,
+                    eng: "The shop does not open early.",
+                    tel: "ఆ దుకాణం తొందరగా తెరుచుకోదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 10,
+                    eng: "I do not drink tea.",
+                    tel: "నేను టీ తాగను.",
+                    tense: "Negative"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Interrogative</b>",
+                    tel: "",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 1,
+                    eng: "Do you play cricket?",
+                    tel: "నీవు క్రికెట్ ఆడుతావా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 2,
+                    eng: "Does she like coffee?",
+                    tel: "ఆమె కాఫీ ఇష్టపడుతుందా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 3,
+                    eng: "Do they go to school every day?",
+                    tel: "వారు ప్రతిరోజూ పాఠశాలకు వెళ్తారా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 4,
+                    eng: "Does he watch TV in the morning?",
+                    tel: "అతను ఉదయం టీవీ చూస్తాడా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 5,
+                    eng: "Do we eat junk food?",
+                    tel: "మనం జంక్ ఫుడ్ తింటామా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 6,
+                    eng: "Do I study at night?",
+                    tel: "నేను రాత్రి చదువుతానా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 7,
+                    eng: "Does it rain here often?",
+                    tel: "ఇక్కడ తరచుగా వర్షం పడుతుందా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 8,
+                    eng: "Does Ravi work on weekends?",
+                    tel: "రవీ వీకెండ్లలో పని చేస్తాడా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 9,
+                    eng: "Does the shop open early?",
+                    tel: "ఆ దుకాణం తొందరగా తెరుచుకుంటుందా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 10,
+                    eng: "Do you drink tea?",
+                    tel: "నీవు టీ తాగుతావా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 1,
+                    eng: "Do you play cricket?",
+                    tel: "నీవు క్రికెట్ ఆడుతావా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 2,
+                    eng: "Does she like coffee?",
+                    tel: "ఆమె కాఫీ ఇష్టపడుతుందా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 3,
+                    eng: "Do they go to school every day?",
+                    tel: "వారు ప్రతిరోజూ పాఠశాలకు వెళ్తారా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 4,
+                    eng: "Does he watch TV in the morning?",
+                    tel: "అతను ఉదయం టీవీ చూస్తాడా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 5,
+                    eng: "Do we eat junk food?",
+                    tel: "మనం జంక్ ఫుడ్ తింటామా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 6,
+                    eng: "Do I study at night?",
+                    tel: "నేను రాత్రి చదువుతానా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 7,
+                    eng: "Does it rain here often?",
+                    tel: "ఇక్కడ తరచుగా వర్షం పడుతుందా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 8,
+                    eng: "Does Ravi work on weekends?",
+                    tel: "రవీ వీకెండ్లలో పని చేస్తాడా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 9,
+                    eng: "Does the shop open early?",
+                    tel: "ఆ దుకాణం తొందరగా తెరుచుకుంటుందా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 10,
+                    eng: "Do you drink tea?",
+                    tel: "నీవు టీ తాగుతావా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 1,
+                    eng: "Which way do you want me to choose?",
+                    type: "Interrogative Sentence",
+                    tense: "Simple Present Tense",
+                    tel: "నువ్వు నాకు ఏ దారిని ఎంచుకోవాలని అనుకుంటున్నావు?"
+                },
+                {
+                    id: 2,
+                    eng: "What do you want me to do?",
+                    type: "Interrogative Sentence",
+                    tense: "Simple Present Tense",
+                    tel: "నువ్వు నాకు ఏమి చేయమని కోరుకుంటున్నావు?"
+                },
+                {
+                    id: 3,
+                    eng: "Which book do you want me to read?",
+                    type: "Interrogative Sentence",
+                    tense: "Simple Present Tense",
+                    tel: "నువ్వు నాకు ఏ పుస్తకాన్ని చదవమని కోరుకుంటున్నావు?"
+                },
+                {
+                    id: 4,
+                    eng: "Where do you want me to go?",
+                    type: "Interrogative Sentence",
+                    tense: "Simple Present Tense",
+                    tel: "నువ్వు నాకు ఎక్కడికి వెళ్లమని కోరుకుంటున్నావు?"
+                },
+                {
+                    id: 5,
+                    eng: "When do you want me to come?",
+                    type: "Interrogative Sentence",
+                    tense: "Simple Present Tense",
+                    tel: "నువ్వు నాకు ఎప్పుడు రావమని కోరుకుంటున్నావు?"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Negative Interrogative</b>",
+                    tel: "",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 1,
+                    eng: "Don't you play cricket?",
+                    tel: "నీవు క్రికెట్ ఆడవా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 2,
+                    eng: "Doesn't she like coffee?",
+                    tel: "ఆమెకి కాఫీ నచ్చదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 3,
+                    eng: "Don't they go to school every day?",
+                    tel: "వారు ప్రతిరోజూ పాఠశాలకు వెళ్లరా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 4,
+                    eng: "Doesn't he watch TV in the morning?",
+                    tel: "అతను ఉదయం టీవీ చూడడా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 5,
+                    eng: "Don't we eat junk food?",
+                    tel: "మనం జంక్ ఫుడ్ తినమా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 6,
+                    eng: "Don't I study at night?",
+                    tel: "నేను రాత్రి చదవనా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 7,
+                    eng: "Doesn't it rain here often?",
+                    tel: "ఇక్కడ తరచుగా వర్షం పడదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 8,
+                    eng: "Doesn't Ravi work on weekends?",
+                    tel: "రవీ వీకెండ్లలో పని చేయడా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 9,
+                    eng: "Doesn't the shop open early?",
+                    tel: "ఆ దుకాణం తొందరగా తెరుచుకోదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 10,
+                    eng: "Don't you drink tea?",
+                    tel: "నీవు టీ తాగవా?",
+                    tense: "Negative Interrogative"
+                }
+
+
+            ],
+        },
+        {
+            id: 2,
+            topic: "Present Continuous Tense",
+            explain: 'ఇప్పుడు చూద్దాం Present Continuous Tense — ఇది ఇప్పుడు జరుగుతున్న క్రియలను లేదా ఇప్పటికి సమీపంగా జరుగుతున్న పనులను సూచిస్తుంది.',
+            formation: 'Subject + am/is/are + verb(+ing) + rest of the sentence.',
+            content: [
+                {
+                    id: 10,
+                    eng: "<b>Positive</b>",
+                    tel: "",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 1,
+                    eng: "I am reading a book.",
+                    tel: "నేను పుస్తకం చదువుతున్నాను.",
+                    tense: "Positive"
+                },
+                {
+                    id: 2,
+                    eng: "She is cooking dinner.",
+                    tel: "ఆమె భోజనం వండుతోంది.",
+                    tense: "Positive"
+                },
+                {
+                    id: 3,
+                    eng: "They are playing cricket.",
+                    tel: "వారు క్రికెట్ ఆడుతున్నారు.",
+                    tense: "Positive"
+                },
+                {
+                    id: 4,
+                    eng: "He is watching TV.",
+                    tel: "అతను టీవీ చూస్తున్నాడు.",
+                    tense: "Positive"
+                },
+                {
+                    id: 5,
+                    eng: "We are going to school.",
+                    tel: "మేము పాఠశాలకు వెళ్తున్నాము.",
+                    tense: "Positive"
+                },
+                {
+                    id: 6,
+                    eng: "You are learning English.",
+                    tel: "నువ్వు ఇంగ్లీష్ నేర్చుకుంటున్నావు.",
+                    tense: "Positive"
+                },
+                {
+                    id: 7,
+                    eng: "It is raining heavily.",
+                    tel: "బాగా వర్షం పడుతోంది.",
+                    tense: "Positive"
+                },
+                {
+                    id: 8,
+                    eng: "My brother is driving the car.",
+                    tel: "నా అన్నయ్య కారు నడుపుతున్నాడు.",
+                    tense: "Positive"
+                },
+                {
+                    id: 9,
+                    eng: "The children are playing in the park.",
+                    tel: "పిల్లలు పార్కులో ఆడుతున్నారు.",
+                    tense: "Positive"
+                },
+                {
+                    id: 10,
+                    eng: "Ravi is writing a letter.",
+                    tel: "రవీ ఒక లేఖ రాస్తున్నాడు.",
+                    tense: "Positive"
+                },
+                {
+                    id: 1,
+                    eng: "How long are you going to be here?",
+                    type: "Interrogative Sentence",
+                    tense: "Future / Present Continuous for future plan",
+                    tel: "నీవు ఇక్కడ ఎంతసేపు ఉండబోతున్నావు?"
+                },
+                {
+                    id: 1,
+                    eng: "I am working on an important React project that needs to be completed before the client meeting tomorrow morning.",
+                    tel: "నేను ఒక ముఖ్యమైన React ప్రాజెక్ట్‌పై పని చేస్తున్నాను, ఇది రేపు ఉదయం కస్టమర్ మీటింగ్‌కు ముందు పూర్తి చేయాలి.",
+                    tense: "Present Continuous Tense"
+                },
+                {
+                    id: 2,
+                    eng: "She is preparing a detailed presentation about our company’s new product launch while also attending multiple client calls.",
+                    tel: "ఆమె మా కంపెనీ కొత్త ఉత్పత్తి ప్రారంభంపై వివరమైన ప్రెజెంటేషన్ సిద్ధం చేస్తోంది, అలాగే అనేక కస్టమర్ కాల్స్‌కు హాజరవుతోంది.",
+                    tense: "Present Continuous Tense"
+                },
+                {
+                    id: 3,
+                    eng: "We are discussing different approaches to optimize the website performance without affecting the user experience.",
+                    tel: "మేము యూజర్ అనుభవాన్ని ప్రభావితం చేయకుండా వెబ్‌సైట్ పనితీరును మెరుగుపరచడానికి వివిధ విధానాలను చర్చిస్తున్నాము.",
+                    tense: "Present Continuous Tense"
+                },
+                {
+                    id: 4,
+                    eng: "The developers are fixing multiple bugs in the code that were reported during the recent QA testing phase.",
+                    tel: "డెవలపర్లు ఇటీవల QA టెస్టింగ్ సమయంలో నివేదించిన అనేక బగ్స్‌ను కోడ్‌లో సరిచేస్తున్నారు.",
+                    tense: "Present Continuous Tense"
+                },
+                {
+                    id: 5,
+                    eng: "My manager is reviewing the progress of each team member to ensure that everyone is meeting the project deadlines.",
+                    tel: "ప్రతి టీమ్ సభ్యుడి పురోగతిని పరిశీలిస్తూ, అందరూ ప్రాజెక్ట్ డెడ్‌లైన్స్‌ను పాటిస్తున్నారో లేదో నా మేనేజర్ చూసుకుంటున్నారు.",
+                    tense: "Present Continuous Tense"
+                },
+                {
+                    id: 6,
+                    eng: "They are updating the database schema while migrating the old records to maintain compatibility with the new system.",
+                    tel: "కొత్త సిస్టమ్‌తో అనుకూలత కోసం పాత రికార్డులను మార్చుతూ వారు డేటాబేస్ స్కీమాను నవీకరిస్తున్నారు.",
+                    tense: "Present Continuous Tense"
+                },
+                {
+                    id: 7,
+                    eng: "Our team is collaborating with the design department to create a more user-friendly and visually appealing dashboard layout.",
+                    tel: "మా టీమ్, డిజైన్ విభాగంతో కలిసి మరింత యూజర్ ఫ్రెండ్లీ మరియు ఆకర్షణీయమైన డాష్‌బోర్డ్ లేఅవుట్ సృష్టించడానికి పనిచేస్తోంది.",
+                    tense: "Present Continuous Tense"
+                },
+                {
+                    id: 8,
+                    eng: "I am learning advanced TypeScript concepts while simultaneously implementing them in our live project.",
+                    tel: "నేను అధునాతన TypeScript కాన్సెప్ట్‌లను నేర్చుకుంటూ వాటిని మా లైవ్ ప్రాజెక్ట్‌లో అమలు చేస్తున్నాను.",
+                    tense: "Present Continuous Tense"
+                },
+                {
+                    id: 9,
+                    eng: "The HR team is conducting interviews to fill the new frontend developer positions by the end of this week.",
+                    tel: "ఈ వారం చివరినాటికి కొత్త ఫ్రంట్‌ఎండ్ డెవలపర్ పోస్టులను భర్తీ చేయడానికి HR టీమ్ ఇంటర్వ్యూలు నిర్వహిస్తోంది.",
+                    tense: "Present Continuous Tense"
+                },
+                {
+                    id: 10,
+                    eng: "I am attending a virtual training session that focuses on improving our project management and communication skills.",
+                    tel: "మా ప్రాజెక్ట్ మేనేజ్‌మెంట్ మరియు కమ్యూనికేషన్ నైపుణ్యాలను మెరుగుపరచడంపై దృష్టి పెట్టిన వర్చువల్ ట్రైనింగ్ సెషన్‌లో నేను పాల్గొంటున్నాను.",
+                    tense: "Present Continuous Tense"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Negative</b>",
+                    tel: "",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 1,
+                    eng: "I am not working on the new module today because I need to review the previous sprint tasks first.",
+                    tel: "నేను ఈ రోజు కొత్త మాడ్యూల్‌పై పని చేయడం లేదు, ఎందుకంటే ముందు స్ప్రింట్ పనులను సమీక్షించాలి.",
+                    tense: "Present Continuous Negative"
+                },
+                {
+                    id: 2,
+                    eng: "She is not attending the client meeting since she is handling a critical production issue right now.",
+                    tel: "ఆమె ప్రస్తుతం ఒక ముఖ్యమైన ప్రొడక్షన్ ఇష్యూను పరిష్కరిస్తోంది కాబట్టి క్లయింట్ మీటింగ్‌కు హాజరుకావడం లేదు.",
+                    tense: "Present Continuous Negative"
+                },
+                {
+                    id: 3,
+                    eng: "We are not deploying the latest build until all the test cases pass successfully.",
+                    tel: "అన్ని టెస్ట్ కేసులు విజయవంతంగా పూర్తయ్యే వరకు మేము తాజా బిల్డ్‌ను డిప్లాయ్ చేయడం లేదు.",
+                    tense: "Present Continuous Negative"
+                },
+                {
+                    id: 4,
+                    eng: "The developers are not using the old API anymore because it has several security vulnerabilities.",
+                    tel: "డెవలపర్లు ఇప్పుడు పాత APIని వాడడం లేదు, ఎందుకంటే అందులో అనేక భద్రతా లోపాలు ఉన్నాయి.",
+                    tense: "Present Continuous Negative"
+                },
+                {
+                    id: 5,
+                    eng: "I am not taking any new tasks this week as I am focusing on completing the pending ones.",
+                    tel: "నేను ఈ వారం కొత్త పనులను తీసుకోవడం లేదు, ఎందుకంటే పెండింగ్‌లో ఉన్న పనులను పూర్తి చేయడంపై దృష్టి పెట్టుతున్నాను.",
+                    tense: "Present Continuous Negative"
+                },
+                {
+                    id: 6,
+                    eng: "They are not releasing the update today because the QA team found some unexpected bugs.",
+                    tel: "QA టీమ్ కొన్ని అనూహ్యమైన బగ్స్ కనుగొన్నందున వారు ఈ రోజు అప్‌డేట్ విడుదల చేయడం లేదు.",
+                    tense: "Present Continuous Negative"
+                },
+                {
+                    id: 7,
+                    eng: "My team is not participating in the hackathon this month due to workload from other projects.",
+                    tel: "ఇతర ప్రాజెక్టుల పని భారంతో ఈ నెల హ్యాకథాన్‌లో నా టీమ్ పాల్గొనడం లేదు.",
+                    tense: "Present Continuous Negative"
+                },
+                {
+                    id: 8,
+                    eng: "The designer is not creating new layouts until the product manager finalizes the requirements.",
+                    tel: "ప్రొడక్ట్ మేనేజర్ అవసరాలను ఖరారు చేసే వరకు డిజైనర్ కొత్త లేఅవుట్లు రూపొందించడం లేదు.",
+                    tense: "Present Continuous Negative"
+                },
+                {
+                    id: 9,
+                    eng: "We are not using the staging environment today because the server is under maintenance.",
+                    tel: "సర్వర్ మెయింటెనెన్స్‌లో ఉండటంతో మేము ఈ రోజు స్టేజింగ్ ఎన్విరాన్‌మెంట్ వాడడం లేదు.",
+                    tense: "Present Continuous Negative"
+                },
+                {
+                    id: 10,
+                    eng: "I am not joining the meeting right now since I am waiting for the updated presentation slides.",
+                    tel: "నేను ఇప్పుడే మీటింగ్‌లో చేరడం లేదు, ఎందుకంటే అప్‌డేట్ చేసిన ప్రెజెంటేషన్ స్లైడ్స్ కోసం ఎదురు చూస్తున్నాను.",
+                    tense: "Present Continuous Negative"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Interrogative</b>",
+                    tel: "",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 1,
+                    eng: "Am I eating breakfast?",
+                    tel: "నేను అల్పాహారం తింటున్నానా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 2,
+                    eng: "Is she watching TV?",
+                    tel: "ఆమె టీవీ చూస్తుందా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 3,
+                    eng: "Is he reading a book?",
+                    tel: "అతను పుస్తకం చదువుతున్నాడా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 4,
+                    eng: "Are they playing football?",
+                    tel: "వారు ఫుట్‌బాల్ ఆడుతున్నారా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 5,
+                    eng: "Are we learning English?",
+                    tel: "మేము ఇంగ్లీష్ నేర్చుకుంటున్నామా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 6,
+                    eng: "Are you talking too loudly?",
+                    tel: "నీవు చాలా గట్టిగా మాట్లాడుతున్నావా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 7,
+                    eng: "Is it raining outside?",
+                    tel: "బయట వర్షం పడుతుందా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 8,
+                    eng: "Is my father working in the garden?",
+                    tel: "నా తండ్రి తోటలో పని చేస్తున్నాడా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 9,
+                    eng: "Are the children drawing pictures?",
+                    tel: "పిల్లలు చిత్రాలు గీయుతున్నారా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 10,
+                    eng: "Is Ravi preparing for the exam?",
+                    tel: "రవీ పరీక్షకు సిద్ధం అవుతున్నాడా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Negative Interrogative</b>",
+                    tel: "",
+                    tense: "Simple Present Tense"
+                },
+                {
+                    id: 1,
+                    eng: "Am I not eating breakfast?",
+                    tel: "నేను అల్పాహారం తినట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 2,
+                    eng: "Is she not watching TV?",
+                    tel: "ఆమె టీవీ చూడట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 3,
+                    eng: "Is he not reading a book?",
+                    tel: "అతను పుస్తకం చదువుతున్నట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 4,
+                    eng: "Are they not playing football?",
+                    tel: "వారు ఫుట్‌బాల్ ఆడట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 5,
+                    eng: "Are we not learning English?",
+                    tel: "మేము ఇంగ్లీష్ నేర్చుకుంటున్నట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 6,
+                    eng: "Are you not talking too loudly?",
+                    tel: "నీవు చాలా గట్టిగా మాట్లాడట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 7,
+                    eng: "Is it not raining outside?",
+                    tel: "బయట వర్షం పడట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 8,
+                    eng: "Is my father not working in the garden?",
+                    tel: "నా తండ్రి తోటలో పని చేస్తున్నట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 9,
+                    eng: "Are the children not drawing pictures?",
+                    tel: "పిల్లలు చిత్రాలు గీయట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 10,
+                    eng: "Is Ravi not preparing for the exam?",
+                    tel: "రవీ పరీక్షకు సిద్ధం అవుతున్నట్లేదా?",
+                    tense: "Negative Interrogative"
+                }
+
+            ],
+        },
+        {
+            id: 3,
+            topic: "Present Perfect Tense",
+            explain: 'ఒక action గతంలో జరిగినా దాని ప్రభావం ఇప్పటికీ కొనసాగుతున్నప్పుడు లేదా మనం time చెప్పకుండా అనుభవం చెప్పాలనుకున్నప్పుడు వాడతాం. (గతంలో జరిగి, ఇప్పుడు ప్రభావం ఉన్నప్పుడు)',
+            formation: 'Subject + has/have + past participle (verb 3rd form) + rest',
+            content: [
+                {
+                    id: 1,
+                    eng: "<b>గతంలో జరిగి, ఇప్పుడు ప్రభావం ఉన్నప్పుడు</b>",
+                    tel: '',
+                },
+                {
+                    id: 1,
+                    eng: "I have lost my keys.",
+                    tel: 'నేను తాళాలు పోగొట్టుకున్నాను (ఇప్పటికీ దొరకలేదు).',
+                },
+                {
+                    id: 1,
+                    eng: "She has broken her leg.",
+                    tel: 'ఆమె కాలు విరిగింది (ఇప్పటికీ problem ఉంది).',
+                },
+                {
+                    id: 1,
+                    eng: "<b>అనుభవం చెప్పడానికి (experience)</b>",
+                    tel: '',
+                },
+                {
+                    id: 1,
+                    eng: "I have been to Goa.",
+                    tel: 'నేను గోవాకు వెళ్లి వచ్చాను.',
+                },
+                {
+                    id: 1,
+                    eng: "He has seen the Taj Mahal.",
+                    tel: 'అతను తాజ్ మహల్ చూసాడు.',
+                },
+                {
+                    id: 1,
+                    eng: "<b>Just, Already, Yet లాంటి words తో</b>",
+                    tel: '',
+                },
+                {
+                    id: 1,
+                    eng: "I have just finished my homework.",
+                    tel: 'నేను ఇప్పుడే నా homework పూర్తి చేశాను.',
+                },
+                {
+                    id: 1,
+                    eng: "She has already eaten lunch.",
+                    tel: 'ఆమె ఇప్పటికే భోజనం చేసింది.',
+                },
+                {
+                    id: 1,
+                    eng: "Have you finished your work yet?",
+                    tel: 'నువ్వు నీ పని పూర్తి చేశావా?',
+                },
+                {
+                    id: 1,
+                    eng: "<b>Repeated actions (గతం నుంచి ఇప్పటివరకు చాలాసార్లు జరిగినవి)</b>",
+                    tel: '',
+                },
+                {
+                    id: 1,
+                    eng: "I have watched this movie three times.",
+                    tel: 'నేను ఈ సినిమా మూడుసార్లు చూశాను.',
+                },
+                {
+                    id: 1,
+                    eng: "They have visited us many times.",
+                    tel: 'వాళ్లు మమ్మల్ని ఎన్నో సార్లు కలిశారు.',
+                },
+            ],
+        },
+        {
+            id: 4,
+            topic: "Present perfect Continuous Tense - (have been)",
+            explain: 'గతంలో ఏదో ఒక action మొదలై ఇప్పటికీ కొనసాగుతూనే ఉందని చెప్పడానికి వాడతాం.',
+            formation: 'Subject + has/have been + verb(+ing)',
+            content: [
+                {
+                    id: 1,
+                    eng: "I have been studying for 2 hours.",
+                    tel: 'నేను రెండు గంటలుగా చదువుతున్నాను.',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "She has been working here since 2019.",
+                    tel: 'ఆమె 2019 నుంచి ఇక్కడ పని చేస్తోంది.',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "ఎంతకాలంగా (duration / since - for తో)",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "They have been playing since morning.",
+                    tel: 'వాళ్లు ఉదయం నుంచి ఆడుతున్నారు.',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "I have been studying for two hours.",
+                    tel: 'నేను రెండు గంటలుగా చదువుతున్నాను.',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "He has been watching TV for two hours.",
+                    tel: 'అతను TV చూస్తున్నాడు రెండు గంటలుగా',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "We have been learning Telugu since last week.",
+                    tel: 'మేము తెలుగు నేర్చుకుంటున్నాము గత వారం నుండి',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "You have been studying for a long time.",
+                    tel: 'నువ్వు చాలా సేపు చదువుతున్నావు',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "I have been waiting for you.",
+                    tel: 'నేను నీకోసం వేచి ఉన్నాను',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "I have been working on resolving a critical production issue for the last 3 hours.",
+                    tel: "నేను గత 3 గంటలుగా ఒక కీలకమైన production సమస్యను పరిష్కరించడానికి పని చేస్తున్నాను.",
+                    tense: "Present Perfect Continuous"
+                },
+                {
+                    id: 2,
+                    eng: "The development team has been continuously improving the application performance since the last release.",
+                    tel: "డెవలప్మెంట్ టీమ్ last release నుండి application performance ను నిరంతరం మెరుగుపరుస్తూ వస్తోంది.",
+                    tense: "Present Perfect Continuous"
+                },
+                {
+                    id: 3,
+                    eng: "We have been discussing the API integration issues in multiple meetings throughout the day.",
+                    tel: "మేము రోజంతా జరిగిన అనేక meetings లో API integration సమస్యల గురించి చర్చిస్తూనే ఉన్నాము.",
+                    tense: "Present Perfect Continuous"
+                },
+                {
+                    id: 4,
+                    eng: "The QA team has been testing the new feature across different environments to ensure stability.",
+                    tel: "QA టీమ్ stability నిర్ధారించడానికి కొత్త feature ను వివిధ environments లో test చేస్తూ ఉంది.",
+                    tense: "Present Perfect Continuous"
+                },
+                {
+                    id: 5,
+                    eng: "I have been learning advanced React patterns and state management techniques for the past few months.",
+                    tel: "నేను గత కొన్ని నెలలుగా advanced React patterns మరియు state management techniques నేర్చుకుంటున్నాను.",
+                    tense: "Present Perfect Continuous"
+                },
+                {
+                    id: 6,
+                    eng: "The system has been experiencing intermittent latency issues since the latest deployment.",
+                    tel: "latest deployment నుండి system లో intermittent latency issues ఎదురవుతున్నాయి.",
+                    tense: "Present Perfect Continuous"
+                },
+                {
+                    id: 7,
+                    eng: "Our DevOps team has been monitoring server performance closely to prevent downtime.",
+                    tel: "మా DevOps టీమ్ downtime నివారించడానికి server performance ను దగ్గరగా monitor చేస్తోంది.",
+                    tense: "Present Perfect Continuous"
+                },
+                {
+                    id: 8,
+                    eng: "I have been collaborating with backend developers to fix authentication-related bugs.",
+                    tel: "నేను authentication-related bugs ను fix చేయడానికి backend developers తో కలిసి పని చేస్తున్నాను.",
+                    tense: "Present Perfect Continuous"
+                },
+                {
+                    id: 9,
+                    eng: "The product team has been gathering user feedback to improve the overall user experience.",
+                    tel: "product team overall user experience ను మెరుగుపరచడానికి user feedback సేకరిస్తోంది.",
+                    tense: "Present Perfect Continuous"
+                },
+                {
+                    id: 10,
+                    eng: "We have been migrating legacy services to a new cloud infrastructure for better scalability.",
+                    tel: "మేము మంచి scalability కోసం legacy services ను కొత్త cloud infrastructure కి migrate చేస్తూ ఉన్నాము.",
+                    tense: "Present Perfect Continuous"
+                }
+            ],
+        },
+        {
+            id: 5,
+            topic: "Simple Past Tense",
+            explain: 'Simple Past Tense అంటే గతంలో పూర్తయిన చర్యలు, పరిస్థితులు, విషయాలు చూపడానికి ఉపయోగించే క్రియ రకం. ఇప్పుడు వాటికి ప్రభావం ఉండకపోవచ్చు, కేవలం భूतకాలంలో జరిగిందనే విషయం మాత్రమే సూచిస్తుంది.',
+            formation: '=> Positive: Subject + past form of verb + rest => Negative: Subject + did not + base verb + rest => Interrogative: Did + subject + base verb + rest? => Negative Interrogative: Did + subject + not + base verb + rest?',
+            note: 'Past Tense',
+            content: [
+                {
+                    id: 10,
+                    eng: "<b>Positive</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 1,
+                    eng: "He declined the job offer. → He refused it.",
+                    tel: 'వర్షం పడితే, మీరు తడిసిపోయేవారు',
+                    tense: 'Simple Past tense'
+                },
+                {
+                    id: 1,
+                    eng: "I visited my grandmother last weekend.",
+                    tel: "నేను గత వారం నా అమ్మమ్మని చూశాను.",
+                    tense: "Positive"
+                },
+                {
+                    id: 2,
+                    eng: "She watched a movie yesterday evening.",
+                    tel: "ఆమె నిన్న సాయంత్రం సినిమా చూశింది.",
+                    tense: "Positive"
+                },
+                {
+                    id: 3,
+                    eng: "They played football in the park last Sunday.",
+                    tel: "వారు గత ఆదివారం పార్క్‌లో ఫుట్‌బాల్ ఆడారు.",
+                    tense: "Positive"
+                },
+                {
+                    id: 4,
+                    eng: "We completed the project two days ago.",
+                    tel: "మేము రెండు రోజుల క్రితం ప్రాజెక్ట్ పూర్తి చేసాము.",
+                    tense: "Positive"
+                },
+                {
+                    id: 5,
+                    eng: "He went to Delhi last month for a conference.",
+                    tel: "అతను గత నెల డెలీకి ఒక కాన్ఫరెన్స్ కోసం వెళ్లాడు.",
+                    tense: "Positive"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Negative</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 6,
+                    eng: "I did not visit my friend yesterday.",
+                    tel: "నేను నిన్న నా స్నేహితుడిని చూడలేదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 7,
+                    eng: "She did not attend the meeting last week.",
+                    tel: "ఆమె గత వారం మీటింగ్‌కు హాజరుకాలేదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 8,
+                    eng: "They did not play cricket yesterday.",
+                    tel: "వారు నిన్న క్రికెట్ ఆడలేదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 9,
+                    eng: "We did not complete the assignment on time.",
+                    tel: "మేము అసైన్‌మెంట్ ను సమయానికి పూర్తి చేయలేకపోయాం.",
+                    tense: "Negative"
+                },
+                {
+                    id: 10,
+                    eng: "He did not go to the party last night.",
+                    tel: "అతను నిన్న రాత్రి పార్టీకి వెళ్లలేడు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Interrogative</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 11,
+                    eng: "Did you visit the museum last weekend?",
+                    tel: "నీవు గత వారం మ్యూజియం కు వెళ్లాయా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 12,
+                    eng: "Did she watch the movie yesterday?",
+                    tel: "ఆమె నిన్న సినిమా చూశిందా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 13,
+                    eng: "Did they play football last Sunday?",
+                    tel: "వారు గత ఆదివారం ఫుట్‌బాల్ ఆడారా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 14,
+                    eng: "Did we complete the project on time?",
+                    tel: "మేము ప్రాజెక్ట్‌ను సమయానికి పూర్తి చేసామా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 15,
+                    eng: "Did he go to Delhi last month?",
+                    tel: "అతను గత నెల డెలీకి వెళ్లాడా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 15,
+                    eng: "What did you pack in this?",
+                    tel: "నువ్వు దీంట్లో ఏమి పెట్టావు?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 15,
+                    eng: "What is packed in this?",
+                    tel: "దీంట్లో ఏమి ప్యాక్ అయింది?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Negative Interrogativ</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 16,
+                    eng: "Didn’t you visit your friend yesterday?",
+                    tel: "నీవు నిన్న నీ స్నేహితుడిని చూడలేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 17,
+                    eng: "Didn’t she attend the meeting last week?",
+                    tel: "ఆమె గత వారం మీటింగ్ కు హాజరుకాలేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 18,
+                    eng: "Didn’t they play cricket yesterday?",
+                    tel: "వారు నిన్న క్రికెట్ ఆడలేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 19,
+                    eng: "Didn’t we complete the assignment on time?",
+                    tel: "మేము అసైన్‌మెంట్ సమయానికి పూర్తి చేయలేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 20,
+                    eng: "Didn’t he go to the party last night?",
+                    tel: "అతను నిన్న రాత్రి పార్టీకి వెళ్లలేదా?",
+                    tense: "Negative Interrogative"
+                }
+
+            ],
+        },
+        {
+            id: 6,
+            topic: "Past Continuous Tense",
+            explain: 'Past Continuous Tense అంటే గతంలో ఒక నిర్దిష్ట సమయం లేదా సందర్భంలో కొనసాగుతున్న పనిను సూచిస్తుంది. English లో ఇది was / were + verb-ing రూపంలో ఉంటుంది.',
+            formation: '=> Positive: Subject + was/were + verb-ing + rest => Negative: Subject + was/were + not + verb-ing + rest => Interrogative: Was/Were + subject + verb-ing + rest? => Negative Interrogative: Was/Were + subject + not + verb-ing + rest?',
+            content: [
+                {
+                    id: 10,
+                    eng: "<b>Positive</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 1,
+                    eng: "I was reading a book at 8 pm yesterday.",
+                    tel: "నేను నిన్న రాత్రి 8 గంటలకు పుస్తకం చదువుతున్నాను.",
+                    tense: "Positive"
+                },
+                {
+                    id: 2,
+                    eng: "She was cooking dinner when I called her.",
+                    tel: "నేను ఆమెకు కాల్ చేసినప్పుడు ఆమె డిన్నర్ వండుతున్‍ది.",
+                    tense: "Positive"
+                },
+                {
+                    id: 3,
+                    eng: "They were playing football in the park last evening.",
+                    tel: "వారు నిన్న సాయంత్రం పార్క్‌లో ఫుట్‌బాల్ ఆడుతున్నారు.",
+                    tense: "Positive"
+                },
+                {
+                    id: 4,
+                    eng: "We were discussing the project plan when the manager arrived.",
+                    tel: "మేనేజర్ వచ్చినప్పుడు మేము ప్రాజెక్ట్ ప్లాన్ చర్చిస్తున్నాము.",
+                    tense: "Positive"
+                },
+                {
+                    id: 5,
+                    eng: "He was studying for the exam all night.",
+                    tel: "అతను రాత్రంతా పరీక్ష కోసం చదువుతున్నాడు.",
+                    tense: "Positive"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Negative</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 6,
+                    eng: "I was not watching TV at 9 pm yesterday.",
+                    tel: "నేను నిన్న రాత్రి 9 గంటలకు టీవీ చూడట్లేదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 7,
+                    eng: "She was not listening to music when I entered the room.",
+                    tel: "నేను రూమ్‌లోకి వెళ్లినప్పుడు ఆమె సంగీతం వింటట్లేదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 8,
+                    eng: "They were not playing cricket in the morning.",
+                    tel: "వారు ఉదయం క్రికెట్ ఆడట్లేదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 9,
+                    eng: "We were not using the computer when the power went off.",
+                    tel: "విద్యుత్ చెల్లని సమయంలో మేము కంప్యూటర్ వాడట్లేదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 10,
+                    eng: "He was not working on the assignment last night.",
+                    tel: "అతను నిన్న రాత్రి అసైన్‌మెంట్‌పై పని చేయట్లేదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 10,
+                    eng: "She was hungry because she was not eating a banana",
+                    tel: "ఆమె ఆకలిగా ఉంది ఎందుకంటే ఆమె అరటిపండు తినడం లేదు.",
+                    tense: "Negative"
+                },
+                {
+                    id: 10,
+                    eng: "Because she was not eating a banana, she was feeling weak.",
+                    tel: "ఆమె అరటిపండు తినడం లేదు కాబట్టి ఆమె బలహీనంగా అనిపించింది.",
+                    tense: "Negative"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Interrogative</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 11,
+                    eng: "Was I reading the book at 8 pm yesterday?",
+                    tel: "నేను నిన్న రాత్రి 8 గంటలకు పుస్తకం చదువుతున్నానా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 12,
+                    eng: "Was she cooking dinner when you called her?",
+                    tel: "నీవు ఆమెకు కాల్ చేసినప్పుడు ఆమె డిన్నర్ వండుతున్నాడా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 13,
+                    eng: "Were they playing football last evening?",
+                    tel: "వారు నిన్న సాయంత్రం ఫుట్‌బాల్ ఆడుతున్నారా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 14,
+                    eng: "Were we discussing the project plan when the manager arrived?",
+                    tel: "మేనేజర్ వచ్చినప్పుడు మేము ప్రాజెక్ట్ ప్లాన్ చర్చిస్తున్నామా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 15,
+                    eng: "Was he studying for the exam all night?",
+                    tel: "అతను రాత్రంతా పరీక్ష కోసం చదువుతున్నాడా?",
+                    tense: "Interrogative"
+                },
+                {
+                    id: 10,
+                    eng: "<b>Negative Interrogative</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 16,
+                    eng: "Wasn’t I reading the book at 8 pm yesterday?",
+                    tel: "నేను నిన్న రాత్రి 8 గంటలకు పుస్తకం చదువుతున్నట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 17,
+                    eng: "Wasn’t she cooking dinner when you called her?",
+                    tel: "నీవు ఆమెకు కాల్ చేసినప్పుడు ఆమె డిన్నర్ వండుతున్నట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 18,
+                    eng: "Weren’t they playing football last evening?",
+                    tel: "వారు నిన్న సాయంత్రం ఫుట్‌బాల్ ఆడట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 19,
+                    eng: "Weren’t we discussing the project plan when the manager arrived?",
+                    tel: "మేనేజర్ వచ్చినప్పుడు మేము ప్రాజెక్ట్ ప్లాన్ చర్చిస్తున్నట్లేదా?",
+                    tense: "Negative Interrogative"
+                },
+                {
+                    id: 20,
+                    eng: "Wasn’t he studying for the exam all night?",
+                    tel: "అతను రాత్రంతా పరీక్ష కోసం చదువుతున్నట్లేదా?",
+                    tense: "Negative Interrogative"
+                }
+
+            ],
+        },
+        {
+            id: 7,
+            topic: "Past Perfect Tense",
+            explain: `ast Time లో రెండు actions జరిగినప్పుడు ఆ రెండింటిలో ఏ action ముందుగా జరిగింది అనే విషయాన్నీ తెలియజేయాల్సిన ఆవశ్యకత ఉన్నపుడు ముందుగా జరిగిన action ను Past Perfect Tense లో చెప్పాలి. తరువాత జరిగిన action ను simple past లో చెప్పాలి.`,
+            formation: `Past Perfect Tense లో మొదటి జరిగిన action ను సూచించడానికి had + main varb యొక్క past participle (మూడవ రూపం) వాడాలి
+            <br/>
+             <div> -> use <i>Past Perfect</i> for the earlier action</div>
+              </div>-> and <i>Simple Past</i> for the later action.</div>
+            `,
+            content: [
+                {
+                    id: 1,
+                    eng: `After the peon had rung the bell, we went home`,
+                    tel: 'పియోన్ గంట కొట్టాక మేము ఇంటికి వెళ్లాము.',
+                    tense: 'Past Perfect Tense'
+                },
+                {
+                    id: 1,
+                    eng: `The code had been deployed before it was reviewed by me.`,
+                    tel: 'నేను సమీక్షించే ముందు కోడ్ డిప్లాయ్ చేయబడింది.',
+                    tense: 'Past Perfect Tense'
+                },
+                {
+                    id: 1,
+                    eng: `She had left the office before I reached.`,
+                    tel: 'నేను ఆఫీస్‌కి చేరకముందే ఆమె వెళ్ళిపోయింది.',
+                    tense: 'Past Perfect Tense'
+                },
+                {
+                    id: 1,
+                    eng: `They had already eaten when we got there.`,
+                    tel: 'మేము అక్కడికి వచ్చేలోగా వారు ఇప్పటికే తినేశారు.',
+                    tense: 'Past Perfect Tense'
+                },
+                {
+                    id: 1,
+                    eng: `The developer had committed the code before the review started.`,
+                    tel: 'రివ్యూ ప్రారంభించకముందే డెవలపర్ కోడ్ commit చేశాడు.',
+                    tense: 'Past Perfect Tense'
+                },
+                {
+                    id: 1,
+                    eng: `I had finished the report before the manager arrived.`,
+                    tel: 'మేనేజర్ రాకముందే నేను రిపోర్ట్ పూర్తి చేశాను.',
+                    tense: 'Past Perfect Tense'
+                },
+                {
+                    id: 1,
+                    eng: `They had eaten dinner before the guests arrived.`,
+                    tel: 'అతిథులు రావడానికి ముందే వారు డిన్నర్ తిన్నారు.',
+                    tense: 'Past Perfect Tense'
+                },
+                {
+                    id: 1,
+                    eng: `The code had been deployed before the testing started.`,
+                    tel: 'టెస్టింగ్ ప్రారంభించకముందే కోడ్ డిప్లాయ్ చేయబడింది.',
+                    tense: 'Past Perfect Tense'
+                },
+            ],
+        },
+        {
+            id: 8,
+            topic: "Past Perfect Continuous Tense",
+            explain: 'Past Perfect Continuous Tense (అవతలి భూతకాల కొనసాగింపు కాలం) అనేది ఒక పని గతంలోనే ప్రారంభమై, ఇంకొక గత క్రియ జరిగినంత వరకూ కొనసాగిందని తెలియజెప్పడానికి ఉపయోగిస్తారు.',
+            formation: 'Subject + had been + verb + ing + time expression (optional)',
+            content: [
+                {
+                    id: 1,
+                    eng: "I had been working on a critical issue before the server crashed.",
+                    tel: 'సర్వర్ క్రాష్ కాకముందు నేను ఒక క్రిటికల్ ఇష్యూపై పనిచేస్తున్న వాడిని.',
+                    tense: 'Past Perfect Continuous'
+                },
+                {
+                    id: 1,
+                    eng: "We had been deploying the release before the client call started.",
+                    tel: 'క్లయింట్ కాల్ ప్రారంభమయ్యే ముందు మేము రీలీజ్ డిప్లాయ్ చేస్తున్నాం.',
+                    tense: 'Past Perfect Continuous'
+                },
+                {
+                    id: 1,
+                    eng: "She had been debugging the code all night before she found the solution.",
+                    tel: 'ఆమె పరిష్కారం కనుగొనడానికి ముందు రాత్రంతా కోడ్ డీబగ్ చేస్తోంది.',
+                    tense: 'Past Perfect Continuous'
+                },
+                {
+                    id: 1,
+                    eng: "I had been using JavaScript before I switched to TypeScript.",
+                    tel: 'నేను TypeScriptకి మారేముందు JavaScript వాడుతున్న వాడిని.',
+                    tense: 'Past Perfect Continuous'
+                },
+                {
+                    id: 1,
+                    eng: "They had been testing the app before the QA team took over.",
+                    tel: 'QA టీం టెస్టింగ్ ప్రారంభించే ముందు వారు ఆ యాప్‌ను టెస్ట్ చేస్తున్నారు.',
+                    tense: 'Past Perfect Continuous'
+                },
+                {
+                    id: 1,
+                    eng: "She had been learning Java before she switched to Python.",
+                    tel: 'ఆమె పైథాన్‌కి మారడానికి ముందు జావా నేర్చుకుంటూ ఉండేది.',
+                    tense: 'Past Perfect Continuous'
+                },
+                {
+                    id: 1,
+                    eng: "We had been fixing bugs when the server crashed.",
+                    tel: 'మేము బగ్‌లను పరిష్కరిస్తున్నప్పుడు సర్వర్ క్రాష్ అయ్యింది.',
+                    tense: 'Past Perfect Continuous'
+                },
+            ],
+        },
+        {
+            id: 9,
+            topic: "Simple Future Tense",
+            explain: 'భవిష్యత్తులో ఏదో పని జరగబోతుందన్నది తెలిపే వాక్య కాలం.',
+            formation: 'Subject + will + base verb + object/complement',
+            note: 'Future Tense',
+            content: [
+                {
+                    id: 1,
+                    eng: "I will go to the market tomorrow.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Future Tense",
+                    tel: "నేను రేపు మార్కెట్‌కి వెళ్తాను."
+                },
+                {
+                    id: 2,
+                    eng: "She will study for the exam next week.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Future Tense",
+                    tel: "ఆమె వచ్చే వారం పరీక్ష కోసం చదువుతుంది."
+                },
+                {
+                    id: 3,
+                    eng: "They will visit their grandparents during the festival.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Future Tense",
+                    tel: "పండగ సమయంలో వారు తమ తాతమ్మ/తాతయ్యలను కలుస్తారు."
+                },
+                {
+                    id: 4,
+                    eng: "We will help you with your project.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Future Tense",
+                    tel: "మేము మీ ప్రాజెక్ట్‌లో మీకు సహాయం చేస్తాము."
+                },
+                {
+                    id: 5,
+                    eng: "He will come to the party tonight.",
+                    type: "Affirmative Sentence",
+                    tense: "Simple Future Tense",
+                    tel: "అతను ఈ రాత్రి పార్టీకి వస్తాడు."
+                }
+            ],
+        },
+        {
+            id: 10,
+            topic: "Future Continuous Tense",
+            explain: 'Future Continuous Tense లో Subject + will + be + క్రియా వచనం (-ing) ఉపయోగించి భవిష్యత్తులో జరుగుతున్న చర్యను వ్యక్తపరిస్తాము.',
+            formation: 'Subject + will + be + <b>base verb + -ing</b> + rest of the sentence',
+            content: [
+                {
+                    "id": 1,
+                    "eng": "I will be discussing the new project.",
+                    "tel": "నేను కొత్త ప్రాజెక్ట్ గురించి చర్చించబోతున్నాను।",
+                    "tense": "Future Continuous"
+                },
+                {
+                    "id": 2,
+                    "eng": "In today’s meeting, I will be discussing our team goals.",
+                    "tel": "ఈరోజు మీటింగ్‌లో మా టీమ్ లక్ష్యాల గురించి చర్చించబోతున్నాను।",
+                    "tense": "Future Continuous"
+                },
+                {
+                    "id": 3,
+                    "eng": "Today, I will be discussing three main topics.",
+                    "tel": "ఈరోజు నేను మూడు ముఖ్యమైన విషయాలను చర్చించబోతున్నాను।",
+                    "tense": "Future Continuous"
+                },
+                {
+                    "id": 3,
+                    "eng": "I will be discussing this in detail during the presentation.",
+                    "tel": "నేను ప్రెజెంటేషన్ సమయంలో దీని గురించి విపులంగా చర్చించబోతున్నాను।",
+                    "tense": "Future Continuous"
+                },
+                {
+                    "id": 3,
+                    "eng": "I have started the 145 story, and I will be working on it.",
+                    "tel": "నేను 145 స్టోరీను ప్రారంభించాను, దానిపై పని చేయబోతున్నాను।",
+                    "tense": "Future Continuous"
+                },
+                {
+                    "id": 3,
+                    "eng": "I have started working on Story 145 and will continue working on",
+                    "tel": "నేను స్టోరీ 145 పై పని ప్రారంభించాను మరియు దానిపై కొనసాగిస్తాను।",
+                    "tense": "Future Continuous"
+                },
+                {
+                    "id": 1,
+                    "eng": "I have started working on Story 145, and I will be working on it.",
+                    "tel": "నేను స్టోరీ 145 పై పని ప్రారంభించాను మరియు దానిపై పని చేస్తాను.",
+                    "tense": "Positive",
+                },
+                {
+                    "id": 2,
+                    "eng": "I have not started working on Story 145, and I will not be working on it.",
+                    "tel": "నేను స్టోరీ 145 పై పని ప్రారంభించలేదు మరియు దానిపై పని చేయను.",
+                    "tense": "Negative"
+                },
+                {
+                    "id": 3,
+                    "eng": "Have I started working on Story 145, and will I be working on it?",
+                    "tel": "నేను స్టోరీ 145 పై పని ప్రారంభించానా, మరియు దానిపై పని చేస్తానా?",
+                    "tense": "Interrogative"
+                },
+                {
+                    "id": 4,
+                    "eng": "Haven't I started working on Story 145, and won't I be working on it?",
+                    "tel": "నేను స్టోరీ 145 పై పని ప్రారంభించలేదు కదా, మరియు దానిపై పని చేయను కదా?",
+                    "tense": "Negative Interrogative"
+                },
+                {
+                    "id": 1,
+                    "eng": "<b>Positive</b>",
+                    "tel": ""
+                },
+                {
+                    "id": 1,
+                    "tense": "Positive",
+                    "eng": "I will be attending the meeting tomorrow.",
+                    "tel": "నేను రేపు మీటింగ్‌లో హాజరవుతాను."
+                },
+                {
+                    "id": 2,
+                    "tense": "Positive",
+                    "eng": "She will be presenting the report in the meeting.",
+                    "tel": "ఆమె మీటింగ్‌లో నివేదికను ప్రదర్శించబోతుంది."
+                },
+                {
+                    "id": 3,
+                    "tense": "Positive",
+                    "eng": "We will be starting the new project next week.",
+                    "tel": "మేము వచ్చే వారం కొత్త ప్రాజెక్ట్‌ను ప్రారంభించబోతున్నాము."
+                },
+                {
+                    "id": 4,
+                    "tense": "Positive",
+                    "eng": "He will be working on the new feature all day tomorrow.",
+                    "tel": "అతను రేపు మొత్తం రోజు కొత్త ఫీచర్‌పై పని చేయబోతున్నాడు."
+                },
+                {
+                    "id": 5,
+                    "tense": "Positive",
+                    "eng": "They will be discussing the plan during the meeting.",
+                    "tel": "వారు మీటింగ్ సమయంలో ప్లాన్ గురించి చర్చించబోతున్నారు."
+                }, {
+                    "id": 1,
+                    "tense": "Positive",
+                    "eng": "I will be writing the letter tomorrow.",
+                    "tel": "నేను రేపు లేఖ రాయబోతున్నాను."
+                },
+                {
+                    "id": 2,
+                    "tense": "Positive",
+                    "eng": "The baby will be playing the whole night.",
+                    "tel": "బేబీ రాత్రంతా ఆడుకుంటూ ఉంటుంది."
+                },
+                {
+                    "id": 3,
+                    "tense": "Positive",
+                    "eng": "I will be helping my mother to make breakfast.",
+                    "tel": "నేను నా తల్లికి బ్రేక్‌ఫాస్ట్ తయారు చేయడంలో సహాయం చేస్తూ ఉంటాను."
+                },
+                {
+                    "id": 4,
+                    "tense": "Positive",
+                    "eng": "Sheldon will be eating the cake later.",
+                    "tel": "షెల్డన్ తర్వాత కేక్ తింటూ ఉంటాడు."
+                },
+                {
+                    "id": 5,
+                    "tense": "Positive",
+                    "eng": "Penny will be running in the marathon tomorrow.",
+                    "tel": "పెన్నీ రేపు మరాథాన్‌లో పరుగు పెడతారు."
+                },
+                {
+                    "id": 6,
+                    "tense": "Positive",
+                    "eng": "She will be taking her dog for a walk.",
+                    "tel": "ఆమె తన కుక్కను నడకకి తీసుకెళ్ళుతుంది."
+                },
+                {
+                    "id": 7,
+                    "tense": "Positive",
+                    "eng": "Ritz will be coming to our place soon.",
+                    "tel": "రిట్జ్ త్వరలో మన ఇంటికి వస్తారు."
+                },
+                {
+                    "id": 8,
+                    "tense": "Negative",
+                    "eng": "My mother won’t be working tomorrow.",
+                    "tel": "నా తల్లి రేపు పని చేయడం లేదు."
+                },
+                {
+                    "id": 9,
+                    "tense": "Negative",
+                    "eng": "The series won’t be releasing this month.",
+                    "tel": "సిరీస్ ఈ నెలలో విడుదలవ్వదు."
+                },
+                {
+                    "id": 10,
+                    "tense": "Interrogative",
+                    "eng": "Who will be waiting for John at the railway station?",
+                    "tel": "రైల్వే స్టేషన్ వద్ద జాన్ కోసం ఎవరు ఎదురుచూస్తున్నారు?"
+                },
+                {
+                    "id": 11,
+                    "tense": "Interrogative",
+                    "eng": "Will I be sleeping here?",
+                    "tel": "నేను ఇక్కడ నిద్రపోతానా?"
+                },
+                {
+                    "id": 12,
+                    "tense": "Positive",
+                    "eng": "I will be arriving at the station by 5:00 P.M.",
+                    "tel": "నేను సాయంత్రం 5 గంటలకు స్టేషన్‌కు చేరుతాను."
+                },
+                {
+                    "id": 13,
+                    "tense": "Positive",
+                    "eng": "My friends will be coming over for lunch tomorrow.",
+                    "tel": "నా స్నేహితులు రేపు లంచ్ కోసం వస్తారు."
+                },
+                {
+                    "id": 14,
+                    "tense": "Interrogative",
+                    "eng": "Will you be doing laundry tonight?",
+                    "tel": "నీవు ఈ రాత్రి లాండ్రీ చేస్తావా?"
+                },
+                {
+                    "id": 15,
+                    "tense": "Positive",
+                    "eng": "I will be watering the plants tomorrow morning.",
+                    "tel": "నేను రేపు ఉదయం పువ్వులకి నీరు పోస్తాను."
+                },
+                {
+                    "id": 16,
+                    "tense": "Positive",
+                    "eng": "Shyam will be visiting his aunt tomorrow.",
+                    "tel": "శ్యామ్ రేపు తన మామగారిని సందర్శిస్తాడు."
+                },
+                {
+                    "id": 17,
+                    "tense": "Positive",
+                    "eng": "I will be joining the new office from next week.",
+                    "tel": "నేను వచ్చే వారం నుండి కొత్త ఆఫీస్‌లో చేరబోతున్నాను."
+                },
+                {
+                    "id": 18,
+                    "tense": "Positive",
+                    "eng": "My parents will be flying to Delhi tomorrow.",
+                    "tel": "నా తల్లితల్లి రేపు ఢిల్లీకి ఎయిర్ ఫ్లైట్ ద్వారా వెళ్తారు."
+                },
+                {
+                    "id": 19,
+                    "tense": "Negative",
+                    "eng": "I will not be working tomorrow.",
+                    "tel": "నేను రేపు పని చేయను."
+                },
+                {
+                    "id": 20,
+                    "tense": "Positive",
+                    "eng": "Rajesh will be staying at the hotel on Friday.",
+                    "tel": "రాజేష్ శుక్రవారం హోటల్లో ఉండబోతున్నాడు."
+                },
+                {
+                    "id": 1,
+                    "eng": "<b>Negative</b>",
+                    "tel": ""
+                }, {
+                    "id": 1,
+                    "tense": "Negative",
+                    "eng": "I will not be attending the meeting tomorrow.",
+                    "tel": "నేను రేపు మీటింగ్‌లో హాజరవ్వను."
+                },
+                {
+                    "id": 2,
+                    "tense": "Negative",
+                    "eng": "She will not be presenting the report in the meeting.",
+                    "tel": "ఆమె మీటింగ్‌లో నివేదికను ప్రదర్శించకపోతోంది."
+                },
+                {
+                    "id": 3,
+                    "tense": "Negative",
+                    "eng": "We will not be starting the new project next week.",
+                    "tel": "మేము వచ్చే వారం కొత్త ప్రాజెక్ట్‌ను ప్రారంభించబోమేము."
+                },
+                {
+                    "id": 4,
+                    "tense": "Negative",
+                    "eng": "He will not be working on the new feature all day tomorrow.",
+                    "tel": "అతను రేపు మొత్తం రోజు కొత్త ఫీచర్‌పై పని చేయడంలేదు."
+                },
+                {
+                    "id": 5,
+                    "tense": "Negative",
+                    "eng": "They will not be discussing the plan during the meeting.",
+                    "tel": "వారు మీటింగ్ సమయంలో ప్లాన్ గురించి చర్చించకపోవడం జరుగదు."
+                },
+                {
+                    "id": 1,
+                    "eng": "<b>Interrogative</b>",
+                    "tel": "<b>Interrogative form of Future Continuous</b> is <b>less common - People usually ask <a href='file:///home/srihas/project/mynotes.github.io/pages/english.html#Simple%20Future%20Tense'>simple Future questions</a> instead: --- (Will you attend the meeting tomorrow?)</b>"
+                },
+                {
+                    "id": 2,
+                    "tense": "Interrogative",
+                    "eng": "Will she be presenting the report in the meeting?",
+                    "tel": "ఆమె మీటింగ్‌లో నివేదికను ప్రదర్శించబోతుందా?"
+                },
+                {
+                    "id": 3,
+                    "tense": "Interrogative",
+                    "eng": "Will we be starting the new project next week?",
+                    "tel": "మేము వచ్చే వారం కొత్త ప్రాజెక్ట్‌ను ప్రారంభించబోతున్నామా?"
+                },
+                {
+                    "id": 5,
+                    "tense": "Interrogative",
+                    "eng": "Will they be discussing the plan during the meeting?",
+                    "tel": "వారు మీటింగ్ సమయంలో ప్లాన్ గురించి చర్చించబోతున్నారా?"
+                },
+                {
+                    "id": 1,
+                    "eng": "<b>Negative Interrogative</b>",
+                    "tel": ""
+                },
+            ],
+        },
+        {
+            id: 11,
+            topic: "Future Perfect Tense",
+            explain: 'భవిష్యత్తులో ఒక పని ముగింపు అయినప్పుడు లేదా మరొక భవిష్యత్తు చర్యకు ముందు పూర్తవుతుందని చూపించడానికి వాడతారు.',
+            formation: 'Subject + will have + past participle (verb3) + object/complement',
+            content: [
+                {
+                    id: 1,
+                    eng: "I will have finished my homework by 8 PM.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "నేను రాత్రి 8 గంటలకు నా హోంవర్క్ పూర్తి చేసుకుంటాను."
+                },
+                {
+                    id: 2,
+                    eng: "She will have left before you arrive.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "నువ్వు చేరడానికి ముందే ఆమె బయలుదేరి ఉంటుంది."
+                },
+                {
+                    id: 3,
+                    eng: "They will have completed the project by next month.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "వారు వచ్చే నెలలో ప్రాజెక్ట్ పూర్తి చేసి ఉంటారు."
+                },
+                {
+                    id: 4,
+                    eng: "We will have cooked dinner by the time guests come.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "అతిథులు వచ్చే సమయానికి మేము విందు వంట చేస్తూ ఉంటాము."
+                },
+                {
+                    id: 5,
+                    eng: "He will have finished reading the book by tomorrow.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "అతను రేపు వరకు ఆ పుస్తకం చదివి పూర్తి చేసుకుంటాడు."
+                },
+                {
+                    id: 6,
+                    eng: "By next year, I will have learned Spanish.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "తరువాత వచ్చే సంవత్సరం వరకు, నేను స్పానిష్ నేర్చుకుంటాను."
+                },
+                {
+                    id: 7,
+                    eng: "She will have reached the airport by 5 PM.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "ఆమె సాయంత్రం 5 గంటలకు విమానాశ్రయానికి చేరుకుంటుంది."
+                },
+                {
+                    id: 8,
+                    eng: "They will have built the house by December.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "వారు డిసెంబర్ వరకు ఇల్లు నిర్మించి పూర్తి చేస్తారు."
+                },
+                {
+                    id: 9,
+                    eng: "We will have submitted the report before the meeting.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "మనం సమావేశానికి ముందు రిపోర్ట్ సమర్పించి పూర్తి చేస్తాము."
+                },
+                {
+                    id: 10,
+                    eng: "He will have completed the course by the end of this month.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "ఈ నెల ముగింపుకు అతను కోర్స్ పూర్తి చేసి ఉంటాడు."
+                },
+                {
+                    id: 1,
+                    eng: "I will have finished my homework by 8 PM.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "నేను రాత్రి 8 గంటలకు నా హోంవర్క్ పూర్తి చేసుకుంటాను."
+                },
+                {
+                    id: 2,
+                    eng: "She will have left before you arrive.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "నువ్వు చేరడానికి ముందే ఆమె బయలుదేరి ఉంటుంది."
+                },
+                {
+                    id: 3,
+                    eng: "They will have completed the project by next month.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "వారు వచ్చే నెలలో ప్రాజెక్ట్ పూర్తి చేసి ఉంటారు."
+                },
+                {
+                    id: 4,
+                    eng: "We will have cooked dinner by the time guests come.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "అతిథులు వచ్చే సమయానికి మేము విందు వంట చేస్తూ ఉంటాము."
+                },
+                {
+                    id: 5,
+                    eng: "He will have finished reading the book by tomorrow.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Tense",
+                    tel: "అతను రేపు వరకు ఆ పుస్తకం చదివి పూర్తి చేసుకుంటాడు."
+                }
+            ],
+        },
+        {
+            id: 12,
+            topic: "Future Perfect Continuous Tense",
+            explain: 'భవిష్యత్తులో ఒక పని ఒక నిర్దిష్ట సమయం వరకు కొనసాగుతూనే ఉంటుంది అని చూపించడానికి వాడతారు. ఇది పనికి అయిన కాలవ్యవధిని (duration) పైన ఫోకస్ చేస్తుంది.అంటే, ఒక పని భవిష్యత్తులో ప్రారంభమై, ఒక సమయం వరకు అపరాధం లేకుండా కొనసాగుతుందని చెప్పే కాలం.',
+            formation: 'Subject + will have been + verb(-ing) + object/complement',
+            content: [
+                {
+                    id: 1,
+                    eng: "I will have been studying for 3 hours by 8 PM.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Continuous Tense",
+                    tel: "రాత్రి 8 గంటలకు నేను మూడు గంటలుగా చదువుతున్నాను."
+                },
+                {
+                    id: 2,
+                    eng: "She will have been working at the company for 5 years by next month.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Continuous Tense",
+                    tel: "వచ్చే నెల వరకు ఆమె ఐదు సంవత్సరాలుగా ఆ కంపెనీలో పనిచేస్తోంది."
+                },
+                {
+                    id: 3,
+                    eng: "They will have been playing football for 2 hours by the time you arrive.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Continuous Tense",
+                    tel: "నువ్వు చేరే సమయానికి వారు రెండు గంటలుగా ఫుట్‌బాల్ ఆడుతున్నారు."
+                },
+                {
+                    id: 4,
+                    eng: "We will have been waiting for the bus for 30 minutes by 9 AM.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Continuous Tense",
+                    tel: "ఉదయం 9 గంటలకు మేము 30 నిమిషాలుగా బస్సు కోసం వేచి చూస్తూ ఉంటాము."
+                },
+                {
+                    id: 5,
+                    eng: "He will have been living in Delhi for 10 years by 2026.",
+                    type: "Affirmative Sentence",
+                    tense: "Future Perfect Continuous Tense",
+                    tel: "2026 వరకు అతను 10 సంవత్సరాలుగా ఢిల్లీ లో నివసిస్తున్నాడు."
+                },
+                {
+                    id: 1,
+                    eng: `<table border="1" style="border-spacing: 0px;"><tbody>
+<tr><td align="center" colspan="3" style="font-weight: bold;">కూరగాయలు (Vegetables) - English - Telugu - తెలుగు</td></tr>
+<tr><th style="width: 185px;">Name in English</th><th style="width: 185px;">Name in Telugu</th><th style="width: 195px;">తెలుగు పేరు</th></tr>
+<tr><td>Brinjal / Egg plant</td><td>Vankaya</td><td>వంకాయ</td></tr>
+<tr><td>Radish</td><td>Mullangi</td><td>ముల్లంగి</td></tr>
+<tr><td>Potato</td><td>Aalu, Bangala dumpa</td><td>ఆలు, బంగాళదుంప</td></tr>
+<tr><td>Onion</td><td>Ulli</td><td>ఉల్లి గడ్డ</td></tr>
+<tr><td>Garlic</td><td>Vellulli, Elligadda</td><td>వెల్లుల్లి, ఎల్లిగడ్డ</td></tr>
+<tr><td>Ginger</td><td>Allam</td><td>అల్లం</td></tr>
+<tr><td>Chilli</td><td>Mirapakaya</td><td>మిరపకాయ</td></tr>
+<tr><td>Lady finger / Okra</td><td>Bendakaya</td><td>బెండకాయ</td></tr>
+<tr><td>Drumstick</td><td>Mulagakada</td><td>ములగకాడ</td></tr>
+<tr><td>Cucumber</td><td>Dosakaya</td><td>దోసకాయ</td></tr>
+<tr><td>Bitter Gourd</td><td>Kakarakaya</td><td>కాకరకాయ</td></tr>
+<tr><td>Teasel Gourd</td><td>Boda Kakarakaya, Aakakarakaya</td><td>బోడ కాకరకాయ, ఆకాకరకాయ</td></tr>
+<tr><td>Snake Gourd</td><td>Potlakaya</td><td>పొట్లకాయ</td></tr>
+<tr><td>Pumpkin</td><td>Gummadikaya</td><td>గుమ్మడికాయ</td></tr>
+<tr><td>Tindora, Gherkin, Pointed Gourd</td><td>Dondakaya</td><td>దొండకాయ</td></tr>
+<tr><td>Tomato</td><td>Tamata, Thakkali</td><td>టమాట, తక్కాళి</td></tr>
+<tr><td>Cauliflower</td><td>Kosu Puvu</td><td>కోసు పువ్వు</td></tr>
+<tr><td>Ridge Gourd</td><td>Beerakaya</td><td>బీరకాయ</td></tr>
+<tr><td>Bottle Gourd</td><td>Sorakaya</td><td>సొరకాయ, అన్యపుకాయ</td></tr>
+<tr><td>Cluster Beans</td><td>Goru Chikkudu</td><td>గోరు చిక్కుడు</td></tr>
+<tr><td>Suran, Yam, Sweet Potato</td><td>Kanda Gadda</td><td>కంద గడ్డ</td></tr>
+<tr><td>Colocasia, Taro</td><td>Chemadumpa, Chemagadda</td><td>చేమదుంప, చేమగడ్డ</td></tr>
+<tr><td>Broad Beans, Fresh Beans</td><td>Chikkudukaya, Pedda chikkudukaya</td><td>చిక్కుడుకాయ, పెద్ద చిక్కుడుకాయ</td></tr>
+<tr><td>Ash Gourd</td><td>Boodida Gummadikaya</td><td>బూడిద గుమ్మడికాయ</td></tr>
+<tr><td>Plantain</td><td>Aratikaya</td><td>అరటికాయ</td></tr>
+<tr><td>Carrot</td><td>Gajaragadda</td><td>గాజరగడ్డ</td></tr>
+<tr><td>Green Peas</td><td>Batani</td><td>పచ్చి బఠానీ</td></tr>
+<tr><td>Betal Leaves</td><td>Tamalapakulu</td><td>తమలపాకులు</td></tr>
+<tr><td>Mushroom</td><td>Puttagodugu</td><td>పుట్టగొడుగు</td></tr>
+<tr><td>Lemon</td><td>Nimma Kaya</td><td>నిమ్మకాయ</td></tr></tbody></table>
+
+</br>
+</br>
+</br>
+
+<table border="1" style="border-spacing: 0px;"><tbody>
+<tr><td align="center" colspan="3" style="font-weight: bold;">ఆకు కూరలు (Leafy Vegetables) - English - Telugu - తెలుగు</td></tr>
+<tr><th style="width: 185px;">Name in English</th><th style="width: 185px;">Name in Telugu</th><th style="width: 195px;">తెలుగు పేరు</th></tr>
+<tr><td>Spinach</td><td>Palakura</td><td>పాలకూర</td></tr>
+<tr><td>Malabar Spinach / Chinese Spinach</td><td>Bachalikura</td><td>బచ్చలికూర</td></tr>
+<tr><td>Amaranthus</td><td>Thotakura</td><td>తోటకూర</td></tr>
+<tr><td>Red Amaranthus</td><td>Koyya Thotakura</td><td>కొయ్య తోటకూర</td></tr>
+<tr><td>Kenaf Leaves / Sorrel Leaves</td><td>Gongura</td><td>గోంగూర</td></tr>
+<tr><td>Curry Leaves</td><td>Karivepaku</td><td>కరివేపాకు</td></tr>
+<tr><td>Purslane</td><td>Gangavalli Aaku / Gangabala Aaku</td><td>గంగవల్లి ఆకు / గంగబాయల ఆకు</td></tr>
+<tr><td>Fenugreek Leaves</td><td>Menthikura</td><td>మెంతికూర</td></tr>
+<tr><td>Plantain Flower</td><td>Arati Puvvu</td><td>అరటి పువ్వు</td></tr>
+<tr><td>Coriander Leaves</td><td>Kothimeera</td><td>కొత్తిమీర</td></tr>
+<tr><td>Mint Leaves</td><td>Poodina</td><td>పూదిన</td></tr>
+<tr><td>Chives</td><td>Ulli aaku</td><td>ఉల్లి ఆకు</td></tr>
+<tr><td>Mustard Leaves</td><td>Aava Aakulu</td><td>ఆవ ఆకులు</td></tr>
+<tr><td>Spring Onions/ Leeks</td><td>Ulli Kaadalu</td><td>ఉల్లి కాడలు</td></tr>
+<tr><td>Garden Sorrel / Red Sorrel</td><td>Chukkakura</td><td>చుక్కకూర</td></tr>
+<tr><td>Dwarf Copperleaf / Water Amaranth / Sessile Joyweed</td><td>Ponnaganti Kura</td><td>పొన్నగంటి కూర</td></tr>
+<tr><td>Tamarind Tender Leaves</td><td>Chinta Chiguru</td><td>చింత చిగురు</td></tr></tbody></table>
+
+</br>
+</br>
+</br>
+
+<table border="1" style="border-spacing: 0px;"><tbody>
+<tr><td align="center" colspan="3" style="font-weight: bold;">పండ్లు (Fruits) - English - Telugu - తెలుగు</td></tr>
+<tr><th style="width: 185px;">Name in English</th><th style="width: 185px;">Name in Telugu</th><th style="width: 195px;">తెలుగు పేరు</th></tr>
+<tr><td>Apple</td><td>Sepulu / Apil</td><td>సేపులు / ఆపిల్</td></tr>
+<tr><td>Mango</td><td>Mamidi</td><td>మామిడి</td></tr>
+<tr><td>Orange</td><td>Narinja</td><td>నారింజ</td></tr>
+<tr><td>Banana</td><td>Arati Pandu</td><td>అరటిపండు</td></tr>
+<tr><td>Grapes</td><td>Draksha</td><td>ద్రాక్ష</td></tr>
+<tr><td>Pomegranate</td><td>Danimma</td><td>దానిమ్మ</td></tr>
+<tr><td>Fig</td><td>Anjeera / Atti Pandu</td><td>అంజీర / అత్తి పండు</td></tr>
+<tr><td>Guava</td><td>Jama</td><td>జామ</td></tr>
+<tr><td>Jackfruit</td><td>Panasa</td><td>పనస</td></tr>
+<tr><td>Papaya</td><td>Boppayi</td><td>బొప్పాయి</td></tr>
+<tr><td>Water Melon</td><td>Pucchakaya</td><td>పుచ్చకాయ</td></tr>
+<tr><td>Canataloupe / Musk Melon</td><td>Kharbuja</td><td>ఖర్బుజా</td></tr>
+<tr><td>Pear</td><td>Bery Pandu</td><td>బేరిపండు</td></tr>
+<tr><td>Pineapple</td><td>Anasa Pandu</td><td>అనాస పండు</td></tr>
+<tr><td>Sapodilla / Chickoo</td><td>Sapota</td><td>సపోటా</td></tr>
+<tr><td>Sweet Lime</td><td>Batthayi</td><td>బత్తాయి</td></tr>
+<tr><td>Custard Apple</td><td>Sitaphalam</td><td>సీతాఫలం</td></tr>
+<tr><td>Avocado</td><td>Venna Pandu</td><td>వెన్నపండు</td></tr>
+<tr><td>Plum / Jujebi</td><td>Regipandu</td><td>రేగిపండు</td></tr>
+<tr><td>Bokhara Plum</td><td>Seema Regu / Ganga Regu</td><td>సీమరేగు / గంగరేగు</td></tr>
+<tr><td>Litchi</td><td>Lychee</td><td>లీచీ</td></tr>
+<tr><td>Black Berry</td><td>Neredu</td><td>నేరేడు</td></tr>
+<tr><td>Blue Berry</td><td>Phal Sa</td><td>ఫాల్ సా</td></tr>
+<tr><td>Mulberry</td><td>Bontapandu</td><td>బొంతపండు</td></tr>
+<tr><td>Straw Berry</td><td>Strawberry Pandu</td><td>స్ట్రాబెర్రీ పండు</td></tr>
+<tr><td>Cran Berry</td><td>Cranberry Pandu</td><td>క్రాన్బెర్రీ పండు</td></tr>
+<tr><td>Currant</td><td>Kismis</td><td>కిస్మిస్</td></tr>
+<tr><td>Black Currant</td><td>Nalla Kismis</td><td>నల్ల కిస్మిస్</td></tr>
+<tr><td>Carambola / Star Fruit</td><td>Nakshatra Pandu</td><td>నక్షత్ర పండు</td></tr>
+<tr><td>Apricot</td><td>Jaldaru Pandu</td><td>జల్దారు పండు</td></tr>
+<tr><td>Peach</td><td>Shaptalu Pandu</td><td>శాప్తాలు పండు</td></tr>
+<tr><td>Dates</td><td>Kharjura</td><td>ఖర్జూర</td></tr>
+<tr><td>Cashew</td><td>Jeedipappu</td><td>జీడిపప్పు</td></tr>
+<tr><td>Almond</td><td>Badam</td><td>బాదాం</td></tr>
+<tr><td>Pistachios</td><td>Pista Pappu</td><td>పిస్తాపప్పు</td></tr>
+<tr><td>Walnut</td><td>Akrot</td><td>అక్రోటు</td></tr>
+<tr><td>Kiwi</td><td>Kivi</td><td>కివి</td></tr>
+<tr><td>Cherry</td><td>Cherri Pandu</td><td>చెర్రీ పండు</td></tr></tbody></table>
+
+</br>
+</br>
+</br>
+
+<table border="1" style="border-spacing: 0px;"><tbody>
+<tr><td align="center" colspan="3" style="font-weight: bold;">పప్పు దినుసులు (Pulses) - English - Telugu - తెలుగు</td></tr>
+<tr><th style="width: 185px;">Name in English</th><th style="width: 185px;">Name in Telugu</th><th style="width: 195px;">తెలుగు పేరు</th></tr>
+<tr><td>Toor Dal / Pigeon Peas /Red Gram</td><td>Kandi Pappu</td><td>కంది పప్పు</td></tr>
+<tr><td>Chana Dal / Bengal Gram Dal</td><td>Senaga Pappu</td><td>శనగ పప్పు</td></tr>
+<tr><td>Whole Moong Dal</td><td>Pesarlu</td><td>పెసర్లు</td></tr>
+<tr><td>Moong Dal</td><td>Pesaru Pappu</td><td>పెసర పప్పు</td></tr>
+<tr><td>Urad Dal / Black Dal</td><td>Minapa Pappu</td><td>మినప పప్పు</td></tr>
+<tr><td>Masoor Dal</td><td>Mysur Pappu</td><td>మైసూర్ పప్పు</td></tr>
+<tr><td>Green Moong Dal</td><td>Pottu Pesaru Pappu</td><td>పొట్టు పెసర పప్పు</td></tr>
+<tr><td>Red Kidney Beans</td><td>Rajma</td><td>రాజ్మా</td></tr>
+<tr><td>Black Chickpeas/ Kala Chana</td><td>Senagalu</td><td>శెనగలు</td></tr>
+<tr><td>White Chickpeas / Kabuli Chana</td><td>Kabuli Senagalu</td><td>కాబూలీ శెనగలు</td></tr>
+<tr><td>Horse Gram</td><td>Ulavalu</td><td>ఉలవలు</td></tr>
+<tr><td>Adzuki Beans</td><td>Chikkudu Ginjalu</td><td>చిక్కుడు గింజలు</td></tr>
+<tr><td>Poppy Seeds</td><td>Gasagasalu</td><td>గసగసాలు</td></tr>
+<tr><td>Black Eyed Beans / Cow Peas / Lobia</td><td>Alasandalu / Bobbarlu</td><td>అలసందలు / బొబ్బర్లు</td></tr>
+<tr><td>Hyacinth Bean</td><td>Anumulu</td><td>అనుములు</td></tr></tbody></table>
+
+
+</br>
+</br>
+</br>
+
+
+<table border="1" style="border-spacing: 0px;"><tbody>
+<tr><td align="center" colspan="3" style="font-weight: bold;">చిరుధాన్యాలు / సిరిధాన్యాలు (Millets) - English - Telugu - తెలుగు</td></tr>
+<tr><th style="width: 185px;">Name in English</th><th style="width: 185px;">Name in Telugu</th><th style="width: 195px;">తెలుగు పేరు</th></tr>
+<tr><td>Kangni / Foxtail millet</td><td>Korralu</td><td>కొర్రలు</td></tr>
+<tr><td>Little Millet /Moraiyo / Kutki / Shavan</td><td>Samalu</td><td>సామలు</td></tr>
+<tr><td>Kodo Millet</td><td>Arikelu</td><td>అరికెలు</td></tr>
+<tr><td>Barnyard Millet</td><td>Oodalu / Odalu</td><td>వూదలు / ఓదెలు</td></tr>
+<tr><td>Browntop</td><td>Andu Korralu</td><td>అండు కొర్రెలు</td></tr>
+<tr><td>Ragi / Finger Millet</td><td>Ragi / Ragulu</td><td>రాగులు</td></tr>
+<tr><td>Proso Millet</td><td>Origalu</td><td>ఒరిగలు</td></tr>
+<tr><td>Bajra / Pearl Millet</td><td>Sajjalu</td><td>సజ్జలు</td></tr>
+<tr><td>Jowar / Sorghum / Great Millet</td><td>Jonnalu</td><td>జొన్నలు</td></tr>
+<tr><td>Green Sorghum</td><td>Paccha Jonnalu / Pajjonnalu</td><td>పచ్చ జొన్నలు</td></tr>
+<tr><td>Rajgira or Amaranth</td><td>Thotakura Ginjalu</td><td>తోటకూర గింజలు</td></tr>
+<tr><td>Till / Sesame Seeds / Gingely Seeds</td><td>Nuvvulu</td><td>నువ్వులు</td></tr></tbody></table>
+
+
+</br>
+</br>
+</br>
+
+
+<table border="1" style="border-spacing: 0px;"><tbody>
+<tr><td align="center" colspan="3" style="font-weight: bold;">కిరాణా (Groceries) - English - Telugu - తెలుగు</td></tr>
+<tr><th style="width: 185px;">Name in English</th><th style="width: 185px;">Name in Telugu</th><th style="width: 195px;">తెలుగు పేరు</th></tr>
+<tr><td>Puffed Rice</td><td>Moramoralu, Maramaralu</td><td>మొరమోరాలు, మరమరాలు, పేలాలు</td></tr>
+<tr><td>Dried Ginger</td><td>Sonti</td><td>సొంఠి</td></tr>
+<tr><td>Ceylon Cinnamon</td><td>Dalchana Chekka</td><td>దాల్చన చెక్క</td></tr>
+<tr><td>Jackfruit</td><td>Panasakaya</td><td>పనసకాయ</td></tr>
+<tr><td>Gooseberry / Amla</td><td>Usirikaya</td><td>ఉసిరికాయ</td></tr>
+<tr><td>Black Pepper</td><td>Miriyalu</td><td>మిరియాలు</td></tr>
+<tr><td>Cardamom</td><td>Elaichi, Yalakkaya</td><td>ఇలైచి, యాలక్కాయ</td></tr>
+<tr><td>Cloves</td><td>Lavangam</td><td>లవంగం</td></tr>
+<tr><td>Coriander Seeds</td><td>Dhaniyalu</td><td>ధనియాలు</td></tr>
+<tr><td>Cumin Seeds</td><td>Jeelakarra</td><td>జీలకర్ర</td></tr>
+<tr><td>Fenugreek</td><td>Menthulu</td><td>మెంతులు</td></tr>
+<tr><td>Jaggery</td><td>Bellam</td><td>బెల్లం</td></tr>
+<tr><td>Mustard</td><td>Aavalu</td><td>ఆవాలు</td></tr>
+<tr><td>Poppy Seeds</td><td>Gaslu, Gasagasalu</td><td>గసాలు, గసగసాలు</td></tr>
+<tr><td>Raisins</td><td>Yendu Draksha</td><td>ఎండు ద్రాక్ష</td></tr>
+<tr><td>Yogurt</td><td>Perugu</td><td>పెరుగు</td></tr>
+<tr><td>Semolina / Suji</td><td>Upma Ravva</td><td>ఉప్మా రవ్వ</td></tr>
+<tr><td>Vermicelli</td><td>Semia</td><td>సేమియా</td></tr>
+<tr><td>Ground Nuts / Peanuts</td><td>Pallilu / Veru Senagalu</td><td>పల్లీలు / వేరు శెనగలు</td></tr>
+<tr><td>Roasted Split Chickpeas</td><td>Putnalu</td><td>పుట్నాలు</td></tr>
+<tr><td>Nutmeg</td><td>Jajikaya</td><td>జాజికాయ</td></tr>
+<tr><td>Mace</td><td>Japathri</td><td>జాపత్రి</td></tr>
+<tr><td>Bay leaf</td><td>Biryani Aaku</td><td>బిర్యాని ఆకు</td></tr>
+<tr><td>Star Anise</td><td>Anasa Puvvu</td><td>అనాస పువ్వు</td></tr>
+<tr><td>Alsi Seeds / Flax Seeds / Linseed</td><td>Aviselu</td><td>అవిసెలు</td></tr>
+<tr><td>Sweet Basil Seeds</td><td>Sabja</td><td>సబ్జా గింజలు</td></tr>
+<tr><td>Barley</td><td>Barlee</td><td>బార్లీ</td></tr>
+<tr><td>Fennel / Soanf</td><td>Sompu</td><td>సోంపు</td></tr>
+<tr><td>Long Pepper</td><td>Toka Miryalu</td><td>తోక మిరియాలు</td></tr>
+<tr><td>Wailong</td><td>Marati Mogga</td><td>మరాఠీ మొగ్గ</td></tr>
+<tr><td>Dry Chilli</td><td>Endu Mirapa</td><td>ఎండు మిరప</td></tr>
+<tr><td>Sago</td><td>Saggu Biyyam</td><td>సగ్గు బియ్యం</td></tr>
+<tr><td>Beatal Nut</td><td>Vakka</td><td>వక్క</td></tr>
+<tr><td>Flattend Rice / Rice Flakes</td><td>Atukulu</td><td>అటుకులు</td></tr>
+<tr><td>Maize / Corn</td><td>Mokka Jonnalu</td><td>మొక్క జొన్నలు</td></tr>
+<tr><td>Gall Nut</td><td>Machi Kaya</td><td>మాచి కాయ</td></tr>
+<tr><td>Soap Nuts</td><td>Kunkudu Kayalu</td><td>కుంకుడు కాయలు</td></tr>
+<tr><td>Basil</td><td>Tulasi</td><td>తులసి</td></tr>
+<tr><td>Candy Sugar</td><td>Patika Bellam</td><td>పటిక బెల్లం</td></tr>
+<tr><td>Assafoetida</td><td>Enguva</td><td>ఇంగువ</td></tr>
+<tr><td>Carom Seed / Bishops Weed / Ajowan Caraway</td><td>Vamu</td><td>వాము</td></tr>
+<tr><td>Saffron</td><td>Kumkuma Puvvu</td><td>కుంకుమపువ్వు</td></tr>
+<tr><td>Camphor</td><td>Karpuram</td><td>కర్పూరం</td></tr>
+<tr><td>Copra</td><td>Kobbari / Kuduka</td><td>కొబ్బరి / కుడుక</td></tr>
+<tr><td>Tamarind</td><td>Chintapandu</td><td>చింతపండు</td></tr>
+<tr><td>Sour Mango Powder</td><td>Amchoor</td><td>ఆంచూర్</td></tr>
+<tr><td>Black Cardamom</td><td>Nalla Yalakulu</td><td>నల్ల యాలకులు</td></tr>
+<tr><td>Chironji</td><td>Sara Pappu</td><td>సారా పప్పు</td></tr>
+<tr><td>Black Salt</td><td>Nalla Uppu</td><td>నల్ల ఉప్పు</td></tr>
+<tr><td>Kalonji / Black Cumin</td><td>Nalla Jeelakarra</td><td>నల్ల జీలకర్ర</td></tr>
+<tr><td>Chebulic Myrobalan</td><td>Karakkaya</td><td>కరక్కాయ</td></tr>
+</tbody></table>`,
+                    tel: '',
+                    tense: ''
+                },
+            ],
+        },
+        {
+            id: 1,
+            section: "general",
+            topic: "Conditional Sentences",
+            explain: 'ఒక పని జరిగి ఉంటే, మరొక పని జరిగి ఉండేది అని చెప్పే సంధర్బములో ఈ Structure ని ఉపయోగిస్తారు',
+            formation: 'If + Subject + had + past Participle - Subject + would have + past Participle',
+            content: [
+                {
+                    id: 1,
+                    eng: "<b>0 (Zero)</b> : Real, Always, General truths, Scientific facts, Universal rules",
+                    tel: 'వాస్తవాలు, శాశ్వత నిజాలు - <b>Structure</b> : If + Present Simple, Present Simple',
+                },
+                {
+                    id: 1,
+                    eng: "If you heat water, it boils.",
+                    tel: "నీటిని వేడి చేస్తే, అది మరుగుతుంది.",
+                },
+                {
+                    id: 2,
+                    eng: "If you click the button, the page reloads.",
+                    tel: "మీరు బటన్‌పై క్లిక్ చేస్తే, పేజీ మళ్లీ లోడ్ అవుతుంది.",
+                },
+                {
+                    id: 3,
+                    eng: "If you mix red and blue, you get purple.",
+                    tel: "మీరు ఎరుపు మరియు నీలం కలిపితే, ఊదా రంగు వస్తుంది.",
+                },
+                {
+                    id: 4,
+                    eng: "If you press Ctrl + S, it saves the file.",
+                    tel: "మీరు Ctrl + S నొక్కితే, ఫైల్ సేవ్ అవుతుంది.",
+                },
+                {
+                    id: 5,
+                    eng: "If the system has no internet, it shows an error.",
+                    tel: "సిస్టమ్‌కు ఇంటర్నెట్ లేకపోతే, అది ఎరర్ చూపిస్తుంది.",
+                },
+                {
+                    id: 6,
+                    eng: "If you log in with correct credentials, you access the dashboard.",
+                    tel: "మీరు సరైన లాగిన్ వివరాలతో లాగిన్ అయితే, డాష్‌బోర్డ్‌కి యాక్సెస్ వస్తుంది.",
+                },
+                {
+                    id: 1,
+                    eng: "<b>1 (First)</b> : Real future possibilities, ",
+                    tel: 'నిజంగా జరగే అవకాశాలు - <b>Structure</b> :👉 If + Present Simple, will + V1(verb)',
+                },
+                {
+                    id: 1,
+                    eng: "If the build passes, we will deploy it to production.",
+                    tel: "బిల్డ్ పాస్ అయితే, మేము దాన్ని ప్రొడక్షన్‌కి డిప్లాయ్ చేస్తాము.",
+                },
+                {
+                    id: 2,
+                    eng: "If the API fails, I will check the logs.",
+                    tel: "API ఫెయిల్ అయితే, నేను లాగ్స్ చెక్ చేస్తాను.",
+                },
+                {
+                    id: 3,
+                    eng: "If you click the submit button, the form will be sent.",
+                    tel: "మీరు సబ్మిట్ బటన్‌పై క్లిక్ చేస్తే, ఫారమ్ పంపబడుతుంది.",
+                },
+                {
+                    id: 4,
+                    eng: "If the server goes down, the team will restart it.",
+                    tel: "సర్వర్ డౌన్ అయితే, టీమ్ దాన్ని రీస్టార్ట్ చేస్తుంది.",
+                },
+                {
+                    id: 5,
+                    eng: "If I finish my task early, I will help you with debugging.",
+                    tel: "నేను నా పని ముందుగా పూర్తి చేస్తే, నేను నీకు డీబగ్గింగ్‌లో సహాయం చేస్తాను.",
+                },
+                {
+                    id: 6,
+                    eng: "If the code is not working, we will raise a bug.",
+                    tel: "కోడ్ పనిచేయకపోతే, మేము బగ్ రైజ్ చేస్తాము.",
+                },
+                {
+                    id: 1,
+                    eng: "<b>2 (Second)</b> : Unreal present/future, Imaginary Condition (Present/Future) ",
+                    tel: 'కల్పిత పరిస్థితులు- <b>Structure</b> : 👉 If + Past Simple, would + V1 (verb)',
+                },
+                {
+                    id: 1,
+                    eng: "If I were you, I would apply for that job.",
+                    tel: "నేను నీ స్థానంలో ఉంటే, ఆ ఉద్యోగానికి అప్లై చేస్తాను.",
+                },
+                {
+                    id: 2,
+                    eng: "If I had more time, I would learn React deeply.",
+                    tel: "నాకు ఎక్కువ సమయం ఉంటే, నేను React ని లోతుగా నేర్చుకుంటాను.",
+                },
+                {
+                    id: 3,
+                    eng: "If the system were faster, we would complete tasks sooner.",
+                    tel: "సిస్టమ్ వేగంగా ఉంటే, మేము పనులను త్వరగా పూర్తి చేసేవాళ్లం.",
+                },
+                {
+                    id: 4,
+                    eng: "If I knew Java well, I would switch to backend development.",
+                    tel: "నాకు Java బాగా తెలిసి ఉంటే, నేను బ్యాక్‌ఎండ్ డెవలప్‌మెంట్‌కి మారేవాడిని.",
+                },
+                {
+                    id: 5,
+                    eng: "If we had a better internet connection, we would deploy faster.",
+                    tel: "మాకు మంచి ఇంటర్నెట్ కనెక్షన్ ఉంటే, మేము వేగంగా డిప్లాయ్ చేసేవాళ్లం.",
+                },
+                {
+                    id: 6,
+                    eng: "If I worked in a product-based company, I would learn more advanced systems.",
+                    tel: "నేను ప్రొడక్ట్ కంపెనీలో పని చేస్తే, నేను ఇంకా అడ్వాన్స్‌డ్ సిస్టమ్స్ నేర్చుకుంటాను.",
+                },
+                {
+                    id: 1,
+                    eng: "<b>3 (Third)</b> : Unreal Past (Regret or Hypothetical Past), did not happen ",
+                    tel: 'గతంలో జరగకపోయినవి- <b>Structure</b> : If + past perfect, would have + past participle (V3) - (👉 If + had + V3, would have + V3)',
+                },
+                {
+                    id: 1,
+                    eng: "If it had rained, you would have gotten wet",
+                    tel: 'వర్షం పడితే, మీరు తడిసిపోయేవారు',
+                },
+                {
+                    id: 2,
+                    eng: "You would have gotten wet if it had rained",
+                    tel: "వర్షం పడిఉంటే, నువ్వు తడిసిపోయేవాడివి.",
+                },
+                {
+                    id: 3,
+                    eng: "You would have passed your exam if you had worked harder",
+                    tel: "నువ్వు ఎక్కువ కష్టపడి చదివి ఉంటే, పరీక్షలో పాస్ అయ్యేవాడివి.",
+                },
+                {
+                    id: 4,
+                    eng: "If you had worked harder, you would have passed your exam",
+                    tel: "నువ్వు ఎక్కువ కష్టపడి చదివి ఉంటే, పరీక్షలో పాస్ అయ్యేవాడివి.",
+                },
+                {
+                    id: 5,
+                    eng: "I would have believed you if you hadn't lied to me before",
+                    tel: "నువ్వు ముందే నాతో అబద్ధం చెప్పి ఉండకపోతే, నేను నిన్ను నమ్మేవాడిని.",
+                },
+                {
+                    id: 6,
+                    eng: "If you hadn't lied to me before, I would have believed you",
+                    tel: "నువ్వు ముందే నాతో అబద్ధం చెప్పి ఉండకపోతే, నేను నిన్ను నమ్మేవాడిని.",
+                },
+                {
+                    id: 1,
+                    eng: "If I had restarted the server, the issue would have been fixed.",
+                    tel: "నేను సర్వర్‌ని రీస్టార్ట్ చేసి ఉంటే, సమస్య ఫిక్స్ అయిపోయేది.",
+                },
+                {
+                    id: 2,
+                    eng: "If I had committed the code earlier, I would have avoided the bug.",
+                    tel: "నేను కోడ్‌ను ముందే commit చేసి ఉంటే, బగ్‌ని తప్పించుకునేవాడిని.",
+                },
+                {
+                    id: 3,
+                    eng: "If the team had tested properly, the production issue would not have occurred.",
+                    tel: "టీమ్ సరిగ్గా టెస్ట్ చేసి ఉంటే, ప్రొడక్షన్ ఇష్యూ వచ్చేది కాదు.",
+                },
+                {
+                    id: 4,
+                    eng: "If I had known about the deadline, I would have finished the task on time.",
+                    tel: "డెడ్‌లైన్ గురించి నాకు తెలిసి ఉంటే, నేను పని సమయానికి పూర్తి చేసేవాడిని.",
+                },
+                {
+                    id: 5,
+                    eng: "If the API had responded correctly, we would have saved debugging time.",
+                    tel: "API సరిగ్గా రెస్పాండ్ చేసి ఉంటే, మేము డీబగ్గింగ్ టైమ్ సేవ్ చేసుకునేవాళ్లం.",
+                },
+                {
+                    id: 6,
+                    eng: "If I had taken a backup, I would not have lost the data.",
+                    tel: "నేను బ్యాకప్ తీసుకుని ఉంటే, డేటా కోల్పోయేవాడిని కాదు.",
+                }
+            ],
+        },
+        {
+            id: 11,
+            topic: "Articles (“a”, “an”, “the”)",
+            explain: `ఇవి చిన్న మాటలు కానీ ఇంగ్లీష్‌లో చాలా ముఖ్యమైనవి.
+            </br>
+    <span style="color:#d66313">a / an</span> → ఏదైనా ఒక వస్తువు, మొదటిసారి చెప్పేటప్పుడు.
+    </br>
+        I saw <span style="color:#d66313">a</span> temple. (నేను ఒక గుడి చూశాను)
+        </br>
+        I ate <span style="color:#d66313">an</span> apple. (నేను ఒక ఆపిల్ తిన్నాను)
+</br>
+    <span style="color:#d66313">the</span> → ఇప్పటికే తెలిసిన లేదా ముందే చెప్పిన వస్తువు.
+    </br>
+        I saw <span style="color:#d66313">the</span> temple near your house. (నీ ఇంటి దగ్గర ఉన్న గుడి చూశాను)
+నీ తప్పు:
+</br>
+నువ్వు వీటిని వదిలేస్తావు.
+</br>
+❌ Keep akshantha's on Lord Venkateshwara foot.
+</br>
+✅ Keep <span style="color:#d66313">the</span> akshanthas on <span style="color:#d66313">the</span> Lord Venkateshwara's foot.`,
+            formation: 'If + Subject + had + past Participle - Subject + would have + past Participle',
+            content: [
+                {
+                    eng: "I saw <b>a</b> bird in <b>the</b> tree.",
+                    tel: "నేను చెట్టు మీద ఒక పక్షి చూసాను.",
+                    tense: "Past tense"
+                },
+                {
+                    eng: "She wants <b>an</b> apple from <b>the</b> basket.",
+                    tel: "ఆమె బుట్టలో నుండి ఒక ఆపిల్ కావాలి.",
+                    tense: "Present tense"
+                },
+                {
+                    eng: "<b>The</b> sun rises in <b>the</b> east.",
+                    tel: "సూర్యుడు తూర్పున ఉదయిస్తాడు.",
+                    tense: "Present tense"
+                },
+                {
+                    eng: "He bought <b>a</b> book and read <b>the</b> book.",
+                    tel: "అతను ఒక పుస్తకం కొనుగోలు చేసి ఆ పుస్తకం చదివాడు.",
+                    tense: "Past tense"
+                },
+                {
+                    eng: "There is <b>an</b> elephant near <b>the</b> river.",
+                    tel: "నది దగ్గర ఒక ఏనుగు ఉంది.",
+                    tense: "Present tense"
+                },
+                {
+                    eng: "I am looking for <b>a</b> pen on <b>the</b> table.",
+                    tel: "నేను టేబుల్ మీద ఒక పెన్ కోసం చూస్తున్నాను.",
+                    tense: "Present continuous tense"
+                },
+                {
+                    eng: "<b>The</b> stars are shining in <b>the</b> night sky.",
+                    tel: "నక్షత్రాలు రాత్రి ఆకాశంలో ప్రకాశిస్తున్నాయి.",
+                    tense: "Present continuous tense"
+                },
+            ],
+        },
+        {
+            id: 11,
+            topic: "Prepositions (“on”, “at”, “in”, “to”)",
+            explain: `ఇవి స్థానం, సమయం, దిశ చూపించే మాటలు.
+</br>
+ఉదాహరణలు:
+</br>
+    Keep the book <span style="color:#d66313">on</span>  the table. (పుస్తకం టేబుల్ మీద పెట్టు)
+</br>
+    I will meet you <span style="color:#d66313">at</span>  the temple. (గుడి వద్ద కలుస్తాను)
+</br>
+    Flowers are <span style="color:#d66313">in</span>  the basket. (పూలు బుట్టలో ఉన్నాయి)
+</br>
+    Offer flowers <span style="color:#d66313">to</span>  the deity. (పూలు దేవుడికి సమర్పించు)
+</br>
+నీ తప్పు:
+</br>
+నువ్వు preposition మర్చిపోతావు.
+</br>
+❌ Keep flowers Lord's foot.
+</br>
+✅ Keep flowers <span style="color:#d66313">at</span> the Lord's feet.`,
+            formation: '',
+            content: [
+                {
+                    eng: "<b>in → a specific field / industry </b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 1,
+                    eng: "I work in IT.",
+                    tel: "నేను ఐటీ రంగంలో పని చేస్తున్నాను.",
+                    type: "in → field / industry"
+                },
+                {
+                    id: 2,
+                    eng: "She works in healthcare.",
+                    tel: "ఆమె ఆరోగ్య రంగంలో పని చేస్తోంది.",
+                    type: "in → field / industry"
+                },
+                {
+                    id: 3,
+                    eng: "They work in finance.",
+                    tel: "వాళ్లు ఫైనాన్స్ రంగంలో పని చేస్తున్నారు.",
+                    type: "in → field / industry"
+                },
+                {
+                    id: 2,
+                    eng: "She is <b>in</b> the room.",
+                    tel: "ఆమె గదిలో ఉంది.",
+                },
+                {
+                    id: 3,
+                    eng: "We are <b>in</b> the office.",
+                    tel: "మేము ఆఫీసులో ఉన్నాము.",
+                },
+                {
+                    id: 4,
+                    eng: "There are many fish <b>in</b> the river.",
+                    tel: "నదిలో చాలా చేపలు ఉన్నాయి.",
+                },
+                {
+                    id: 5,
+                    eng: "He is <b>in</b> the car.",
+                    tel: "అతను కారులో ఉన్నాడు.",
+                },
+                {
+                    eng: "<b>for → a company / employer</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 4,
+                    eng: "I work for Google.",
+                    tel: "నేను గూగుల్ కోసం పని చేస్తున్నాను.",
+                    type: "for → company / employer"
+                },
+                {
+                    id: 5,
+                    eng: "He works for TCS.",
+                    tel: "అతను టీసీఎస్ కోసం పని చేస్తున్నాడు.",
+                    type: "for → company / employer"
+                },
+                {
+                    id: 6,
+                    eng: "She works for a startup.",
+                    tel: "ఆమె ఒక స్టార్టప్ కోసం పని చేస్తోంది.",
+                    type: "for → company / employer"
+                },
+                {
+                    eng: "<b>as → a job title / role</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 7,
+                    eng: "I work as a software engineer.",
+                    tel: "నేను సాఫ్ట్‌వేర్ ఇంజనీర్‌గా పని చేస్తున్నాను.",
+                    type: "as → job title / role"
+                },
+                {
+                    id: 8,
+                    eng: "She works as a project manager.",
+                    tel: "ఆమె ప్రాజెక్ట్ మేనేజర్‌గా పని చేస్తోంది.",
+                    type: "as → job title / role"
+                },
+                {
+                    id: 9,
+                    eng: "He works as a tester.",
+                    tel: "అతను టెస్టర్‌గా పని చేస్తున్నాడు.",
+                    type: "as → job title / role"
+                },
+                {
+                    eng: "<b>place usage rule - In</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 1,
+                    eng: "I live in Hyderabad.",
+                    tel: "నేను హైదరాబాద్‌లో ఉంటున్నాను.",
+                    type: "in → city"
+                },
+                {
+                    id: 2,
+                    eng: "He works in India.",
+                    tel: "అతను భారతదేశంలో పని చేస్తున్నాడు.",
+                    type: "in → country"
+                },
+                {
+                    id: 3,
+                    eng: "She studies in America.",
+                    tel: "ఆమె అమెరికాలో చదువుతోంది.",
+                    type: "in → country"
+                },
+                {
+                    id: 8,
+                    eng: "They arrived in Europe.",
+                    tel: "వాళ్లు యూరప్‌కు చేరుకున్నారు.",
+                    type: "in → continent"
+                },
+                {
+                    id: 9,
+                    eng: "My friend is in Bangalore.",
+                    tel: "నా స్నేహితుడు బెంగళూరులో ఉన్నాడు.",
+                    type: "in → city"
+                },
+                {
+                    id: 7,
+                    eng: "The server is located in our data center.",
+                    tel: "సర్వర్ మా డేటా సెంటర్‌లో ఉంది.",
+                    type: "in → big facility"
+                },
+                {
+                    id: 2,
+                    eng: "Our company has an office in Bangalore.",
+                    tel: "మా కంపెనీకి బెంగళూరులో ఆఫీస్ ఉంది.",
+                    type: "in → city"
+                },
+                {
+                    eng: "<b>place usage rule - At</b>",
+                    tel: "",
+                    tense: ""
+                },
+                {
+                    id: 4,
+                    eng: "I am at the bus stop.",
+                    tel: "నేను బస్ స్టాప్ వద్ద ఉన్నాను.",
+                    type: "at → specific place"
+                },
+                {
+                    id: 5,
+                    eng: "He is waiting at the railway station.",
+                    tel: "అతను రైల్వే స్టేషన్ వద్ద వేచి ఉన్నాడు.",
+                    type: "at → specific place"
+                },
+                {
+                    id: 6,
+                    eng: "She is at the office.",
+                    tel: "ఆమె ఆఫీస్‌లో ఉంది.",
+                    type: "at → specific place"
+                },
+                {
+                    id: 7,
+                    eng: "We met at his house.",
+                    tel: "మేము అతని ఇంట్లో కలిశాము.",
+                    type: "at → specific location"
+                },
+                {
+                    id: 10,
+                    eng: "I’m at the airport.",
+                    tel: "నేను విమానాశ్రయం వద్ద ఉన్నాను.",
+                    type: "at → exact location"
+                },
+                {
+                    id: 4,
+                    eng: "I am at my desk right now.",
+                    tel: "నేను ఇప్పుడు నా డెస్క్ వద్ద ఉన్నాను.",
+                    type: "at → specific location"
+                },
+                {
+                    id: 5,
+                    eng: "He is at the meeting room.",
+                    tel: "అతను మీటింగ్ రూమ్‌లో ఉన్నాడు.",
+                    type: "at → specific location"
+                },
+                {
+                    id: 8,
+                    eng: "The technician is at the server rack.",
+                    tel: "టెక్నీషియన్ సర్వర్ రాక్ వద్ద ఉన్నాడు.",
+                    type: "at → exact point"
+                },
+            ],
+        },
+        {
+            id: 11,
+            topic: "Future Perfect Tense",
+            explain: 'ఒక పని జరిగి ఉంటే, మరొక పని జరిగి ఉండేది అని చెప్పే సంధర్బములో ఈ Structure ని ఉపయోగిస్తారు',
+            formation: 'If + Subject + had + past Participle - Subject + would have + past Participle',
+            content: [
+                {
+                    id: 1,
+                    eng: "If it had rained, you would have gotten wet",
+                    tel: 'వర్షం పడితే, మీరు తడిసిపోయేవారు',
+                    tense: 'Present tense'
+                },
+            ],
+        },
+        {
+            id: 11,
+            topic: "general IT phrases",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "Two days ago, when I was installing Node.js, I noticed it displayed three specific commands. I am running them every time I open the terminal because Node.js is not working without them.",
+                    type: "",
+                    tense: "Simple Present",
+                    tel: ""
+                },
+                {
+                    id: 1,
+                    eng: "When I install Node.js, it prompts specific commands. I need to use them every time I open the terminal.",
+                    type: "",
+                    tense: "Simple Present",
+                    tel: ""
+                }, {
+                    id: 1,
+                    eng: "When I installed Node.js, it prompted specific commands. I need to run them every time I open the terminal.",
+                    type: "",
+                    tense: "Past + present",
+                }],
+        },
+
+    ],
+    // conditionalSentences: [
+    //     {
+    //         id: 1,
+    //         topic: "Conditional Sentences",
+    //         explain:'ఒక పని జరిగి ఉంటే, మరొక పని జరిగి ఉండేది అని చెప్పే సంధర్బములో ఈ Structure ని ఉపయోగిస్తారు',
+    //         formation:'If + Subject + had + past Participle - Subject + would have + past Participle',
+    //         content:[
+    //             {
+    //                 id: 1,
+    //                 eng: "If it had rained, you would have gotten wet",
+    //                 tel:'వర్షం పడితే, మీరు తడిసిపోయేవారు',
+    //             },
+    //             {
+    //                 id: 2,
+    //                 eng: "You would have gotten wet if it had rained",
+    //                 tel:'',
+    //             },
+    //             {
+    //                 id: 3,
+    //                 eng: "You would have passed your exam if you had worked harder",
+    //                 tel:'',
+    //             },                {
+    //                 id: 4,
+    //                 eng: "If you had worked harder, you would have passed your exam",
+    //                 tel:'',
+    //             },
+    //             {
+    //                 id: 5,
+    //                 eng: "I would have believed you if you hadn't lied to me before",
+    //                 tel:'',
+    //             },
+    //             {
+    //                 id: 6,
+    //                 eng: "If you hadn't lied to me before, I would have believed you",
+    //                 tel:'',
+    //             },
+    //             {
+    //                 id: 7,
+    //                 eng: '',
+    //                 tel:'',
+    //             }
+    //         ],
+    //     }
+    // ]
+}
