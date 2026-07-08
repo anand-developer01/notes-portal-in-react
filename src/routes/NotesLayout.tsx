@@ -1,7 +1,7 @@
 import { Outlet, useParams } from "react-router-dom";
 
 import { javaData } from "../notes-data/java-notes";
-import JavaNotes from "../components/java/JavaNotes";
+import CommonNotes from "../components/common/CommonNotes";
 import { reactData } from "../notes-data/react-data";
 
 const NotesLayout = () => {
@@ -10,10 +10,10 @@ const NotesLayout = () => {
   const renderNotes = () => {
     switch (course) {
       case "java":
-        return <JavaNotes data={javaData} />;
+        return <CommonNotes data={javaData} />;
 
       case "react":
-        return <JavaNotes data={reactData} />;
+        return <CommonNotes data={reactData} />;
 
       default:
         return <div>Course not found</div>;
