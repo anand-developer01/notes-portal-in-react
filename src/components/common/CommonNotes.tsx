@@ -10,40 +10,44 @@ type NoteItem = {
 };
 
 type NoteTopic = {
+  id?: number;
   title?: string;
   section?: string;
   note?: NoteItem[];
 };
 
 type CourseComponentProps = {
-  data?: {
-    javaNote?: NoteTopic[];
-    reactNote?: NoteTopic[];
-  };
+  data: NoteTopic[];
 };
 
-const CommonNotes = ({ data }: CourseComponentProps) => {
+const CommonNotes = ({ data }: { data: NoteTopic[] }) => {
   const { course } = useParams();
+  // console.log("course", course);
   const location = useLocation();
   const hash = location.hash.replace("#", "").toLowerCase();
 
+  // console.log("hash", hash);
   useEffect(() => {
     hljs.highlightAll();
   }, [hash, data]);
 
-  const topics = Array.isArray(data?.javaNote)
-    ? data.javaNote
-    : Array.isArray(data?.reactNote)
-      ? data.reactNote
-      : [];
+  console.log("data", data);
 
-  const currentTopic = topics.find((item) => {
+  // const topics = Array.isArray(data?.javaNote)
+  //   ? data.javaNote
+  //   : Array.isArray(data?.reactNote)
+  //     ? data.reactNote
+  //     : [];
+
+  const currentTopic = data.find((item) => {
     const slug = (item.title ?? "")
       .toLowerCase()
       .replace(/[^\w\s]/g, "")
       .replace(/\s+/g, "-");
     return slug === hash;
   });
+
+  console.log("currentTopic", currentTopic);
 
   if (!currentTopic) {
     return (
@@ -76,7 +80,7 @@ const CommonNotes = ({ data }: CourseComponentProps) => {
 
         <div>
             {/* <div style={{ display: "grid", gap: 16 }}> */}
-          {topicNotes.map((item, index) => {
+          { topicNotes.map((item, index: any) => {
             const isImgExist = item.img ? (
               <img
                 src={item.img}

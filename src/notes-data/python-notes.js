@@ -5,7 +5,7 @@ const Links4 = 'python-projects'
 
 const isHighlighted = 'python-notes'
 
-const pythonData = {
+export const pythonData = {
     pythonNote: [
         {
             id: 1,
@@ -1050,8 +1050,52 @@ print(ops["minus"](3, 2))  # Output: 1`
         },
         {
             id: 1,
+            title: "Python - in",
+            note: [
+                {
+                    text1: ` the <b>in</b> operator is a membership operator. It is used to check whether a specific value exists within a sequence or collection (such as strings, lists, tuples, sets, or dictionaries).
+                    
+                    The operator evaluates to a boolean value:
+                    <b>True</b> if the value is found in the sequence.
+                    <b>False</b> if the value is not found.
+    `,
+                    code1: `// ------ 1. Checking in Lists, Tuples, and Sets ------
+// You can quickly verify if an item is present in a collection.
+// Python
+fruits = ["apple", "banana", "cherry"]
+print("banana" in fruits)  # Output: True
+print("orange" in fruits)  # Output: False
+
+// ------ 2. Checking in Strings ------
+// When used with strings, the in operator checks for the existence of a substring.
+
+text = "Hello, welcome to Python programming."
+print("Python" in text)  # Output: True
+print("Java" in text)    # Output: False
+
+// ------ 3. Checking in Dictionaries  ------
+// When used with a dictionary, the in operator checks for the existence of a key, not a value.
+
+student = {"name": "Alice", "age": 25, "grade": "A"}
+print("name" in student)   # Output: True (checks keys)
+print("Alice" in student)  # Output: False (does not check values by default)
+
+// To check for a value in a dictionary, you must explicitly check the .values() method:
+print("Alice" in student.values())  # Output: True
+
+// The Opposite: not in
+// Python also provides a complementary operator, not in, which returns True if the specified value is not present in the sequence.
+numbers = [1, 2, 3, 4, 5]
+print(10 not in numbers)  # Output: True
+print(3 not in numbers)   # Output: False
+`
+                }
+            ]
+        },
+        {
+            id: 1,
             section: `Closure function`,
-            title: "What is Python?",
+            title: "closure",
             note: [
                 {
                     text1: `Python closure is a nested function that allows us to access variables of the outer function even after the outer function is closed.
@@ -1298,17 +1342,65 @@ print(cube(5))    # 125
             title: "Decorators",
             note: [
                 {
-                    text1: `Dies when the main thread ends`,
-                    code1: ``
-                }
-            ]
-        },
-        {
-            id: 1,
-            title: "new topic",
-            note: [
-                {
-                    text1: `Dies when the main thread ends`,
+                    text1: `In Python, a <b>decorator</b> is a powerful design pattern that allows you to modify or enhance the behavior of a function or method without permanently changing its source code.
+decorators are a way to add or modify the behavior of a function or class without changing its original code.
+
+Think of a decorator as a wrapper: it takes a function, adds some functionality before or after the function runs, and returns the modified function.
+
+<b>How Decorators Work</b>
+To understand decorators, you first need to remember that in Python, functions are first-class citizens. This means functions can be passed around as arguments, returned from other functions, and assigned to variables.
+
+A decorator is simply a callable (usually a function) that takes another function as input, extends its behavior, and returns a new function.
+
+<b>What actually happens?</b>
+This:
+
+@my_decorator
+def hello():
+    print("Hello")
+
+// is basically equivalent to:
+def hello():
+    print("Hello")
+
+hello = my_decorator(hello)
+
+So Python takes the original <b>hello</b> function and <b>passes it to the decorator.</b>
+The decorator returns a new function (<b>wrapper</b>), and <b>hello</b> now refers to that wrapper.
+
+<b>Why are decorators useful?</b>
+They are useful when you want to add common functionality to many functions.
+For example:
+-> Logging
+-> Authentication/authorization
+-> Performance measurement
+-> Validation
+-> Caching
+-> Error handling
+-> Permission checking
+<b>Logging</b>: Automatically tracking when functions are called and with what arguments.
+<b>Access Control / Authentication</b>: Checking if a user is logged in before allowing them to access a route or endpoint.
+<b>Caching / Memoization</b>: Storing the results of expensive function calls to speed up future executions (e.g., using functools.lru_cache).
+<b>Execution Timing</b>: Measuring how long a function takes to run for performance profiling.
+
+<b>Important concept</b>
+There are three things to understand:
+<span style="color:#ac4561"> Decorator
+    ↓
+takes a function
+    ↓
+adds behavior
+    ↓
+returns a new function </span>
+
+<b>Python has built-in decorators</b>
+<b>@property</b> : decorator is used in classes to turn a method into a "getter" for an attribute. This lets you access a method like a normal attribute (without parentheses ()), while still allowing you to run logic (like validation or data formatting) behind the scenes.
+<b>@staticmethod </b> : Defines a method that doesn't receive an implicit first argument (self or cls). It behaves just like a regular function, but lives inside the class's namespace because it's logically related.
+<b>@classmethod </b> : Defines a method that receives the class itself (cls) as its first argument instead of an instance. This is often used to create alternative constructors.
+<b>@functools.lru_cache</b> : Found in the built-in functools module, this decorator automatically memoizes (caches) the return values of a function. If the function is called again with the exact same arguments, it returns the cached result instantly instead of recalculating it—which is amazing for recursive functions like Fibonacci sequences.
+
+<a href="https://github.com/anand-developer01/python-programs/blob/main/Decorators.py" target="_blank">Decorators Examples</a>
+`,
                     code1: ``
                 }
             ]
@@ -1338,7 +1430,7 @@ We use <b>*args</b> and <b>**kwargs</b> as an argument when we are unsure about 
 🔸 But * and ** have special meaning in function definitions:
 
     <b>*</b> unpacks positional arguments into a tuple
-    <b>**</b> unpacks keyword arguments into a dict
+    <b>**</b> unpacks Keyword/named arguments into a dict
      You can name them anything:
 
 def my_func(*values, **options):
@@ -1363,15 +1455,96 @@ Key Points to Remember
 
 
 <b>Python **kwargs (Ex : 2)</b>
-We use **kwargs in function definitions to pass keyworded variable-length arguments to functions. Please note that we can’t use **kwargs in Python to pass keyword arguments.
+<b>**kwargs</b> in a function definition → collect keyword arguments into a dictionary.
+<b>**dict</b> in a function call → unpack a dictionary into keyword arguments.
 
-We use kwargs with double ** before the parameter name because it allows us to pass any number of arguments. 
+
+<a href="https://github.com/anand-developer01/python-programs/blob/main/dict_kwargs_unpacking.py" target="_blank">(*dict, **kwargs) Unpacking</a> <b>Ex : 3 </b>
+**kwargs in a function definition collects named arguments into a dictionary.
+**user in a function call unpacks dictionary values into keyword arguments.
+Added an AI model configuration example using **model_settings.
 
 Key Points to Remember
--> The keyworded arguments are passed as a dictionary. 
--> A keyword argument allows you to provide a variable name as we pass it into the function.
--> Python considers a variable name with two stars (**) before it a keyword argument.
--> kwargs is like a dictionary that maps every keyword to the value passed alongside it. Therefore, when we iterate over kwargs, there is no order in which they are printed. 
+<b>--></b> Keyword arguments are collected into a dictionary.(<b> Ex : 5 </b>)
+<b>--></b> A keyword argument is an argument passed using <b>name=value</b> syntax.
+    student(name="Anand", age=36)
+    Here:
+    name → keyword
+    "Anand" → value
+    age → keyword
+    36 → value
+
+<b>--></b> ** in a function definition tells Python to collect a variable number of keyword arguments into a dictionary.
+Here, <b>kwargs</b> is just a conventional name. You could use another name:
+def show_user(**user_details):
+	print(user_details)
+
+<b>--></b> <b>kwargs</b> behaves like a dictionary mapping each keyword to its value.
+def student(**kwargs):
+    print(kwargs["name"])
+    print(kwargs["age"])
+student(name="Anand", age=36)
+
+<b>--></b> In modern Python, when we iterate over kwargs, the keyword arguments are processed in the order they were provided.
+def student(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+student(name="Anand", age=36, city="Hyderabad")
+// The order is preserved.
+Output:
+name Anand
+age 36
+city Hyderabad
+
+<b>--></b> You can combine <b>*args</b> and <b>**kwargs</b> in a function definition to accept <b>both positional and keyword arguments</b>. The order is important: <b>*args</b> must come before <b>**kwargs</b>.
+def student(*args, **kwargs):
+    print(args)
+    print(kwargs)
+student("Anand", 36, city="Hyderabad", role="Developer")
+Output:
+('Anand', 36)
+{'city': 'Hyderabad', 'role': 'Developer'}
+ <b>Why?</b>
+"Anand"          → positional argument → *args
+36               → positional argument → *args
+city="Hyderabad" → keyword argument → **kwargs
+role="Developer" → keyword argument → **kwargs
+
+<b>--></b> You can also use <b>*args</b> and <b>**kwargs</b> when calling a function to unpack a list/tuple and dictionary into positional and keyword arguments, respectively.
+When <b>defining</b> a function, they <b>collect</b> arguments.
+When <b>calling</b> a function, they <b>unpack</b> arguments.
+1. * unpacks a list/tuple into positional arguments
+def add(a, b, c):
+    return a + b + c
+numbers = [10, 20, 30] 
+result = add(*numbers) # approximately like: add(10, 20, 30)
+print(result)
+# Output:
+# 60
+
+2. ** unpacks a dictionary into keyword arguments
+def student(name, age, city):
+    print(name, age, city)
+data = {
+    "name": "Anand",
+    "age": 36,
+    "city": "Hyderabad"
+}
+student(**data)
+//------
+// Python treats:
+student(**data) # approximately like:
+student(
+    name="Anand",
+    age=36,
+    city="Hyderabad"
+)
+
+<b>--></b> When using <b>*args</b> and <b>**kwargs</b>, you can provide default values for other parameters in the function definition. These default parameters should come before <b>*args</b> and <b>**kwargs</b>.
+
+<b> Note </b>:
+<b>One more important point</b>: kwargs is <b>not a special Python keyword</b>. The special part is **; the name kwargs is just a convention.
+<a href="https://github.com/anand-developer01/python-programs/blob/main/args_kwargs_examples.py" target="_blank">(*args, **kwargs) Examples</a>
 `,
                     code1: `//---------- Ex : 1 ---------
                     // *args
@@ -1390,6 +1563,7 @@ print(multiply_all(10))
 print(multiply_all()) 
 
 
+
 //---------- Ex : 2 ---------
 def print_kwargs(**kwargs):
     """Function to print key-value pairs passed as keyword arguments."""
@@ -1402,9 +1576,78 @@ print("---")
 print_kwargs(language="Python", version=3.10)
 print("---")
 print_kwargs(course="Data Science", duration="6 months", level="Intermediate")
+// Output: 
+// name: Raman
+// age: 30
+// city: New York
+// ---
+// language: Python
+// version: 3.1
+// ---
+// course: Data Science
+// duration: 6 months
+// level: Intermediate
 
 
-//---------- Ex : 2 ---------
+//---------- Ex : 3 ---------
+"""Understanding **kwargs in function definitions and calls."""
+# \`**kwargs\` in a function definition collects named arguments into a dictionary.
+# \`**user\` in a function call unpacks dictionary values into keyword arguments.
+# Added an AI model configuration example using **model_settings.
+
+# --------
+# 1. **kwargs in a function definition collects keyword arguments.
+def show_user(**user_details):
+	print(user_details)
+
+show_user(name="Maya", role="developer", active=True)
+# Expected output:
+# {'name': 'Maya', 'role': 'developer', 'active': True}
+
+# -------
+# 2. **dict in a function call unpacks a dictionary into keyword arguments.
+def introduce_user(name, role, active):
+	print(f"Name: {name}")
+	print(f"Role: {role}")
+	print(f"Active: {active}")
+
+user = {
+	"name": "Maya",
+	"role": "developer",
+	"active": True,
+}
+
+introduce_user(**user)
+# Expected output:
+# Name: Maya
+# Role: developer
+# Active: True
+
+# -------
+# 3. AI development example: pass model settings from a dictionary.
+def generate_text(prompt, model, temperature, max_tokens):
+	print("Prompt:", prompt)
+	print("Model:", model)
+	print("Temperature:", temperature)
+	print("Maximum tokens:", max_tokens)
+
+
+model_settings = {
+	"model": "text-model-v1",
+	"temperature": 0.2,
+	"max_tokens": 200,
+}
+
+generate_text("Summarize this document.", **model_settings)
+# Expected output:
+# Prompt: Summarize this document.
+# Model: text-model-v1
+# Temperature: 0.2
+# Maximum tokens: 200
+
+
+
+//---------- Ex : 4 ---------
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -1433,6 +1676,26 @@ if __name__ == "__main__":
 //   "year": 2025,
 //   "month": "June"
 // }
+
+
+
+
+// ---------------- Ex : 5 --------------
+def student(**kwargs):
+    print(kwargs)
+
+student(name="Anand", age=36, city="Hyderabad")
+
+// kwargs becomes:
+
+{
+    "name": "Anand",
+    "age": 36,
+    "city": "Hyderabad"
+}
+
+
+// ---------------- Ex : 6 --------------
       `
                 }
             ]
@@ -1505,6 +1768,8 @@ Another place you'll use lambda functions is in data science when creating a dat
 
 df["lower_name"] = df["name"].apply(lambda x: x.lower())
 The apply function will apply each element of the series to the lambda function. The lambda function will then return a value for each element based on the expression you passed to it. In our case, the expression was to lowercase each element.
+
+<a href="https://github.com/anand-developer01/python-programs/blob/main/lambda_function.py" target="_blank">lambda function examples</a>
 `,
                     code1: `// ------------- Ex : 1 ------------
                     s1 = 'GeeksforGeeks'
@@ -1678,6 +1943,10 @@ print(vowels)
                 {
                     text1: `The <b>reduce()</b> function in Python is a functional programming tool that applies a given function cumulatively to the items of an iterable, from left to right, so as to reduce the iterable to a single value. It is part of the functools module and needs to be imported. 
                     
+                    <b>reduce()</b> is used when you want to <b>combine all elements of a sequence into one final value.</b>
+It comes from the functools module:<span style="color:#ac4561">
+from functools import reduce </span>
+
                     The <b>reduce(fun,seq)</b> function is used to apply a particular function passed in its argument to all of the list elements mentioned in the sequence passed along. This function is defined in "functools" module.
                     
                     <b>Syntax of reduce()</b>
@@ -1725,16 +1994,6 @@ print("Numbers:", nums)   # [1, 2]
 print("Strings:", strings)  # ['a', 'b']
 
 `
-                }
-            ]
-        },
-        {
-            id: 1,
-            title: "Decorators",
-            note: [
-                {
-                    text1: `What is Python?`,
-                    code1: ``
                 }
             ]
         },
@@ -1973,11 +2232,108 @@ print("Diagonal:", diagonal)
         },
         {
             id: 1,
-            title: "Iterators",
+            title: "Iterator",
             note: [
                 {
-                    text1: `What is Python?`,
-                    code1: ``
+                    text1: `An <b>iterator</b> is an object that allows you to go through a collection <b>one item at a time.</b> In Python, an iterator is an object that implements the iterator protocol, which consists of the methods <b>__iter__()</b> and <b>__next__()</b>.
+                    
+                    <b>Iterable vs Iterator</b>
+An <b>iterable</b> is any Python object capable of returning its members one at a time, allowing it to be iterated over in a for-loop. Examples of iterables include lists, tuples, strings, and dictionaries.
+An <b>iterator</b> is an object that represents a stream of data; it returns the next item of the iterable when you call the <b>next()</b> function on it. An iterator keeps track of its current position in the iterable and raises a <b>StopIteration</b> exception when there are no more items to return.<span style="color:#ac4561">
+[10, 20, 30, 40]
+   ↓
+next() → 10
+next() → 20
+next() → 30
+next() → 40
+next() → StopIteration
+</span>
+<b>Creating an iterator with iter()</b>
+Python provides <b>iter()</b> to convert an iterable into an iterator.<span style="color:#ac4561">
+numbers = [10, 20, 30]
+iterator = iter(numbers)
+print(iterator)
+// Now use next():
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))</span>
+// Output:
+// 10
+// 20
+// 30
+If you call next() again:
+print(next(iterator))
+You get:<span style="color:#ac4561">
+StopIteration</span>
+because there are no more elements.
+
+<b>How for loop uses iterators</b>
+This is an important concept.
+When you write:<span style="color:#ac4561">
+numbers = [10, 20, 30]
+for number in numbers:
+    print(number) </span>
+Python internally does something conceptually similar to:<span style="color:#ac4561">
+iterator = iter(numbers)
+while True:
+    try:
+        number = next(iterator)
+        print(number)
+    except StopIteration:
+        break </span>
+
+        <b>Creating your own iterator</b>
+An object becomes an iterator when it implements: (<b>__iter__()</b> and <b>__next__()</b>) methods.(<b> Ex : 1</b>)
+
+<b>Why do we need iterators?</b>
+The biggest advantage is that <b>we don't necessarily need to keep all data in memory at once.</b>
+
+<a href="https://github.com/anand-developer01/python-programs/blob/main/iterator.py" target="_blank">iterator examples</a>
+                    `,
+                    code1: `// ----------- Ex : 1 -----------        
+            class Numbers:
+                def __init__(self, max_number):
+                    self.number = 1
+                    self.max_number = max_number
+
+                def __iter__(self):
+                    return self
+
+                def __next__(self):
+                    if self.number <= self.max_number:
+                        result = self.number
+                        self.number += 1
+                        return result
+                    else:
+                        raise StopIteration
+            
+                // Use it:
+                numbers = Numbers(3)
+                print(next(numbers))
+                print(next(numbers))
+                print(next(numbers))
+
+                // Output:
+                // 1
+                // 2
+                // 3
+
+                // The next call:
+                print(next(numbers))
+                // raises:
+                StopIteration
+
+                // And you can also use it with a for loop:
+                numbers = Numbers(3)
+                for n in numbers:
+                    print(n)
+
+                // Output:
+                // 1
+                // 2
+                // 3
+            
+            `
                 }
             ]
         },
@@ -2135,10 +2491,122 @@ It lets you <b>install, upgrade, and manage</b> third-party Python libraries fro
         },
         {
             id: 1,
-            title: "What is Python?",
+            title: "[:]  slicing syntax",
             note: [
                 {
-                    text1: `What is Python?`,
+                    text1: `In Python, [:] is called slicing syntax. It is used to extract a portion of a sequence such as a list, string, tuple, or other sliceable objects.
+                    
+                    The general syntax is:
+<b> sequence[start:stop:step] </b>
+Think of it as:
+Start → where to begin
+Stop → where to stop (not included)
+Step → how many positions to move each time
+
+<b>1. Basic [:] </b>
+Suppose:
+numbers = [10, 20, 30, 40, 50]
+
+If you do:
+numbers[:]
+You get:
+[10, 20, 30, 40, 50]
+
+It means:
+"Take everything from the beginning to the end."
+So:
+numbers[:]
+is essentially a way to create a shallow copy of the list.
+
+<b>2. [start:stop]</b>
+numbers = [10, 20, 30, 40, 50]
+print(numbers[1:4])
+Output:
+[20, 30, 40]
+Why?
+Python indexes:
+Index:    0    1    2    3    4
+          ↓    ↓    ↓    ↓    ↓
+Value:   10   20   30   40   50
+
+[1:4] means:
+<b>Start at index 1</b>
+<b>Stop before index 4</b>
+
+Therefore:
+20, 30, 40
+
+<b>3. [start:]</b>
+If you don't provide the stop:
+numbers[2:]
+Output:
+[30, 40, 50]
+Meaning:
+Start at index 2 and continue until the end.
+
+<b>4. [:stop]</b>
+If you don't provide the start:
+numbers[:3]
+Output:
+[10, 20, 30]
+Meaning:
+Start from the beginning and stop before index 3.
+
+<b>5. [::step]</b>
+Now we have the third part: step.
+numbers = [10, 20, 30, 40, 50]
+print(numbers[::2])
+Output:
+[10, 30, 50]
+
+It takes every 2nd element.
+Think:
+10 → 20 → 30 → 40 → 50
+↑         ↑         ↑
+take      take      take
+
+<b>6. Reverse a list with [::-1]</b>
+This is one of the most important uses.
+numbers = [10, 20, 30, 40, 50]
+print(numbers[::-1])
+
+Output:
+[50, 40, 30, 20, 10]
+Why?
+[start : stop : step]
+   ↓      ↓      ↓
+   -      -     -1
+
+-1 means:
+Move backwards one position at a time.
+So:
+[::-1]
+means:
+Take everything, but move backwards.
+
+<b>7. Strings also support [:]</b>
+name = "Anand"
+print(name[:])
+Output:
+Anand
+You can also do:
+print(name[1:4])
+Output:
+nan
+And:
+print(name[::-1])
+Output:
+dnanA
+
+<b>8. Very important: [:] vs [::] vs [::-1]</b>
+These may look confusing initially.
+<b>[:]</b>	Everything
+<b>[start:]</b>	Start → end
+<b>[:stop]</b>	Beginning → stop
+<b>[start:stop]</b>	Start → stop
+<b>[::2]</b>	Everything, every 2nd element
+<b>[::-1]</b>	Everything in reverse
+`,
                     code1: ``
                 }
             ]
@@ -2776,22 +3244,484 @@ print(result)
         {
             id: 1,
             section: `Tuples`,
-            title: "What is Python?",
+            title: "Tuples in Python",
             note: [
                 {
-                    text1: `What is Python?`,
-                    code1: ``
+                    text1: `<b>What is a Tuple?</b>
+                    A tuple is an ordered collection of values in Python. Tuples are similar to lists, but they are <b>immutable</b>, which means their items cannot be changed after the tuple is created.
+
+                    <b>Key features</b>
+                    -> Ordered: Items keep their position and can be accessed by index.
+                    -> Immutable: Items cannot be added, removed, or replaced.
+                    -> Heterogeneous: A tuple can contain different data types.
+                    -> Allows duplicates: The same value can appear more than once.
+                    -> Iterable: You can loop through its items.
+
+                    <b>Creating tuples</b>
+                    Tuples are usually written with parentheses, but the comma is what creates a tuple. An empty tuple is written as <b>()</b>. A one-item tuple needs a trailing comma: <b>(10,)</b>.
+
+                    <b>When should you use a tuple?</b>
+                    Use a tuple for a fixed collection of related values, such as coordinates, database records, or function results. Since tuples cannot be changed, they are useful for protecting data from accidental modification. A tuple containing only hashable values can also be used as a dictionary key or as a set item.
+
+                    <b>Tuple methods</b>
+                    Tuples have only two common methods: <b>count()</b>, which counts matching values, and <b>index()</b>, which returns the position of the first matching value. Other operations, such as sorting or appending, require creating a new object or converting the tuple to a list.
+
+                     <a href="https://github.com/anand-developer01/python-programs/blob/main/tuple.py" target="_blank">tuple examples</a>
+                    `,
+                    code1: `// ------------ Ex : 1 - Creating tuples ------------
+                    empty_tuple = ()
+numbers = (10, 20, 30)
+mixed_tuple = (1, "Python", True, 3.14)
+
+print(numbers)
+print(type(numbers))  # <class 'tuple'>
+
+// A one-item tuple needs a comma.
+one_item_tuple = (10,)
+not_a_tuple = (10)
+print(type(one_item_tuple))  # <class 'tuple'>
+print(type(not_a_tuple))     # <class 'int'>
+
+
+// ------------ Ex : 2 - Indexing and slicing ------------
+colors = ("red", "green", "blue", "yellow")
+
+print(colors[0])    # red
+print(colors[-1])   # yellow
+print(colors[1:3])  # ('green', 'blue')
+print(colors[::-1]) # ('yellow', 'blue', 'green', 'red')
+
+
+// ------------ Ex : 3 - Tuples are immutable ------------
+point = (10, 20)
+
+// point[0] = 100
+// TypeError: 'tuple' object does not support item assignment
+
+// Convert to a list when a change is required.
+point_as_list = list(point)
+point_as_list[0] = 100
+point = tuple(point_as_list)
+print(point)  # (100, 20)
+
+
+// ------------ Ex : 4 - Tuple packing and unpacking ------------
+// Packing: Python groups the values into a tuple.
+user = "Anand", 36, "Developer"
+print(user)  # ('Anand', 36, 'Developer')
+
+// Unpacking: assign each item to a variable.
+name, age, role = user
+print(name)
+print(age)
+print(role)
+
+// Extended unpacking with *
+first, *middle, last = (1, 2, 3, 4, 5)
+print(first)   # 1
+print(middle)  # [2, 3, 4]
+print(last)    # 5
+
+
+// ------------ Ex : 5 - Looping and membership ------------
+languages = ("Python", "JavaScript", "Java")
+
+for language in languages:
+    print(language)
+
+print("Python" in languages)  # True
+print("C++" not in languages) # True
+
+
+// ------------ Ex : 6 - Tuple methods ------------
+values = (10, 20, 10, 30, 10)
+
+print(values.count(10))  # 3
+print(values.index(30))  # 3
+print(len(values))       # 5
+
+
+// ------------ Ex : 7 - Nested tuples ------------
+coordinates = ((0, 0), (10, 20), (30, 40))
+print(coordinates[1])       # (10, 20)
+print(coordinates[1][0])    # 10
+
+
+// ------------ Ex : 8 - Returning multiple values ------------
+def get_user():
+    return "Anand", "anand@example.com"
+
+user_name, email = get_user()
+print(user_name)
+print(email)
+
+
+// ------------ Ex : 9 - Tuple as a dictionary key ------------
+locations = {
+    (17.3850, 78.4867): "Hyderabad",
+    (12.9716, 77.5946): "Bengaluru"
+}
+
+print(locations[(17.3850, 78.4867)])  # Hyderabad
+
+
+// ------------ Ex : 10 - Convert between list and tuple ------------
+items = ["pen", "book", "bag"]
+items_tuple = tuple(items)
+items_list = list(items_tuple)
+
+print(items_tuple)  # ('pen', 'book', 'bag')
+print(items_list)   # ['pen', 'book', 'bag']`
                 }
             ]
         },
         {
             id: 1,
             section: `Sets`,
-            title: "What is Python?",
+            title: "Sets in Python",
             note: [
                 {
-                    text1: `What is Python?`,
-                    code1: ``
+                    text1: `<b>What is a Set?</b>
+                    A set is an unordered collection of <b>unique</b> values in Python. Sets are useful when you need to remove duplicate values or perform mathematical operations such as union, intersection, and difference.
+
+                    <b>Key features</b>
+                    -> Unordered: Sets do not store items by index, so indexing and slicing are not supported.
+                    -> Unique: Duplicate values are automatically removed.
+                    -> Mutable: You can add or remove items after creating a set.
+                    -> Iterable: You can loop through the values.
+                    -> Elements must be hashable: Numbers, strings, and tuples can be set items, but lists and dictionaries cannot.
+
+                    <b>Creating sets</b>
+                    Use curly braces with values, such as <b>{1, 2, 3}</b>. An empty set must be created with <b>set()</b> because <b>{}</b> creates an empty dictionary. Use a comma-separated sequence inside <b>set()</b> to remove duplicates from a list or string.
+
+                    <b>Set operations</b>
+                    -> Union: all values from both sets.
+                    -> Intersection: values common to both sets.
+                    -> Difference: values in the first set but not the second.
+                    -> Symmetric difference: values in either set, but not in both.
+
+                    <b>When should you use a set?</b>
+                    Use a set for membership checks, removing duplicate data, comparing groups, and finding common or different values. Sets are generally faster than lists for checking whether an item exists.
+
+                    <a href="https://github.com/anand-developer01/python-programs/blob/main/set.py" target="_blank">set examples</a>
+                    `,
+                    code1: `// ------------ Ex : 1 - Creating sets ------------
+                    numbers = {1, 2, 3, 4}
+fruits = {"apple", "banana", "orange"}
+mixed_set = {1, "Python", 3.14, True}
+
+print(numbers)
+print(type(numbers))  # <class 'set'>
+
+// An empty set must use set().
+empty_set = set()
+empty_dictionary = {}
+print(type(empty_set))        # <class 'set'>
+print(type(empty_dictionary)) # <class 'dict'>
+
+
+// ------------ Ex : 2 - Duplicate values are removed ------------
+values = {1, 2, 2, 3, 3, 3, 4}
+print(values)  # {1, 2, 3, 4}
+
+names = ["Anand", "Ravi", "Anand", "Meena"]
+unique_names = set(names)
+print(unique_names)  # {'Anand', 'Ravi', 'Meena'}
+
+
+// ------------ Ex : 3 - Adding items ------------
+skills = {"Python", "JavaScript"}
+
+skills.add("SQL")
+skills.update(["React", "Docker"])
+print(skills)
+
+
+// ------------ Ex : 4 - Removing items ------------
+colors = {"red", "green", "blue"}
+
+colors.remove("green")   # Raises KeyError if the value is missing.
+colors.discard("yellow") # Does not raise an error if the value is missing.
+removed_color = colors.pop() # Removes and returns an arbitrary item.
+print(colors)
+print(removed_color)
+
+colors.clear()
+print(colors)  # set()
+
+
+// ------------ Ex : 5 - Membership checks ------------
+allowed_roles = {"admin", "editor", "viewer"}
+
+print("admin" in allowed_roles)  # True
+print("guest" in allowed_roles)  # False
+print("guest" not in allowed_roles) # True
+
+
+// ------------ Ex : 6 - Union ------------
+frontend = {"HTML", "CSS", "JavaScript"}
+backend = {"Python", "SQL", "Docker"}
+
+all_skills = frontend | backend
+print(all_skills)
+print(frontend.union(backend))
+
+
+// ------------ Ex : 7 - Intersection ------------
+team_a = {"Python", "SQL", "Git"}
+team_b = {"Python", "Docker", "Git"}
+
+common_skills = team_a & team_b
+print(common_skills)  # {'Python', 'Git'}
+print(team_a.intersection(team_b))
+
+
+// ------------ Ex : 8 - Difference ------------
+only_in_team_a = team_a - team_b
+only_in_team_b = team_b - team_a
+
+print(only_in_team_a)  # {'SQL'}
+print(only_in_team_b)  # {'Docker'}
+print(team_a.difference(team_b))
+
+
+// ------------ Ex : 9 - Symmetric difference ------------
+different_skills = team_a ^ team_b
+print(different_skills)  # {'SQL', 'Docker'}
+print(team_a.symmetric_difference(team_b))
+
+
+// ------------ Ex : 10 - Subset and superset ------------
+small_set = {1, 2}
+large_set = {1, 2, 3, 4}
+
+print(small_set.issubset(large_set))   # True
+print(large_set.issuperset(small_set)) # True
+print(small_set <= large_set)          # True
+print(large_set >= small_set)          # True
+
+
+// ------------ Ex : 11 - Looping through a set ------------
+languages = {"Python", "JavaScript", "Java"}
+
+for language in languages:
+    print(language)
+
+// Set order is not guaranteed, so do not rely on the output order.
+for language in sorted(languages):
+    print(language)
+
+
+// ------------ Ex : 12 - Set methods ------------
+numbers = {1, 2, 3}
+
+print(len(numbers))       # 3
+print(numbers.copy())     # {1, 2, 3}
+print(numbers.isdisjoint({4, 5})) # True
+
+
+// ------------ Ex : 13 - Hashable and unhashable values ------------
+valid_set = {(1, 2), "Python", 10}
+print(valid_set)
+
+// invalid_set = {[1, 2], "Python"}
+// TypeError: unhashable type: 'list'
+
+
+// ------------ Ex : 14 - Practical example: common users ------------
+newsletter_users = {"anand", "ravi", "meena"}
+event_users = {"ravi", "meena", "suresh"}
+
+print(newsletter_users & event_users) # Users in both groups.
+print(newsletter_users | event_users) # Users in either group.
+print(event_users - newsletter_users) # New event users.
+
+
+// ------------ Ex : 15 - Convert a set back to a list ------------
+unique_numbers = {4, 1, 3, 2}
+sorted_numbers = sorted(unique_numbers)
+numbers_list = list(unique_numbers)
+
+print(sorted_numbers) # [1, 2, 3, 4]
+print(numbers_list)   # List order is not guaranteed.
+
+
+// ------------ Ex : 16 - Set comprehension ------------
+even_squares = {number * number for number in range(1, 6) if number % 2 == 0}
+print(even_squares)  # {4, 16}`
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "Set comprehension",
+            note: [
+                {
+                    text1: `Set comprehension is a concise way to create a set using a <b>for</b> loop, optionally with an <b>if</b> condition.
+                    
+                    <b>Systex</b>:
+                    {expression for item in iterable}
+                    With a condition:
+                    {expression for item in iterable if condition}
+
+                    The important difference is the <b>{}</b> syntax and the fact that the result is a <b>set</b>, so duplicate values are automatically removed.
+                    `,
+                    code1: `// ------------------ Without comprehension: ------------
+                    numbers = [1, 2, 3, 4, 5]
+                    result = set()
+                    for num in numbers:
+                        result.add(num * 2)
+                    print(result)
+                    // Output:
+                    // {2, 4, 6, 8, 10}
+
+                    // --------------- Using set comprehension: --------------
+                    numbers = [1, 2, 3, 4, 5]
+                    result = {num * 2 for num in numbers}
+                    print(result)
+
+                    // Output:
+                    // {2, 4, 6, 8, 10}
+                    // So:
+                    {num * 2 for num in numbers}
+                    // means:
+                    // For every \`num\` in \`numbers\`, calculate \`num * 2\` and put the result into a set.
+
+                    // -------------- 3. Duplicate Values ---------
+// This is where set comprehension becomes particularly useful.
+
+numbers = [1, 2, 2, 3, 3, 4, 5, 5]
+result = {num for num in numbers}
+print(result)
+// Output:
+// {1, 2, 3, 4, 5}
+
+// Duplicates are automatically removed because a set cannot contain duplicate elements.
+// You can simplify this even further:
+result = set(numbers)
+// But set comprehension becomes more useful when you transform or filter values.
+
+// --------------  4. Set Comprehension with if -----------------
+
+Example: get only even numbers.
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = {num for num in numbers if num % 2 == 0}
+print(even_numbers)
+
+// Output:
+// {2, 4, 6}
+
+// Here:
+{num for num in numbers if num % 2 == 0}
+// can be read as:
+// Take num from numbers if num is even, and add it to the set.
+
+// --------------  5. Transformation + Condition ----------------
+// You can transform the value as well.
+numbers = [1, 2, 3, 4, 5, 6]
+result = {num * 10 for num in numbers if num % 2 == 0}
+print(result)
+// Output:
+// {20, 40, 60}
+
+// Break it down:
+{num * 10 for num in numbers if num % 2 == 0}
+
+
+// Part	Meaning
+// num * 10	Expression/result
+// for num in numbers	Iterate through numbers
+// if num % 2 == 0	Keep only even numbers
+// { ... }	Create a set
+
+// -------- 6. Set Comprehension with Strings ------------
+name = "programming"
+letters = {char for char in name}
+print(letters)
+
+// Output could be:
+// {'p', 'r', 'o', 'g', 'a', 'm', 'i', 'n'}
+
+// Notice that repeated characters such as m, g, and r appear only once.
+
+// ---------- 7. Get Unique Even Numbers -----------------
+numbers = [1, 2, 2, 3, 4, 4, 6, 6, 7, 8]
+result = {num for num in numbers if num % 2 == 0}
+print(result)
+
+// Output:
+// {2, 4, 6, 8}
+// This is a very common interview-style example.
+
+// ------------- 8. Set Comprehension vs List Comprehension -------------
+// List comprehension
+result = [x * 2 for x in numbers]
+// Result:
+// [2, 4, 4, 6, 8]
+
+// Set comprehension
+result = {x * 2 for x in numbers}
+// Result:
+// {2, 4, 6, 8}
+
+// Main difference:
+// [] → List comprehension
+// {} → Set comprehension
+
+// But remember:
+
+{x for x in numbers}
+is a set comprehension, whereas:
+{x: x for x in numbers}
+is a dictionary comprehension.
+
+// ------------- 9. Nested for in Set Comprehension -------------------
+// You can also use multiple for loops.
+result = {x * y for x in [1, 2, 3] for y in [10, 20]}
+print(result)
+// Output:
+// {10, 20, 30, 40, 60}
+
+// Equivalent normal loops:
+result = set()
+for x in [1, 2, 3]:
+    for y in [10, 20]:
+        result.add(x * y)
+
+
+// ------------- 10. Important Interview Point ----------------
+// A set comprehension:
+// Creates a set by applying an expression to each item of an iterable, optionally filtering items using a condition.
+
+// General pattern:
+{expression for item in iterable if condition}
+
+// For example:
+squares = {x * x for x in range(1, 6)}
+
+// Output:
+{1, 4, 9, 16, 25}
+
+// --------- Easy way to remember ---------
+// Think of it as:
+
+SET
+ ↓
+{ expression
+  for item in iterable
+  if condition
+}
+
+// So the three comprehension types you've been learning are:
+# List comprehension
+[x * 2 for x in numbers]
+
+# Set comprehension
+{x * 2 for x in numbers}
+
+# Dictionary comprehension
+{x: x * 2 for x in numbers}
+                    `
                 }
             ]
         },
@@ -3106,11 +4036,385 @@ for i in range(1, 10, 2):
         {
             id: 1,
             section: `File Handling`,
-            title: "What is Python?",
+            title: "File Handling",
             note: [
                 {
-                    text1: `What is Python?`,
-                    code1: ``
+                    text1: `In Python, the built-in function open() is used to open a file. It returns a file object, which has methods and attributes to read, write, and manipulate the file.
+
+    Syntax: <b>file_object = open(file_name, mode) </b>
+    
+    <b>'r':-	Read (Default)</b> : Opens a file for reading. Raises an error if the file does not exist.
+<b>'w' :-	Write</b> : Opens a file for writing. Creates a new file if it doesn't exist or truncates (overwrites) an existing file.
+<b>'a' :-	Append</b> : Opens a file for appending. Appends data at the end of the file without overwriting existing content. Creates a file if it doesn't exist.
+<b>'x' :-	Exclusive Creation</b> : Creates a new file. Fails if the file already exists.
+<b>'b' :-	Binary Mode</b> : Used for non-text files like images or executables (e.g., 'rb', 'wb').
+<b>'+' :-	Open for Updating</b> : Reading and writing (e.g., 'r+').
+
+<b>Best Practice</b>: Always close files after use to free up system resources, or better yet, use the with statement (context manager) which handles closing automatically.
+Python automatically closes the file.
+<b>2. Using the with Statement (Context Manager)</b>
+The with statement ensures that the file is properly closed as soon as the block of code inside it finishes executing, even if exceptions occur.
+
+<b>3. Reading Files</b>
+You can read the contents of a file using different methods depending on your needs:
+    <b>read(size)</b>: Reads the entire file (or up to size bytes).
+    <b>readline()</b>: Reads a single line from the file.
+    <b>readlines()</b>: Reads all lines and returns them as a list of strings.
+<b>4. Writing and Appending Data</b>
+    <b>write(string)</b>: Writes a string to the file.
+    <b>writelines(list_of_strings)</b>: Writes a list of strings to the file.
+    <b>file.close()</b>       # Close the file
+
+<b>5. Working with File Paths (pathlib)</b>
+For robust file and path manipulation across different operating systems (Windows, macOS, Linux), Python provides the modern pathlib module.
+    pathlib is Python's modern way to work with files and directories. It is usually preferred over os.path because the code is cleaner and more object-oriented.
+    <b>Import Path</b>
+    <b>from pathlib import Path</b>
+    <b>Create a path</b>:
+    file_path = Path("data/sample.txt")
+    print(file_path)
+    Output:
+    data/sample.txt
+
+    <b>Path.cwd()</b> : Returns the current working directory.
+<b>Path("file.txt")</b> : Creates a Path object representing the specified file or directory path.
+<b>path.exists()</b> : Checks whether the specified file or directory exists.
+<b>path.is_file()</b> : Checks whether the path points to a file.
+<b>path.is_dir()</b> : Checks whether the path points to a directory.
+<b>path.mkdir()</b> : Creates a new directory at the specified path.
+<b>path.read_text()</b> : Reads the entire contents of a text file and returns it as a string.
+<b>path.write_text()</b> : Writes a string to a text file. If the file already exists, its contents are replaced.
+<b>path.unlink()</b> : Deletes the file represented by the path.
+<b>path.iterdir()</b> : Returns an iterator containing the files and directories inside the specified directory.
+<b>path.glob("*.txt")</b> : Finds files and directories matching a pattern within the specified directory.
+<b>path.rglob("*.txt")</b> : Finds files and directories matching a pattern recursively, including subdirectories.
+<b>path.name</b> : Returns the name of the file or directory, including its extension.
+<b>path.stem</b> : Returns the file or directory name without its extension.
+<b>path.suffix</b> : Returns the file extension, including the dot, such as \`.txt\` or \`.pdf\`.
+<b>path.parent</b> : Returns the parent directory of the current path.
+`,
+                    code1: `// ---------  # Writing to a file using 'with' --------
+                with open("example.txt", "w") as file:
+                    file.write("Hello, World!\n")
+                    file.write("Python file handling is easy.")
+                    
+                    // --------- Write ---------
+with open("sample.txt", "w") as file:
+    file.write("Hello Python")
+
+// --------- Append ---------
+with open("sample.txt", "a") as file:
+    file.write("\nWelcome to AI")
+
+// --------- 4. Read a File ---------
+Read entire file
+with open("sample.txt", "r") as file:
+    print(file.read())
+
+// --------- Read one line ---------
+with open("sample.txt", "r") as file:
+    print(file.readline())
+
+// --------- Read all lines ---------
+with open("sample.txt", "r") as file:
+    print(file.readlines())
+// Output:
+// ['Hello\\n', 'Python\\n', 'AI']
+ 
+// --------- 5. Read Line by Line ---------
+with open("sample.txt", "r") as file:
+    for line in file:
+        print(line.strip())
+
+// --------- 6. Check if File Exists ---------
+import os
+if os.path.exists("sample.txt"):
+    print("File exists")
+else:
+    print("File not found")
+
+// --------- 7. Delete a File ---------
+import os
+if os.path.exists("sample.txt"):
+    os.remove("sample.txt")
+
+// --------- 8. Working with Binary Files ---------
+with open("image.jpg", "rb") as file:
+    data = file.read()
+
+// --------- 9. Exception Handling ---------
+try:
+    with open("sample.txt", "r") as file:
+        print(file.read())
+except FileNotFoundError:
+    print("File not found")
+
+// ----------- Working with File Paths (pathlib) ---------
+from pathlib import Path
+
+// # Define a path
+file_path = Path("example.txt")
+
+// # Check if file exists
+if file_path.exists():
+    print("File found!")
+    content = file_path.read_text()
+    print(content)
+else:
+    print("File does not exist.")
+
+
+
+
+
+
+    // 1. Import Path 
+from pathlib import Path
+// Create a path:
+file_path = Path("data/sample.txt")
+print(file_path)
+// Output:
+// data/sample.txt
+
+
+// 2. Current Directory
+from pathlib import Path
+current = Path.cwd()
+print(current)
+// cwd() = Current Working Directory
+// For example:
+// /home/anand/python-project
+
+// 3. Create a Directory
+from pathlib import Path
+folder = Path("data")
+folder.mkdir()
+
+// This creates:
+python-project/
+└── data/
+
+
+// Create parent directories
+folder = Path("data/documents/pdf")
+folder.mkdir(parents=True)
+// parents=True creates all missing directories.
+
+
+// 4. Check Whether Something Exists
+path = Path("data/sample.txt")
+print(path.exists())
+// Returns:
+// True
+// or
+// False
+
+// You can also check specifically:
+path.is_file()
+path.is_dir()
+
+
+// 5. Create and Write a File
+// Instead of:
+with open("sample.txt", "w") as file:
+    file.write("Hello Python")
+
+// You can use:
+from pathlib import Path
+file = Path("sample.txt")
+file.write_text("Hello Python")
+// Very convenient.
+
+
+
+// 6. Read a File
+from pathlib import Path
+file = Path("sample.txt")
+content = file.read_text()
+print(content)
+
+
+// 7. Append to a File
+// Path doesn't have a direct append_text() method.
+// You can do:
+file = Path("sample.txt")
+with file.open("a") as f:
+    f.write("\\nHello AI")
+
+
+// 8. Delete a File
+file = Path("sample.txt")
+file.unlink()
+unlink() = delete a file.
+
+
+
+// 9. List Files in a Directory
+// Suppose:
+project/
+├── data/
+│   ├── users.json
+│   ├── users.csv
+│   └── notes.txt
+
+// You can do:
+from pathlib import Path
+data = Path("data")
+for file in data.iterdir():
+    print(file)
+// Output:
+// data/users.json
+// data/users.csv
+// data/notes.txt
+
+
+// 10. Find Specific Files
+All .txt files
+for file in Path("data").glob("*.txt"):
+    print(file)
+// All JSON files
+for file in Path("data").glob("*.json"):
+    print(file)
+// Search recursively
+
+// If you have:
+
+data/
+├── file1.txt
+├── documents/
+│   └── file2.txt
+└── backup/
+    └── file3.txt
+
+// Use:
+for file in Path("data").rglob("*.txt"):
+    print(file)
+
+// Output:
+data/file1.txt
+data/documents/file2.txt
+data/backup/file3.txt
+// rglob() = recursive glob.
+
+
+
+// 11. File Name and Extension
+file = Path("documents/report.pdf")
+
+print(file.name)
+print(file.stem)
+print(file.suffix)
+
+// Output:
+// report.pdf
+// report
+// .pdf
+
+// So:
+name → report.pdf
+stem → report
+suffix → .pdf
+
+
+
+// 12. Parent Directory
+file = Path("documents/report.pdf")
+print(file.parent)
+// Output:
+// documents
+
+
+// 13. Joining Paths ⭐
+// This is one of the most useful features.
+// Instead of:
+path = "data" + "/" + "users" + "/" + "users.json"
+
+// Use:
+from pathlib import Path
+path = Path("data") / "users" / "users.json"
+print(path)
+
+// Output:
+// data/users/users.json
+// The / operator joins paths.
+
+// 14. Very Important Example
+Imagine your AI project has:
+ai-project/
+│
+├── data/
+│   ├── documents/
+│   │   ├── book.pdf
+│   │   └── notes.txt
+│   │
+│   └── users.json
+│
+└── main.py
+// You can manage everything using:
+
+from pathlib import Path
+
+BASE_DIR = Path("data")
+
+documents = BASE_DIR / "documents"
+
+print(documents.exists())
+
+for file in documents.iterdir():
+    print(file.name)
+
+// Output:
+// True
+// book.pdf
+// notes.txt
+
+
+// 15. pathlib vs os.path
+
+// Old style:
+import os
+
+path = os.path.join("data", "documents", "file.txt")
+
+if os.path.exists(path):
+    print("Exists")
+
+Modern style:
+
+from pathlib import Path
+
+path = Path("data") / "documents" / "file.txt"
+
+if path.exists():
+    print("Exists")
+
+// I recommend learning the pathlib approach.
+
+
+
+
+
+
+    // ------------ Working with File Paths (pathlib) ---------
+    from pathlib import Path
+
+path = Path("data/example.txt")
+
+print(path.name)      # example.txt
+print(path.stem)      # example
+print(path.suffix)    # .txt
+print(path.parent)    # data
+print(path.exists())  # True/False
+// ------------ Handling Exceptions -----------
+// When dealing with files, errors can occur (e.g., file not found, permission denied). Use try-except blocks to handle them gracefully.
+try:
+    with open("non_existent_file.txt", "r") as file:
+        print(file.read())
+except FileNotFoundError:
+    print("Error: The file was not found.")
+except IOError:
+    print("Error: An I/O error occurred.")
+    `
                 }
             ]
         },
@@ -4165,14 +5469,14 @@ print(Calculator.div(5, 2))
     `
                 }
             ]
-        },    
+        },
         {
             id: 1,
             title: "@classmethod",
             note: [
                 {
-                text1: ``,
-                code1: `class Emp:
+                    text1: ``,
+                    code1: `class Emp:
                             emp_count = 101
                             def __init__(self, name, salary, designation):
                                 self.name = name
@@ -4329,7 +5633,7 @@ print(dog2.get_species())     # All dogs belong to the species: Canis lupus
             title: "MRO (Method Resolution Order)",
             note: [
                 {
-                text1: `<b>MRO (Method Resolution Order)</b> is the order in which Python <b>looks up methods and attributes</b> when you call them on an object — especially when <b>multiple inheritance</b> is involved.
+                    text1: `<b>MRO (Method Resolution Order)</b> is the order in which Python <b>looks up methods and attributes</b> when you call them on an object — especially when <b>multiple inheritance</b> is involved.
                 
                 <b>Why is MRO important?</b>
 When a class inherits from multiple parent classes, the same method or attribute might be defined in more than one parent.
@@ -4363,7 +5667,7 @@ Why is <b>object</b> important?
 ✅ Output:
 [&lt;class &#39;__main__.A&#39;&gt;, &lt;class &#39;object&#39;&gt;]
                 `,
-                code1: `// ----------- Ex : 1 -----------
+                    code1: `// ----------- Ex : 1 -----------
         class A:
             def show(self):
                 print("A")
@@ -4386,6 +5690,90 @@ Why is <b>object</b> important?
 [&lt;class &#39;__main__.D&#39;&gt;, &lt;class &#39;__main__.B&#39;&gt;, &lt;class &#39;__main__.C&#39;&gt;, &lt;class &#39;__main__.A&#39;&gt;, &lt;class &#39;object&#39;&gt;]
 // D → B → C → A → object
 `,
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "Dependency Injection",
+            note: [
+                {
+                    text1: ` Dependency Injection means giving an object the dependencies it needs from outside, instead of creating those dependencies inside the object.
+
+                    Dependency Injection is a design pattern where an object's dependencies are provided from outside rather than being created by the object itself. It helps achieve loose coupling and improves testability and maintainability.
+                    
+                    This leads to loose coupling → easier testing → easier maintenance → easier replacement of implementations.
+                    
+                    <b>7. Types of Dependency Injection</b>
+                    There are three commonly discussed types:
+                    <b>1. Constructor Injection ⭐</b>
+                    Most common and recommended.
+                    class UserService:
+                        def __init__(self, database):
+                            self.database = database
+                    Dependency is passed through the constructor.
+
+                    <b>2. Setter/Property Injection</b>
+                    Dependency is assigned after object creation.
+                    class UserService:
+                        def set_database(self, database):
+                            self.database = database
+
+                    Usage:
+                    service = UserService()
+                    service.set_database(database)
+
+                    <b>3. Method Injection</b>
+                    Dependency is passed directly to a method.
+                    class UserService:
+                        def create_user(self, user, database):
+                            database.save(user)
+
+                    Usage:
+                    service = UserService()
+                    service.create_user("Anand", database)
+
+                    <a href="https://github.com/anand-developer01/python-programs/blob/main/DependencyInjection.py" target="_blank">Dependency Injection</a>
+                `,
+                    code1: `// --------------   -----------
+                    class MySQLDatabase:
+                    def save(self, user):
+                        print("Saving user to MySQL")
+
+
+                    class UserService:
+                        def __init__(self, database):
+                            self.database = database
+
+                        def create_user(self, user):
+                            self.database.save(user)
+                            
+                            database = MySQLDatabase()
+
+                    service = UserService(database)
+
+                    service.create_user("Anand")
+
+
+                    // -------- Real Example ---------
+                    class EmailService:
+                    def send(self, message):
+                        print("Sending email")
+
+
+                    class NotificationService:
+                        def __init__(self, email_service):
+                            self.email_service = email_service
+
+                        def notify(self, message):
+                            self.email_service.send(message)
+
+                    //We inject EmailService:
+
+            email_service = EmailService()
+            notification_service = NotificationService(email_service)
+            notification_service.notify("Welcome Anand")
+`
                 }
             ]
         },
@@ -4710,6 +6098,477 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 `
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "**try / except",
+            note: [
+                {
+                    text1: `Exception handling is used when your program encounters an error while running.
+                    
+                    The try...except block in Python is a control flow structure used to intercept runtime errors, preventing your program from crashing abruptly. When an error occurs inside the guarded section, Python stops normal execution and jumps to the handling block.
+
+    <b>Syntax Components</b>
+    <b>try</b>: Houses the risky code that has the potential to raise an exception.
+    <b>except</b>: Captures specific error types and executes fallback logic when an exception is triggered.
+    <b>else</b>: Runs only if the try block executes successfully without raising any exceptions.
+    <b>finally</b>: Executes unconditionally at the end, making it ideal for cleanup tasks like closing files or database connections.
+    
+    <b>For example:</b>
+num = int(input("Enter a number: "))
+print(10 / num)
+
+If the user enters:
+0
+Python raises:
+ZeroDivisionError: division by zero
+<b>Exception handling</b> lets a Python program respond to runtime errors without stopping unexpectedly.
+
+<b>1. Basic try / except</b>
+The basic syntax is:
+<span style="color:#ac4561">try:
+    # code that might cause an error
+except:
+    # code to execute if an error occurs</span>
+
+Example:
+<span style="color:#ac4561">try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+    print(result)
+
+except:
+    print("Something went wrong")</span>
+
+If the user enters <span style="color:#ac4561">2</span>, the output is <span style="color:#ac4561">5.0</span>.
+If the user enters <span style="color:#ac4561">0</span> or <span style="color:#ac4561">abc</span>, the output is <span style="color:#ac4561">Something went wrong</span>.
+
+Two different exceptions can occur:
+<span style="color:#ac4561">ValueError
+ZeroDivisionError</span>
+
+<b>2. Catching a specific exception</b>
+It is better to specify which exception you want to handle:
+<span style="color:#ac4561">try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+    print(result)
+
+except ValueError:
+    print("Please enter a valid number")
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")</span>
+
+Input <span style="color:#ac4561">abc</span> produces <span style="color:#ac4561">Please enter a valid number</span>.
+Input <span style="color:#ac4561">0</span> produces <span style="color:#ac4561">Cannot divide by zero</span>.
+Input <span style="color:#ac4561">5</span> produces <span style="color:#ac4561">2.0</span>.
+
+<b>3. Why specify the exception?</b>
+Using a bare <span style="color:#ac4561">except:</span> can hide programming bugs:
+<span style="color:#ac4561">try:
+    num = int(input("Enter number: "))
+    result = 10 / num
+    print(resultt)   # typo
+
+except:
+    print("Error")</span>
+
+The actual problem is <span style="color:#ac4561">NameError</span>, but the bare handler hides it. Prefer a specific handler such as <span style="color:#ac4561">except ValueError:</span> whenever possible.
+
+<b>4. Accessing the exception object</b>
+Use <span style="color:#ac4561">as</span> to store the exception in a variable:
+<span style="color:#ac4561">try:
+    num = int("abc")
+
+except ValueError as error:
+    print(error)
+
+# Output: invalid literal for int() with base 10: 'abc'</span>
+
+<b>5. Handling multiple exceptions together</b>
+Use a tuple when the same logic applies to multiple exception types:
+<span style="color:#ac4561">try:
+    num = int(input("Enter number: "))
+    print(10 / num)
+
+except (ValueError, ZeroDivisionError):
+    print("Invalid operation")</span>
+
+<b>6. try / except / else</b>
+The <span style="color:#ac4561">else</span> block executes only when no exception occurs:
+<span style="color:#ac4561">try:
+    num = int(input("Enter number: "))
+    result = 10 / num
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+else:
+    print("Result:", result)</span>
+
+The flow is:
+<span style="color:#ac4561">try
+ │
+ ├── error → except
+ │
+ └── no error → else</span>
+
+<b>7. try / except / finally</b>
+The <span style="color:#ac4561">finally</span> block always executes, whether an exception occurs or not:
+<span style="color:#ac4561">try:
+    num = int(input("Enter a number: "))
+    print(10 / num)
+
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+
+finally:
+    print("Program finished")</span>
+
+<b>8. Complete structure</b>
+<span style="color:#ac4561">try:
+    # risky code
+
+except SomeException:
+    # handle error
+
+else:
+    # executes when no error
+
+finally:
+    # always executes</span>
+
+<b>9. Real-world examples</b>
+File operations, API calls, database operations, network requests, and LLM calls can all fail:
+<span style="color:#ac4561">try:
+    file = open("data.txt")
+    data = file.read()
+
+except FileNotFoundError:
+    print("File does not exist")
+
+finally:
+    print("Finished")
+
+try:
+    response = model.generate(prompt)
+except TimeoutError:
+    print("Model request timed out")</span>
+
+<b>Important:</b> an exception is not the same as a syntax error.
+<span style="color:#ac4561">print("Hello"</span> causes a <span style="color:#ac4561">SyntaxError</span> because Python cannot parse the code.
+<span style="color:#ac4561">print(10 / 0)</span> is valid syntax but raises the runtime exception <span style="color:#ac4561">ZeroDivisionError</span>.
+`,
+                    code1: `// The basic syntax is:
+            try:
+                # code that might cause an error
+            except:
+                # code to execute if an error occurs
+                
+                // ------------ Ex : 1 ----------
+            try:
+                num = int(input("Enter a number: "))
+                result = 10 / num
+                print(result)
+
+            except:
+                print("Something went wrong")`
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "`raise` in Python",
+            note: [
+                {
+                    text1: `The <b>raise</b> keyword in Python is used to explicitly trigger an exception (an error) during the execution of a program. When a <b>raise</b> statement is encountered, normal program flow stops, and Python looks for a matching <b>try...except</b> block to handle the error.
+
+<b>Key Use Cases</b>
+-> <b>Enforcing conditions:</b> Stop code execution if an input or state is invalid, such as when a positive number is required but a negative number is provided.
+-> <b>Reraising exceptions:</b> Catch an error, log it or perform cleanup, and pass the same error up the call stack using a bare <b>raise</b>.
+-> <b>Custom errors:</b> Raise user-defined exception classes that inherit from Python's built-in <b>Exception</b> class.
+
+<b>1. Enforcing conditions</b>
+Use <span style="color:#ac4561">raise</span> when you want to stop execution because a value or state is invalid.
+<span style="color:#ac4561">age = -5
+
+if age &lt; 0:
+    raise ValueError("Age cannot be negative")</span>
+
+Here, we are saying: <b>"This value is invalid, so don't continue."</b> This is commonly used for <b>input validation</b>.
+
+<b>2. Reraising exceptions</b>
+Sometimes you catch an exception, do something with it, such as logging, and then send the same exception upward.
+<span style="color:#ac4561">try:
+    result = 10 / 0
+
+except ZeroDivisionError:
+    print("Logging the error...")
+    raise</span>
+
+The important part is:
+<span style="color:#ac4561">raise</span>
+
+A bare <span style="color:#ac4561">raise</span> inside <span style="color:#ac4561">except</span> means: <b>"Raise the exact same exception again."</b> It preserves the original exception and traceback.
+
+<b>3. Custom errors</b>
+You can create your own exception class by inheriting from <span style="color:#ac4561">Exception</span>.
+<span style="color:#ac4561">class InvalidAgeError(Exception):
+    pass</span>
+
+Then raise it:
+<span style="color:#ac4561">age = 15
+
+if age &lt; 18:
+    raise InvalidAgeError("Age must be 18 or above")</span>
+
+Python raises your custom exception:
+<span style="color:#ac4561">InvalidAgeError: Age must be 18 or above</span>
+
+This is useful when you want errors that are specific to your application's business logic.
+
+<b>In short</b>
+<span style="color:#ac4561">raise
+ │
+ ├── Validate → reject invalid values
+ │
+ ├── Reraise → pass an existing exception upward
+ │
+ └── Custom → raise your application's own errors</span>
+
+<b>raise</b> is used when <b>you want to manually create or trigger an exception</b>.
+raise is a keyword in Python that allows you to explicitly trigger an exception. It is commonly used for input validation, enforcing constraints, or signaling that an error condition has occurred. When raise is called, it interrupts the normal flow of the program and transfers control to the nearest enclosing exception handler.
+
+raise is a Python keyword used to manually trigger an exception when a specific condition occurs.
+
+<b>1. Basic example</b>
+<span style="color:#ac4561">age = 15
+
+if age &lt; 18:
+    raise ValueError("Age must be 18 or above")</span>
+
+Output:
+<span style="color:#ac4561">ValueError: Age must be 18 or above</span>
+
+Here, Python did not discover an unexpected error. <b>We intentionally raised the exception.</b>
+
+<b>2. raise with try / except</b>
+<span style="color:#ac4561">try:
+    age = 15
+
+    if age &lt; 18:
+        raise ValueError("You are not eligible")
+
+except ValueError as error:
+    print(error)</span>
+
+Output:
+<span style="color:#ac4561">You are not eligible</span>
+
+The flow is:
+<span style="color:#ac4561">condition
+   ↓
+raise ValueError
+   ↓
+except ValueError
+   ↓
+handle the error</span>
+
+<b>3. Why do we need raise?</b>
+Use <span style="color:#ac4561">raise</span> to validate input and stop an operation that cannot continue:
+<span style="color:#ac4561">def withdraw(balance, amount):
+
+    if amount &gt; balance:
+        raise ValueError("Insufficient balance")
+
+    return balance - amount
+
+print(withdraw(1000, 1500))</span>
+
+Instead of returning an incorrect value, the function tells the caller:
+<span style="color:#ac4561">ValueError: Insufficient balance</span>
+
+This is extremely useful for <b>validation</b>.
+
+<b>4. Re-raising an exception</b>
+The bare <span style="color:#ac4561">raise</span> inside an <span style="color:#ac4561">except</span> block raises the same exception again:
+<span style="color:#ac4561">try:
+    num = int("abc")
+
+except ValueError:
+    print("Logging the error")
+    raise</span>
+
+Output:
+<span style="color:#ac4561">Logging the error
+ValueError: invalid literal for int() with base 10: 'abc'</span>
+
+This pattern is useful when you want to log or perform an action and then let the error propagate to another layer.
+
+<b>5. raise vs except</b>
+Think of them as opposites:
+<span style="color:#ac4561">raise
+  ↓
+"I am creating or triggering an error"
+
+except
+  ↓
+"I am catching or handling an error"</span>
+
+Example:
+<span style="color:#ac4561">def divide(a, b):
+    if b == 0:
+        raise ZeroDivisionError("b cannot be zero")
+
+    return a / b
+
+try:
+    print(divide(10, 0))
+
+except ZeroDivisionError as error:
+    print(error)</span>
+
+Output:
+<span style="color:#ac4561">b cannot be zero</span>
+
+<a href="https://github.com/anand-developer01/python-programs/blob/main/raise.py" target="_blank">raise Examples</a>
+`,
+                    code1: ``
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "Custom Exceptions in Python",
+            note: [
+                {
+                    text1: `A <b>custom exception</b> is a user-defined exception that you create for a specific situation in your application.
+
+Python already provides built-in exceptions such as <span style="color:#ac4561">ValueError</span>, <span style="color:#ac4561">TypeError</span>, and <span style="color:#ac4561">IndexError</span>. But sometimes these do not clearly describe the problem in your application. That is when you create a custom exception.
+
+<b>1. Creating a Custom Exception</b>
+A custom exception is usually created by inheriting from Python's built-in <span style="color:#ac4561">Exception</span> class.
+<span style="color:#ac4561">class InsufficientBalanceError(Exception):
+    pass</span>
+
+Here:
+<span style="color:#ac4561">InsufficientBalanceError</span> is our custom exception.
+<span style="color:#ac4561">Exception</span> is the parent or base class.
+<span style="color:#ac4561">pass</span> means no additional behavior is needed.
+
+<b>2. Raising a Custom Exception</b>
+Use <span style="color:#ac4561">raise</span> to throw your custom exception.
+<span style="color:#ac4561">class InsufficientBalanceError(Exception):
+    pass
+
+balance = 500
+withdraw = 1000
+
+if withdraw &gt; balance:
+    raise InsufficientBalanceError("Insufficient balance")
+
+print("Withdrawal successful")</span>
+
+Output:
+<span style="color:#ac4561">InsufficientBalanceError: Insufficient balance</span>
+
+When Python reaches <span style="color:#ac4561">raise</span>, normal execution stops and the exception is thrown.
+
+<b>3. Handling a Custom Exception</b>
+Catch it using <span style="color:#ac4561">try-except</span>:
+<span style="color:#ac4561">class InsufficientBalanceError(Exception):
+    pass
+
+try:
+    balance = 500
+    withdraw = 1000
+
+    if withdraw &gt; balance:
+        raise InsufficientBalanceError("Insufficient balance")
+
+except InsufficientBalanceError as error:
+    print(error)</span>
+
+Output:
+<span style="color:#ac4561">Insufficient balance</span>
+
+<b>4. Custom Exception with Additional Data</b>
+A custom exception can also contain additional information.
+<span style="color:#ac4561">class InsufficientBalanceError(Exception):
+    def __init__(self, balance, amount):
+        self.balance = balance
+        self.amount = amount
+
+        super().__init__(
+            f"Balance is {balance}, but withdrawal amount is {amount}"
+        )
+
+try:
+    balance = 500
+    withdraw = 1000
+
+    if withdraw &gt; balance:
+        raise InsufficientBalanceError(balance, withdraw)
+
+except InsufficientBalanceError as error:
+    print(error)</span>
+
+Output:
+<span style="color:#ac4561">Balance is 500, but withdrawal amount is 1000</span>
+
+The exception object stores:
+<span style="color:#ac4561">error.balance
+error.amount</span>
+
+<b>5. Real-World Example</b>
+Suppose you are building a login system. Instead of using a generic error:
+<span style="color:#ac4561">raise ValueError("Invalid login")</span>
+
+Create a meaningful exception:
+<span style="color:#ac4561">class InvalidCredentialsError(Exception):
+    pass</span>
+
+Then use it:
+<span style="color:#ac4561">def login(username, password):
+    if username != "admin" or password != "1234":
+        raise InvalidCredentialsError("Invalid username or password")
+
+    return "Login successful"
+
+try:
+    print(login("admin", "wrong"))
+
+except InvalidCredentialsError as error:
+    print(error)</span>
+
+Output:
+<span style="color:#ac4561">Invalid username or password</span>
+
+<b>Why use Custom Exceptions?</b>
+Custom exceptions make your code:
+-> <b>More readable:</b> The exception name explains the problem.
+-> <b>More specific:</b> You can catch one particular type of error.
+-> <b>Easier to maintain:</b> Business-specific errors are clearly separated.
+-> <b>Better for large applications:</b> Different parts of the application can define and handle their own errors.
+
+<b>Key Pattern</b>
+<span style="color:#ac4561">class MyCustomError(Exception):
+    pass
+
+try:
+    if some_condition:
+        raise MyCustomError("Something went wrong")
+
+except MyCustomError as error:
+    print(error)</span>
+
+<b>In short:</b> A custom exception is a user-defined exception created by inheriting from <span style="color:#ac4561">Exception</span>, allowing you to represent and handle application-specific errors clearly.
+
+<a href="https://github.com/anand-developer01/python-programs/blob/main/custom_exceptions.py" target="_blank">Custom Exceptions Examples</a>`,
+                    code1: ``
                 }
             ]
         },
@@ -5292,16 +7151,6 @@ asyncio.run(main())
         },
         {
             id: 1,
-            title: "topic",
-            note: [
-                {
-                    text1: `What is Python?`,
-                    code1: ``
-                }
-            ]
-        },
-        {
-            id: 1,
             section: `Networking`,
             title: "Networking",
             note: [
@@ -5389,6 +7238,29 @@ First, let's create a simple TCP server that listens for incoming connections an
 <b>DNS</b>	Translates names like google.com to IP addresses
 <b>CORS</b>	Security rule that restricts how websites from different origins communicate`,
                     code1: ``
+                }
+            ]
+        },
+        {
+            id: 1,
+            section: `Built-in functions`,
+            title: "isinstance()",
+            note: [
+                {
+                    text1: `The built-in isinstance() function in Python checks whether an object belongs to a specified class or a tuple of classes, returning a <b>boolean (True or False)</b>
+                    
+                    <span style="font-family: 'Courier New', monospace;">isinstance(object, classinfo)</span>
+    <b>object</b>: The item you want to check.
+    <b>classinfo</b>: A class, a type, or a tuple of classes and types.
+    </b>.
+    
+    <b>Key Characteristics</b>
+    <b>Inheritance Awareness</b>: Unlike comparing types directly with type(obj) == Class, isinstance() returns True if the object is an instance of a subclass of the specified class.
+
+    <b>Multiple Type Checking</b>: You can pass a tuple of classes to classinfo (e.g., isinstance(x, (int, float))), and it will return True if the object matches any type in the tuple.`,
+                    code1: `isinstance(object, classinfo)
+                    
+                    `
                 }
             ]
         },

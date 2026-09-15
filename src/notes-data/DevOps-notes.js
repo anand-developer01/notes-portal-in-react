@@ -4,7 +4,7 @@ const Links2 = 'spring-boot-notes'
 const Links3 = 'java-practice'
 const Links4 = 'vue3-projects'
 
-const DevOpsData = {
+export const DevOpsData = {
     DevOpsNotes: [
         {
             id: 1,

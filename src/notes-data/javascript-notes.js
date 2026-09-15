@@ -4,7 +4,7 @@ const Links2 = 'javascript-code-challenge'
 const Links3 = 'javascript-builtin-function'
 const Links4 = 'javascript-projects'
 
-const javascriptData = {
+export const javascriptData = {
   javascriptNote: [
     {
       id: 1,

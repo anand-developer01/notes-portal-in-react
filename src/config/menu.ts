@@ -5,8 +5,8 @@ export const COURSE_MENU = [
     icon: "☕",
   },
   {
-    title: "Spring Boot",
-    path: "/notes/spring",
+    title: "devops",
+    path: "/notes/devops",
     icon: "🌱",
   },
   {
@@ -15,13 +15,13 @@ export const COURSE_MENU = [
     icon: "⚛️",
   },
   {
-    title: "JavaScript",
+    title: "javascript",
     path: "/notes/javascript",
     icon: "🟨",
   },
   {
-    title: "TypeScript",
-    path: "/notes/typescript",
+    title: "Python",
+    path: "/notes/python",
     icon: "🔷",
   },
   {

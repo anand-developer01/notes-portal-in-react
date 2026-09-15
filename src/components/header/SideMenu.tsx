@@ -2,6 +2,9 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocation, useParams, Link } from "react-router-dom";
 import { javaData } from "../../notes-data/java-notes";
 import { reactData } from "../../notes-data/react-data";
+import { DevOpsData } from "../../notes-data/DevOps-notes";
+import { javascriptData } from "../../notes-data/javascript-notes";
+import { pythonData } from "../../notes-data/python-notes";
 
 type Props = {
   collapsed: boolean;
@@ -35,6 +38,9 @@ const SideMenu = ({
   const currentData = useMemo(() => {
     if (course === "java") return javaData.javaNote;
     if (course === "react") return reactData.reactNote;
+    if (course === "devops") return DevOpsData.DevOpsNotes;
+    if (course === "javascript") return javascriptData.javascriptNote;
+    if (course === "python") return pythonData.pythonNote;
     return [];
   }, [course]);
 
@@ -90,12 +96,12 @@ const SideMenu = ({
         </div>
       ))} */}
       {
-        currentData.map((topic) => {
+        currentData.map((topic, index) => {
           const slug = topic.title?.toLowerCase().replace(/[^\w\s]/g, "").replace(/\s+/g, "-") || "";
           const active = location.hash === `#${slug}`;
 
           return (
-            <div key={slug} style={{ marginBottom: 6 }}>
+            <div key={ index } style={{ marginBottom: 6 }}>
               <h3 style={{ margin: "0 0 6px 4px", fontSize: 12, fontWeight: 700, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.04em" }}>
                 {topic.section}
               </h3>
@@ -117,6 +123,7 @@ const SideMenu = ({
                   wordBreak: "break-word",
                   lineHeight: 1.4,
                   fontSize: 14,
+                  textAlign: "left",
                 }}
               >
                 {collapsed ? "•" : topic.title}
