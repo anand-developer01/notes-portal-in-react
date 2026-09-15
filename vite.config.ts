@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
-  base: '/s-maths/'   // 👈 ADD THIS LINE
+  base: '/notes-portal-in-react/'   // 👈 ADD THIS LINE
 })

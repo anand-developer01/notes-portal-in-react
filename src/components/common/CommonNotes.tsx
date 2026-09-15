@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import hljs from "highlight.js";
 import "highlight.js/styles/github-dark.css";
@@ -16,20 +16,27 @@ type NoteTopic = {
   note?: NoteItem[];
 };
 
-type CourseComponentProps = {
-  data: NoteTopic[];
-};
-
 const CommonNotes = ({ data }: { data: NoteTopic[] }) => {
   const { course } = useParams();
-  // console.log("course", course);
   const location = useLocation();
   const hash = location.hash.replace("#", "").toLowerCase();
+  const [isMobile, setIsMobile] = useState(false);
 
-  // console.log("hash", hash);
+  useEffect(() => {
+    const updateMobileMode = () => setIsMobile(window.innerWidth < 768);
+
+    updateMobileMode();
+    window.addEventListener("resize", updateMobileMode);
+
+    return () => window.removeEventListener("resize", updateMobileMode);
+  }, []);
+
   useEffect(() => {
     hljs.highlightAll();
   }, [hash, data]);
+
+  const outerPadding = isMobile ? "12px" : "24px";
+  const titlePadding = isMobile ? "8px 10px" : "14px 18px";
 
   console.log("data", data);
 
@@ -51,7 +58,7 @@ const CommonNotes = ({ data }: { data: NoteTopic[] }) => {
 
   if (!currentTopic) {
     return (
-      <div style={{ padding: "24px" }}>
+      <div style={{ padding: outerPadding }}>
         <div style={{ background: "linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%)", border: "1px solid #e2e8f0", borderRadius: 16, padding: "24px 28px", boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)" }}>
           <h2 style={{ margin: "0 0 8px", color: "#1f2937" }}>Welcome to the {course} documentation.</h2>
           <p style={{ margin: 0, color: "#64748b", lineHeight: 1.6 }}>Please select a topic from the side menu to get started.</p>
@@ -63,13 +70,13 @@ const CommonNotes = ({ data }: { data: NoteTopic[] }) => {
   const topicNotes = currentTopic.note ?? [];
 
   return (
-    <div style={{ padding: "24px" }}>
-      <div style={{ background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)", border: "1px solid #e5e7eb", borderRadius: 18, padding: 24, boxShadow: "0 12px 35px rgba(15, 23, 42, 0.08)" }}>
+    <div style={{ padding: outerPadding, background: "linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%)", borderRadius: 16, boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)" }}>
+      <div style={{padding: outerPadding , background: "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)", border: "1px solid #e5e7eb", borderRadius: 18, boxShadow: "0 12px 35px rgba(15, 23, 42, 0.08)" }}>
         <div
           style={{
             background: "linear-gradient(90deg, #2563eb 0%, #3b82f6 100%)",
             color: "#fff",
-            padding: "14px 18px",
+            padding: titlePadding,
             borderRadius: 12,
             marginBottom: 18,
             boxShadow: "0 8px 20px rgba(37, 99, 235, 0.2)",
@@ -96,7 +103,7 @@ const CommonNotes = ({ data }: { data: NoteTopic[] }) => {
                   background: "#ffffff",
                   border: "1px solid #e5e7eb",
                   borderRadius: 14,
-                  padding: "16px 18px",
+                  padding: titlePadding,
                   boxShadow: "0 6px 16px rgba(15, 23, 42, 0.04)",
                 }}
               >

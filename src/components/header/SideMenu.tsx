@@ -5,6 +5,7 @@ import { reactData } from "../../notes-data/react-data";
 import { DevOpsData } from "../../notes-data/DevOps-notes";
 import { javascriptData } from "../../notes-data/javascript-notes";
 import { pythonData } from "../../notes-data/python-notes";
+import { EnglishList } from "../../notes-data/english-notes";
 
 type Props = {
   collapsed: boolean;
@@ -34,7 +35,23 @@ const SideMenu = ({
 
   const closeMobile = () => setMobileOpen?.(false);
 
-  // Dynamically select data based on course param
+  const normalizeEnglishTopics = (data: unknown) => {
+    if (Array.isArray(data)) return data;
+
+    if (data && typeof data === "object") {
+      const entry = data as Record<string, unknown>;
+      const list = Array.isArray(entry.Structures)
+        ? entry.Structures
+        : Array.isArray(entry.topics)
+          ? entry.topics
+          : Object.values(entry).find(Array.isArray);
+
+      return Array.isArray(list) ? list : [];
+    }
+
+    return [];
+  };
+
   const currentData = useMemo(() => {
     if (course === "java") return javaData.javaNote;
     if (course === "react") return reactData.reactNote;
@@ -44,96 +61,97 @@ const SideMenu = ({
     return [];
   }, [course]);
 
-  // Group topics by section
-  // const groupedTopics = useMemo(() => {
-  //   const groups: Record<string, typeof currentData> = {};
-  //   currentData.forEach((item) => {
-  //     const section = item.section || "Basics";
-  //     if (!groups[section]) groups[section] = [];
-  //     groups[section].push(item);
-  //   });
-  //   return groups;
-  // }, [currentData]);
+  const englishTopics = useMemo(() => {
+    if (course !== "english") return [];
+    return normalizeEnglishTopics(EnglishList);
+  }, [course]);
 
-  const renderMenu = () => (
+  const renderDefaultMenu = () => (
     <div style={{ padding: "12px 10px", overflowY: "auto", flex: 1, background: "#f8fafc" }}>
-      {/* {Object.entries(groupedTopics).map(([section, topics]) => (
-        <div key={section} style={{ marginBottom: 22 }}>
-          {!collapsed && (
-            <div style={{ fontSize: 13, color: "#64748b", fontWeight: 700, marginBottom: 8, textTransform: "uppercase" }}>
-              {section}
-            </div>
-          )}
-          {topics.map((topic) => {
-            const slug = topic.title.toLowerCase().replace(/[^\w\s]/g, "").replace(/\s+/g, "-");
-            const active = location.hash === `#${slug}`;
+      {currentData.map((topic, index) => {
+        const slug = topic.title?.toLowerCase().replace(/[^\w\s]/g, "").replace(/\s+/g, "-") || "";
+        const active = location.hash === `#${slug}`;
 
-            return (
-              <Link
-                key={slug}
-                to={`/notes/${course}#${slug}`}
-                onClick={closeMobile}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding: "10px 14px",
-                  marginBottom: 6,
-                  borderRadius: 8,
-                  textDecoration: "none",
-                  background: active ? "#2563eb" : "transparent",
-                  color: active ? "#fff" : "#111827",
-                  fontWeight: active ? 600 : 500,
-                  transition: ".25s",
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                }}
-              >
-                {collapsed ? "•" : topic.title}
-              </Link>
-            );
-          })}
-        </div>
-      ))} */}
-      {
-        currentData.map((topic, index) => {
-          const slug = topic.title?.toLowerCase().replace(/[^\w\s]/g, "").replace(/\s+/g, "-") || "";
-          const active = location.hash === `#${slug}`;
-
-          return (
-            <div key={ index } style={{ marginBottom: 6 }}>
-              <h3 style={{ margin: "0 0 6px 4px", fontSize: 12, fontWeight: 700, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.04em" }}>
-                {topic.section}
-              </h3>
-              <Link
-                to={`/notes/${course}#${slug}`}
-                onClick={closeMobile}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  padding: "10px 12px",
-                  borderRadius: 8,
-                  textDecoration: "none",
-                  background: active ? "#2563eb" : "transparent",
-                  color: active ? "#fff" : "#111827",
-                  fontWeight: active ? 600 : 500,
-                  transition: ".2s ease",
-                  whiteSpace: "normal",
-                  overflowWrap: "anywhere",
-                  wordBreak: "break-word",
-                  lineHeight: 1.4,
-                  fontSize: 14,
-                  textAlign: "left",
-                }}
-              >
-                {collapsed ? "•" : topic.title}
-              </Link>
-            </div>
-          );
-        })
-      }
+        return (
+          <div key={index} style={{ marginBottom: 6 }}>
+            <h3 style={{ margin: "0 0 6px 4px", fontSize: 12, fontWeight: 700, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.04em", background: "#eeeeee" }}>
+              {topic.section}
+            </h3>
+            <Link
+              to={`/notes/${course}#${slug}`}
+              onClick={closeMobile}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                padding: "10px 12px",
+                borderRadius: 8,
+                textDecoration: "none",
+                background: active ? "#2563eb" : "transparent",
+                color: active ? "#fff" : "#111827",
+                fontWeight: active ? 600 : 500,
+                transition: ".2s ease",
+                whiteSpace: "normal",
+                overflowWrap: "anywhere",
+                wordBreak: "break-word",
+                lineHeight: 1.4,
+                fontSize: 14,
+                textAlign: "left",
+              }}
+            >
+              {collapsed ? "•" : topic.title}
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
+
+  const renderEnglishMenu = () => (
+    <div style={{ padding: "12px 10px", overflowY: "auto", flex: 1, background: "#f8fafc" }}>
+      {englishTopics.map((topic, index) => {
+        const title = (topic.title ?? topic.topic ?? `Topic ${index + 1}`) as string;
+        const slug = title
+          .trim()
+          .toLowerCase()
+          .replace(/[^a-z0-9\s-]/g, "")
+          .replace(/\s+/g, "-");
+        const active = location.hash === `#${slug}`;
+
+        return (
+          <div key={`${title}-${index}`} style={{ marginBottom: 8 }}>
+            <Link
+              to={`/notes/${course}#${slug}`}
+              onClick={closeMobile}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                padding: "10px 12px",
+                borderRadius: 8,
+                textDecoration: "none",
+                background: active ? "#2563eb" : "transparent",
+                color: active ? "#fff" : "#111827",
+                fontWeight: active ? 600 : 500,
+                transition: ".2s ease",
+                whiteSpace: "normal",
+                overflowWrap: "anywhere",
+                wordBreak: "break-word",
+                lineHeight: 1.4,
+                fontSize: 14,
+                textAlign: "left",
+              }}
+            >
+              {collapsed ? "•" : title}
+            </Link>
+          </div>
+        );
+      })}
+    </div>
+  );
+
+  const renderMenu = () => {
+    if (course === "english") return renderEnglishMenu();
+    return renderDefaultMenu();
+  };
 
   return (
     <>

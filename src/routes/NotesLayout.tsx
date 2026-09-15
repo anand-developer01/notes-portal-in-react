@@ -6,6 +6,8 @@ import { reactData } from "../notes-data/react-data";
 import { DevOpsData } from "../notes-data/DevOps-notes";
 import { javascriptData } from "../notes-data/javascript-notes";
 import { pythonData } from "../notes-data/python-notes";
+import { EnglishList } from "../notes-data/english-notes";
+import EnglishNotes from "../components/common/EnglishNotes";
 
 const NotesLayout = () => {
   const { course } = useParams();
@@ -17,7 +19,7 @@ const NotesLayout = () => {
 
       case "react":
         return <CommonNotes data={reactData.reactNote} />;
-      
+
       case "devops":
         return <CommonNotes data={DevOpsData.DevOpsNotes} />;
 
@@ -26,6 +28,9 @@ const NotesLayout = () => {
 
       case "python":
         return <CommonNotes data={pythonData.pythonNote} />;
+
+      case "english":
+        return <EnglishNotes data={EnglishList} />;
 
       default:
         return <div>Course not found</div>;

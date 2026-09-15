@@ -1,4 +1,4 @@
-const SubjectList = {
+export const EnglishList = {
     Structures: [
         {
             id: 1,
