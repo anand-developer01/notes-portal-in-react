@@ -119,6 +119,9 @@ const SideMenu = ({
 
         return (
           <div key={`${title}-${index}`} style={{ marginBottom: 8 }}>
+            <h3 style={{ margin: "0 0 6px 4px", fontSize: 12, fontWeight: 700, color: "#64748b", textTransform: "uppercase", letterSpacing: "0.04em", background: "#eeeeee" }}>
+              {topic.section}
+            </h3>
             <Link
               to={`/notes/${course}#${slug}`}
               onClick={closeMobile}

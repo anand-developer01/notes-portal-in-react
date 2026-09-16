@@ -2971,9 +2971,7 @@ export const EnglishList = {
                 }
             ],
         },
-    ],
-
-    Tense: [
+  
         {
             id: 1,
             section: "Tenses",
@@ -5552,48 +5550,5 @@ export const EnglishList = {
         },
 
     ],
-    // conditionalSentences: [
-    //     {
-    //         id: 1,
-    //         topic: "Conditional Sentences",
-    //         explain:'ఒక పని జరిగి ఉంటే, మరొక పని జరిగి ఉండేది అని చెప్పే సంధర్బములో ఈ Structure ని ఉపయోగిస్తారు',
-    //         formation:'If + Subject + had + past Participle - Subject + would have + past Participle',
-    //         content:[
-    //             {
-    //                 id: 1,
-    //                 eng: "If it had rained, you would have gotten wet",
-    //                 tel:'వర్షం పడితే, మీరు తడిసిపోయేవారు',
-    //             },
-    //             {
-    //                 id: 2,
-    //                 eng: "You would have gotten wet if it had rained",
-    //                 tel:'',
-    //             },
-    //             {
-    //                 id: 3,
-    //                 eng: "You would have passed your exam if you had worked harder",
-    //                 tel:'',
-    //             },                {
-    //                 id: 4,
-    //                 eng: "If you had worked harder, you would have passed your exam",
-    //                 tel:'',
-    //             },
-    //             {
-    //                 id: 5,
-    //                 eng: "I would have believed you if you hadn't lied to me before",
-    //                 tel:'',
-    //             },
-    //             {
-    //                 id: 6,
-    //                 eng: "If you hadn't lied to me before, I would have believed you",
-    //                 tel:'',
-    //             },
-    //             {
-    //                 id: 7,
-    //                 eng: '',
-    //                 tel:'',
-    //             }
-    //         ],
-    //     }
-    // ]
+    
 }

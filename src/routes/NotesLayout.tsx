@@ -1,4 +1,4 @@
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet, useLocation, useParams } from "react-router-dom";
 
 import { javaData } from "../notes-data/java-notes";
 import CommonNotes from "../components/common/CommonNotes";
@@ -11,6 +11,43 @@ import EnglishNotes from "../components/common/EnglishNotes";
 
 const NotesLayout = () => {
   const { course } = useParams();
+
+  // *************  ENGLISH NOTES STARTS ***********************
+  const location = useLocation();
+  const toSlug = (value = "") =>
+    value
+      .toLowerCase()
+      .trim()
+      .replace(/[^a-z0-9\s-]/g, "")
+      .replace(/\s+/g, "-");
+
+  const normalizeEnglishTopics = (data: unknown) => {
+    if (Array.isArray(data)) return data;
+
+    if (data && typeof data === "object") {
+      const candidate = data as Record<string, unknown>;
+      const list = Array.isArray(candidate.Structures)
+        ? candidate.Structures
+        : Array.isArray(candidate.topics)
+          ? candidate.topics
+          : Object.values(candidate).find(Array.isArray);
+
+      return Array.isArray(list) ? list : [];
+    }
+
+    return [];
+  };
+
+  const englishSlug = location.hash.replace("#", "").trim().toLowerCase();
+  const englishTopics = normalizeEnglishTopics(EnglishList);
+  const filteredEnglishTopics = englishSlug
+    ? englishTopics.filter((topic) => {
+        const title = String(topic.title ?? topic.topic ?? "");
+        return toSlug(title) === englishSlug;
+      })
+    : englishTopics;
+
+    // *************  ENGLISH NOTES END ***********************
 
   const renderNotes = () => {
     switch (course) {
@@ -30,7 +67,7 @@ const NotesLayout = () => {
         return <CommonNotes data={pythonData.pythonNote} />;
 
       case "english":
-        return <EnglishNotes data={EnglishList} />;
+        return <EnglishNotes data={filteredEnglishTopics.length ? filteredEnglishTopics : EnglishList} />;
 
       default:
         return <div>Course not found</div>;

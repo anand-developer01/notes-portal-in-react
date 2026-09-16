@@ -38,8 +38,6 @@ const CommonNotes = ({ data }: { data: NoteTopic[] }) => {
   const outerPadding = isMobile ? "12px" : "24px";
   const titlePadding = isMobile ? "8px 10px" : "14px 18px";
 
-  console.log("data", data);
-
   // const topics = Array.isArray(data?.javaNote)
   //   ? data.javaNote
   //   : Array.isArray(data?.reactNote)

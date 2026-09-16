@@ -124,7 +124,7 @@ const EnglishNotes = ({ data }: { data: unknown }) => {
   }
 
   const topicTitle = currentTopic.title ?? currentTopic.topic ?? "Topic";
-  const examples = currentTopic.content ?? [];
+
 
   return (
     <div
@@ -156,7 +156,7 @@ const EnglishNotes = ({ data }: { data: unknown }) => {
         </div>
 
         <div style={{ padding: isMobile ? "12px" : "16px" }}>
-          <div
+          {/* <div
             style={{
               display: "flex",
               flexWrap: "wrap",
@@ -190,7 +190,7 @@ const EnglishNotes = ({ data }: { data: unknown }) => {
                 </button>
               );
             })}
-          </div>
+          </div> */}
 
           {currentTopic.explain && (
             <div
@@ -204,7 +204,7 @@ const EnglishNotes = ({ data }: { data: unknown }) => {
                 marginBottom: 16,
               }}
             >
-              {currentTopic.explain}
+              <span dangerouslySetInnerHTML={{ __html: currentTopic.explain }} />
             </div>
           )}
 
@@ -220,20 +220,21 @@ const EnglishNotes = ({ data }: { data: unknown }) => {
                 fontSize: 14,
               }}
             >
-              <strong style={{ color: "#0f172a" }}>Formation:</strong> {currentTopic.formation}
+              <strong style={{ color: "#0f172a" }}>Formation:</strong>{" "}
+              <span dangerouslySetInnerHTML={{ __html: currentTopic.formation }} />
             </div>
           )}
 
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))",
-              gap: 14,
+              // display: "grid",
+              // gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))",
+              // gap: 14,
             }}
           >
-            {examples.map((item, index) => (
+            {currentTopic?.content && currentTopic?.content.map((item, index) => (
               <div
-                key={item.id ?? `${item.eng ?? "example"}-${index}`}
+                key={`${item.eng ?? "example"}-${index}`}
                 style={{
                   background: "#ffffff",
                   border: "1px solid #e5e7eb",
@@ -280,7 +281,10 @@ const EnglishNotes = ({ data }: { data: unknown }) => {
                   }}
                 >
                   <div style={{ fontSize: 12, color: "#64748b", marginBottom: 4 }}>English</div>
-                  <div style={{ fontSize: 15, color: "#0f172a", fontWeight: 600 }}>{item.eng}</div>
+                  <div
+                    style={{ fontSize: 15, color: "#0f172a" }}
+                    dangerouslySetInnerHTML={{ __html: item.eng ?? "" }}
+                  />
                 </div>
 
                 <div
@@ -292,7 +296,10 @@ const EnglishNotes = ({ data }: { data: unknown }) => {
                   }}
                 >
                   <div style={{ fontSize: 12, color: "#0f766e", marginBottom: 4 }}>Telugu</div>
-                  <div style={{ fontSize: 15, color: "#134e4a", fontWeight: 600 }}>{item.tel}</div>
+                  <div
+                    style={{ fontSize: 15, color: "#134e4a", fontWeight: 600 }}
+                    dangerouslySetInnerHTML={{ __html: item.tel ?? "" }}
+                  />
                 </div>
 
                 {item.tense && (
