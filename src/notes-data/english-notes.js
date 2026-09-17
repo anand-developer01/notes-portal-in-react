@@ -2971,7 +2971,7 @@ export const EnglishList = {
                 }
             ],
         },
-  
+
         {
             id: 1,
             section: "Tenses",
@@ -5548,7 +5548,43 @@ export const EnglishList = {
                     tense: "Past + present",
                 }],
         },
+        {
+            id: 11,
+            topic: "clarification (or) analysis story",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "For your stand-up, you can say: \"Priyanka gave me some guidance on the pre-RLA concern layout. But I don't have the appropriate RLA test account to validate it. So the concern list is returning null during testing. I know how to generate accounts in the Arena portal, but I need clarification on which account I should create.\" That makes it clear what you've done and what you need without sounding like a blocker.",
+                    type: "",
+                    tense: "",
+                    tel: ""
+                },
+                                {
+                    id: 1,
+                    eng: "If you don't have questions yet, you can say something like, <b>\"No questions from my side at the moment. I'll start analyzing the story and reach out if anything comes up.\"</b>",
+                    type: "",
+                    tense: "",
+                    tel: ""
+                }, 
+                {
+                    id: 1,
+                    eng: "And if you know you'll need time to understand the story, you could say, <b>\"No questions at the moment. I'll analyze the story first and will contact the team if I need clarification.\"</b>",
+                    type: "",
+                    tense: "",
+                    tel: ""
+                }, 
+                {
+                    id: 1,
+                    eng: "Or simpler, <b>\"All clear for now. I'll let you know if I need any clarification.\"</b>",
+                    type: "",
+                    tense: "",
+                    tel: ""
+                }
+            ],
+        },
 
     ],
-    
+
 }

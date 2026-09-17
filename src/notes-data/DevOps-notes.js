@@ -14,13 +14,13 @@ export const DevOpsData = {
                 {
                     text1: `You should know:
 
-Branching strategies (feature, develop, release, main)
-Merge vs Rebase
-Resolving conflicts
-Cherry-pick
-Stash
-Pull Requests
-GitHub Actions basics`,
+                    Branching strategies (feature, develop, release, main)
+                    Merge vs Rebase
+                    Resolving conflicts
+                    Cherry-pick
+                    Stash
+                    Pull Requests
+                    GitHub Actions basics`,
                     code1: ``
                 }
             ]
@@ -530,6 +530,151 @@ git stash branch feature/new-work stash@{0}
                     text1: `<b>Untracked files</b> are files that exist in your working directory but are not yet being tracked by Git.
                     
                     `,
+                    code1: ``
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "git reset",
+            note: [
+                {
+                    definition: `<b>git reset</b> is a Git command used to move the current branch pointer (<b>HEAD</b>) to a specified commit, optionally modifying the staging area and working directory depending on the reset mode.`,
+                    text1: `
+                    <b>git reset</b> is used to move the current branch to a previous or specific commit. It can also update the staging area and working directory depending on whether we use <b>--soft, --mixed</b>, or <b>--hard</b>.    
+                    git reset HEAD~1
+
+                    This moves the current branch one commit backward.
+                    The important thing to remember:
+                    <b>reset</b> = Move the branch pointer to another commit.
+
+                    Then:
+                    <b>--soft</b> → keep changes staged
+                    <b>--mixed</b> → keep changes unstaged (default)
+                    <b>--hard</b> → discard changes
+                    `,
+                    code1: `// ---------- Reset ----------
+                    git reset HEAD~1
+                    `
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "HEAD",
+            note: [
+                {
+                    definition: `<b>HEAD</b> is a pointer/reference that indicates the commit you are currently on. It usually points to the latest commit of the currently checked-out branch.`,
+                    text1: `
+                    HEAD is a pointer/reference in Git that indicates the commit currently checked out in your working directory
+                    
+                    HEAD is a reference that points to the currently checked-out commit, usually through the current branch. It represents the current position of the repository in Git history.
+                    
+                    And remember this relationship:
+                    HEAD
+                    ↓
+                    current branch
+                    ↓
+                    current commit
+                    .
+                    `,
+                    code1: ``
+                }
+            ]
+        },
+                {
+            id: 1,
+            title: "origin",
+            note: [
+                {
+                    definition: `<b>origin</b> is the default name given to a remote repository when you clone a project from a remote source. It serves as a shorthand reference to that remote repository, allowing you to easily fetch, pull, and push changes.
+                    
+                    <b>origin</b> is the default name (alias) Git gives to the remote repository when you clone a repository.
+
+(OR)
+
+<b>origin</b> is a remote repository alias used by Git to identify the URL of the repository you cloned from.
+`,
+                    text1: `
+<ol>
+  <li>
+    <strong>It’s a Default Alias:</strong>
+    When you run
+    <span style="font-family: 'Courier New', monospace;">git clone &lt;url&gt;</span>,
+    Git automatically creates a shorthand bookmark named
+    <span style="font-family: 'Courier New', monospace;">origin</span>
+    pointing to that specific URL so you don't have to type out the full web address every time.
+  </li>
+  <li>
+    <strong>It Saves Time:</strong>
+    Instead of typing
+    <span style="font-family: 'Courier New', monospace;">git push https://github.com/username/repository.git main</span>,
+    you simply type
+    <span style="font-family: 'Courier New', monospace;">git push origin main</span>.
+  </li>
+  <li>
+    <strong>It’s Customizable:</strong>
+    While <span style="font-family: 'Courier New', monospace;">origin</span> is the conventional default name, it isn't hardcoded. You can rename it
+    or even add multiple remotes (e.g.,
+    <span style="font-family: 'Courier New', monospace;">upstream</span>,
+    <span style="font-family: 'Courier New', monospace;">backup</span>)
+    if you are working with forks or multiple servers.
+  </li>
+</ol>
+                    `,
+                    code1: ``
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "git reset --soft origin/main",
+            note: [
+                {
+                    definition: `<b>git reset --soft origin/main</b> moves the current branch pointer to the commit pointed to by <b>origin/main</b>, while keeping all changes from the removed commits staged in the index. It does not modify the working directory, so your files remain unchanged.
+                    
+                    <b>git reset --soft origin/main</b>  moves your current branch back to origin/main, but keeps all your local changes staged.
+                                    (OR)
+                    "Move my branch to origin/main, but don't lose my changes; keep them ready to commit."
+                    `,
+                    text1: `
+                    <b>git reset --soft origin/main</b> moves the current branch to origin/main while keeping the changes from the removed commits staged, without modifying the working directory.
+
+                    <pre style="margin: 0; text-align: left; white-space: pre; overflow-x: auto;">
+                    git      reset     --soft     origin/main
+                    │        │         │          │
+                    │        │         │          └─ Target commit
+                    │        │         └─ Keep changes staged
+                    │        └─ Move current branch/HEAD
+                    └─ Git command</pre>
+                    
+                    <b>git reset</b>
+Means:
+Move the current branch pointer to another commit.
+<b>--soft</b>
+Means:
+Move the branch pointer, but keep the changes between the old position and the new position staged.
+<b>origin/main</b>
+This is the remote-tracking branch representing the main branch on the origin remote.
+So the complete meaning is:
+Move my current local branch to <b>origin/main</b>, while keeping all changes from my removed local commits staged.
+
+How <b>git reset --soft origin/main</b> works
+1) Git moves the current branch pointer to the commit pointed to by origin/main.
+2) The changes introduced by the commits that are no longer part of the branch are kept in the staging area (index). OR (The changes that were in the commits that are now "removed" from the branch are kept in the staging area (index).)
+3) The working directory remains unchanged, so your files still contain all those changes.    
+
+<b>Why would you do this?</b>
+One common reason is to <b>combine several local commits into one clean commit.</b>
+
+<b>Very important: origin/main is NOT your local main</b>
+This distinction is important for interviews.
+<b>origin/main</b>  → remote-tracking reference
+<b>main        </b> → your local branch
+
+<b>--soft</b>  → move HEAD, keep changes STAGED
+<b>--mixed</b> → move HEAD, keep changes UNSTAGED
+<b>--hard</b>  → move HEAD, DELETE changes`,
                     code1: ``
                 }
             ]

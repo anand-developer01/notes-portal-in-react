@@ -275,14 +275,14 @@ const EnglishNotes = ({ data }: { data: unknown }) => {
                   style={{
                     background: "#f8fafc",
                     borderRadius: 10,
-                    padding: "10px 12px",
+                    padding: "8px 10px",
                     border: "1px solid #e2e8f0",
                     marginBottom: 8,
                   }}
                 >
                   <div style={{ fontSize: 12, color: "#64748b", marginBottom: 4 }}>English</div>
                   <div
-                    style={{ fontSize: 15, color: "#0f172a" }}
+                    style={{ fontSize: 18, color: "#0f172a" }}
                     dangerouslySetInnerHTML={{ __html: item.eng ?? "" }}
                   />
                 </div>
@@ -291,13 +291,13 @@ const EnglishNotes = ({ data }: { data: unknown }) => {
                   style={{
                     background: "#ecfeff",
                     borderRadius: 10,
-                    padding: "10px 12px",
+                    padding: "8px 10px",
                     border: "1px solid #a5f3fc",
                   }}
                 >
                   <div style={{ fontSize: 12, color: "#0f766e", marginBottom: 4 }}>Telugu</div>
                   <div
-                    style={{ fontSize: 15, color: "#134e4a", fontWeight: 600 }}
+                    style={{ fontSize: 18, color: "#134e4a", fontWeight: 600 }}
                     dangerouslySetInnerHTML={{ __html: item.tel ?? "" }}
                   />
                 </div>
