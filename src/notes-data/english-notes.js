@@ -1014,6 +1014,114 @@ export const EnglishList = {
             ],
         },
         {
+            id: 1,
+            topic: "I'll = I will",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "I'll let you know. = I will let you know.",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "I'll join the meeting. = I will join the meeting.",
+                    tel: '',
+                    tense: ''
+                },
+                {
+                    id: 1,
+                    eng: "I'll join the meeting. = I will join the meeting.",
+                    tel: '',
+                    tense: ''
+                },
+
+            ],
+        },
+        {
+            id: 1,
+            topic: "I will let  Vs I let you",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "I'll let you know. = I will let you know.",
+                    tel: "నేను మీకు తెలియజేస్తాను.",
+                    tense: "Future"
+                },
+                {
+                    id: 2,
+                    eng: "I'll let you know once I get an update.",
+                    tel: "నాకు అప్‌డేట్ వచ్చిన తర్వాత నేను మీకు తెలియజేస్తాను.",
+                    tense: "Future"
+                },
+                {
+                    id: 3,
+                    eng: "I'll let you know after I check the API.",
+                    tel: "నేను API చెక్ చేసిన తర్వాత మీకు తెలియజేస్తాను.",
+                    tense: "Future"
+                },
+                {
+                    id: 4,
+                    eng: "I'll let you know if there are any issues.",
+                    tel: "ఏమైనా సమస్యలు ఉంటే నేను మీకు తెలియజేస్తాను.",
+                    tense: "Future"
+                },
+                {
+                    id: 5,
+                    eng: "I'll let you know when I get the confirmation.",
+                    tel: "నాకు కన్ఫర్మేషన్ వచ్చినప్పుడు నేను మీకు తెలియజేస్తాను.",
+                    tense: "Future"
+                },
+                {
+                    id: 6,
+                    eng: "I let you know yesterday.",
+                    tel: "నేను నిన్న మీకు తెలియజేశాను.",
+                    tense: "Past"
+                },
+                {
+                    id: 7,
+                    eng: "I let you know about the issue yesterday.",
+                    tel: "నేను నిన్న సమస్య గురించి మీకు తెలియజేశాను.",
+                    tense: "Past"
+                },
+                {
+                    id: 8,
+                    eng: "I let you know after the deployment.",
+                    tel: "డిప్లాయ్‌మెంట్ తర్వాత నేను మీకు తెలియజేశాను.",
+                    tense: "Past"
+                },
+                {
+                    id: 9,
+                    eng: "I always let you know when there is an issue.",
+                    tel: "ఏదైనా సమస్య వచ్చినప్పుడు నేను ఎప్పుడూ మీకు తెలియజేస్తాను.",
+                    tense: "Present / Habit"
+                },
+                {
+                    id: 10,
+                    eng: "I let you know whenever I get an update.",
+                    tel: "నాకు ఎప్పుడైనా అప్‌డేట్ వచ్చినప్పుడు నేను మీకు తెలియజేస్తాను.",
+                    tense: "Present / Habit"
+                },
+                {
+                    id: 10,
+                    eng: "Did you inform Priya about the issue? <b>Yes, I have already updated her.</b>",
+                    tel: "ప్రియాకు సమస్య గురించి మీరు తెలియజేశారా? <b>అవును, నేను ఇప్పటికే ఆమెకు అప్‌డేట్ ఇచ్చాను.</b>",
+                    tense: ""
+                },
+                {
+                    id: 10,
+                    eng: "Please inform me when you get an update. <b>Sure, I will let you know.</b>",
+                    tel: "దయచేసి మీరు అప్‌డేట్ పొందినప్పుడు నాకు తెలియజేయండి. <b>ఖచ్చితంగా, నేను మీకు తెలియజేస్తాను.</b>",
+                    tense: ""
+                }
+
+            ],
+        },
+        {
             id: 11,
             topic: "Was మరియు Were",
             explain: 'అర్థం: ఉన్నాను / ఉన్నాడు / ఉంది (గత కాలంలో). 1. Was – singular subjects (I, He, She, It, singular noun) తో వాడతారు.',
@@ -2971,7 +3079,120 @@ export const EnglishList = {
                 }
             ],
         },
+        {
+            id: 11,
+            topic: "Emphasize",
+            explain: 'to give `"extra importance or attentio"` to something. నొక్కి చెప్పడం / ప్రత్యేకంగా చెప్పడం / ప్రాధాన్యత ఇవ్వడం',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "I want to emphasize the importance of testing before deployment.",
+                    tel: "Deployment ముందు testing యొక్క ప్రాముఖ్యతను నేను నొక్కి చెప్పాలనుకుంటున్నాను.",
+                    type: "IT",
+                    tense: "Simple Present"
+                },
+                {
+                    id: 2,
+                    eng: "The manager emphasized the importance of meeting the deadline.",
+                    tel: "Deadline ను పాటించడం యొక్క ప్రాముఖ్యతను manager నొక్కి చెప్పారు.",
+                    type: "IT",
+                    tense: "Simple Past"
+                },
+                {
+                    id: 3,
+                    eng: "I want to emphasize that the issue has already been fixed.",
+                    tel: "ఆ issue ఇప్పటికే fix అయిందని నేను నొక్కి చెప్పాలనుకుంటున్నాను.",
+                    type: "IT",
+                    tense: "Simple Present + Present Perfect"
+                },
+                {
+                    id: 4,
+                    eng: "She emphasized the need to communicate clearly with the client.",
+                    tel: "Client తో స్పష్టంగా communicate చేయాల్సిన అవసరాన్ని ఆమె నొక్కి చెప్పారు.",
+                    type: "IT",
+                    tense: "Simple Past"
+                },
+                {
+                    id: 5,
+                    eng: "Let me emphasize that this change will not affect the existing functionality.",
+                    tel: "ఈ change ఇప్పటికే ఉన్న functionality ని ప్రభావితం చేయదని నేను నొక్కి చెప్పనివ్వండి.",
+                    type: "IT",
+                    tense: "Simple Future"
+                },
+                {
+                    id: 6,
+                    eng: "The team lead emphasized the importance of reviewing the PR carefully.",
+                    tel: "PR ని జాగ్రత్తగా review చేయడం యొక్క ప్రాముఖ్యతను team lead నొక్కి చెప్పారు.",
+                    type: "IT",
+                    tense: "Simple Past"
+                },
+                {
+                    id: 7,
+                    eng: "I want to emphasize that we need approval before merging the PR.",
+                    tel: "PR merge చేయడానికి ముందు మనకు approval అవసరమని నేను నొక్కి చెప్పాలనుకుంటున్నాను.",
+                    type: "IT",
+                    tense: "Simple Present"
+                },
+                {
+                    id: 8,
+                    eng: "The doctor emphasized the importance of getting enough sleep.",
+                    tel: "సరిపడా నిద్ర పొందడం యొక్క ప్రాముఖ్యతను doctor నొక్కి చెప్పారు.",
+                    type: "Real World",
+                    tense: "Simple Past"
+                },
+                {
+                    id: 9,
+                    eng: "My teacher emphasized the importance of practicing every day.",
+                    tel: "ప్రతిరోజూ practice చేయడం యొక్క ప్రాముఖ్యతను నా teacher నొక్కి చెప్పారు.",
+                    type: "Real World",
+                    tense: "Simple Past"
+                },
+                {
+                    id: 10,
+                    eng: "My father always emphasizes the importance of saving money.",
+                    tel: "డబ్బు save చేయడం యొక్క ప్రాముఖ్యతను మా నాన్న ఎప్పుడూ నొక్కి చెబుతారు.",
+                    type: "Real World",
+                    tense: "Simple Present"
+                },
+                {
+                    id: 11,
+                    eng: "The trainer emphasized the importance of following safety rules.",
+                    tel: "Safety rules పాటించడం యొక్క ప్రాముఖ్యతను trainer నొక్కి చెప్పారు.",
+                    type: "Real World",
+                    tense: "Simple Past"
+                },
+                {
+                    id: 12,
+                    eng: "I want to emphasize that this is only a temporary solution.",
+                    tel: "ఇది కేవలం temporary solution మాత్రమే అని నేను నొక్కి చెప్పాలనుకుంటున్నాను.",
+                    type: "Real World",
+                    tense: "Simple Present"
+                },
+                {
+                    id: 13,
+                    eng: "The customer emphasized that the issue was affecting their business.",
+                    tel: "ఆ issue వారి business ని ప్రభావితం చేస్తోందని customer నొక్కి చెప్పారు.",
+                    type: "IT",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 14,
+                    eng: "The developer emphasized that the API response should be validated before displaying the data.",
+                    tel: "Data display చేయడానికి ముందు API response ని validate చేయాలని developer నొక్కి చెప్పారు.",
+                    type: "IT",
+                    tense: "Simple Past + Modal"
+                },
+                {
+                    id: 15,
+                    eng: "I would like to emphasize that I have already shared the required details.",
+                    tel: "అవసరమైన details నేను ఇప్పటికే share చేశానని నొక్కి చెప్పాలనుకుంటున్నాను.",
+                    type: "IT",
+                    tense: "Present Perfect"
+                }
 
+            ],
+        },
         {
             id: 1,
             section: "Tenses",
@@ -3715,13 +3936,23 @@ export const EnglishList = {
         {
             id: 3,
             topic: "Present Perfect Tense",
-            explain: 'ఒక action గతంలో జరిగినా దాని ప్రభావం ఇప్పటికీ కొనసాగుతున్నప్పుడు లేదా మనం time చెప్పకుండా అనుభవం చెప్పాలనుకున్నప్పుడు వాడతాం. (గతంలో జరిగి, ఇప్పుడు ప్రభావం ఉన్నప్పుడు)',
+            explain: 'ఒక action గతంలో జరిగినా దాని ప్రభావం ఇప్పటికీ కొనసాగుతున్నప్పుడు లేదా మనం time చెప్పకుండా అనుభవం చెప్పాలనుకున్నప్పుడు వాడతాం. (గతంలో జరిగి, ఇప్పుడు ప్రభావం ఉన్నప్పుడు) focus on WHO did the action',
             formation: 'Subject + has/have + past participle (verb 3rd form) + rest',
             content: [
                 {
                     id: 1,
                     eng: "<b>గతంలో జరిగి, ఇప్పుడు ప్రభావం ఉన్నప్పుడు</b>",
                     tel: '',
+                },
+                {
+                    id: 1,
+                    eng: "<b>I =</b> the person who did the action",
+                    tel: '',
+                },
+                {
+                    id: 1,
+                    eng: "I have completed the task.",
+                    tel: 'నేను పని పూర్తి చేశాను.',
                 },
                 {
                     id: 1,
@@ -3786,11 +4017,102 @@ export const EnglishList = {
             ],
         },
         {
+            id: 11,
+            topic: "Present Perfect Passive",
+            explain: 'Present Perfect Passive అంటే గతంలో జరిగిన పని ఇప్పటికీ ప్రభావం చూపిస్తున్నప్పుడు, focus object పై ఉంచి చెప్పడానికి ఉపయోగిస్తారు. Structure: Object + has/have + been + V3 -- (focus on WHAT happened / the result)',
+            formation: 'Object + has/have + been + past participle (V3)',
+            content: [
+                {
+                    id: 1,
+                    eng: "I have completed the task. --- (The task = the thing that received the action.)",
+                    type: "General",
+                    tense: "Present Perfect Passive",
+                    tel: "I have completed the task."
+                },
+                {
+                    id: 1,
+                    eng: "The windows have been cleaned.",
+                    type: "General",
+                    tense: "Present Perfect Passive",
+                    tel: "కిటికీలు శుభ్రం చేయబడ్డాయి."
+                },
+                {
+                    id: 2,
+                    eng: "The letter has been sent to the manager.",
+                    type: "General",
+                    tense: "Present Perfect Passive",
+                    tel: "లేఖ మేనేజర్‌కు పంపబడింది."
+                },
+                {
+                    id: 3,
+                    eng: "The project has been completed on time.",
+                    type: "General",
+                    tense: "Present Perfect Passive",
+                    tel: "ప్రాజెక్ట్ సమయానికి పూర్తయింది."
+                },
+                {
+                    id: 4,
+                    eng: "The bug has been fixed in the latest version.",
+                    type: "IT",
+                    tense: "Present Perfect Passive",
+                    tel: "బగ్ తాజా వెర్షన్‌లో సరిచేయబడింది."
+                },
+                {
+                    id: 5,
+                    eng: "The files have been uploaded to the server.",
+                    type: "IT",
+                    tense: "Present Perfect Passive",
+                    tel: "ఫైల్‌లు సర్వర్‌కు అప్‌లోడ్ చేయబడ్డాయి."
+                },
+                {
+                    id: 6,
+                    eng: "The API has been tested by the QA team.",
+                    type: "IT",
+                    tense: "Present Perfect Passive",
+                    tel: "APIని QA టీమ్ పరీక్షించింది."
+                },
+                {
+                    id: 7,
+                    eng: "The database has been backed up successfully.",
+                    type: "IT",
+                    tense: "Present Perfect Passive",
+                    tel: "డేటాబేస్ విజయవంతంగా బ్యాక్ అప్ చేయబడింది."
+                },
+                {
+                    id: 8,
+                    eng: "The documents have been reviewed by the manager.",
+                    type: "General / Office",
+                    tense: "Present Perfect Passive",
+                    tel: "డాక్యుమెంట్‌లను మేనేజర్ పరిశీలించాడు."
+                },
+                {
+                    id: 9,
+                    eng: "The deployment has been completed successfully.",
+                    type: "IT",
+                    tense: "Present Perfect Passive",
+                    tel: "డిప్లాయ్‌మెంట్ విజయవంతంగా పూర్తయింది."
+                },
+                {
+                    id: 10,
+                    eng: "The payment has been processed.",
+                    type: "General / Banking",
+                    tense: "Present Perfect Passive",
+                    tel: "చెల్లింపు ప్రాసెస్ చేయబడింది."
+                }
+            ],
+        },
+        {
             id: 4,
             topic: "Present perfect Continuous Tense - (have been)",
             explain: 'గతంలో ఏదో ఒక action మొదలై ఇప్పటికీ కొనసాగుతూనే ఉందని చెప్పడానికి వాడతాం.',
             formation: 'Subject + has/have been + verb(+ing)',
             content: [
+                {
+                    id: 1,
+                    eng: "I have been working on this story for the past few days.",
+                    tel: 'నేను గత కొన్ని రోజులుగా ఈ స్టోరీపై పని చేస్తున్నాను.',
+                    tense: ''
+                },
                 {
                     id: 1,
                     eng: "I have been studying for 2 hours.",
@@ -5561,27 +5883,173 @@ export const EnglishList = {
                     tense: "",
                     tel: ""
                 },
-                                {
+                {
                     id: 1,
                     eng: "If you don't have questions yet, you can say something like, <b>\"No questions from my side at the moment. I'll start analyzing the story and reach out if anything comes up.\"</b>",
                     type: "",
                     tense: "",
                     tel: ""
-                }, 
+                },
                 {
                     id: 1,
                     eng: "And if you know you'll need time to understand the story, you could say, <b>\"No questions at the moment. I'll analyze the story first and will contact the team if I need clarification.\"</b>",
                     type: "",
                     tense: "",
                     tel: ""
-                }, 
+                },
                 {
                     id: 1,
                     eng: "Or simpler, <b>\"All clear for now. I'll let you know if I need any clarification.\"</b>",
                     type: "",
                     tense: "",
                     tel: ""
+                },
+                {
+                    id: 1,
+                    eng: "If I need clarification, I’ll update/inform you.",
+                    type: "",
+                    tense: "",
+                    tel: ""
+                },
+                {
+                    id: 1,
+                    eng: `<b>If I need any clarification, I’ll let you know.</b> — very natural<br> 
+                    <b>If I have any questions, I’ll keep you posted.</b> — good for Slack/workplace`,
+                    type: "",
+                    tense: "",
+                    tel: ""
+                },
+                {
+                    id: 1,
+                    eng: "I don't have any questions for now. I will reach out if anything comes up.",
+                    type: "",
+                    tense: "",
+                    tel: ""
                 }
+            ],
+        },
+        {
+            id: 11,
+            topic: "Due diligence",
+            explain: 'Due diligence = a careful and thorough review/check before making a decision, especially in business, finance, hiring, legal matters, or investments. It means checking facts, risks, documents, and background before proceeding. Telugu: తగిన పరిశీలన / పూర్తిగా తనిఖీ చేయడం / జాగ్రత్తగా పరిశీలించడం',
+            formation: 'do/perform/conduct + due diligence + on + someone/something / before + decision',
+            content: [
+
+                {
+                    id: 1,
+                    eng: "Before investing in the startup, the investors conducted due diligence (డ్యూ డిలిజెన్స్) on its financial records and business model.",
+                    tel: "స్టార్టప్‌లో పెట్టుబడి పెట్టే ముందు, పెట్టుబడిదారులు దాని ఆర్థిక రికార్డులు మరియు వ్యాపార నమూనాను జాగ్రత్తగా పరిశీలించారు.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 2,
+                    eng: "The company did due diligence on the vendor before signing the contract.",
+                    tel: "కాంట్రాక్ట్‌పై సంతకం చేయడానికి ముందు కంపెనీ వెండర్‌కు సంబంధించిన విషయాలను జాగ్రత్తగా పరిశీలించింది.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 3,
+                    eng: "We need to perform due diligence before acquiring the business.",
+                    tel: "వ్యాపారాన్ని కొనుగోలు చేయడానికి ముందు మేము అవసరమైన విషయాలను జాగ్రత్తగా పరిశీలించాలి.",
+                    tense: "Present tense"
+                },
+                {
+                    id: 4,
+                    eng: "Due diligence revealed several compliance issues and financial risks.",
+                    tel: "జాగ్రత్తగా పరిశీలించడంతో అనేక నియమ నిబంధనలకు సంబంధించిన సమస్యలు మరియు ఆర్థిక ప్రమాదాలు బయటపడ్డాయి.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 5,
+                    eng: "The bank requested due diligence documents before approving the loan.",
+                    tel: "రుణాన్ని ఆమోదించే ముందు బ్యాంకు జాగ్రత్త పరిశీలనకు సంబంధించిన పత్రాలను కోరింది.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 6,
+                    eng: "Before hiring a new employee, HR usually performs due diligence on the candidate's background.",
+                    tel: "కొత్త ఉద్యోగిని నియమించే ముందు, HR సాధారణంగా అభ్యర్థి నేపథ్యాన్ని జాగ్రత్తగా పరిశీలిస్తుంది.",
+                    tense: "Present tense"
+                },
+
+                {
+                    id: 1,
+                    eng: "We need to perform due diligence before integrating the third-party API.",
+                    tel: "Third-party APIని integrate చేయడానికి ముందు మనం దాన్ని పూర్తిగా పరిశీలించాలి.",
+                    tense: "Present tense"
+                },
+                {
+                    id: 2,
+                    eng: "The development team conducted due diligence before deploying the application to production.",
+                    tel: "Applicationను productionలో deploy చేయడానికి ముందు development team దాన్ని పూర్తిగా పరిశీలించింది.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 3,
+                    eng: "Before using this open-source library, we should perform due diligence on its security and licensing.",
+                    tel: "ఈ open-source libraryని ఉపయోగించే ముందు, దాని security మరియు licensing గురించి మనం పూర్తిగా పరిశీలించాలి.",
+                    tense: "Present tense"
+                },
+                {
+                    id: 4,
+                    eng: "The team conducted due diligence on the API to identify potential security vulnerabilities.",
+                    tel: "Potential security vulnerabilitiesను గుర్తించడానికి team APIని పూర్తిగా పరిశీలించింది.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 5,
+                    eng: "We are performing due diligence on the existing codebase before making major changes.",
+                    tel: "పెద్ద మార్పులు చేయడానికి ముందు మేము existing codebaseను పూర్తిగా పరిశీలిస్తున్నాము.",
+                    tense: "Present continuous"
+                },
+                {
+                    id: 6,
+                    eng: "Before merging the pull request, the reviewer performed due diligence on the code changes.",
+                    tel: "Pull requestను merge చేయడానికి ముందు reviewer code changesను పూర్తిగా పరిశీలించారు.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 7,
+                    eng: "The security team performed due diligence before approving the new application.",
+                    tel: "కొత్త applicationను approve చేయడానికి ముందు security team దాన్ని పూర్తిగా పరిశీలించింది.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 8,
+                    eng: "We should do our due diligence before introducing a new dependency into the project.",
+                    tel: "Projectలో కొత్త dependencyని ప్రవేశపెట్టే ముందు మనం దాన్ని పూర్తిగా పరిశీలించాలి.",
+                    tense: "Present tense"
+                },
+                {
+                    id: 9,
+                    eng: "Due diligence revealed several configuration issues in the application.",
+                    tel: "జాగ్రత్తగా పరిశీలించడంతో applicationలో అనేక configuration సమస్యలు బయటపడ్డాయి.",
+                    tense: "Past tense"
+                },
+                {
+                    id: 10,
+                    eng: "The team will conduct due diligence before moving the service to production.",
+                    tel: "Serviceను productionకు తరలించే ముందు team పూర్తిగా పరిశీలిస్తుంది.",
+                    tense: "Future tense"
+                }
+
+
+
+            ],
+        },
+        {
+            id: 11,
+            topic: "comes across",
+            explain: 'come across = కనిపించడం / అనిపించడం (impression) దీనికి అర్థం → ఎలా కనిపిస్తున్నావో, ఎలా అనిపిస్తున్నావో.',
+            formation: 'Subject + come(s) across + as + adjective/noun',
+            content: [
+                {
+                    id: 1,
+                    eng: "He comes across as confident.",
+                    tel: 'అతను ఆత్మవిశ్వాసంగా కనిపిస్తాడు.',
+                    tense: 'Present tense'
+                },
+
             ],
         },
 

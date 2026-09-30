@@ -197,13 +197,13 @@ const CommonNotes = ({ data }: { data: NoteTopic[] }) => {
               maxHeight: "min(80vh, 680px)",
               overflowY: "auto",
               borderRadius: 14,
-              padding: isMobile ? 18 : 26,
+              padding: isMobile ? 18 : 20,
               background: "#ffffff",
               boxShadow: "0 24px 70px rgba(15, 23, 42, 0.3)",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16 }}>
-              <h2 id="definition-title" style={{ margin: 0, color: "#0f172a", fontSize: isMobile ? 20 : 24 }}>
+              <h2 id="definition-title" style={{ margin: 0, color: "#0f172a", fontSize: isMobile ? 16 : 18 }}>
                 Definition
               </h2>
               <button

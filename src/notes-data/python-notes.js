@@ -1402,7 +1402,2214 @@ returns a new function </span>
 <a href="https://github.com/anand-developer01/python-programs/blob/main/Decorators.py" target="_blank">Decorators Examples</a>
 `,
                     code1: ``
+                },
+
+
+                {
+                    definition: `<b>Decorator</b> in Python is a function that <b>modifies or extends the behavior of another function or class without changing its original source code.</b>
+
+A decorator takes a function, adds some extra behavior, and returns a new function.
+
+<b>Key idea:</b> A decorator <b>wraps</b> another function.`,
+
+                    text1: `<b>Why do we need Decorators?</b>
+
+Suppose we have multiple functions and we want to perform the same additional operation before or after each function.
+
+Common use cases:
+- <b>Logging</b>
+- <b>Authentication</b>
+- <b>Authorization</b>
+- <b>Validation</b>
+- <b>Performance measurement</b>
+- <b>Caching</b>
+- <b>Error handling</b>
+- <b>Retry logic</b>
+
+<b>Important:</b> Decorators help us reuse common behavior without modifying every function.`,
+
+                    code1: `# ---------- Ex : 1 - Without Decorator -----------
+
+def add(a, b):
+    print("Function started")
+    result = a + b
+    print("Function completed")
+    return result
+
+
+def multiply(a, b):
+    print("Function started")
+    result = a * b
+    print("Function completed")
+    return result
+
+
+print(add(10, 20))
+print(multiply(10, 20))
+
+
+# The same logging code is repeated.
+
+
+# ---------- Ex : 2 - With Decorator -----------
+
+def logger(func):
+
+    def wrapper():
+        print("Function started")
+        func()
+        print("Function completed")
+
+    return wrapper
+
+
+@logger
+def greet():
+    print("Hello")
+
+
+greet()
+
+
+# ---------- Ex : 3 - Main idea -----------
+
+# Original function
+#
+#        greet()
+#           |
+#           v
+#      Decorator
+#           |
+#           v
+#        wrapper()
+#       /         \\
+#   Before       After
+#      \\          /
+#       Original function`
+                },
+
+                {
+                    definition: `<b>Functions are First-Class Objects</b>
+
+Decorators are possible because Python treats <b>functions as first-class objects</b>.
+
+This means a function can be:
+- <b>stored in a variable</b>
+- <b>passed as an argument</b>
+- <b>returned from another function</b>
+- <b>stored in collections</b>
+
+<b>This concept is the foundation of decorators.</b>`,
+
+                    text1: `<b>Example: Assigning a function to a variable</b>
+
+A function can be assigned to another variable and called through that variable.`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def greet():
+    print("Hello")
+
+
+say_hello = greet
+
+say_hello()
+
+# Output:
+# Hello
+
+
+# ---------- Ex : 2 -----------
+
+print(greet)
+print(say_hello)
+
+# Both variables refer to the same function object.
+
+
+# ---------- Ex : 3 -----------
+
+def add(a, b):
+    return a + b
+
+
+calculate = add
+
+print(calculate(10, 20))
+
+# Output:
+# 30`
+                },
+
+                {
+                    definition: `<b>Passing a Function as an Argument</b>
+
+Since functions are first-class objects, we can pass a function to another function.
+
+<b>This is one of the fundamental concepts behind decorators.</b>`,
+
+                    text1: `<b>A function can receive another function as an argument.</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def greet():
+    print("Hello")
+
+
+def execute_function(func):
+    func()
+
+
+execute_function(greet)
+
+# Output:
+# Hello
+
+
+# ---------- Ex : 2 -----------
+
+def add():
+    print("Addition")
+
+
+def execute(func):
+    print("Before")
+    func()
+    print("After")
+
+
+execute(add)
+
+# Output:
+# Before
+# Addition
+# After`
+                },
+
+                {
+                    definition: `<b>Nested Functions</b>
+
+A function defined inside another function is called a <b>nested function</b> or <b>inner function</b>.
+
+Decorators commonly use an inner function called a <b>wrapper function</b>.`,
+
+                    text1: `<b>The wrapper function is responsible for adding extra behavior around the original function.</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def outer():
+
+    def inner():
+        print("Inside inner function")
+
+    inner()
+
+
+outer()
+
+# Output:
+# Inside inner function
+
+
+# ---------- Ex : 2 -----------
+
+def outer():
+
+    def inner():
+        print("Hello from inner")
+
+    return inner
+
+
+result = outer()
+
+result()
+
+# Output:
+# Hello from inner`
+                },
+
+                {
+                    definition: `<b>Returning a Function</b>
+
+A function can return another function.
+
+<b>This is another important building block of decorators.</b>`,
+
+                    text1: `<b>Example:</b>
+
+The outer function creates an inner function and returns it.`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def outer():
+
+    def inner():
+        print("Hello")
+
+    return inner
+
+
+result = outer()
+
+result()
+
+# Output:
+# Hello
+
+
+# ---------- Ex : 2 -----------
+
+def create_greeting():
+
+    def greet():
+        print("Welcome to Python")
+
+    return greet
+
+
+greeting = create_greeting()
+
+greeting()
+
+# Output:
+# Welcome to Python`
+                },
+
+                {
+                    definition: `<b>Basic Decorator</b>
+
+A basic decorator normally has three important parts:
+
+<b>1. Decorator function</b>
+<b>2. Wrapper function</b>
+<b>3. Original function</b>
+
+The decorator receives the original function, creates a wrapper, and returns the wrapper.`,
+
+                    text1: `<b>Important flow:</b>
+
+Original function → Decorator → Wrapper → Modified behavior`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def my_decorator(func):
+
+    def wrapper():
+
+        print("Before function")
+
+        func()
+
+        print("After function")
+
+    return wrapper
+
+
+def greet():
+    print("Hello")
+
+
+greet = my_decorator(greet)
+
+greet()
+
+# Output:
+# Before function
+# Hello
+# After function
+
+
+# ---------- Ex : 2 -----------
+
+def logger(func):
+
+    def wrapper():
+
+        print("Starting")
+
+        func()
+
+        print("Completed")
+
+    return wrapper
+
+
+def process():
+    print("Processing...")
+
+
+process = logger(process)
+
+process()`
+                },
+
+                {
+                    definition: `<b>@ Decorator Syntax</b>
+
+Python provides a shorter syntax for applying a decorator.
+
+Instead of:
+
+<b>greet = my_decorator(greet)</b>
+
+we can write:
+
+<b>@my_decorator</b>
+
+This is called <b>decorator syntax</b> or <b>syntactic sugar</b>.`,
+
+                    text1: `<b>Both approaches are equivalent.</b>`,
+
+                    code1: `# ---------- Ex : 1 - Normal syntax -----------
+
+def decorator(func):
+
+    def wrapper():
+        print("Before")
+        func()
+        print("After")
+
+    return wrapper
+
+
+def greet():
+    print("Hello")
+
+
+greet = decorator(greet)
+
+greet()
+
+
+# ---------- Ex : 2 - @ syntax -----------
+
+def decorator(func):
+
+    def wrapper():
+        print("Before")
+        func()
+        print("After")
+
+    return wrapper
+
+
+@decorator
+def greet():
+    print("Hello")
+
+
+greet()
+
+
+# ---------- Ex : 3 - What Python does internally -----------
+
+@decorator
+def greet():
+    print("Hello")
+
+
+# Python internally performs:
+#
+# greet = decorator(greet)`
+                },
+
+                {
+                    definition: `<b>Decorator with Function Arguments</b>
+
+A decorator must support the arguments expected by the original function.
+
+If we know the exact arguments, we can define them explicitly in the wrapper.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def decorator(func):
+
+    def wrapper(a, b):
+
+        print("Before function")
+
+        result = func(a, b)
+
+        print("After function")
+
+        return result
+
+    return wrapper
+
+
+@decorator
+def add(a, b):
+    return a + b
+
+
+result = add(10, 20)
+
+print(result)
+
+# Output:
+# Before function
+# After function
+# 30`
+                },
+
+                {
+                    definition: `<b>*args and **kwargs in Decorators</b>
+
+A reusable decorator should normally support functions with different numbers of arguments.
+
+<b>*args</b> collects positional arguments.
+
+<b>**kwargs</b> collects keyword arguments.
+
+<b>Important:</b> Using <b>*args</b> and <b>**kwargs</b> makes a decorator more generic.`,
+
+                    text1: `<b>Generic decorator pattern:</b>
+
+<b>func(*args, **kwargs)</b> forwards all arguments to the original function.`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+from functools import wraps
+
+
+def decorator(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+
+        print("Before")
+
+        result = func(*args, **kwargs)
+
+        print("After")
+
+        return result
+
+    return wrapper
+
+
+@decorator
+def add(a, b):
+    return a + b
+
+
+print(add(10, 20))
+
+
+# ---------- Ex : 2 -----------
+
+@decorator
+def greet(name, message="Hello"):
+    print(message, name)
+
+
+greet("Anand")
+
+greet("Anand", message="Welcome")
+
+
+# ---------- Ex : 3 -----------
+
+@decorator
+def calculate(a, b, c=10):
+    return a + b + c
+
+
+print(calculate(10, 20, c=30))`
+                },
+
+                {
+                    definition: `<b>Returning Values from Decorators</b>
+
+If the original function returns a value, the wrapper should normally <b>return that value</b>.
+
+Otherwise, the caller may receive <b>None</b>.`,
+
+                    text1: `<b>Important:</b> Always consider whether the original function returns a value.`,
+
+                    code1: `# ---------- Ex : 1 - Correct -----------
+
+def decorator(func):
+
+    def wrapper(*args, **kwargs):
+
+        result = func(*args, **kwargs)
+
+        return result
+
+    return wrapper
+
+
+@decorator
+def add(a, b):
+    return a + b
+
+
+result = add(10, 20)
+
+print(result)
+
+# Output:
+# 30
+
+
+# ---------- Ex : 2 - Incorrect -----------
+
+def decorator(func):
+
+    def wrapper(*args, **kwargs):
+
+        result = func(*args, **kwargs)
+
+        # Missing:
+        # return result
+
+    return wrapper
+
+
+@decorator
+def multiply(a, b):
+    return a * b
+
+
+print(multiply(10, 20))
+
+# Output:
+# None`
+                },
+
+                {
+                    definition: `<b>Before and After Execution</b>
+
+A decorator can execute code <b>before</b> the original function and <b>after</b> the original function.
+
+This pattern is commonly used for:
+- <b>Logging</b>
+- <b>Performance measurement</b>
+- <b>Authentication</b>
+- <b>Cleanup</b>`,
+
+                    text1: `<b>Common structure:</b>
+
+Before → Original function → After`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def decorator(func):
+
+    def wrapper(*args, **kwargs):
+
+        print("Before")
+
+        result = func(*args, **kwargs)
+
+        print("After")
+
+        return result
+
+    return wrapper
+
+
+@decorator
+def process():
+    print("Processing...")
+
+
+process()
+
+# Output:
+# Before
+# Processing...
+# After`
+                },
+
+                {
+                    definition: `<b>Decorator with Exception Handling</b>
+
+A decorator can handle exceptions generated by the wrapped function.
+
+This allows common error-handling behavior to be reused.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def handle_errors(func):
+
+    def wrapper(*args, **kwargs):
+
+        try:
+            return func(*args, **kwargs)
+
+        except Exception as e:
+            print("Error:", e)
+
+    return wrapper
+
+
+@handle_errors
+def divide(a, b):
+    return a / b
+
+
+print(divide(10, 2))
+
+print(divide(10, 0))
+
+# Output:
+# 5.0
+# Error: division by zero
+
+
+# ---------- Ex : 2 - Re-raise exception -----------
+
+def handle_errors(func):
+
+    def wrapper(*args, **kwargs):
+
+        try:
+            return func(*args, **kwargs)
+
+        except Exception as e:
+            print("Logging error:", e)
+            raise
+
+    return wrapper`
+                },
+
+                {
+                    definition: `<b>Logging Decorator</b>
+
+One of the most common real-world uses of decorators is <b>logging</b>.
+
+A logging decorator can automatically record which function was called.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `from functools import wraps
+
+
+# ---------- Ex : 1 -----------
+
+def log_function(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+
+        print(f"Calling: {func.__name__}")
+
+        result = func(*args, **kwargs)
+
+        print(f"Finished: {func.__name__}")
+
+        return result
+
+    return wrapper
+
+
+@log_function
+def add(a, b):
+    return a + b
+
+
+print(add(10, 20))
+
+# Output:
+# Calling: add
+# Finished: add
+# 30`
+                },
+
+                {
+                    definition: `<b>Execution Time Decorator</b>
+
+A decorator can measure how long a function takes to execute.
+
+This is useful for <b>performance monitoring</b> and identifying slow operations.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `import time
+from functools import wraps
+
+
+def timer(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+
+        start = time.time()
+
+        result = func(*args, **kwargs)
+
+        end = time.time()
+
+        print("Execution time:", end - start)
+
+        return result
+
+    return wrapper
+
+
+@timer
+def calculate():
+    time.sleep(1)
+    return "Done"
+
+
+print(calculate())
+
+# Output:
+# Execution time: approximately 1 second
+# Done`
+                },
+
+                {
+                    definition: `<b>Decorator with Arguments</b>
+
+Sometimes we want to configure a decorator.
+
+For example:
+
+<b>@repeat(3)</b>
+
+Here, <b>repeat</b> is a <b>decorator factory</b>.
+
+It creates and returns the actual decorator.`,
+
+                    text1: `<b>There are three levels:</b>
+
+<b>Level 1:</b> Decorator factory → receives configuration.
+
+<b>Level 2:</b> Decorator → receives the function.
+
+<b>Level 3:</b> Wrapper → executes the function.`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def repeat(times):
+
+    def decorator(func):
+
+        def wrapper(*args, **kwargs):
+
+            for _ in range(times):
+                func(*args, **kwargs)
+
+        return wrapper
+
+    return decorator
+
+
+@repeat(3)
+def greet():
+    print("Hello")
+
+
+greet()
+
+# Output:
+# Hello
+# Hello
+# Hello
+
+
+# ---------- Ex : 2 -----------
+
+@repeat(2)
+def welcome(name):
+    print("Welcome", name)
+
+
+welcome("Anand")
+
+# Output:
+# Welcome Anand
+# Welcome Anand`
+                },
+
+                {
+                    definition: `<b>Decorator Factory</b>
+
+A function that <b>creates and returns a decorator</b> is called a <b>decorator factory</b>.
+
+Decorator factories are useful when the decorator requires configuration values.`,
+
+                    text1: `<b>General structure:</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def decorator_factory(value):
+
+    def decorator(func):
+
+        def wrapper(*args, **kwargs):
+
+            print("Configured value:", value)
+
+            return func(*args, **kwargs)
+
+        return wrapper
+
+    return decorator
+
+
+@decorator_factory("ADMIN")
+def access():
+    print("Access granted")
+
+
+access()
+
+# Output:
+# Configured value: ADMIN
+# Access granted`
+                },
+
+                {
+                    definition: `<b>functools.wraps</b>
+
+When a function is decorated, the wrapper can replace important metadata of the original function.
+
+Examples:
+- <b>__name__</b>
+- <b>__doc__</b>
+
+Python provides <b>functools.wraps</b> to preserve this metadata.
+
+<b>Best practice:</b> Use <b>@wraps(func)</b> inside custom decorators.`,
+
+                    text1: `<b>Without @wraps:</b> the decorated function may appear to have the wrapper's metadata.
+
+<b>With @wraps:</b> important metadata from the original function is preserved.`,
+
+                    code1: `# ---------- Ex : 1 - Without wraps -----------
+
+def decorator(func):
+
+    def wrapper():
+        return func()
+
+    return wrapper
+
+
+@decorator
+def greet():
+    """Greeting function"""
+    print("Hello")
+
+
+print(greet.__name__)
+print(greet.__doc__)
+
+# Output:
+# wrapper
+# None
+
+
+# ---------- Ex : 2 - With wraps -----------
+
+from functools import wraps
+
+
+def decorator(func):
+
+    @wraps(func)
+    def wrapper():
+        return func()
+
+    return wrapper
+
+
+@decorator
+def greet():
+    """Greeting function"""
+    print("Hello")
+
+
+print(greet.__name__)
+print(greet.__doc__)
+
+# Output:
+# greet
+# Greeting function`
+                },
+
+                {
+                    definition: `<b>Multiple Decorators</b>
+
+We can apply more than one decorator to the same function.
+
+This is called <b>decorator stacking</b>.
+
+<b>Important:</b> The decorator closest to the function is applied first.`,
+
+                    text1: `<b>For:</b>
+
+@A
+@B
+def greet():
+
+Python effectively creates:
+
+<b>greet = A(B(greet))</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def decorator1(func):
+
+    def wrapper():
+
+        print("Decorator 1 - Before")
+
+        func()
+
+        print("Decorator 1 - After")
+
+    return wrapper
+
+
+def decorator2(func):
+
+    def wrapper():
+
+        print("Decorator 2 - Before")
+
+        func()
+
+        print("Decorator 2 - After")
+
+    return wrapper
+
+
+@decorator1
+@decorator2
+def greet():
+    print("Hello")
+
+
+greet()
+
+
+# Output:
+# Decorator 1 - Before
+# Decorator 2 - Before
+# Hello
+# Decorator 2 - After
+# Decorator 1 - After
+
+
+# Equivalent:
+#
+# greet = decorator1(decorator2(greet))`
+                },
+
+                {
+                    definition: `<b>Decorator Order</b>
+
+When multiple decorators are used, <b>order matters</b>.
+
+The decorator closest to the function is applied first, and the outer decorator wraps the result.`,
+
+                    text1: `<b>Remember:</b>
+
+@A
+@B
+def function():
+
+is equivalent to:
+
+<b>function = A(B(function))</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def A(func):
+
+    def wrapper():
+        print("A")
+        func()
+
+    return wrapper
+
+
+def B(func):
+
+    def wrapper():
+        print("B")
+        func()
+
+    return wrapper
+
+
+@A
+@B
+def test():
+    print("Test")
+
+
+test()
+
+# Output:
+# A
+# B
+# Test
+
+
+# ---------- Ex : 2 -----------
+
+@B
+@A
+def test():
+    print("Test")
+
+
+test()
+
+# Output:
+# B
+# A
+# Test
+
+# Changing decorator order changes the behavior.`
+                },
+
+                {
+                    definition: `<b>Class-Based Decorators</b>
+
+A decorator does not have to be a function.
+
+A <b>class</b> can also be used as a decorator if it implements <b>__call__()</b>.
+
+<b>__call__()</b> allows an object to be called like a function.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+class MyDecorator:
+
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, *args, **kwargs):
+
+        print("Before function")
+
+        result = self.func(*args, **kwargs)
+
+        print("After function")
+
+        return result
+
+
+@MyDecorator
+def greet():
+    print("Hello")
+
+
+greet()
+
+# Output:
+# Before function
+# Hello
+# After function`
+                },
+
+                {
+                    definition: `<b>Class-Based Decorator with Configuration</b>
+
+A class-based decorator can receive configuration values.
+
+This can be useful when the decorator needs to maintain <b>state</b>.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+class Repeat:
+
+    def __init__(self, times):
+        self.times = times
+
+    def __call__(self, func):
+
+        def wrapper(*args, **kwargs):
+
+            for _ in range(self.times):
+                func(*args, **kwargs)
+
+        return wrapper
+
+
+@Repeat(3)
+def greet():
+    print("Hello")
+
+
+greet()
+
+# Output:
+# Hello
+# Hello
+# Hello`
+                },
+
+                {
+                    definition: `<b>Decorating Methods in Classes</b>
+
+Decorators can also be applied to <b>instance methods</b>.
+
+The method normally receives <b>self</b>, but a generic decorator can use <b>*args</b> and <b>**kwargs</b> to handle it.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `from functools import wraps
+
+
+def log_method(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+
+        print("Method called")
+
+        return func(*args, **kwargs)
+
+    return wrapper
+
+
+class User:
+
+    @log_method
+    def greet(self, name):
+        print("Hello", name)
+
+
+user = User()
+
+user.greet("Anand")
+
+# Output:
+# Method called
+# Hello Anand`
+                },
+
+                {
+                    definition: `<b>Decorating a Class</b>
+
+Decorators can also be applied to <b>classes</b>.
+
+A class decorator receives the class object and can modify it or return another class.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def add_message(cls):
+
+    cls.message = "Hello"
+
+    return cls
+
+
+@add_message
+class Person:
+    pass
+
+
+person = Person()
+
+print(person.message)
+
+# Output:
+# Hello
+
+
+# ---------- Ex : 2 -----------
+
+def add_version(cls):
+
+    cls.version = "1.0"
+
+    return cls
+
+
+@add_version
+class Application:
+    pass
+
+
+print(Application.version)
+
+# Output:
+# 1.0`
+                },
+
+                {
+                    definition: `<b>Built-in Decorators</b>
+
+Python provides several important built-in decorators.
+
+<b>@staticmethod</b> → creates a method that does not automatically receive <b>self</b> or <b>cls</b>.
+
+<b>@classmethod</b> → creates a method that receives the class as <b>cls</b>.
+
+<b>@property</b> → allows a method to be accessed like an attribute.
+
+<b>@abstractmethod</b> → commonly used with abstract base classes.
+
+<b>@dataclass</b> → a class decorator that can automatically generate methods for data-oriented classes.`,
+
+                    text1: `<b>These are decorators you will frequently see in real Python code.</b>`,
+
+                    code1: `# ---------- Ex : 1 - staticmethod -----------
+
+class MathUtils:
+
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+
+print(MathUtils.add(10, 20))
+
+
+# ---------- Ex : 2 - classmethod -----------
+
+class Employee:
+
+    company = "ABC"
+
+    @classmethod
+    def get_company(cls):
+        return cls.company
+
+
+print(Employee.get_company())
+
+
+# ---------- Ex : 3 - property -----------
+
+class Person:
+
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        return self._name
+
+
+person = Person("Anand")
+
+print(person.name)`
+                },
+
+                {
+                    definition: `<b>@property</b>
+
+The <b>@property</b> decorator allows a method to be accessed like an attribute.
+
+Instead of:
+
+<b>person.name()</b>
+
+we can write:
+
+<b>person.name</b>`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+class Person:
+
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        return self._name
+
+
+person = Person("Anand")
+
+print(person.name)
+
+# Output:
+# Anand
+
+
+# ---------- Ex : 2 - Setter -----------
+
+class Person:
+
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
+
+person = Person("Anand")
+
+print(person.name)
+
+person.name = "Rahul"
+
+print(person.name)
+
+# Output:
+# Anand
+# Rahul`
+                },
+
+                {
+                    definition: `<b>@staticmethod</b>
+
+The <b>@staticmethod</b> decorator creates a method that does not automatically receive <b>self</b> or <b>cls</b>.
+
+It behaves like a regular function placed inside a class namespace.`,
+
+                    text1: `<b>Use it when the method does not need instance or class state.</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+class MathUtils:
+
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+
+print(MathUtils.add(10, 20))
+
+# Output:
+# 30
+
+
+# ---------- Ex : 2 -----------
+
+class Validator:
+
+    @staticmethod
+    def is_positive(number):
+        return number > 0
+
+
+print(Validator.is_positive(10))
+
+print(Validator.is_positive(-5))
+
+# Output:
+# True
+# False`
+                },
+
+                {
+                    definition: `<b>@classmethod</b>
+
+The <b>@classmethod</b> decorator creates a method that receives the class itself as the first argument.
+
+By convention, the first argument is called <b>cls</b>.`,
+
+                    text1: `<b>Use it when the method needs to access or modify class-level data.</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+class Employee:
+
+    company = "ABC"
+
+    @classmethod
+    def get_company(cls):
+        return cls.company
+
+
+print(Employee.get_company())
+
+# Output:
+# ABC
+
+
+# ---------- Ex : 2 -----------
+
+class Employee:
+
+    company = "ABC"
+
+    @classmethod
+    def change_company(cls, name):
+        cls.company = name
+
+
+Employee.change_company("XYZ")
+
+print(Employee.company)
+
+# Output:
+# XYZ`
+                },
+
+                {
+                    definition: `<b>Decorators and Closures</b>
+
+Decorators are closely related to <b>closures</b>.
+
+A wrapper function can remember variables from its enclosing function even after the enclosing function has finished executing.
+
+<b>That behavior is called a closure.</b>`,
+
+                    text1: `<b>Closure</b> → inner function remembers values from an enclosing scope.
+
+<b>Decorator</b> → wraps or modifies another function.
+
+<b>Important:</b> A decorator often uses a closure, but <b>not every closure is a decorator</b>.`,
+
+                    code1: `# ---------- Ex : 1 - Closure -----------
+
+def multiplier(x):
+
+    def multiply(y):
+        return x * y
+
+    return multiply
+
+
+double = multiplier(2)
+
+print(double(5))
+
+# Output:
+# 10
+
+
+# ---------- Ex : 2 - Decorator -----------
+
+def decorator(func):
+
+    def wrapper():
+
+        print("Before")
+
+        func()
+
+        print("After")
+
+    return wrapper
+
+
+@decorator
+def greet():
+    print("Hello")
+
+
+greet()`
+                },
+
+                {
+                    definition: `<b>Decorator Execution Time</b>
+
+The decorator itself and the wrapper do not execute at the same time.
+
+When Python processes:
+
+<b>@decorator</b>
+
+the decorator is applied to the function.
+
+The <b>wrapper</b> executes when the decorated function is called.`,
+
+                    text1: `<b>This difference is important when debugging decorators.</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def decorator(func):
+
+    print("Decorator executed")
+
+    def wrapper():
+
+        print("Wrapper executed")
+
+        func()
+
+    return wrapper
+
+
+@decorator
+def greet():
+    print("Hello")
+
+
+print("Before calling greet")
+
+greet()
+
+# Output:
+# Decorator executed
+# Before calling greet
+# Wrapper executed
+# Hello`
+                },
+
+                {
+                    definition: `<b>Authentication Decorator</b>
+
+In applications, decorators can be used for <b>authentication</b>.
+
+The decorator can check whether a user is logged in before allowing the function to execute.`,
+
+                    text1: `<b>Conceptual example:</b>`,
+
+                    code1: `from functools import wraps
+
+
+def require_login(func):
+
+    @wraps(func)
+    def wrapper(user, *args, **kwargs):
+
+        if not user.is_logged_in:
+            print("Access denied")
+            return
+
+        return func(user, *args, **kwargs)
+
+    return wrapper
+
+
+@require_login
+def view_account(user):
+
+    print("Account details")
+
+
+# The decorator checks authentication
+# before executing view_account().`
+                },
+
+                {
+                    definition: `<b>Validation Decorator</b>
+
+A decorator can perform common <b>input validation</b> before calling a function.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `from functools import wraps
+
+
+def positive_numbers(func):
+
+    @wraps(func)
+    def wrapper(a, b):
+
+        if a < 0 or b < 0:
+            raise ValueError("Numbers must be positive")
+
+        return func(a, b)
+
+    return wrapper
+
+
+@positive_numbers
+def add(a, b):
+    return a + b
+
+
+print(add(10, 20))
+
+# Output:
+# 30
+
+
+# print(add(-10, 20))
+#
+# ValueError:
+# Numbers must be positive`
+                },
+
+                {
+                    definition: `<b>Caching Decorator</b>
+
+Decorators can be used for <b>caching</b> function results.
+
+Python provides a built-in caching decorator:
+
+<b>@functools.lru_cache</b>
+
+It stores previous results so repeated calls can avoid repeating expensive calculations.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `from functools import lru_cache
+
+
+@lru_cache
+def fibonacci(n):
+
+    if n <= 1:
+        return n
+
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+print(fibonacci(10))
+
+# The function automatically caches
+# previous results.`
+                },
+
+                {
+                    definition: `<b>Retry Decorator</b>
+
+A decorator can automatically retry a function when a temporary error occurs.
+
+This can be useful for operations such as:
+- <b>Network requests</b>
+- <b>Temporary service failures</b>
+- <b>Database connections</b>
+
+<b>Important:</b> Retry logic should be designed carefully so that real errors are not hidden.`,
+
+                    text1: `<b>Example:</b>`,
+
+                    code1: `from functools import wraps
+
+
+def retry(times):
+
+    def decorator(func):
+
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+
+            for attempt in range(times):
+
+                try:
+                    return func(*args, **kwargs)
+
+                except Exception:
+
+                    if attempt == times - 1:
+                        raise
+
+        return wrapper
+
+    return decorator
+
+
+@retry(3)
+def process():
+
+    print("Processing...")
+
+
+process()
+
+# The function can be attempted
+# up to 3 times if an exception occurs.`
+                },
+
+                {
+                    definition: `<b>Decorators vs Closures</b>
+
+These concepts are related but they are not the same.
+
+<b>Closure:</b> An inner function remembers values from an enclosing scope.
+
+<b>Decorator:</b> A callable that modifies or extends another callable.
+
+<b>Important:</b> Decorators often use closures internally.`,
+
+                    text1: `<b>Think about the difference like this:</b>
+
+Closure → <b>remembering</b>
+
+Decorator → <b>wrapping/modifying behavior</b>`,
+
+                    code1: `# ---------- Ex : 1 - Closure -----------
+
+def multiplier(x):
+
+    def multiply(y):
+        return x * y
+
+    return multiply
+
+
+double = multiplier(2)
+
+print(double(5))
+
+# Output:
+# 10
+
+
+# ---------- Ex : 2 - Decorator -----------
+
+def log(func):
+
+    def wrapper():
+
+        print("Before")
+
+        func()
+
+        print("After")
+
+    return wrapper`
+                },
+
+                {
+                    definition: `<b>Decorators vs Inheritance</b>
+
+Both can be used to extend behavior, but they solve different problems.
+
+<b>Decorator:</b> adds or modifies behavior around an existing function or class.
+
+<b>Inheritance:</b> creates a new class based on an existing class.
+
+Decorators are particularly useful when the same behavior needs to be reused across multiple unrelated functions or classes.`,
+
+                    text1: `<b>Simple comparison:</b>
+
+Decorator → behavior wrapping.
+
+Inheritance → class relationship.`,
+
+                    code1: `# ---------- Ex : 1 - Decorator -----------
+
+@log_function
+def process():
+    pass
+
+
+# ---------- Ex : 2 - Inheritance -----------
+
+class Child(Parent):
+    pass`
+                },
+
+                {
+                    definition: `<b>Common Mistake: Forgetting return wrapper</b>
+
+The decorator must normally return the wrapper function.
+
+If we forget <b>return wrapper</b>, the decorated function can become <b>None</b>.`,
+
+                    text1: `<b>Incorrect example:</b>`,
+
+                    code1: `# ---------- Ex : 1 -----------
+
+def decorator(func):
+
+    def wrapper():
+        func()
+
+    # Missing:
+    # return wrapper
+
+
+@decorator
+def greet():
+    print("Hello")
+
+
+print(greet)
+
+# Output:
+# None`
+                },
+
+                {
+                    definition: `<b>Common Mistake: Forgetting return result</b>
+
+If the original function returns a value, the wrapper should normally return that value.
+
+Otherwise, the result can be lost.`,
+
+                    text1: `<b>Always check whether the original function has a return value.</b>`,
+
+                    code1: `# ---------- Ex : 1 - Incorrect -----------
+
+def decorator(func):
+
+    def wrapper(*args, **kwargs):
+
+        result = func(*args, **kwargs)
+
+        # Missing:
+        # return result
+
+    return wrapper
+
+
+@decorator
+def add(a, b):
+    return a + b
+
+
+print(add(10, 20))
+
+# Output:
+# None
+
+
+# ---------- Ex : 2 - Correct -----------
+
+def decorator(func):
+
+    def wrapper(*args, **kwargs):
+
+        result = func(*args, **kwargs)
+
+        return result
+
+    return wrapper`
+                },
+
+                {
+                    definition: `<b>Common Mistake: Not Using @wraps</b>
+
+Without <b>@wraps</b>, the decorated function may lose useful metadata.
+
+For reusable decorators, using <b>functools.wraps</b> is a good practice.`,
+
+                    text1: `<b>Preferred pattern:</b>`,
+
+                    code1: `from functools import wraps
+
+
+def decorator(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+
+        return func(*args, **kwargs)
+
+    return wrapper`
+                },
+
+                {
+                    definition: `<b>Real-World Uses of Decorators</b>
+
+Decorators are widely used in Python applications.
+
+<b>Logging</b> → record function execution.
+
+<b>Authentication</b> → verify the user.
+
+<b>Authorization</b> → verify permissions.
+
+<b>Validation</b> → validate input.
+
+<b>Caching</b> → reuse previous results.
+
+<b>Performance monitoring</b> → measure execution time.
+
+<b>Retry logic</b> → retry temporary failures.
+
+<b>Transactions</b> → manage transaction boundaries.
+
+<b>Framework behavior</b> → register routes, commands, tasks, or other components.`,
+
+                    text1: `<b>Framework-style example:</b>
+
+A web framework may provide a decorator that associates a function with a URL route.`,
+
+                    code1: `# ---------- Ex : 1 - Conceptual example -----------
+
+@route("/users")
+def get_users():
+    return users
+
+
+# The decorator can tell the framework:
+#
+# "When /users is requested,
+# execute get_users()."`
+                },
+
+                {
+                    definition: `<b>Complete Generic Decorator Pattern</b>
+
+This is the most important decorator pattern to remember.
+
+<b>Function → Decorator → Wrapper → Original Function</b>`,
+
+                    text1: `<b>Production-friendly generic pattern:</b>
+
+<b>1.</b> Receive the original function.
+
+<b>2.</b> Create a wrapper.
+
+<b>3.</b> Use <b>*args</b> and <b>**kwargs</b>.
+
+<b>4.</b> Execute additional behavior.
+
+<b>5.</b> Call the original function.
+
+<b>6.</b> Return the original result.
+
+<b>7.</b> Use <b>@wraps(func)</b>.`,
+
+                    code1: `from functools import wraps
+
+
+def my_decorator(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+
+        # ---------- Before ----------
+        print("Before")
+
+        # ---------- Original function ----------
+        result = func(*args, **kwargs)
+
+        # ---------- After ----------
+        print("After")
+
+        return result
+
+    return wrapper
+
+
+@my_decorator
+def add(a, b):
+
+    return a + b
+
+
+result = add(10, 20)
+
+print(result)
+
+# Output:
+# Before
+# After
+# 30`
+                },
+
+                {
+                    definition: `<b>Complete Decorator Mental Model</b>
+
+Remember these important concepts:
+
+<b>1. Functions are objects.</b>
+
+Therefore, functions can be passed as arguments.
+
+<b>2. Nested functions are allowed.</b>
+
+Therefore, we can create a wrapper inside a decorator.
+
+<b>3. Functions can return functions.</b>
+
+Therefore, the decorator can return the wrapper.
+
+<b>4. @ syntax applies the decorator.</b>
+
+Therefore:
+
+<b>@decorator</b>
+<b>def function():</b>
+
+is equivalent to:
+
+<b>function = decorator(function)</b>.`,
+
+                    text1: `<b>One-line definition to remember:</b>
+
+<b>"A decorator is a callable that takes another callable, adds or changes behavior, and returns a callable."</b>
+
+<b>Most important pattern:</b>
+
+<b>Decorator → receives function → creates wrapper → returns wrapper.</b>`,
+
+                    code1: `# ---------- Ex : 1 - Complete example -----------
+
+from functools import wraps
+
+
+def decorator(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+
+        print("Before function")
+
+        result = func(*args, **kwargs)
+
+        print("After function")
+
+        return result
+
+    return wrapper
+
+
+@decorator
+def greet(name):
+
+    print("Hello", name)
+
+
+greet("Anand")
+
+
+# Output:
+# Before function
+# Hello Anand
+# After function
+
+
+# ---------- Ex : 2 - Equivalent syntax -----------
+
+def greet(name):
+    print("Hello", name)
+
+
+greet = decorator(greet)
+
+
+# ---------- Ex : 3 - Mental model -----------
+
+# @decorator
+# def greet():
+#     pass
+#
+#              |
+#              v
+#
+#     greet = decorator(greet)
+#
+#              |
+#              v
+#
+#        wrapper function
+#
+#              |
+#              v
+#
+#       greet() calls wrapper()`
+                },
+
+                {
+                    definition: `<b>Decorators — Quick Revision</b>
+
+<b>Decorator</b> → modifies or extends behavior.
+
+<b>Wrapper</b> → function that surrounds the original function.
+
+<b>@decorator</b> → shorthand syntax.
+
+<b>*args</b> → accepts arbitrary positional arguments.
+
+<b>**kwargs</b> → accepts arbitrary keyword arguments.
+
+<b>@wraps</b> → preserves original function metadata.
+
+<b>Decorator factory</b> → function that creates a decorator.
+
+<b>Decorator stacking</b> → applying multiple decorators.
+
+<b>Class decorator</b> → decorator applied to a class.
+
+<b>__call__()</b> → allows an object to behave like a callable.
+
+<b>@property</b> → method accessed like an attribute.
+
+<b>@staticmethod</b> → method without automatic self/cls.
+
+<b>@classmethod</b> → method receiving the class as cls.
+
+<b>@lru_cache</b> → caching decorator.
+
+<b>@dataclass</b> → class decorator for data-oriented classes.`,
+
+                    text1: `<b>The 7 things you should remember first:</b>
+
+<b>1.</b> Functions are first-class objects.
+
+<b>2.</b> Functions can be passed as arguments.
+
+<b>3.</b> Functions can return functions.
+
+<b>4.</b> Decorators use wrapper functions.
+
+<b>5.</b> <b>@decorator</b> is shorthand for <b>function = decorator(function)</b>.
+
+<b>6.</b> Use <b>*args, **kwargs</b> for generic decorators.
+
+<b>7.</b> Use <b>@wraps(func)</b> to preserve metadata.`,
+
+                    code1: `# ---------- Ex : 1 - Final reusable pattern -----------
+
+from functools import wraps
+
+
+def decorator(func):
+
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+
+        # Extra behavior
+        print("Before")
+
+        # Original behavior
+        result = func(*args, **kwargs)
+
+        # Extra behavior
+        print("After")
+
+        # Preserve original result
+        return result
+
+    return wrapper
+
+
+@decorator
+def add(a, b):
+
+    return a + b
+
+
+print(add(10, 20))
+
+# Output:
+# Before
+# After
+# 30
+
+
+# ---------- Ex : 2 - Final mental model -----------
+
+#             Original Function
+#                    |
+#                    v
+#               Decorator
+#                    |
+#                    v
+#                 Wrapper
+#              /          \\
+#           Before       After
+#                \\       /
+#             Original
+#              Function
+#                    |
+#                    v
+#                 Result`
                 }
+
             ]
         },
         {
@@ -2670,6 +4877,1218 @@ print(utils.add(10, 5))
 // Output when running utils.py:
 // 7
 `
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "Context Manager",
+            note: [
+                {
+                    definition: `<b>A context manager in Python is an object that manages a resource or a specific block of code by automatically performing setup before the block and cleanup after the block.</b>
+
+The context manager is commonly used with the <b>"with" statement</b>.
+
+The main purpose is to guarantee that <b>cleanup code is executed, even if an exception occurs</b> inside the "with" block.`,
+
+                    text1: `
+A <b>Context Manager</b> in Python is a mechanism used to <b>manage resources automatically.</b>
+                    A context manager in Python is a construct that handles the setup and teardown of resources automatically. It is most commonly used with the <b>with statement</b> to ensure that resources—like files, database connections, or network sockets—are properly managed and cleaned up (even if errors occur).
+                    
+                    <b>Why Use Context Managers?</b>
+                    Without a context manager, you have to manually handle cleanup tasks, which can lead to resource leaks if an exception interrupts your code. Context managers guarantee cleanup by:
+                    <b>Automating Setup</b>: Preparing the resource before the code block runs (e.g., opening a file).
+                    <b>Guaranteed Teardown</b>: Cleaning up after the block finishes, regardless of whether it succeeded or crashed (e.g., closing a file).
+    
+    The basic syntax is:
+with context_manager as variable:
+    # code block
+
+Python automatically performs:
+
+1. <b>Setup / resource acquisition</b>
+2. Executes the code inside the "with" block
+3. <b>Cleanup / resource release</b>
+
+This makes <b>resource management safer and cleaner.</b>`,
+
+                    code1: `# ---------- Ex : 1 : Basic with statement -------------
+
+with open("example.txt", "w") as file:
+    file.write("Hello Python")
+
+# Python automatically closes the file
+# after the with block finishes.
+
+
+# ---------- Ex : 2 : Without context manager -------------
+
+file = open("example.txt", "w")
+
+try:
+    file.write("Hello Python")
+finally:
+    file.close()
+
+
+# ---------- Ex : 3 : With context manager -------------
+
+with open("example.txt", "w") as file:
+    file.write("Hello Python")
+
+# No need to explicitly call:
+# file.close()
+
+
+# ---------- Ex : 4 : Why context managers are useful -------------
+
+with open("example.txt", "r") as file:
+    data = file.read()
+
+print(data)
+
+# The file is automatically closed after
+# leaving the with block.`
+                },
+
+                {
+                    definition: `The <b>"with" statement</b> is the syntax used to work with a context manager.
+
+It ensures that the context manager's <b>setup and cleanup operations are performed automatically.</b>`,
+
+                    text1: `The general structure is:
+
+with expression as variable:
+    statements
+
+The expression must produce an object that supports the <b>context manager protocol.</b>`,
+
+                    code1: `# ---------- Ex : 5 : with statement -------------
+
+with open("data.txt", "r") as file:
+    content = file.read()
+
+print(content)
+
+
+# ---------- Ex : 6 : with without "as" -------------
+
+with open("data.txt", "r"):
+    print("File is being used")
+
+
+# ---------- Ex : 7 : Multiple context managers -------------
+
+with open("input.txt", "r") as source, open("output.txt", "w") as target:
+    data = source.read()
+    target.write(data)`
+                },
+
+                {
+                    definition: `Python's <b>context manager protocol</b> is mainly based on two special methods:
+
+<b>__enter__()</b>
+<b>__exit__()</b>
+
+An object that implements these methods can be used with the <b>"with" statement.</b>`,
+
+                    text1: `The execution flow is approximately:
+
+1. Python calls <b>__enter__()</b>
+2. The value returned by __enter__() is assigned to the <b>"as" variable</b>
+3. The code inside the with block executes
+4. Python calls <b>__exit__()</b>
+5. <b>__exit__() is called even when an exception occurs</b> inside the block.`,
+
+                    code1: `# ---------- Ex : 8 : Context manager protocol -------------
+
+class MyContext:
+
+    def __enter__(self):
+        print("Entering context")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting context")
+
+
+with MyContext() as obj:
+    print("Inside with block")
+
+
+# Output:
+# Entering context
+# Inside with block
+# Exiting context`
+                },
+
+                {
+                    definition: `<b>__enter__()</b> is called when execution enters the "with" block.
+
+It is normally used for <b>setup or resource acquisition.</b>
+
+The value returned by __enter__() becomes the value assigned to the variable after <b>"as"</b>.`,
+
+                    text1: `For example:
+
+with MyContext() as obj:
+
+Here:
+
+MyContext() -> creates the context manager
+<b>__enter__() -> is automatically called</b>
+obj -> receives the value returned by __enter__()`,
+
+                    code1: `# ---------- Ex : 9 : __enter__() -------------
+
+class Database:
+
+    def __enter__(self):
+        print("Database connection opened")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Database connection closed")
+
+
+with Database() as db:
+    print("Using database")
+
+
+# Output:
+# Database connection opened
+# Using database
+# Database connection closed
+
+
+# ---------- Ex : 10 : Returning another value from __enter__ -------------
+
+class Example:
+
+    def __enter__(self):
+        return "Hello from context manager"
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        pass
+
+
+with Example() as message:
+    print(message)
+
+# Output:
+# Hello from context manager`
+                },
+
+                {
+                    definition: `<b>__exit__()</b> is called automatically when Python leaves the "with" block.
+
+It is mainly used for <b>cleanup operations</b> such as closing files, releasing locks, closing database connections, or releasing other resources.`,
+
+                    text1: `__exit__() receives three important arguments:
+
+<b>exc_type</b>
+    Type of exception
+
+<b>exc_value</b>
+    Exception object / exception value
+
+<b>traceback</b>
+    Traceback information
+
+If no exception occurs, <b>all three are None.</b>`,
+
+                    code1: `# ---------- Ex : 11 : __exit__() without exception -------------
+
+class Example:
+
+    def __enter__(self):
+        print("Entering")
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting")
+        print(exc_type)
+        print(exc_value)
+        print(traceback)
+
+
+with Example():
+    print("Inside")
+
+
+# Output:
+# Entering
+# Inside
+# Exiting
+# None
+# None
+# None
+
+
+# ---------- Ex : 12 : __exit__() with exception -------------
+
+class Example:
+
+    def __enter__(self):
+        print("Entering")
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting")
+        print("Exception type:", exc_type)
+        print("Exception value:", exc_value)
+
+
+with Example():
+    print("Inside")
+    raise ValueError("Something went wrong")
+
+
+# __exit__() is still called before the exception
+# continues outside the context manager.`
+                },
+
+                {
+                    definition: `The <b>return value of __exit__()</b> determines whether an exception should be suppressed.
+
+If __exit__() returns:
+
+<b>True</b>
+    The exception is suppressed.
+
+<b>False or None</b>
+    The exception is not suppressed and continues normally.`,
+
+                    text1: `This is an <b>important feature of context managers.</b>
+
+Normally, __exit__() should return None unless you intentionally want to <b>handle and suppress an exception.</b>`,
+
+                    code1: `# ---------- Ex : 13 : Suppressing an exception -------------
+
+class IgnoreError:
+
+    def __enter__(self):
+        print("Entering")
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting")
+        return True
+
+
+with IgnoreError():
+    print("Inside")
+    raise ValueError("Something went wrong")
+
+print("Program continues")
+
+
+# Output:
+# Entering
+# Inside
+# Exiting
+# Program continues
+
+
+# ---------- Ex : 14 : Not suppressing an exception -------------
+
+class DoNotIgnore:
+
+    def __enter__(self):
+        print("Entering")
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting")
+        return False
+
+
+with DoNotIgnore():
+    raise ValueError("Something went wrong")
+
+# ValueError continues after __exit__()`
+                },
+
+                {
+                    definition: `A <b>custom context manager</b> is a user-defined class that implements the context manager protocol using <b>__enter__() and __exit__().</b>`,
+
+                    text1: `Custom context managers are useful when you want to automatically manage your own resources or operations.
+
+Typical examples:
+
+- Database connections
+- Transactions
+- Locks
+- Temporary files
+- Logging
+- Timers
+- Configuration changes
+- Network connections`,
+
+                    code1: `# ---------- Ex : 15 : Custom context manager -------------
+
+class FileManager:
+
+    def __enter__(self):
+        print("Opening file")
+        self.file = open("data.txt", "w")
+        return self.file
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Closing file")
+        self.file.close()
+
+
+with FileManager() as file:
+    file.write("Hello Python")
+
+
+# Output:
+# Opening file
+# Closing file
+
+
+# The file is automatically closed.`
+                },
+
+                {
+                    definition: `Context managers are especially useful when a resource must <b>always be released, even when an exception occurs.</b>`,
+
+                    text1: `The important idea is:
+
+<b>Acquire resource</b>
+        ↓
+<b>Use resource</b>
+        ↓
+<b>Exception or normal completion</b>
+        ↓
+<b>Cleanup resource</b>
+
+This is similar to <b>try/finally</b>, but a context manager packages this behavior into a reusable abstraction.`,
+
+                    code1: `# ---------- Ex : 16 : try/finally equivalent -------------
+
+file = open("data.txt", "w")
+
+try:
+    file.write("Hello")
+finally:
+    file.close()
+
+
+# ---------- Ex : 17 : Context manager equivalent -------------
+
+with open("data.txt", "w") as file:
+    file.write("Hello")
+
+
+# Both guarantee cleanup,
+# but the context manager provides cleaner syntax.`
+                },
+
+                {
+                    definition: `A context manager can also be used to <b>temporarily change a state</b> and then restore the original state after leaving the with block.`,
+
+                    text1: `The context manager does not have to manage a physical resource.
+
+It can manage <b>any temporary state or behavior.</b>`,
+
+                    code1: `# ---------- Ex : 18 : Temporary state -------------
+
+class TemporarySetting:
+
+    def __enter__(self):
+        print("Setting enabled")
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Setting restored")
+
+
+with TemporarySetting():
+    print("Using temporary setting")
+
+
+# Output:
+# Setting enabled
+# Using temporary setting
+# Setting restored`
+                },
+
+                {
+                    definition: `A context manager can receive a value through <b>__init__()</b> and use that value during __enter__() and __exit__().`,
+
+                    text1: `The lifecycle is:
+
+<b>__init__()</b>
+    ↓
+<b>__enter__()</b>
+    ↓
+<b>with block</b>
+    ↓
+<b>__exit__()</b>`,
+
+                    code1: `# ---------- Ex : 19 : Context manager with constructor -------------
+
+class FileManager:
+
+    def __init__(self, filename, mode):
+        self.filename = filename
+        self.mode = mode
+
+    def __enter__(self):
+        print("Opening:", self.filename)
+        self.file = open(self.filename, self.mode)
+        return self.file
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Closing:", self.filename)
+        self.file.close()
+
+
+with FileManager("data.txt", "w") as file:
+    file.write("Hello Python")`
+                },
+
+                {
+                    definition: `Python provides the <b>contextlib</b> module to make context managers easier to create.
+
+The <b>@contextmanager decorator</b> allows you to create a context manager using a <b>generator function</b> instead of writing a class with __enter__() and __exit__().`,
+
+                    text1: `The contextlib.contextmanager pattern uses:
+
+<b>setup code</b>
+<b>yield</b>
+<b>cleanup code</b>
+
+Code before yield behaves like <b>__enter__()</b>.
+
+The value passed to yield becomes the value after <b>"as"</b>.
+
+Code after yield behaves like <b>__exit__()</b>.`,
+
+                    code1: `# ---------- Ex : 20 : @contextmanager -------------
+
+from contextlib import contextmanager
+
+
+@contextmanager
+def my_context():
+    print("Entering context")
+
+    yield
+
+    print("Exiting context")
+
+
+with my_context():
+    print("Inside with block")
+
+
+# Output:
+# Entering context
+# Inside with block
+# Exiting context`
+                },
+
+                {
+                    definition: `The value passed to <b>yield</b> from a @contextmanager function becomes the value assigned to the variable after <b>"as"</b>.`,
+
+                    text1: `For example:
+
+with database_connection() as db:
+
+The object yielded by the context manager is assigned to <b>db</b>.`,
+
+                    code1: `# ---------- Ex : 21 : Yielding a value -------------
+
+from contextlib import contextmanager
+
+
+@contextmanager
+def database():
+    print("Opening database")
+
+    connection = "Database Connection"
+
+    try:
+        yield connection
+    finally:
+        print("Closing database")
+
+
+with database() as db:
+    print(db)
+
+
+# Output:
+# Opening database
+# Database Connection
+# Closing database`
+                },
+
+                {
+                    definition: `The <b>try/finally</b> pattern inside a @contextmanager is important when cleanup must happen even if an exception occurs inside the with block.`,
+
+                    text1: `The general pattern is:
+
+@contextmanager
+def something():
+    setup()
+
+    try:
+        yield resource
+    finally:
+        cleanup()
+
+The <b>finally block guarantees cleanup.</b>`,
+
+                    code1: `# ---------- Ex : 22 : Exception-safe context manager -------------
+
+from contextlib import contextmanager
+
+
+@contextmanager
+def resource():
+    print("Resource acquired")
+
+    try:
+        yield
+    finally:
+        print("Resource released")
+
+
+with resource():
+    print("Using resource")
+    raise ValueError("Something went wrong")
+
+
+# Output:
+# Resource acquired
+# Using resource
+# Resource released
+#
+# The exception is still raised,
+# but cleanup happens first.`
+                },
+
+                {
+                    definition: `A context manager can also catch exceptions using the <b>try/except/finally</b> pattern inside a @contextmanager function.`,
+
+                    text1: `This allows the context manager to perform <b>custom exception handling</b> while still guaranteeing cleanup.`,
+
+                    code1: `# ---------- Ex : 23 : Handling exception with @contextmanager -------------
+
+from contextlib import contextmanager
+
+
+@contextmanager
+def my_context():
+
+    print("Starting")
+
+    try:
+        yield
+    except ValueError as error:
+        print("Handled:", error)
+    finally:
+        print("Cleanup")
+
+
+with my_context():
+    print("Inside")
+    raise ValueError("Invalid value")
+
+
+print("Program continues")`
+                },
+
+                {
+                    definition: `Multiple context managers can be used in a <b>single with statement.</b>
+
+This is useful when multiple resources need to be opened and automatically cleaned up.`,
+
+                    text1: `Each context manager gets entered and exited automatically.
+
+<b>The cleanup happens in reverse order of entry.</b>`,
+
+                    code1: `# ---------- Ex : 24 : Multiple context managers -------------
+
+with open("input.txt", "r") as source, open("output.txt", "w") as target:
+
+    data = source.read()
+
+    target.write(data)
+
+
+# Equivalent idea:
+
+# Enter source
+# Enter target
+# Execute block
+# Exit target
+# Exit source`
+                },
+
+                {
+                    definition: `Context managers can also be <b>nested.</b>
+
+The inner context manager is entered after the outer context manager and is exited before the outer context manager.`,
+
+                    text1: `Execution order:
+
+<b>Outer __enter__()</b>
+    ↓
+<b>Inner __enter__()</b>
+    ↓
+<b>Inner __exit__()</b>
+    ↓
+<b>Outer __exit__()</b>`,
+
+                    code1: `# ---------- Ex : 25 : Nested context managers -------------
+
+class ContextA:
+
+    def __enter__(self):
+        print("A enter")
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("A exit")
+
+
+class ContextB:
+
+    def __enter__(self):
+        print("B enter")
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("B exit")
+
+
+with ContextA():
+    with ContextB():
+        print("Inside")
+
+
+# Output:
+# A enter
+# B enter
+# Inside
+# B exit
+# A exit`
+                },
+
+                {
+                    definition: `A context manager does not necessarily need to return a value from <b>__enter__().</b>
+
+If __enter__() does not explicitly return anything, it returns <b>None.</b>`,
+
+                    text1: `Therefore:
+
+with MyContext() as value:
+
+value will be <b>None</b> if __enter__() has no return statement.`,
+
+                    code1: `# ---------- Ex : 26 : __enter__() returning None -------------
+
+class Example:
+
+    def __enter__(self):
+        print("Enter")
+        # No return
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exit")
+
+
+with Example() as value:
+    print(value)
+
+
+# Output:
+# Enter
+# None
+# Exit`
+                },
+
+                {
+                    definition: `The context manager protocol is useful because <b>cleanup is guaranteed when control leaves the with block, including when an exception occurs.</b>`,
+
+                    text1: `This makes context managers especially useful for operations where forgetting cleanup could cause problems.
+
+Examples:
+
+File
+Database connection
+Lock
+Network connection
+Transaction
+Temporary state`,
+
+                    code1: `# ---------- Ex : 27 : File resource -------------
+
+with open("data.txt", "r") as file:
+    data = file.read()
+
+
+# ---------- Ex : 28 : Lock resource -------------
+
+# Conceptual example
+
+with lock:
+    update_shared_data()
+
+
+# The lock is automatically released
+# when the block ends.
+
+
+# ---------- Ex : 29 : Database transaction -------------
+
+# Conceptual example
+
+with database.transaction():
+    create_order()
+    update_inventory()
+
+# Transaction can automatically
+# commit or rollback depending on implementation.`
+                },
+
+                {
+                    definition: `A context manager can be designed to <b>suppress only specific exceptions.</b>
+
+__exit__() receives the exception type, value, and traceback, so it can inspect the exception before deciding whether to suppress it.`,
+
+                    text1: `Returning <b>True</b> suppresses the exception.
+
+Returning <b>False or None</b> allows the exception to propagate.`,
+
+                    code1: `# ---------- Ex : 30 : Suppress only ValueError -------------
+
+class IgnoreValueError:
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+
+        if exc_type is ValueError:
+            print("ValueError handled")
+            return True
+
+        return False
+
+
+with IgnoreValueError():
+    raise ValueError("Invalid value")
+
+
+print("Continues")
+
+
+# ValueError is suppressed.
+
+
+# ---------- Ex : 31 : TypeError is not suppressed -------------
+
+with IgnoreValueError():
+    raise TypeError("Wrong type")
+
+# TypeError propagates normally.`
+                },
+
+                {
+                    definition: `Context managers are closely related to the <b>try/finally pattern.</b>
+
+The main advantage is that resource-management logic can be encapsulated inside a <b>reusable object or function.</b>`,
+
+                    text1: `Instead of repeating:
+
+try:
+    use resource
+finally:
+    cleanup
+
+you can create a context manager once and use:
+
+with resource:
+    use resource
+
+<b>The context manager separates resource-management logic from business logic.</b>`,
+
+                    code1: `# ---------- Ex : 32 : Comparison -------------
+
+# Without context manager
+
+resource = acquire_resource()
+
+try:
+    use_resource(resource)
+finally:
+    release_resource(resource)
+
+
+# With context manager
+
+with managed_resource() as resource:
+    use_resource(resource)
+
+
+# The second version separates
+# resource-management logic from
+# business logic.`
+                },
+
+                {
+                    definition: `Context managers can be used with files, locks, database connections, and many other objects that support the <b>context manager protocol.</b>`,
+
+                    text1: `Common Python examples include:
+
+open()
+threading.Lock()
+threading.RLock()
+temporary resources from tempfile
+database connection libraries
+network-related resources
+custom application resources`,
+
+                    code1: `# ---------- Ex : 33 : File context manager -------------
+
+with open("data.txt", "r") as file:
+    print(file.read())
+
+
+# ---------- Ex : 34 : Lock context manager -------------
+
+import threading
+
+lock = threading.Lock()
+
+with lock:
+    print("Critical section")
+
+
+# The lock is automatically released
+# after leaving the with block.`
+                },
+
+                {
+                    definition: `The <b>contextlib</b> module also provides ready-made utilities for building and working with context managers.`,
+
+                    text1: `Some useful contextlib features are:
+
+<b>contextmanager</b>
+    Create context managers using generator functions.
+
+<b>closing</b>
+    Ensure an object's close() method is called.
+
+<b>suppress</b>
+    Suppress specified exceptions.
+
+<b>redirect_stdout</b>
+    Temporarily redirect standard output.
+
+<b>redirect_stderr</b>
+    Temporarily redirect standard error.`,
+
+                    code1: `# ---------- Ex : 35 : contextlib.suppress -------------
+
+from contextlib import suppress
+
+
+with suppress(FileNotFoundError):
+    open("missing.txt", "r")
+
+
+print("Program continues")
+
+
+# FileNotFoundError is suppressed.
+
+
+# ---------- Ex : 36 : contextlib.redirect_stdout -------------
+
+from contextlib import redirect_stdout
+import io
+
+
+output = io.StringIO()
+
+with redirect_stdout(output):
+    print("Hello Python")
+
+print(output.getvalue())`
+                },
+
+                {
+                    definition: `A context manager can also be used to <b>measure execution time.</b>
+
+The setup records the start time and the cleanup records the end time.`,
+
+                    text1: `This is a practical example of using a context manager for temporary execution behavior rather than resource management.`,
+
+                    code1: `# ---------- Ex : 37 : Timer context manager -------------
+
+import time
+
+
+class Timer:
+
+    def __enter__(self):
+        self.start = time.perf_counter()
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        self.end = time.perf_counter()
+        self.elapsed = self.end - self.start
+        print("Execution time:", self.elapsed)
+
+
+with Timer():
+    total = sum(range(1_000_000))`
+                },
+
+                {
+                    definition: `The complete lifecycle of a class-based context manager is:
+
+<b>__init__()</b>
+    ↓
+<b>__enter__()</b>
+    ↓
+<b>with block</b>
+    ↓
+<b>__exit__()</b>
+    ↓
+<b>Exception propagated or suppressed</b>`,
+
+                    text1: `Important:
+
+<b>__init__()</b>
+    Creates/configures the object.
+
+<b>__enter__()</b>
+    Performs setup and returns the value for "as".
+
+<b>with block</b>
+    Contains the code that uses the resource.
+
+<b>__exit__()</b>
+    Performs cleanup and optionally handles exceptions.`,
+
+                    code1: `# ---------- Ex : 38 : Complete lifecycle -------------
+
+class Resource:
+
+    def __init__(self, name):
+        print("1. __init__")
+        self.name = name
+
+    def __enter__(self):
+        print("2. __enter__")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("4. __exit__")
+
+
+resource = Resource("Database")
+
+with resource as r:
+    print("3. with block")
+
+
+# Output:
+# 1. __init__
+# 2. __enter__
+# 3. with block
+# 4. __exit__`
+                },
+
+                {
+                    definition: `The key idea of a context manager is that it defines a <b>controlled lifecycle around a block of code.</b>`,
+
+                    text1: `Think of it as:
+
+<b>BEFORE</b>
+    ↓
+Setup
+
+<b>DURING</b>
+    ↓
+Your code
+
+<b>AFTER</b>
+    ↓
+Cleanup
+
+The <b>"with" statement</b> connects these three stages.`,
+
+                    code1: `# ---------- Ex : 39 : Mental model -------------
+
+with resource as value:
+
+    # BEFORE
+    # __enter__()
+
+    # DURING
+    # Your code
+
+# AFTER
+# __exit__()
+
+
+# This is the core idea
+# behind Python context managers.`
+                },
+
+                {
+                    definition: `A context manager is <b>not the same thing as a generator.</b>
+
+A generator produces values using yield.
+
+A context manager manages the lifecycle of a block of code.
+
+The <b>@contextmanager decorator uses a generator internally</b> to create a context manager.`,
+
+                    text1: `So:
+
+<b>Generator</b>
+    -> Produces values over time
+
+<b>Context Manager</b>
+    -> Manages setup and cleanup around a block
+
+<b>@contextmanager</b>
+    -> Allows a generator function to implement context-manager behavior.`,
+
+                    code1: `# ---------- Ex : 40 : Generator vs context manager -------------
+
+# Generator
+
+def numbers():
+    yield 1
+    yield 2
+    yield 3
+
+
+# Context manager
+
+from contextlib import contextmanager
+
+
+@contextmanager
+def my_context():
+
+    print("Setup")
+
+    yield
+
+    print("Cleanup")
+
+
+with my_context():
+    print("Work")`
+                },
+
+                {
+                    definition: `A context manager should generally be used when something needs <b>guaranteed setup and cleanup around a block of code.</b>`,
+
+                    text1: `Common real-world use cases:
+
+1. Opening and closing files
+2. Acquiring and releasing locks
+3. Opening and closing database connections
+4. Managing database transactions
+5. Temporary configuration changes
+6. Measuring execution time
+7. Redirecting output
+8. Managing network resources
+9. Creating and cleaning temporary resources
+10. Implementing application-specific resource management`,
+
+                    code1: `# ---------- Ex : 41 : Real-world pattern -------------
+
+class DatabaseConnection:
+
+    def __enter__(self):
+        print("Connect to database")
+        return self
+
+    def execute(self, query):
+        print("Executing:", query)
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Close database connection")
+
+
+with DatabaseConnection() as db:
+
+    db.execute("SELECT * FROM users")
+
+    db.execute("SELECT * FROM orders")
+
+
+# The connection is automatically closed
+# after the with block.`
+                },
+
+                {
+                    definition: `<b>The most important points to remember about Python context managers are:</b>
+
+1. They manage resources or temporary states.
+2. They are commonly used with the <b>"with" statement.</b>
+3. Class-based context managers implement <b>__enter__() and __exit__().</b>
+4. <b>__enter__()</b> performs setup.
+5. The value returned by __enter__() is assigned to the <b>"as" variable.</b>
+6. The with block contains the main operation.
+7. <b>__exit__()</b> performs cleanup.
+8. <b>__exit__() is called even when an exception occurs.</b>
+9. Returning <b>True</b> from __exit__() suppresses the exception.
+10. Returning <b>False or None</b> allows the exception to propagate.
+11. <b>contextlib.contextmanager</b> can create context managers using generator functions.
+12. <b>try/finally</b> is the fundamental cleanup mechanism behind the concept.`,
+
+                    text1: `<b>Easy way to remember:</b>
+
+<b>Context Manager = "Manage something before, during, and after a block of code."</b>
+
+with
+    ↓
+<b>__enter__()</b>
+    ↓
+<b>WORK</b>
+    ↓
+<b>__exit__()</b>
+
+<b>Interview definition:</b>
+
+"Python context managers provide a protocol for managing resources using the with statement. A class-based context manager implements __enter__() for setup and __exit__() for cleanup. The __exit__() method is called even when an exception occurs, and its return value determines whether that exception is suppressed."`,
+
+                    code1: `# ---------- Ex : 42 : Complete example -------------
+
+from contextlib import contextmanager
+
+
+@contextmanager
+def database_connection():
+
+    print("1. Opening connection")
+
+    connection = "DB Connection"
+
+    try:
+        yield connection
+
+    finally:
+        print("3. Closing connection")
+
+
+with database_connection() as db:
+
+    print("2. Using:", db)
+
+
+# Output:
+# 1. Opening connection
+# 2. Using: DB Connection
+# 3. Closing connection`
                 }
             ]
         },
@@ -7020,7 +10439,10 @@ Event loops, coroutines, and futures are the essential elements of an asynchrono
             title: "async / await",
             note: [
                 {
-                    text1: `<b>async</b> and <b>await</b> in Python are used to define and run <b>non-blocking asynchronous code</b> using the <b>asyncio</b> library. This allows for better performance in I/O-bound tasks by enabling concurrent execution without using threads.
+                    text1: `
+                    This allows efficient concurrency for I/O-bound tasks by allowing the event loop to switch between tasks while they are waiting, without requiring a separate thread for each task.
+                    
+                    <b>async</b> and <b>await</b> in Python are used to define and run <b>non-blocking asynchronous code</b> using the <b>asyncio</b> library. This allows for better performance in I/O-bound tasks by enabling concurrent execution without using threads.
                     
                     <b>async</b> declares an asynchronous function
 <b>await</b> pauses the function execution until the awaited task completes
@@ -7070,7 +10492,7 @@ Runs multiple <b>awaitable</b> tasks concurrently and <b>waits for all of them t
 In the <b>Ex : 3</b>, we are trying to continue the execution of other tasks even if another one executing is sleeping (blocking). Notice the <b>async</b> keyword in front of the <b>task</b> and <b>main</b> functions.
 
 Those functions are now <b>coroutines</b>.
-Coroutines functions in Python are preceded by the keyword <b>async</b>. The <b>main()</b> function here is the task coordinator or our single event loop, as it executes all tasks using the <b>async.gather</b> method. The <b>asyncio.gather</b> function runs <b>awaitable</b> objects concurrently.
+Coroutine functions in Python are defined using the keyword <b>async</b> with <b>def (async def)</b>. The <b>main()</b> function here is the task coordinator, as it executes/coordinates all tasks using <b>asyncio.gather()</b>. The event loop is responsible for scheduling and running these asynchronous tasks. The <b>asyncio.gather()</b> function runs awaitable objects concurrently.
 
 
 <b><span style="color:red">asyncio.shield</span></b>
