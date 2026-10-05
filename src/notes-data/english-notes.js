@@ -6052,6 +6052,306 @@ export const EnglishList = {
 
             ],
         },
+        {
+            id: 11,
+            topic: "virtual call / call disconnect phrases",
+            explain: 'Virtual callలో sudden interruption లేదా connectivity issueను express చేయడానికి ఈ వాక్యాలు ఉపయోగపడతాయి.',
+            formation: 'Sorry, I lost you for a moment. / I think we got disconnected. / I lost the connection.',
+            content: [
+                {
+                    id: 1,
+                    eng: "Sorry, I lost you for a moment.",
+                    tel: 'మరొక సెకను నేను మీరు loss అయ్యాను. / మీకు నన్ను మొదట చాలా సేపు స్పష్టంగా వినకపోవచ్చు.',
+                    tense: 'Past tense'
+                },
+                {
+                    id: 2,
+                    eng: "Sorry, I think we got disconnected.",
+                    tel: 'క్షమించండి, నేను అనుకుంటున్నాను మనం కనెక్షన్ తగ్గిపోయింది.',
+                    tense: 'Past tense'
+                },
+                {
+                    id: 3,
+                    eng: "Sorry, I lost the connection.",
+                    tel: 'క్షమించండి, నేను కనెక్షన్ loss అయ్యాను.',
+                    tense: 'Past tense'
+                },
+                {
+                    id: 4,
+                    eng: "Can you hear me clearly?",
+                    tel: 'మీకు నాకు స్పష్టంగా వినిపిస్తున్నదా?',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 5,
+                    eng: "The internet is unstable right now.",
+                    tel: 'ఇప్పుడు ఇంటర్నెట్ అస్థిరంగా ఉంది.',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 6,
+                    eng: "I am back now. Can we continue?",
+                    tel: 'నేను ఇప్పుడు తిరిగి వచ్చాను. మేము కొనసాగించొచ్చా?',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 7,
+                    eng: "My connection dropped for a second.",
+                    tel: 'నా కనెక్షన్ ఒక సెకన్‌కి డ్రాప్ అయిపోయింది.',
+                    tense: 'Past tense'
+                },
+                {
+                    id: 8,
+                    eng: "Can you see my screen?",
+                    tel: 'మీకు నా స్క్రీన్ కనిపిస్తుందా?',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 9,
+                    eng: "I think the call got interrupted.",
+                    tel: 'నేను అనుకుంటున్నాను కాల్ మధ్యలో interrupted అయిపోయింది.',
+                    tense: 'Past tense'
+                },
+                {
+                    id: 10,
+                    eng: "Let me reconnect quickly.",
+                    tel: 'నేను త్వరగా తిరిగి కనెక్ట్ అవుతాను.',
+                    tense: 'Future tense'
+                },
+                {
+                    id: 11,
+                    eng: "Your voice is breaking up a little. Can you say that again?",
+                    tel: 'మీ స్వరం కొంచెం విచ్ఛిన్నమవుతోంది. మీరు దానిని మళ్లీ చెప్పగలరా?',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 12,
+                    eng: "I am getting some echo and distortion on your voice.",
+                    tel: 'నేకు మీ స్వరంలో ఇక్కడా echo మరియు distortion వస్తోంది.',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 13,
+                    eng: "Can you please speak a little slower?",
+                    tel: 'దయచేసి కొంచెం నెమ్మదిగా మాట్లాడగలరా?',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 14,
+                    eng: "I am losing your voice intermittently.",
+                    tel: 'నేను మీ స్వరాన్ని కొన్నిసార్లు కోల్పోతున్నాను.',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 15,
+                    eng: "There is some noise on the line. Please repeat that.",
+                    tel: 'లైన్‌పై కొంత శబ్దం ఉంది. దయచేసి ఆ పదాన్ని మళ్లీ చెప్పండి.',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 16,
+                    eng: "I can hear you, but your audio is breaking up.",
+                    tel: 'నేను మీకు వినిపిస్తున్నాను, కానీ మీ ఆడియో విచ్ఛిన్నమవుతోంది.',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 17,
+                    eng: "Could you switch to your mobile hotspot for a moment?",
+                    tel: 'దయచేసి ఒక క్షణం మీ మొబైల్ హాట్స్పాట్కి మారగలరా?',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 18,
+                    eng: "Your voice keeps going up and down. Are you muted?",
+                    tel: 'మీ స్వరం ఎప్పటికప్పుడు పెరుగుతూ, తగ్గుతూ ఉంది. మీరు మ్యూట్ చేయబడ్డారా?',
+                    tense: 'Present tense'
+                },
+                {
+                    id: 19,
+                    eng: "I can hear you one moment and then nothing the next.",
+                    tel: 'నేను మీకు ఒక క్షణం వినగలుగుతున్నాను, తర్వాత ఇంకేమీ వినిపించదు.',
+                    tense: 'Present tense'
+                },
+
+            ],
+        },
+        {
+    id: 11,
+    topic: "Keep + verb-ing",
+    explain: '“Keep + verb-ing” means to continue doing something. It is commonly used to encourage someone to continue an action.',
+    formation: 'Subject + keep/keeps + verb-ing',
+    content: [
+        {
+            id: 1,
+            eng: "Keep going. You are doing well.",
+            tel: "కొనసాగించు. నువ్వు బాగా చేస్తున్నావు.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 2,
+            eng: "Keep moving. We are getting late.",
+            tel: "కదులుతూనే ఉండు. మనకు ఆలస్యం అవుతోంది.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 3,
+            eng: "Keep asking questions if you have any doubts.",
+            tel: "నీకు ఏమైనా సందేహాలు ఉంటే ప్రశ్నలు అడుగుతూనే ఉండు.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 4,
+            eng: "Keep practicing English every day.",
+            tel: "ప్రతిరోజూ ఇంగ్లీష్ ప్రాక్టీస్ చేస్తూ ఉండు.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 5,
+            eng: "Keep trying. You will get it eventually.",
+            tel: "ప్రయత్నిస్తూనే ఉండు. చివరికి నీకు అర్థమవుతుంది / నువ్వు సాధిస్తావు.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 6,
+            eng: "She keeps asking the same question.",
+            tel: "ఆమె అదే ప్రశ్నను పదేపదే అడుగుతూనే ఉంటుంది.",
+            tense: "Present Simple",
+            type: "Declarative Sentence"
+        },
+        {
+            id: 7,
+            eng: "He keeps making the same mistake.",
+            tel: "అతను అదే తప్పును పదేపదే చేస్తూనే ఉంటాడు.",
+            tense: "Present Simple",
+            type: "Declarative Sentence"
+        },
+        {
+            id: 8,
+            eng: "They kept working until the issue was fixed.",
+            tel: "సమస్య పరిష్కారం అయ్యే వరకు వారు పని చేస్తూనే ఉన్నారు.",
+            tense: "Past Simple",
+            type: "Declarative Sentence"
+        },
+        {
+            id: 9,
+            eng: "I will keep working on this story until it is completed.",
+            tel: "ఈ స్టోరీ పూర్తయ్యే వరకు నేను దీనిపై పని చేస్తూనే ఉంటాను.",
+            tense: "Future Simple",
+            type: "Declarative Sentence"
+        },
+        {
+            id: 10,
+            eng: "If you keep practicing, your English will improve.",
+            tel: "నువ్వు ప్రాక్టీస్ చేస్తూనే ఉంటే, నీ ఇంగ్లీష్ మెరుగుపడుతుంది.",
+            tense: "First Conditional",
+            type: "Conditional Sentence"
+        },
+        {
+            id: 11,
+            eng: "Please keep me updated.",
+            tel: "దయచేసి నాకు ఎప్పటికప్పుడు సమాచారం అందిస్తూ ఉండండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 12,
+            eng: "Keep me posted if you get any updates.",
+            tel: "ఏదైనా అప్‌డేట్ వస్తే నాకు తెలియజేస్తూ ఉండండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 13,
+            eng: "Keep me posted on the server issue until it is resolved.",
+            tel: "సర్వర్ ఇష్యూ పరిష్కారం అయ్యే వరకు నాకు ఎప్పటికప్పుడు నవీకరణ తెలుపుతూనే ఉండండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 14,
+            eng: "Please keep me updated on the deployment status.",
+            tel: "డిప్లాయ్‌మెంట్ స్థితిని గురించి నాకు ఎప్పటికప్పుడు నవీకరించండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 15,
+            eng: "Keep working on the bug fix while I review the logs.",
+            tel: "నేను లాగ్‌లను పరిశీలిస్తున్నప్పుడు బగ్ ఫిక్స్‌పై పని చేస్తూనే ఉండండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 16,
+            eng: "Keep working on it; we will review the results after testing.",
+            tel: "దీనిపై పని చేస్తూనే ఉండండి; టెస్టింగ్ తర్వాత ఫలితాలను పరిశీలిస్తాము.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 17,
+            eng: "Keep me informed if the API response time changes.",
+            tel: "API ప్రతిస్పందన సమయం మారితే నాకు తెలియజేస్తూ ఉండండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 18,
+            eng: "Please keep me informed about the database performance issue.",
+            tel: "డేటాబేస్ పనితీరుకు సంబంధించిన సమస్య గురించి నాకు ఎప్పటికప్పుడు తెలియజేయండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 19,
+            eng: "Keep the team posted on the client incident and any updates.",
+            tel: "క్లైంట్ ఇన్‌సిడెంట్ మరియు ఏవైనా అప్‌డేట్‌ల గురించి టీమ్‌కు తెలియజేస్తూ ఉండండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 20,
+            eng: "Keep me updated on the test run results.",
+            tel: "టెస్ట్ రన్ ఫలితాల గురించి నాకు ఎప్పటికప్పుడు నవీకరణ ఇవ్వండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 21,
+            eng: "Keep me posted on the outage status and root cause analysis.",
+            tel: "ఆవుటేజ్ స్థితి మరియు రూట్ కాజ్ అనాలిసిస్ గురించి నాకు ఎప్పటికప్పుడు తెలియజేస్తూ ఉండండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        },
+        {
+            id: 22,
+            eng: "We are still working on it, but keep me informed if anything changes.",
+            tel: "మేము ఇప్పటికీ దీనిపై పని చేస్తున్నాము, కానీ ఏదైనా మారితే నాకు తెలియజేస్తూ ఉండండి.",
+            tense: "Imperative",
+            type: "Imperative Sentence"
+        }
+    ]
+},
+        {
+            id: 11,
+            topic: "",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "",
+                    tel: '',
+                    tense: ''
+                },
+
+            ],
+        },
 
     ],
 

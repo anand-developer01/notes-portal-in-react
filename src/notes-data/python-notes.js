@@ -1094,6 +1094,16 @@ print(3 not in numbers)   # Output: False
         },
         {
             id: 1,
+            title: "Magic/Dunder Methods",
+            note: [
+                {
+                    text1: `What is Python?`,
+                    code1: ``
+                }
+            ]
+        },
+        {
+            id: 1,
             section: `Closure function`,
             title: "closure",
             note: [
@@ -7839,6 +7849,2206 @@ except IOError:
         },
         {
             id: 1,
+            title: "Text vs binary files",
+            note: [
+                {
+                    definition: `<b>Text files</b> store data as a sequence of characters, while <b>binary files</b> store data as a sequence of raw bytes.
+
+<b>Text files</b> are intended to be interpreted using a character encoding such as UTF-8.
+<b>Binary files</b> contain raw byte data and are not automatically interpreted as characters.
+Examples of text files:
+- .txt
+- .csv
+- .json
+- .xml
+- .html
+- .py
+- .log
+
+Examples of binary files:
+- .jpg / .jpeg
+- .png
+- .gif
+- .pdf
+- .mp3
+- .mp4
+- .zip
+- .exe
+
+<b>Key idea:</b>
+Text = characters → encoded/decoded using an encoding such as UTF-8.
+Binary = bytes → handled directly as bytes.`,
+
+                    text1: `<b>1. Text files use character encoding</b>
+When Python reads a text file, it converts the bytes stored on disk into Python <b>str</b> objects using an encoding.
+For example:
+UTF-8 bytes → Python str
+When writing:
+Python str → UTF-8 bytes → file
+The most commonly used encoding is <b>UTF-8</b>.
+
+<b>2. Binary files use bytes</b>
+When Python opens a binary file, it does not decode the contents into characters.
+Instead, Python returns a <b>bytes</b> object.
+Text mode:
+<b>str</b> ↔ file
+Binary mode:
+<b>bytes</b> ↔ file
+
+<b>3. Main difference</b>
+Text files are suitable when the data represents readable characters.
+Binary files are suitable when the data represents raw binary information such as images, audio, video, PDFs, compressed files, or executable files.
+
+<b>4. File modes</b>
+Text mode:
+"r"   → read text
+"w"   → write text
+"a"   → append text
+"r+"  → read and write text
+"w+"  → write and read text
+"a+"  → append and read text
+
+Binary mode:
+"rb"  → read binary
+"wb"  → write binary
+"ab"  → append binary
+"rb+" → read and write binary
+"wb+" → write and read binary
+"ab+" → append and read binary
+
+<b>Important:</b>
+The "b" in the mode means <b>binary</b>.
+If "b" is not specified, Python normally uses <b>text mode</b>.
+
+<b>5. Text mode returns str</b>
+When a text file is opened in text mode, methods such as read() return a <b>str</b>.
+
+<b>6. Binary mode returns bytes</b>
+When a file is opened in binary mode, methods such as read() return a <b>bytes</b> object.
+
+<b>7. Encoding matters in text files</b>
+You can explicitly specify the encoding:
+open("file.txt", "r", encoding="utf-8")
+This is recommended because it makes the expected encoding explicit.
+
+<b>8. Binary files do not use text encoding</b>
+You normally should not use encoding when opening a file in binary mode:
+open("image.jpg", "rb")
+Binary data should be handled as bytes.
+
+<b>9. Why not read an image as text?</b>
+An image contains arbitrary byte values. Trying to interpret those bytes as UTF-8 text can produce a UnicodeDecodeError because the byte sequence may not represent valid UTF-8 characters.
+
+<b>10. Why not write text directly to a binary file?</b>
+Binary mode expects a <b>bytes-like object</b>, not a Python str.
+You need to encode text first:
+text.encode("utf-8")
+
+<b>11. Converting between text and bytes</b>
+str → bytes:
+text.encode("utf-8")
+bytes → str:
+data.decode("utf-8")
+
+<b>12. Text vs binary comparison</b>
+Text file:
+- Data is treated as characters
+- Python uses str
+- Encoding/decoding is involved
+- Human-readable content is common
+- Example: TXT, CSV, JSON
+
+Binary file:
+- Data is treated as bytes
+- Python uses bytes
+- No character decoding is automatically performed
+- Human readability is not required
+- Example: JPG, PNG, PDF, MP3
+
+<b>13. Real-time usage</b>
+Use text files for:
+- Application logs
+- Configuration files
+- JSON data
+- CSV data
+- Source code
+- Plain text documents
+
+Use binary files for:
+- Images
+- Videos
+- Audio
+- PDFs
+- ZIP files
+- Executable files
+- Serialized binary data
+
+<b>14. Important Python types</b>
+Text file:
+type(data) → <b>str</b>
+Binary file:
+type(data) → <b>bytes</b>
+
+<b>15. Important rule</b>
+If the file represents <b>human-readable characters</b>, use text mode.
+If the file represents <b>raw binary data</b>, use binary mode.`,
+
+                    code1: `# ------------------- Ex : 1 ----------------
+# Writing and reading a text file
+
+text = "Hello Python"
+
+with open("message.txt", "w", encoding="utf-8") as file:
+    file.write(text)
+
+with open("message.txt", "r", encoding="utf-8") as file:
+    data = file.read()
+
+print(data)
+print(type(data))
+
+# Output:
+# Hello Python
+# <class 'str'>
+
+
+# ------------------- Ex : 2 ----------------
+# Writing multiple lines to a text file
+
+lines = [
+    "Python\\n",
+    "Java\\n",
+    "JavaScript\\n"
+]
+
+with open("languages.txt", "w", encoding="utf-8") as file:
+    file.writelines(lines)
+
+with open("languages.txt", "r", encoding="utf-8") as file:
+    data = file.read()
+
+print(data)
+
+# Output:
+# Python
+# Java
+# JavaScript
+
+
+# ------------------- Ex : 3 ----------------
+# Reading a text file line by line
+
+with open("languages.txt", "r", encoding="utf-8") as file:
+
+    for line in file:
+        print(line.strip())
+
+# Output:
+# Python
+# Java
+# JavaScript
+
+
+# ------------------- Ex : 4 ----------------
+# Text data is stored as str
+
+with open("message.txt", "r", encoding="utf-8") as file:
+    data = file.read()
+
+print(data)
+print(type(data))
+
+# Output:
+# Hello Python
+# <class 'str'>
+
+
+# ------------------- Ex : 5 ----------------
+# Text -> bytes using encode()
+
+text = "Hello Python"
+
+data = text.encode("utf-8")
+
+print(data)
+print(type(data))
+
+# Output:
+# b'Hello Python'
+# <class 'bytes'>
+
+
+# ------------------- Ex : 6 ----------------
+# Bytes -> text using decode()
+
+data = b"Hello Python"
+
+text = data.decode("utf-8")
+
+print(text)
+print(type(text))
+
+# Output:
+# Hello Python
+# <class 'str'>
+
+
+# ------------------- Ex : 7 ----------------
+# Writing bytes to a binary file
+
+data = b"Hello Python"
+
+with open("data.bin", "wb") as file:
+    file.write(data)
+
+with open("data.bin", "rb") as file:
+    result = file.read()
+
+print(result)
+print(type(result))
+
+# Output:
+# b'Hello Python'
+# <class 'bytes'>
+
+
+# ------------------- Ex : 8 ----------------
+# Text mode vs binary mode
+
+with open("message.txt", "r", encoding="utf-8") as file:
+    text_data = file.read()
+
+with open("data.bin", "rb") as file:
+    binary_data = file.read()
+
+print(type(text_data))
+print(type(binary_data))
+
+# Output:
+# <class 'str'>
+# <class 'bytes'>
+
+
+# ------------------- Ex : 9 ----------------
+# Writing text to a binary file causes an error
+
+text = "Hello Python"
+
+with open("data.bin", "wb") as file:
+    file.write(text)
+
+# TypeError:
+# a bytes-like object is required, not 'str'
+
+
+# ------------------- Ex : 10 ----------------
+# Correct way: encode text before writing in binary mode
+
+text = "Hello Python"
+
+with open("data.bin", "wb") as file:
+    file.write(text.encode("utf-8"))
+
+with open("data.bin", "rb") as file:
+    data = file.read()
+
+print(data)
+
+# Output:
+# b'Hello Python'
+
+
+# ------------------- Ex : 11 ----------------
+# Reading binary data
+
+with open("data.bin", "rb") as file:
+    data = file.read()
+
+print(data)
+
+# Output:
+# b'Hello Python'
+
+
+# ------------------- Ex : 12 ----------------
+# Real-time example: reading an image
+
+with open("photo.jpg", "rb") as file:
+    image_data = file.read()
+
+print(type(image_data))
+print(len(image_data))
+
+# Output:
+# <class 'bytes'>
+# number of bytes in the image
+
+
+# ------------------- Ex : 13 ----------------
+# Real-time example: copying an image
+
+with open("source.jpg", "rb") as source:
+    data = source.read()
+
+with open("backup.jpg", "wb") as destination:
+    destination.write(data)
+
+print("Image copied successfully")
+
+
+# ------------------- Ex : 14 ----------------
+# Better approach for large binary files:
+# Read and write using chunks
+
+with open("source.jpg", "rb") as source:
+    with open("backup.jpg", "wb") as destination:
+
+        while chunk := source.read(4096):
+            destination.write(chunk)
+
+print("Large file copied successfully")
+
+
+# ------------------- Ex : 15 ----------------
+# Unicode text example
+
+text = "Hello Python 😊 తెలుగు"
+
+with open("unicode.txt", "w", encoding="utf-8") as file:
+    file.write(text)
+
+with open("unicode.txt", "r", encoding="utf-8") as file:
+    data = file.read()
+
+print(data)
+
+# Output:
+# Hello Python 😊 తెలుగు
+
+
+# ------------------- Ex : 16 ----------------
+# Different encodings
+
+text = "Hello"
+
+data = text.encode("utf-8")
+
+print(data)
+
+decoded_text = data.decode("utf-8")
+
+print(decoded_text)
+
+# Output:
+# b'Hello'
+# Hello
+
+
+# ------------------- Ex : 17 ----------------
+# Demonstrating UTF-8 encoding
+
+text = "A"
+
+data = text.encode("utf-8")
+
+print(data)
+print(list(data))
+
+# Output:
+# b'A'
+# [65]
+
+
+# ------------------- Ex : 18 ----------------
+# Unicode character uses multiple UTF-8 bytes
+
+text = "😊"
+
+data = text.encode("utf-8")
+
+print(data)
+print(list(data))
+
+# Output:
+# b'\\xf0\\x9f\\x98\\x8a'
+# [240, 159, 152, 138]
+
+
+# ------------------- Ex : 19 ----------------
+# Reading a text file with explicit encoding
+
+with open("message.txt", "r", encoding="utf-8") as file:
+    data = file.read()
+
+print(data)
+
+
+# ------------------- Ex : 20 ----------------
+# Real-time example: application log file
+
+with open("application.log", "a", encoding="utf-8") as file:
+    file.write("Application started\\n")
+    file.write("Database connected\\n")
+    file.write("Request processed successfully\\n")
+
+
+# ------------------- Ex : 21 ----------------
+# Real-time example: JSON is a text file
+
+import json
+
+user = {
+    "id": 101,
+    "name": "Anand",
+    "role": "Developer"
+}
+
+with open("user.json", "w", encoding="utf-8") as file:
+    json.dump(user, file, indent=4)
+
+with open("user.json", "r", encoding="utf-8") as file:
+    data = json.load(file)
+
+print(data)
+print(type(data))
+
+# Output:
+# {'id': 101, 'name': 'Anand', 'role': 'Developer'}
+# <class 'dict'>
+
+
+# ------------------- Ex : 22 ----------------
+# Real-time example: CSV is normally treated as text
+
+import csv
+
+with open("employees.csv", "w", newline="", encoding="utf-8") as file:
+
+    writer = csv.writer(file)
+
+    writer.writerow(["ID", "Name", "Role"])
+    writer.writerow([101, "Anand", "Developer"])
+    writer.writerow([102, "Rahul", "Tester"])
+
+
+# ------------------- Ex : 23 ----------------
+# Binary file chunk processing
+
+chunk_size = 1024
+
+with open("video.mp4", "rb") as source:
+
+    while True:
+
+        chunk = source.read(chunk_size)
+
+        if not chunk:
+            break
+
+        print("Received chunk:", len(chunk), "bytes")
+
+
+# ------------------- Ex : 24 ----------------
+# Checking whether the returned data is str or bytes
+
+with open("message.txt", "r", encoding="utf-8") as file:
+    data = file.read()
+
+if isinstance(data, str):
+    print("This is text data")
+
+
+with open("data.bin", "rb") as file:
+    data = file.read()
+
+if isinstance(data, bytes):
+    print("This is binary data")
+
+
+# ------------------- Ex : 25 ----------------
+# Important comparison in one example
+
+text = "Hello"
+
+# Text representation
+with open("text.txt", "w", encoding="utf-8") as file:
+    file.write(text)
+
+# Binary representation
+binary_data = text.encode("utf-8")
+
+with open("binary.bin", "wb") as file:
+    file.write(binary_data)
+
+with open("text.txt", "r", encoding="utf-8") as file:
+    text_result = file.read()
+
+with open("binary.bin", "rb") as file:
+    binary_result = file.read()
+
+print(text_result)
+print(type(text_result))
+
+print(binary_result)
+print(type(binary_result))
+
+# Output:
+# Hello
+# <class 'str'>
+# b'Hello'
+# <class 'bytes'>
+
+
+# ------------------- Ex : 26 ----------------
+# Real-time example: file upload handling
+
+def save_uploaded_file(file_data, filename):
+
+    with open(filename, "wb") as file:
+        file.write(file_data)
+
+    print("File saved successfully")
+
+
+image_data = b"binary image data"
+
+save_uploaded_file(image_data, "uploaded.jpg")
+
+
+# ------------------- Ex : 27 ----------------
+# Converting binary data back into text
+
+binary_data = "Hello Python".encode("utf-8")
+
+text_data = binary_data.decode("utf-8")
+
+print(text_data)
+
+# Output:
+# Hello Python
+
+
+# ------------------- Ex : 28 ----------------
+# Wrong decoding can cause UnicodeDecodeError
+
+data = "తెలుగు".encode("utf-8")
+
+# Correct:
+print(data.decode("utf-8"))
+
+# Incorrect:
+# print(data.decode("ascii"))
+
+# UnicodeDecodeError can occur because
+# the bytes are UTF-8 encoded, not ASCII.
+
+
+# ------------------- Ex : 29 ----------------
+# Binary file does not automatically decode
+
+data = b"Hello Python"
+
+with open("data.bin", "wb") as file:
+    file.write(data)
+
+with open("data.bin", "rb") as file:
+    result = file.read()
+
+print(result)
+
+# Python gives bytes directly:
+# b'Hello Python'
+
+
+# ------------------- Ex : 30 ----------------
+# Real-time file copy using binary mode
+
+def copy_file(source_path, destination_path):
+
+    with open(source_path, "rb") as source:
+        with open(destination_path, "wb") as destination:
+
+            while chunk := source.read(8192):
+                destination.write(chunk)
+
+    print("File copied successfully")
+
+
+copy_file("input.pdf", "backup.pdf")`
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "File pointer: tell() / seek()",
+            note: [
+                {
+                    definition: `<b>File pointer</b> is the current position inside an open file where Python will perform the next read or write operation.
+
+When a file is opened, Python maintains a <b>file pointer</b>.
+<b>tell()</b> returns the current position of the file pointer.
+<b>seek()</b> moves the file pointer to a specific position.
+
+<b>Key idea:</b>
+tell()  → "Where am I currently?"
+seek()  → "Move me to this position."
+
+The position is generally measured in <b>bytes</b> from the beginning of the file.
+<b>Important:</b>
+The exact behavior of positions can be more nuanced in text mode because of character encoding and newline handling. For learning and ordinary ASCII/UTF-8 examples, thinking of the position as a byte offset is useful.`,
+
+                    text1: `<b>1. tell()</b>
+The <b>tell()</b> method returns the current file pointer position.
+Syntax:
+file.tell()
+
+Example:
+with open("file.txt", "r", encoding="utf-8") as file:
+    print(file.tell())
+
+If the pointer is at the beginning of the file, tell() normally returns:
+0
+
+<b>2. seek()</b>
+The <b>seek()</b> method moves the file pointer to a specified position.
+
+Syntax:
+file.seek(offset)
+
+Example:
+file.seek(5)
+This moves the file pointer to position 5.
+
+<b>3. seek() parameters</b>
+The complete form is:
+file.seek(offset, whence)
+
+<b>offset</b>:
+The number of positions to move.
+
+<b>whence</b>:
+Specifies the reference point.
+
+Common values:
+0 → beginning of the file
+1 → current position
+2 → end of the file
+
+Examples:
+file.seek(0)
+→ Move to the beginning.
+
+file.seek(5)
+→ Move to position 5 from the beginning.
+
+file.seek(0, 2)
+→ Move to the end.
+
+<b>4. Reading after seek()</b>
+After moving the pointer, the next read starts from the new position.
+
+<b>5. tell() after read()</b>
+When data is read, the file pointer moves forward.
+
+Example:
+file.read(5)
+
+The pointer moves after those 5 bytes/characters as applicable to the file mode.
+
+<b>6. seek(0)</b>
+One of the most commonly used patterns is:
+file.seek(0)
+It moves the pointer back to the beginning of the file.
+This allows the same open file to be read again.
+
+<b>7. seek(0, 2)</b>
+This moves the pointer to the end of the file.
+
+It is commonly used when you need to work relative to the end.
+
+<b>8. Important difference</b>
+tell():
+<b>Returns</b> the current pointer position.
+seek():
+<b>Changes</b> the pointer position.
+
+<b>9. File pointer and read()</b>
+Suppose the file contains:
+Hello Python
+Initially:
+pointer → 0
+After:
+file.read(5)
+the pointer moves forward.
+The next read continues from the new position.
+
+<b>10. File pointer and readline()</b>
+readline() also moves the pointer forward because Python has consumed data from the file.
+
+<b>11. File pointer and write()</b>
+Writing also changes the file pointer.
+
+After writing data, the pointer normally moves to the position immediately after the newly written data.
+
+<b>12. Why use seek()?</b>
+seek() is useful when you need to:
+- Read the same file again
+- Jump to a specific location
+- Read data from a particular position
+- Move to the beginning
+- Move to the end
+- Reposition a file before writing
+- Process large files more efficiently
+- Work with binary files
+
+<b>13. Why use tell()?</b>
+tell() is useful when you need to:
+- Know the current position
+- Track how much data has been processed
+- Save a position for later
+- Debug file-reading logic
+- Monitor progress while processing a large file
+
+<b>14. Text mode vs binary mode</b>
+In <b>binary mode</b>, tell() and seek() positions are naturally based on byte offsets.
+
+In <b>text mode</b>, Python performs encoding/decoding and newline handling, so arbitrary numeric seeking can have restrictions. For predictable random access, <b>binary mode</b> is often preferred.
+
+<b>15. Negative seek()</b>
+Negative offsets are not generally supported from the beginning of a file.
+For example:
+file.seek(-5, 0)
+can raise an error.
+
+However, moving backward relative to the current position or end is possible in appropriate contexts, especially with binary files.
+
+<b>16. Real-time example</b>
+A large video file can be opened in binary mode, and seek() can move directly to a particular byte position instead of reading the entire file from the beginning.
+
+<b>17. Important relationship</b>
+tell() and seek() are often used together:
+position = file.tell()
+file.seek(...)
+file.seek(position)
+This allows you to remember a position and return to it later.
+
+<b>18. Important caution</b>
+seek() does not mean "go to character number" in every situation.
+For binary files, offsets are byte positions.
+For text files, encoding can make one character occupy multiple bytes, so arbitrary positioning should be handled carefully.
+
+<b>19. File pointer visualization</b>
+File:
+Hello Python
+Positions:
+0 1 2 3 4 5 6 7 8 9 ...
+H e l l o   P y t h o n
+^
+
+Initially, the pointer is at position 0.
+After read(5):
+H e l l o   P y t h o n
+          ^
+
+The next operation starts from the new pointer position.
+
+<b>20. Key summary</b>
+<b>tell()</b> → returns current file pointer position.
+<b>seek()</b> → changes file pointer position.
+<b>seek(0)</b> → beginning.
+<b>seek(0, 2)</b> → end.
+<b>tell() + seek()</b> → useful for tracking and repositioning.
+<b>Binary files</b> → best for precise byte-based random access.`,
+
+                    code1: `# ------------------- Ex : 1 ----------------
+# Check the initial file pointer position
+
+with open("file.txt", "w", encoding="utf-8") as file:
+    file.write("Hello Python")
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    position = file.tell()
+
+    print(position)
+
+# Output:
+# 0
+
+
+# ------------------- Ex : 2 ----------------
+# tell() after reading data
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    print(file.tell())
+
+    data = file.read(5)
+
+    print(data)
+    print(file.tell())
+
+# Output:
+# 0
+# Hello
+# 5
+
+
+# ------------------- Ex : 3 ----------------
+# Reading continues from the current pointer
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    print(file.read(5))
+    print(file.read(7))
+
+# Output:
+# Hello
+#  Python
+
+
+# ------------------- Ex : 4 ----------------
+# seek(0) moves pointer to the beginning
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    print(file.read(5))
+
+    file.seek(0)
+
+    print(file.read(5))
+
+# Output:
+# Hello
+# Hello
+
+
+# ------------------- Ex : 5 ----------------
+# tell() + seek()
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    print(file.read(5))
+
+    print("Current position:", file.tell())
+
+    file.seek(0)
+
+    print("New position:", file.tell())
+
+# Output:
+# Hello
+# Current position: 5
+# New position: 0
+
+
+# ------------------- Ex : 6 ----------------
+# Move to a specific position
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    file.seek(6)
+
+    print(file.tell())
+    print(file.read())
+
+# Output:
+# 6
+# Python
+
+
+# ------------------- Ex : 7 ----------------
+# Read data from a specific position
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    file.seek(6)
+
+    data = file.read(6)
+
+    print(data)
+
+# Output:
+# Python
+
+
+# ------------------- Ex : 8 ----------------
+# Move to the end of the file
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    file.seek(0, 2)
+
+    print(file.tell())
+
+# Output:
+# 12
+
+
+# ------------------- Ex : 9 ----------------
+# Read from the beginning, move to the end,
+# then return to the beginning
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    print(file.read())
+
+    file.seek(0, 2)
+
+    print("End position:", file.tell())
+
+    file.seek(0)
+
+    print("Beginning position:", file.tell())
+
+# Output:
+# Hello Python
+# End position: 12
+# Beginning position: 0
+
+
+# ------------------- Ex : 10 ----------------
+# Remember the current position
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    print(file.read(5))
+
+    saved_position = file.tell()
+
+    print("Saved position:", saved_position)
+
+    print(file.read())
+
+    file.seek(saved_position)
+
+    print(file.read())
+
+# Output:
+# Hello
+# Saved position: 5
+#  Python
+#  Python
+
+
+# ------------------- Ex : 11 ----------------
+# Using seek() with whence = 0
+# 0 means beginning of the file
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    file.seek(6, 0)
+
+    print(file.read())
+
+# Output:
+# Python
+
+
+# ------------------- Ex : 12 ----------------
+# Using seek(0, 2)
+# 2 means end of the file
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    file.seek(0, 2)
+
+    print("Position:", file.tell())
+
+# Output:
+# Position: 12
+
+
+# ------------------- Ex : 13 ----------------
+# File pointer with readline()
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    print("Before:", file.tell())
+
+    line = file.readline()
+
+    print("Data:", line)
+    print("After:", file.tell())
+
+
+# ------------------- Ex : 14 ----------------
+# Reading the same file twice using seek()
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    first_read = file.read()
+
+    file.seek(0)
+
+    second_read = file.read()
+
+print(first_read)
+print(second_read)
+
+# Output:
+# Hello Python
+# Hello Python
+
+
+# ------------------- Ex : 15 ----------------
+# Binary file and tell()
+
+data = b"Hello Python"
+
+with open("data.bin", "wb") as file:
+    file.write(data)
+
+with open("data.bin", "rb") as file:
+
+    print(file.tell())
+
+    file.read(5)
+
+    print(file.tell())
+
+# Output:
+# 0
+# 5
+
+
+# ------------------- Ex : 16 ----------------
+# Binary file and seek()
+
+with open("data.bin", "rb") as file:
+
+    file.seek(6)
+
+    data = file.read()
+
+print(data)
+
+# Output:
+# b'Python'
+
+
+# ------------------- Ex : 17 ----------------
+# Binary file: move to the end
+
+with open("data.bin", "rb") as file:
+
+    file.seek(0, 2)
+
+    size = file.tell()
+
+print("File size:", size)
+
+# Output:
+# File size: 12
+
+
+# ------------------- Ex : 18 ----------------
+# Real-time example: find file size
+
+with open("data.bin", "rb") as file:
+
+    file.seek(0, 2)
+
+    file_size = file.tell()
+
+print("File size:", file_size, "bytes")
+
+
+# ------------------- Ex : 19 ----------------
+# Real-time example: process a large file
+# and track the current position
+
+with open("large.log", "rb") as file:
+
+    while chunk := file.read(1024):
+
+        current_position = file.tell()
+
+        print(
+            "Processed:",
+            current_position,
+            "bytes"
+        )
+
+
+# ------------------- Ex : 20 ----------------
+# Real-time example: remember and restore position
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    file.read(5)
+
+    position = file.tell()
+
+    print("Current data:", file.read())
+
+    file.seek(position)
+
+    print("Reading again:", file.read())
+
+# Output:
+# Current data:  Python
+# Reading again:  Python
+
+
+# ------------------- Ex : 21 ----------------
+# File pointer changes after writing
+
+with open("output.txt", "w", encoding="utf-8") as file:
+
+    print("Before writing:", file.tell())
+
+    file.write("Hello")
+
+    print("After writing:", file.tell())
+
+# Output:
+# Before writing: 0
+# After writing: 5
+
+
+# ------------------- Ex : 22 ----------------
+# Move pointer before writing
+
+with open("output.txt", "w", encoding="utf-8") as file:
+
+    file.write("Hello Python")
+
+    file.seek(6)
+
+    file.write("World")
+
+# Result may be:
+# Hello World
+
+
+# ------------------- Ex : 23 ----------------
+# Binary random access
+
+data = b"ABCDEFGHIJ"
+
+with open("data.bin", "wb") as file:
+    file.write(data)
+
+with open("data.bin", "rb") as file:
+
+    file.seek(5)
+
+    print(file.read(2))
+
+# Output:
+# b'FG'
+
+
+# ------------------- Ex : 24 ----------------
+# Read one byte at a time using seek()
+
+with open("data.bin", "rb") as file:
+
+    file.seek(3)
+
+    byte = file.read(1)
+
+print(byte)
+
+# Output:
+# b'D'
+
+
+# ------------------- Ex : 25 ----------------
+# Real-time example:
+# Random access to a large binary file
+
+with open("video.mp4", "rb") as file:
+
+    # Jump to a particular byte position
+    file.seek(1000000)
+
+    data = file.read(1024)
+
+print("Read:", len(data), "bytes")
+
+
+# ------------------- Ex : 26 ----------------
+# Check current position while processing
+
+with open("large_file.bin", "rb") as file:
+
+    while chunk := file.read(4096):
+
+        position = file.tell()
+
+        print(
+            "Current file position:",
+            position
+        )
+
+
+# ------------------- Ex : 27 ----------------
+# seek() can reposition the pointer multiple times
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    file.seek(6)
+    print(file.read(6))
+
+    file.seek(0)
+    print(file.read(5))
+
+    file.seek(6)
+    print(file.read())
+
+# Output:
+# Python
+# Hello
+# Python
+
+
+# ------------------- Ex : 28 ----------------
+# Important concept:
+# tell() does not read the file
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    print("Before tell:", file.tell())
+
+    position = file.tell()
+
+    print("Position:", position)
+
+    print("After tell:", file.tell())
+
+# tell() only reports the position.
+# It does not move the pointer.
+
+
+# ------------------- Ex : 29 ----------------
+# Important concept:
+# seek() changes the pointer but does not read data
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    file.seek(6)
+
+    print("Position:", file.tell())
+
+    print("Data:", file.read())
+
+# Output:
+# Position: 6
+# Data: Python
+
+
+# ------------------- Ex : 30 ----------------
+# Master example:
+# tell() + seek() + read()
+
+with open("file.txt", "r", encoding="utf-8") as file:
+
+    print("Initial position:", file.tell())
+
+    first = file.read(5)
+
+    print("First:", first)
+    print("Position:", file.tell())
+
+    saved_position = file.tell()
+
+    file.seek(0)
+
+    print("After seek(0):", file.tell())
+
+    print("From beginning:", file.read(5))
+
+    file.seek(saved_position)
+
+    print("Restored position:", file.tell())
+
+    print("Remaining:", file.read())
+
+# Output:
+# Initial position: 0
+# First: Hello
+# Position: 5
+# After seek(0): 0
+# From beginning: Hello
+# Restored position: 5
+# Remaining:  Python`
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "CSV / JSON files",
+            note: [
+                {
+                    definition: `<b>CSV</b> stands for <b>Comma-Separated Values</b>. A CSV file stores tabular data in rows and columns, where each row represents a record and values are usually separated by commas.
+
+<b>JSON</b> stands for <b>JavaScript Object Notation</b>. JSON stores structured data using objects, arrays, key-value pairs, strings, numbers, booleans, and null values.
+
+Python provides built-in modules:
+<b>csv</b> → Used to read and write CSV files.
+<b>json</b> → Used to read and write JSON files.`,
+
+                    text1: `<b>CSV vs JSON</b>
+
+CSV is mainly suitable for <b>tabular data</b>, such as employee records, reports, and Excel-like data.
+
+JSON is mainly suitable for <b>structured or hierarchical data</b>, especially API requests and responses.
+
+CSV example:
+name,age,city
+Anand,36,Hyderabad
+Rahul,30,Bangalore
+
+JSON example:
+{
+    "name": "Anand",
+    "age": 36,
+    "city": "Hyderabad"
+}`,
+
+                    code1: `# ---------- Ex : 1 - Create and write a CSV file ----------
+
+import csv
+
+employees = [
+    ["id", "name", "department", "salary"],
+    [101, "Anand", "IT", 80000],
+    [102, "Rahul", "HR", 60000],
+    [103, "Priya", "Finance", 75000]
+]
+
+with open("employees.csv", "w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerows(employees)
+
+print("CSV file created successfully")
+
+
+# ---------- Ex : 2 - Read a CSV file ----------
+
+import csv
+
+with open("employees.csv", "r") as file:
+    reader = csv.reader(file)
+
+    for row in reader:
+        print(row)
+
+
+# ---------- Ex : 3 - Read CSV row by row ----------
+
+import csv
+
+with open("employees.csv", "r") as file:
+    reader = csv.reader(file)
+
+    for row in reader:
+        print("ID:", row[0])
+        print("Name:", row[1])
+        print("Department:", row[2])
+        print("Salary:", row[3])
+        print("----------------")
+
+
+# ---------- Ex : 4 - CSV using DictWriter ----------
+
+import csv
+
+employees = [
+    {
+        "id": 101,
+        "name": "Anand",
+        "department": "IT",
+        "salary": 80000
+    },
+    {
+        "id": 102,
+        "name": "Rahul",
+        "department": "HR",
+        "salary": 60000
+    }
+]
+
+with open("employees.csv", "w", newline="") as file:
+    fieldnames = ["id", "name", "department", "salary"]
+
+    writer = csv.DictWriter(
+        file,
+        fieldnames=fieldnames
+    )
+
+    writer.writeheader()
+    writer.writerows(employees)
+
+
+# ---------- Ex : 5 - Read CSV using DictReader ----------
+
+import csv
+
+with open("employees.csv", "r") as file:
+    reader = csv.DictReader(file)
+
+    for employee in reader:
+        print(employee["name"])
+        print(employee["department"])
+        print(employee["salary"])
+
+
+# ---------- Ex : 6 - Append data to CSV ----------
+
+import csv
+
+new_employee = {
+    "id": 104,
+    "name": "Kiran",
+    "department": "IT",
+    "salary": 70000
+}
+
+with open("employees.csv", "a", newline="") as file:
+    writer = csv.DictWriter(
+        file,
+        fieldnames=["id", "name", "department", "salary"]
+    )
+
+    writer.writerow(new_employee)
+
+print("Employee added")
+
+
+# ---------- Ex : 7 - Create and write a JSON file ----------
+
+import json
+
+employee = {
+    "id": 101,
+    "name": "Anand",
+    "department": "IT",
+    "salary": 80000
+}
+
+with open("employee.json", "w") as file:
+    json.dump(employee, file, indent=4)
+
+print("JSON file created")
+
+
+# ---------- Ex : 8 - Read a JSON file ----------
+
+import json
+
+with open("employee.json", "r") as file:
+    employee = json.load(file)
+
+print(employee)
+
+print("Name:", employee["name"])
+print("Department:", employee["department"])
+print("Salary:", employee["salary"])
+
+
+# ---------- Ex : 9 - JSON with a list of objects ----------
+
+import json
+
+employees = [
+    {
+        "id": 101,
+        "name": "Anand",
+        "department": "IT"
+    },
+    {
+        "id": 102,
+        "name": "Rahul",
+        "department": "HR"
+    },
+    {
+        "id": 103,
+        "name": "Priya",
+        "department": "Finance"
+    }
+]
+
+with open("employees.json", "w") as file:
+    json.dump(employees, file, indent=4)
+
+
+# ---------- Ex : 10 - Read JSON list ----------
+
+import json
+
+with open("employees.json", "r") as file:
+    employees = json.load(file)
+
+for employee in employees:
+    print(
+        employee["id"],
+        employee["name"],
+        employee["department"]
+    )
+
+
+# ---------- Ex : 11 - Convert Python object to JSON string ----------
+
+import json
+
+employee = {
+    "id": 101,
+    "name": "Anand",
+    "skills": ["Python", "React", "Java"]
+}
+
+json_string = json.dumps(employee, indent=4)
+
+print(json_string)
+
+
+# ---------- Ex : 12 - Convert JSON string to Python object ----------
+
+import json
+
+json_string = '''
+{
+    "id": 101,
+    "name": "Anand",
+    "skills": ["Python", "React", "Java"]
+}
+'''
+
+employee = json.loads(json_string)
+
+print(employee)
+print(employee["name"])
+print(employee["skills"])
+
+
+# ---------- Ex : 13 - json.dump() vs json.dumps() ----------
+
+import json
+
+employee = {
+    "id": 101,
+    "name": "Anand"
+}
+
+# dump() → Python object → JSON file
+with open("employee.json", "w") as file:
+    json.dump(employee, file, indent=4)
+
+# dumps() → Python object → JSON string
+json_string = json.dumps(employee)
+
+print(json_string)
+
+
+# ---------- Ex : 14 - json.load() vs json.loads() ----------
+
+import json
+
+# load() → JSON file → Python object
+with open("employee.json", "r") as file:
+    employee = json.load(file)
+
+print(employee)
+
+# loads() → JSON string → Python object
+json_string = '{"id": 101, "name": "Anand"}'
+
+employee = json.loads(json_string)
+
+print(employee)
+
+
+# ---------- Ex : 15 - Real-time API response example ----------
+
+import json
+
+api_response = '''
+{
+    "status": "success",
+    "user": {
+        "id": 101,
+        "name": "Anand",
+        "role": "Software Engineer"
+    },
+    "skills": [
+        "React",
+        "Java",
+        "Python"
+    ]
+}
+'''
+
+data = json.loads(api_response)
+
+print("Status:", data["status"])
+print("User:", data["user"]["name"])
+print("Role:", data["user"]["role"])
+print("Skills:", data["skills"])
+
+
+# ---------- Ex : 16 - Update JSON data ----------
+
+import json
+
+with open("employee.json", "r") as file:
+    employee = json.load(file)
+
+employee["salary"] = 90000
+employee["department"] = "Engineering"
+
+with open("employee.json", "w") as file:
+    json.dump(employee, file, indent=4)
+
+print("Employee updated")
+
+
+# ---------- Ex : 17 - Filter CSV records ----------
+
+import csv
+
+with open("employees.csv", "r") as file:
+    reader = csv.DictReader(file)
+
+    for employee in reader:
+        if employee["department"] == "IT":
+            print(employee["name"])
+
+
+# ---------- Ex : 18 - Calculate salary from CSV ----------
+
+import csv
+
+total_salary = 0
+
+with open("employees.csv", "r") as file:
+    reader = csv.DictReader(file)
+
+    for employee in reader:
+        total_salary += int(employee["salary"])
+
+print("Total salary:", total_salary)
+
+
+# ---------- Ex : 19 - CSV to JSON conversion ----------
+
+import csv
+import json
+
+employees = []
+
+with open("employees.csv", "r") as csv_file:
+    reader = csv.DictReader(csv_file)
+
+    for row in reader:
+        employees.append(row)
+
+with open("employees.json", "w") as json_file:
+    json.dump(employees, json_file, indent=4)
+
+print("CSV converted to JSON")
+
+
+# ---------- Ex : 20 - JSON to CSV conversion ----------
+
+import json
+import csv
+
+with open("employees.json", "r") as json_file:
+    employees = json.load(json_file)
+
+with open("employees.csv", "w", newline="") as csv_file:
+
+    fieldnames = employees[0].keys()
+
+    writer = csv.DictWriter(
+        csv_file,
+        fieldnames=fieldnames
+    )
+
+    writer.writeheader()
+    writer.writerows(employees)
+
+print("JSON converted to CSV")
+
+
+# ---------- Ex : 21 - Real-time employee data processing ----------
+
+import csv
+
+employees = []
+
+with open("employees.csv", "r") as file:
+    reader = csv.DictReader(file)
+
+    for employee in reader:
+        employee["id"] = int(employee["id"])
+        employee["salary"] = int(employee["salary"])
+
+        employees.append(employee)
+
+high_salary_employees = [
+    employee
+    for employee in employees
+    if employee["salary"] > 70000
+]
+
+for employee in high_salary_employees:
+    print(employee)
+
+
+# ---------- Ex : 22 - Real-time configuration JSON ----------
+
+import json
+
+config = {
+    "application": {
+        "name": "Banking Application",
+        "version": "1.0.0"
+    },
+    "database": {
+        "host": "localhost",
+        "port": 5432,
+        "name": "bankdb"
+    },
+    "features": {
+        "login": True,
+        "payments": True,
+        "notifications": False
+    }
+}
+
+with open("config.json", "w") as file:
+    json.dump(config, file, indent=4)
+
+print("Configuration saved")
+
+
+# ---------- Ex : 23 - Read nested JSON configuration ----------
+
+import json
+
+with open("config.json", "r") as file:
+    config = json.load(file)
+
+print("Application:", config["application"]["name"])
+print("Database:", config["database"]["name"])
+print("Database Port:", config["database"]["port"])
+print("Payments:", config["features"]["payments"])
+
+
+# ---------- Ex : 24 - Handle JSON errors ----------
+
+import json
+
+try:
+    with open("employee.json", "r") as file:
+        employee = json.load(file)
+
+    print(employee)
+
+except FileNotFoundError:
+    print("JSON file does not exist")
+
+except json.JSONDecodeError:
+    print("Invalid JSON format")
+
+
+# ---------- Ex : 25 - Handle CSV file errors ----------
+
+import csv
+
+try:
+    with open("employees.csv", "r") as file:
+        reader = csv.DictReader(file)
+
+        for employee in reader:
+            print(employee)
+
+except FileNotFoundError:
+    print("CSV file does not exist")`
+                },
+
+                {
+                    definition: `<b>Important CSV functions/classes</b>
+
+<b>csv.reader()</b> → Reads CSV rows as lists.
+
+<b>csv.writer()</b> → Writes rows to a CSV file.
+
+<b>csv.DictReader()</b> → Reads CSV rows as dictionaries using the header names.
+
+<b>csv.DictWriter()</b> → Writes dictionaries to a CSV file.
+
+<b>writerow()</b> → Writes one row.
+
+<b>writerows()</b> → Writes multiple rows.
+
+<b>Important JSON functions</b>
+
+<b>json.dump()</b> → Python object → JSON file.
+
+<b>json.dumps()</b> → Python object → JSON string.
+
+<b>json.load()</b> → JSON file → Python object.
+
+<b>json.loads()</b> → JSON string → Python object.`,
+
+                    text1: `<b>Python ↔ JSON conversion</b>
+
+Python dict → JSON object
+Python list → JSON array
+Python str → JSON string
+Python int/float → JSON number
+Python True → JSON true
+Python False → JSON false
+Python None → JSON null
+
+<b>Important:</b> <b>load()</b> and <b>dump()</b> work with files, while <b>loads()</b> and <b>dumps()</b> work with strings.`
+                },
+
+                {
+                    definition: `<b>When should you use CSV?</b>
+
+Use CSV when the data is primarily <b>tabular</b> and has a simple row/column structure.
+
+Examples:
+• Employee reports
+• Sales reports
+• Product lists
+• Excel exports
+• Transaction reports
+• Data analysis datasets
+
+<b>When should you use JSON?</b>
+
+Use JSON when the data contains <b>nested, hierarchical, or structured information</b>.
+
+Examples:
+• REST API request/response
+• Application configuration
+• User profiles
+• Frontend-backend communication
+• Microservices communication
+• Nested business objects`,
+
+                    text1: `<b>Real-time IT example</b>
+
+A React frontend may send a JSON request to a Spring Boot API:
+
+{
+    "customerId": 101,
+    "accountType": "CREDIT_CARD",
+    "country": "US"
+}
+
+The backend can process this request and return JSON:
+
+{
+    "status": "SUCCESS",
+    "customer": {
+        "id": 101,
+        "name": "Anand"
+    },
+    "accounts": [
+        {
+            "type": "CREDIT_CARD",
+            "status": "ACTIVE"
+        }
+    ]
+}
+
+A CSV file would be more appropriate for exporting many customer records into a report.`
+                },
+
+                {
+                    definition: `<b>Key differences between CSV and JSON</b>`,
+
+                    text1: `<b>CSV</b>
+• Simple tabular structure
+• Smaller and easy to export
+• Commonly used with Excel/data analysis
+• Does not naturally represent nested objects
+• Usually uses rows and columns
+
+<b>JSON</b>
+• Supports nested structures
+• Supports objects and arrays
+• Very common in REST APIs
+• More expressive than CSV
+• Easy for JavaScript/React applications to consume
+
+<b>Interview point:</b>
+CSV is generally better for <b>flat tabular data</b>, while JSON is generally better for <b>structured and hierarchical data</b>.`
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "File and directory operations",
+            note: [
+                {
+                    definition: `<b>File and directory operations</b> in Python are used to create, read, write, modify, rename, delete, and manage files and directories (folders) on the filesystem.`,
+
+                    text1: `<b>Python provides several built-in modules and functions</b> for working with files and directories. The most commonly used ones are <b>open()</b>, <b>os</b>, <b>os.path</b>, <b>pathlib</b>, and <b>shutil</b>.`,
+
+                    code1: `// ---------- Ex : 1 - Create a file ----------
+file = open("example.txt", "w")
+file.write("Hello Python")
+file.close()
+
+// ---------- Ex : 2 - Read a file ----------
+file = open("example.txt", "r")
+content = file.read()
+print(content)
+file.close()
+
+// ---------- Ex : 3 - Append data to a file ----------
+file = open("example.txt", "a")
+file.write("\\nWelcome to Python")
+file.close()
+
+// ---------- Ex : 4 - Check whether a file exists ----------
+import os
+
+if os.path.exists("example.txt"):
+    print("File exists")
+else:
+    print("File does not exist")
+
+// ---------- Ex : 5 - Get file information ----------
+import os
+
+print(os.path.getsize("example.txt"))       // File size in bytes
+print(os.path.abspath("example.txt"))      // Absolute path
+
+// ---------- Ex : 6 - Rename a file ----------
+import os
+
+os.rename("example.txt", "new_example.txt")
+
+// ---------- Ex : 7 - Delete a file ----------
+import os
+
+if os.path.exists("new_example.txt"):
+    os.remove("new_example.txt")
+
+// ---------- Ex : 8 - Create a directory ----------
+import os
+
+os.mkdir("reports")
+
+// ---------- Ex : 9 - Create nested directories ----------
+import os
+
+os.makedirs("project/src/components")
+
+// ---------- Ex : 10 - Check whether a directory exists ----------
+import os
+
+if os.path.isdir("reports"):
+    print("Directory exists")
+
+// ---------- Ex : 11 - List files and directories ----------
+import os
+
+items = os.listdir(".")
+print(items)
+
+// ---------- Ex : 12 - Rename a directory ----------
+import os
+
+os.rename("reports", "documents")
+
+// ---------- Ex : 13 - Delete an empty directory ----------
+import os
+
+os.rmdir("documents")
+
+// ---------- Ex : 14 - Delete a directory and its contents ----------
+import shutil
+
+shutil.rmtree("project")
+
+// ---------- Ex : 15 - Copy a file ----------
+import shutil
+
+shutil.copy("source.txt", "backup.txt")
+
+// ---------- Ex : 16 - Move a file ----------
+import shutil
+
+shutil.move("source.txt", "backup/source.txt")
+
+// ---------- Ex : 17 - Copy an entire directory ----------
+import shutil
+
+shutil.copytree("project", "project_backup")
+
+// ---------- Ex : 18 - Using pathlib ----------
+from pathlib import Path
+
+file = Path("example.txt")
+
+file.write_text("Hello Python")
+
+print(file.read_text())
+
+// ---------- Ex : 19 - Create a directory using pathlib ----------
+from pathlib import Path
+
+directory = Path("reports")
+directory.mkdir(exist_ok=True)
+
+// ---------- Ex : 20 - Check file/directory ----------
+from pathlib import Path
+
+path = Path("example.txt")
+
+print(path.exists())
+print(path.is_file())
+print(path.is_dir())
+
+// ---------- Ex : 21 - List files using pathlib ----------
+from pathlib import Path
+
+directory = Path(".")
+
+for item in directory.iterdir():
+    print(item)
+
+// ---------- Ex : 22 - Find all Python files ----------
+from pathlib import Path
+
+for file in Path(".").glob("*.py"):
+    print(file)
+
+// ---------- Ex : 23 - Find Python files recursively ----------
+from pathlib import Path
+
+for file in Path(".").rglob("*.py"):
+    print(file)
+
+// ---------- Ex : 24 - Real-time example: Create log directory and file ----------
+from pathlib import Path
+
+log_dir = Path("logs")
+log_dir.mkdir(exist_ok=True)
+
+log_file = log_dir / "application.log"
+
+with log_file.open("a") as file:
+    file.write("Application started\\n")
+
+print("Log file created successfully")`
+                },
+                {
+                    text1: `<b>Important file modes:</b>`,
+                    code1: `// "r"  -> Read
+// "w"  -> Write (creates a new file or overwrites existing content)
+// "a"  -> Append (adds data at the end)
+// "x"  -> Create a new file; raises an error if the file already exists
+// "b"  -> Binary mode
+// "t"  -> Text mode (default)
+// "+"  -> Read and write
+
+// Examples:
+open("file.txt", "r")
+open("file.txt", "w")
+open("file.txt", "a")
+open("file.txt", "rb")
+open("file.txt", "w+")`
+                },
+                {
+                    text1: `<b>Important os functions:</b>`,
+                    code1: `import os
+
+os.getcwd()                    // Get current working directory
+os.chdir("path")               // Change current working directory
+os.listdir()                   // List directory contents
+os.mkdir("folder")             // Create directory
+os.makedirs("a/b/c")           // Create nested directories
+os.rmdir("folder")             // Remove empty directory
+os.remove("file.txt")          // Delete file
+os.rename("old.txt", "new.txt") // Rename file/directory
+os.path.exists("path")         // Check whether path exists
+os.path.isfile("path")         // Check whether path is a file
+os.path.isdir("path")          // Check whether path is a directory
+os.path.getsize("file.txt")    // Get file size
+os.path.abspath("file.txt")    // Get absolute path`
+                },
+                {
+                    text1: `<b>Important pathlib operations:</b>`,
+                    code1: `from pathlib import Path
+
+path = Path("example.txt")
+
+path.exists()                  // Check existence
+path.is_file()                 // Check file
+path.is_dir()                  // Check directory
+path.mkdir()                   // Create directory
+path.rmdir()                   // Remove empty directory
+path.unlink()                  // Delete file
+path.rename("new.txt")         // Rename
+path.read_text()               // Read text
+path.write_text("Hello")       // Write text
+path.iterdir()                 // Iterate directory contents
+path.glob("*.txt")             // Find matching files
+path.rglob("*.txt")            // Find recursively
+
+<b>Note:</b> <b>pathlib</b> is generally preferred for modern Python code because it provides an object-oriented and readable way to work with filesystem paths.`
+                },
+                {
+                    text1: `<b>Real-time example: Organizing files into folders</b>`,
+                    code1: `from pathlib import Path
+import shutil
+
+source = Path("downloads")
+images = source / "images"
+documents = source / "documents"
+
+images.mkdir(parents=True, exist_ok=True)
+documents.mkdir(parents=True, exist_ok=True)
+
+for file in source.iterdir():
+    if file.is_file():
+        if file.suffix.lower() in [".jpg", ".jpeg", ".png"]:
+            shutil.move(str(file), str(images / file.name))
+
+        elif file.suffix.lower() in [".pdf", ".docx", ".txt"]:
+            shutil.move(str(file), str(documents / file.name))
+
+print("Files organized successfully")`
+                },
+                {
+                    text1: `<b>Key points to remember:</b>`,
+                    code1: `// 1. Use open() for basic file reading and writing.
+// 2. Use "with open(...)" so Python automatically closes the file.
+// 3. Use os for traditional filesystem operations.
+// 4. Use pathlib for modern and readable path operations.
+// 5. Use shutil for copying, moving, and deleting directory trees.
+// 6. os.remove() / Path.unlink() -> delete a file.
+// 7. os.rmdir() / Path.rmdir() -> remove an empty directory.
+// 8. shutil.rmtree() -> remove a directory and all its contents.
+// 9. Always be careful when using delete operations.
+// 10. <b>Use pathlib + shutil</b> for most modern file-management applications.`
+                }
+            ]
+        },
+        {
+            id: 1,
+            title: "Exception handling with files",
+            note: [
+                {
+                    text1: `What is Python?`,
+                    code1: ``
+                }
+            ]
+        },
+        {
+            id: 1,
             section: `Oops`,
             title: "class",
             note: [
@@ -8692,9 +10902,10 @@ print("Geeks"*4)
                     text1: `<b>Getter</b>: A method used to <b>read</b> (access) the value of a private attribute.
 <b>Setter</b>: A method used to <b>modify</b> (update) the value of a private attribute.
 In Python, you can define them <b>manually</b> or use the <b>@property decorator</b>.`,
-                    code1: `// --------- Ex : 1 -----------
-                    //Using Methods
-                     class Person:
+                    code1: `
+// --------- Ex : 1 -----------
+//Using Methods
+class Person:
     def __init__(self, name):
         self.__name = name  # private variable
 
@@ -8718,9 +10929,9 @@ p.set_name("Arun")
 print(p.get_name())     # Arun
 
 
-            // --------- Ex : 2 -----------
-            // Using @property (Pythonic way)
-            class Person:
+// --------- Ex : 2 -----------
+// Using @property (Pythonic way)
+class Person:
     def __init__(self, name):
         self.__name = name
 
@@ -8799,10 +11010,6 @@ print(cc.convert(82))
 cc.set_currency("UNA")
 cc.set_rate(90)
 print(cc.convert(100))
-
-
-
-
 
 `
                 }
@@ -10036,8 +12243,9 @@ You can check which thread your code is running on with <b>threading.current_thr
 <b>Key Point for Interviews</b>:
     Even though you call <b>t.start()</b> from the main thread, the actual execution of the child thread is <b>scheduled by the OS</b>, so their <b>execution order may vary</b>, but the <b>main thread always starts first</b>.
 `,
-                    code1: `// ------------ Ex : 1 ----------
-                    import threading
+                    code1: `
+// ------------ Ex : 1 ----------
+import threading
 
 def greet():
     print("Hi! I'm running in a thread")
@@ -10047,16 +12255,16 @@ greet()
 
                     
                     
-                    // ------------ Ex : 2 ----------
-                    import time
+// ------------ Ex : 2 ----------
+import time
 
 for val in range(10):
     print(val)
     time.sleep(1)
 
                     
-                    // ------------ Ex : 3 ----------
-          import threading
+// ------------ Ex : 3 ----------
+import threading
 import time
 
 def print_hello():
@@ -10073,9 +12281,9 @@ for i in range(5):
     time.sleep(1)
           
                     
-                    // ------------ Ex : 4 ----------
-                    // Main Thread Behavior in Python
-         import threading
+// ------------ Ex : 4 ----------
+// Main Thread Behavior in Python
+import threading
 import time
 
 def func(x):
@@ -10091,8 +12299,8 @@ for i in range(3):
    print('Main Thread Running',i)
 print("Main Thread Finished...")           
                     
-                    // ------------ Ex : 5 ----------
-                    import threading
+// ------------ Ex : 5 ----------
+import threading
 
 def child_task():
     print("Child thread started")
@@ -10206,6 +12414,7 @@ for t in threads:
             title: "Joining Threads",
             note: [
                 {
+                    definition: `<b>Joining threads</b> means waiting for a thread to complete its execution before the calling thread continues. The <b>join()</b> method is used for this purpose.`,
                     text1: `Wait for a thread to finish using <b>.join()</b>
                     The join() method in Python's threading module is used to block the calling thread (typically the main thread) until the thread on which join() is called has completed its execution. 
 
@@ -10216,8 +12425,9 @@ for t in threads:
                     The following example features two threads, <b>thread_A</b> and <b>thread_B</b>. Each thread makes a call to <b>.start()</b>, immediately followed by a call to <b>.join()</b>.
                     
                     The second thread, <b>thread_B</b>, cannot start before <b>thread_A</b> is finished due to <b>.join()</b>.`,
-                    code1: `// Syntax
-                    // thread_object.join(timeout)
+                    code1: `
+// Syntax
+// thread_object.join(timeout)
 // ------------- Ex : 1 -----------
 import threading
 import time
@@ -10279,8 +12489,374 @@ thread_B.join()
             title: "Daemon Threads",
             note: [
                 {
-                    text1: `Dies when the main thread ends`,
-                    code1: ``
+                    definition: `<b>Daemon threads</b> are background threads that automatically stop when all <b>non-daemon (main) threads</b> have finished. They are useful for background tasks that do not need to keep the application alive.`,
+
+                    text1: `A thread is <b>non-daemon</b> by default. You can make a thread a daemon by setting <b>thread.daemon = True</b> before calling <b>start()</b>. A daemon thread runs in the background, but Python does not wait for it to finish when the main program exits.`,
+
+                    code1: `
+// ---------- Ex : 1 — Basic daemon thread ----------
+
+import threading
+import time
+
+def background_task():
+    while True:
+        print("Daemon thread is running...")
+        time.sleep(1)
+
+thread = threading.Thread(target=background_task)
+
+thread.daemon = True
+thread.start()
+
+print("Main thread is completed")
+
+// The daemon thread runs in the background.
+// When the main thread finishes, Python can terminate the daemon thread.
+
+
+// ---------- Ex : 2 — Non-daemon thread (default) ----------
+
+import threading
+import time
+
+def task():
+    print("Task started")
+    time.sleep(5)
+    print("Task completed")
+
+thread = threading.Thread(target=task)
+
+thread.start()
+
+print("Main thread completed")
+
+// The thread is non-daemon by default.
+// Python waits for the non-daemon thread to finish before
+// the Python process exits.
+
+
+// ---------- Ex : 3 — Setting daemon=True during creation ----------
+
+import threading
+import time
+
+def background_task():
+    while True:
+        print("Background task running...")
+        time.sleep(1)
+
+thread = threading.Thread(
+    target=background_task,
+    daemon=True
+)
+
+thread.start()
+
+print("Main thread completed")
+
+// daemon=True makes the thread a daemon thread.
+
+
+// ---------- Ex : 4 — daemon property ----------
+
+import threading
+
+def task():
+    print("Task running")
+
+thread = threading.Thread(target=task)
+
+print(thread.daemon)
+
+thread.daemon = True
+
+print(thread.daemon)
+
+// Output:
+// False
+// True
+
+
+// ---------- Ex : 5 — Daemon must be set before start() ----------
+
+import threading
+import time
+
+def task():
+    print("Background task")
+
+thread = threading.Thread(target=task)
+
+thread.daemon = True
+thread.start()
+
+// Correct.
+
+// The daemon property should be set before calling start().
+
+
+// ---------- Ex : 6 — Attempting to change daemon after start ----------
+
+import threading
+import time
+
+def task():
+    time.sleep(2)
+
+thread = threading.Thread(target=task)
+
+thread.start()
+
+thread.daemon = True
+
+// RuntimeError:
+// cannot set daemon status of active thread
+
+// Therefore:
+// thread.daemon = True
+// thread.start()
+
+// Correct order.
+
+
+// ---------- Ex : 7 — Daemon vs non-daemon ----------
+
+import threading
+import time
+
+def task(name):
+    for i in range(5):
+        print(f"{name}: {i}")
+        time.sleep(1)
+
+daemon_thread = threading.Thread(
+    target=task,
+    args=("Daemon",),
+    daemon=True
+)
+
+normal_thread = threading.Thread(
+    target=task,
+    args=("Normal",)
+)
+
+daemon_thread.start()
+normal_thread.start()
+
+print("Main thread completed")
+
+// The normal thread keeps the Python program alive
+// until it completes.
+// The daemon thread does not prevent program termination.
+
+
+// ---------- Ex : 8 — Using join() with a daemon thread ----------
+
+import threading
+import time
+
+def task():
+    print("Daemon task started")
+    time.sleep(3)
+    print("Daemon task completed")
+
+thread = threading.Thread(
+    target=task,
+    daemon=True
+)
+
+thread.start()
+
+thread.join()
+
+print("Main thread completed")
+
+// Important:
+// Even though this is a daemon thread,
+// join() makes the calling thread wait for it.
+
+// Therefore, daemon=True does NOT mean that join() cannot be used.
+
+
+// ---------- Ex : 9 — Real-time example: Background monitoring ----------
+
+import threading
+import time
+
+def monitor_system():
+    while True:
+        print("Monitoring system...")
+        time.sleep(2)
+
+monitor_thread = threading.Thread(
+    target=monitor_system,
+    daemon=True
+)
+
+monitor_thread.start()
+
+print("Application is running...")
+
+time.sleep(5)
+
+print("Application shutting down...")
+
+// The monitoring thread continuously runs in the background.
+// When the main application finishes, the daemon thread
+// does not keep the application alive.
+
+
+// ---------- Ex : 10 — Real-time example: Logging ----------
+
+import threading
+import time
+
+def background_logger():
+    while True:
+        print("Writing logs...")
+        time.sleep(2)
+
+logger_thread = threading.Thread(
+    target=background_logger,
+    daemon=True
+)
+
+logger_thread.start()
+
+print("Application started")
+
+time.sleep(5)
+
+print("Application stopped")
+
+// A background logger can be implemented as a daemon thread
+// when unfinished background logging does not need to prevent
+// application shutdown.
+
+
+// ---------- Ex : 11 — Real-time example: Cache cleanup ----------
+
+import threading
+import time
+
+def cleanup_cache():
+    while True:
+        print("Cleaning expired cache...")
+        time.sleep(10)
+
+cache_thread = threading.Thread(
+    target=cleanup_cache,
+    daemon=True
+)
+
+cache_thread.start()
+
+print("Application is running")
+
+time.sleep(5)
+
+print("Application shutting down")
+
+// Cache cleanup is a background operation.
+// It does not necessarily need to keep the application alive.
+
+
+// ---------- Ex : 12 — Checking whether a thread is daemon ----------
+
+import threading
+
+def task():
+    print("Running task")
+
+thread = threading.Thread(
+    target=task,
+    daemon=True
+)
+
+print(thread.daemon)
+
+thread.start()
+
+// Output:
+// True
+
+
+// ---------- Ex : 13 — Main thread is non-daemon ----------
+
+import threading
+
+print(threading.current_thread().name)
+print(threading.current_thread().daemon)
+
+// Output:
+// MainThread
+// False
+
+// The main thread is normally a non-daemon thread.
+
+
+// ---------- Ex : 14 — Daemon thread with join() ----------
+
+import threading
+import time
+
+def task():
+    print("Background task started")
+    time.sleep(3)
+    print("Background task completed")
+
+thread = threading.Thread(
+    target=task,
+    daemon=True
+)
+
+thread.start()
+
+print("Waiting for daemon thread...")
+thread.join()
+
+print("Daemon thread finished")
+print("Application completed")
+
+// join() explicitly waits for the daemon thread.
+// Therefore, the daemon thread is allowed to finish normally.
+
+
+// ---------- Ex : 15 — Practical comparison ----------
+
+import threading
+import time
+
+def worker():
+    print("Worker started")
+    time.sleep(5)
+    print("Worker completed")
+
+daemon_thread = threading.Thread(
+    target=worker,
+    daemon=True
+)
+
+normal_thread = threading.Thread(
+    target=worker
+)
+
+daemon_thread.start()
+normal_thread.start()
+
+print("Main thread completed")
+
+// Daemon thread:
+// - Runs in the background.
+// - Does not keep the process alive.
+
+// Non-daemon thread:
+// - Runs normally.
+// - Keeps the process alive until it finishes.
+
+// The Python process exits only after all non-daemon threads
+// have completed.`
                 }
             ]
         },
@@ -10680,7 +13256,255 @@ First, let's create a simple TCP server that listens for incoming connections an
     <b>Inheritance Awareness</b>: Unlike comparing types directly with type(obj) == Class, isinstance() returns True if the object is an instance of a subclass of the specified class.
 
     <b>Multiple Type Checking</b>: You can pass a tuple of classes to classinfo (e.g., isinstance(x, (int, float))), and it will return True if the object matches any type in the tuple.`,
-                    code1: `isinstance(object, classinfo)
+                    code1: `
+# ---------- Ex : 1 — Validate API input ----------
+
+user_id = 101
+
+if isinstance(user_id, int):
+    print("Valid user ID")
+else:
+    print("User ID must be an integer")
+
+
+# ---------- Ex : 2 — Validate user name ----------
+
+name = "Anand"
+
+if isinstance(name, str):
+    print("Valid name")
+else:
+    print("Name must be a string")
+
+
+# ---------- Ex : 3 — Validate price ----------
+
+price = 499.99
+
+if isinstance(price, (int, float)):
+    print("Valid price")
+else:
+    print("Price must be a number")
+
+
+# ---------- Ex : 4 — Handle API response ----------
+
+response = {
+    "status": 200,
+    "data": ["Anand", "Rahul", "John"]
+}
+
+if isinstance(response.get("data"), list):
+    for user in response["data"]:
+        print(user)
+
+
+# ---------- Ex : 5 — Validate JSON-like data ----------
+
+request_data = {
+    "name": "Anand",
+    "age": 36,
+    "skills": ["React", "Python", "Java"]
+}
+
+if isinstance(request_data.get("name"), str):
+    print("Name is valid")
+
+if isinstance(request_data.get("age"), int):
+    print("Age is valid")
+
+if isinstance(request_data.get("skills"), list):
+    print("Skills are valid")
+
+
+# ---------- Ex : 6 — Function accepts multiple types ----------
+
+def process_value(value):
+
+    if isinstance(value, str):
+        print("Processing string:", value)
+
+    elif isinstance(value, int):
+        print("Processing integer:", value)
+
+    elif isinstance(value, list):
+        print("Processing list:", value)
+
+    else:
+        print("Unsupported type")
+
+process_value("Anand")
+process_value(100)
+process_value(["React", "Java"])
+
+
+# ---------- Ex : 7 — Check multiple types ----------
+
+value = 100
+
+if isinstance(value, (int, float)):
+    print("Value is numeric")
+
+# Same as:
+
+if isinstance(value, int) or isinstance(value, float):
+    print("Value is numeric")
+
+
+# ---------- Ex : 8 — Validate function arguments ----------
+
+def calculate_salary(salary):
+
+    if not isinstance(salary, (int, float)):
+        raise TypeError("Salary must be a number")
+
+    return salary * 12
+
+print(calculate_salary(50000))
+
+
+# ---------- Ex : 9 — Process database records ----------
+
+records = [
+    {"id": 1, "name": "Anand"},
+    {"id": 2, "name": "Rahul"},
+    "invalid record",
+    {"id": 3, "name": "John"}
+]
+
+for record in records:
+
+    if isinstance(record, dict):
+        print("Processing:", record)
+
+    else:
+        print("Invalid record:", record)
+
+
+# ---------- Ex : 10 — Check nested data ----------
+
+user = {
+    "name": "Anand",
+    "address": {
+        "city": "Hyderabad",
+        "pincode": 500072
+    }
+}
+
+address = user.get("address")
+
+if isinstance(address, dict):
+    city = address.get("city")
+
+    if isinstance(city, str):
+        print("City:", city)
+
+
+# ---------- Ex : 11 — File processing ----------
+
+def process_file(file):
+
+    if isinstance(file, str):
+        print("File path received:", file)
+
+    elif isinstance(file, bytes):
+        print("Binary file data received")
+
+    else:
+        print("Unsupported file type")
+
+
+process_file("employee.pdf")
+process_file(b"PDF binary data")
+
+
+# ---------- Ex : 12 — Custom class ----------
+
+class Employee:
+
+    def __init__(self, name):
+        self.name = name
+
+
+employee = Employee("Anand")
+
+if isinstance(employee, Employee):
+    print("This is an Employee object")
+
+
+# ---------- Ex : 13 — Inheritance ----------
+
+class Employee:
+    pass
+
+class Developer(Employee):
+    pass
+
+
+developer = Developer()
+
+print(isinstance(developer, Developer))  # True
+print(isinstance(developer, Employee))   # True
+print(isinstance(developer, object))     # True
+
+
+# ---------- Ex : 14 — Real-world service layer ----------
+
+class UserService:
+
+    def save_user(self, user):
+
+        if not isinstance(user, dict):
+            raise TypeError("User must be a dictionary")
+
+        if not isinstance(user.get("name"), str):
+            raise TypeError("Name must be a string")
+
+        if not isinstance(user.get("age"), int):
+            raise TypeError("Age must be an integer")
+
+        print("User saved successfully")
+
+
+service = UserService()
+
+service.save_user({
+    "name": "Anand",
+    "age": 36
+})
+
+
+# ---------- Ex : 15 — Real-world API response validation ----------
+
+def process_api_response(response):
+
+    if not isinstance(response, dict):
+        raise TypeError("Response must be a dictionary")
+
+    status = response.get("status")
+
+    if not isinstance(status, int):
+        raise TypeError("Status must be an integer")
+
+    data = response.get("data")
+
+    if isinstance(data, list):
+        print("Processing list response")
+
+    elif isinstance(data, dict):
+        print("Processing object response")
+
+    elif data is None:
+        print("No data available")
+
+    else:
+        print("Unexpected response data")
+
+
+process_api_response({
+    "status": 200,
+    "data": [{"id": 1}, {"id": 2}]
+})
                     
                     `
                 }
