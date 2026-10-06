@@ -4824,7 +4824,271 @@ These may look confusing initially.
 <b>[::2]</b>	Everything, every 2nd element
 <b>[::-1]</b>	Everything in reverse
 `,
-                    code1: ``
+                    code1: `
+# ============================================================
+# Python Slicing [:]
+# ============================================================
+
+
+# -------------------------- Ex : 1 --------------------------
+# Basic slicing: [start:end]
+
+text = "Python"
+
+result = text[0:3]
+
+print(result)
+
+# Output:
+# Pyt
+
+
+# -------------------------- Ex : 2 --------------------------
+# Start omitted: [:end]
+
+text = "Python"
+
+result = text[:4]
+
+print(result)
+
+# Output:
+# Pyth
+
+
+# -------------------------- Ex : 3 --------------------------
+# End omitted: [start:]
+
+text = "Python"
+
+result = text[2:]
+
+print(result)
+
+# Output:
+# thon
+
+
+# -------------------------- Ex : 4 --------------------------
+# Start and end omitted: [:]
+
+text = "Python"
+
+result = text[:]
+
+print(result)
+
+# Output:
+# Python
+
+
+# -------------------------- Ex : 5 --------------------------
+# Negative index: [-3:]
+
+text = "Python"
+
+result = text[-3:]
+
+print(result)
+
+# Output:
+# hon
+
+
+# -------------------------- Ex : 6 --------------------------
+# Negative end: [:-2]
+
+text = "Python"
+
+result = text[:-2]
+
+print(result)
+
+# Output:
+# Pyth
+
+
+# -------------------------- Ex : 7 --------------------------
+# Slicing with step: [start:end:step]
+
+text = "Python"
+
+result = text[0:6:2]
+
+print(result)
+
+# Output:
+# Pto
+
+
+# -------------------------- Ex : 8 --------------------------
+# Step only: [::2]
+
+text = "Python"
+
+result = text[::2]
+
+print(result)
+
+# Output:
+# Pto
+
+
+# -------------------------- Ex : 9 --------------------------
+# Reverse string: [::-1]
+
+text = "Python"
+
+result = text[::-1]
+
+print(result)
+
+# Output:
+# nohtyP
+
+
+# -------------------------- Ex : 10 --------------------------
+# List slicing
+
+numbers = [10, 20, 30, 40, 50]
+
+result = numbers[1:4]
+
+print(result)
+
+# Output:
+# [20, 30, 40]
+
+
+# -------------------------- Ex : 11 --------------------------
+# List from beginning
+
+numbers = [10, 20, 30, 40, 50]
+
+result = numbers[:3]
+
+print(result)
+
+# Output:
+# [10, 20, 30]
+
+
+# -------------------------- Ex : 12 --------------------------
+# List from a specific index
+
+numbers = [10, 20, 30, 40, 50]
+
+result = numbers[2:]
+
+print(result)
+
+# Output:
+# [30, 40, 50]
+
+
+# -------------------------- Ex : 13 --------------------------
+# List with step
+
+numbers = [10, 20, 30, 40, 50]
+
+result = numbers[::2]
+
+print(result)
+
+# Output:
+# [10, 30, 50]
+
+
+# -------------------------- Ex : 14 --------------------------
+# Reverse a list
+
+numbers = [10, 20, 30, 40, 50]
+
+result = numbers[::-1]
+
+print(result)
+
+# Output:
+# [50, 40, 30, 20, 10]
+
+
+# -------------------------- Ex : 15 --------------------------
+# Tuple slicing
+
+items = ("A", "B", "C", "D", "E")
+
+result = items[1:4]
+
+print(result)
+
+# Output:
+# ('B', 'C', 'D')
+
+
+# -------------------------- Ex : 16 --------------------------
+# Tuple with step
+
+items = ("A", "B", "C", "D", "E")
+
+result = items[::2]
+
+print(result)
+
+# Output:
+# ('A', 'C', 'E')
+
+
+# -------------------------- Ex : 17 --------------------------
+# Negative slicing
+
+text = "ABCDEFGHIJ"
+
+result = text[-5:-1]
+
+print(result)
+
+# Output:
+# FGHI
+
+
+# -------------------------- Ex : 18 --------------------------
+# Reverse using negative step
+
+text = "ABCDEFGHIJ"
+
+result = text[8:2:-1]
+
+print(result)
+
+# Output:
+# IHGFED
+
+
+# -------------------------- Ex : 19 --------------------------
+# Every second character
+
+text = "ABCDEFGHIJ"
+
+result = text[1::2]
+
+print(result)
+
+# Output:
+# BDFHJ
+
+
+# -------------------------- Ex : 20 --------------------------
+# Copying a list using [:]
+
+numbers = [10, 20, 30, 40, 50]
+
+result = numbers[:]
+
+print(result)
+
+# Output:
+# [10, 20, 30, 40, 50]                    
+                    `
                 }
             ]
         },
@@ -12865,8 +13129,1263 @@ print("Main thread completed")
             title: "Race Conditions",
             note: [
                 {
-                    text1: `Dies when the main thread ends`,
-                    code1: ``
+                    definition: `
+<b>Race Condition</b> is a situation where <b>multiple threads</b> access
+and modify the same <b>shared resource</b> at the same time, and the
+final result depends on the <b>timing</b> or <b>order</b> in which
+the threads execute.
+
+A race condition can cause:
+- <b>Incorrect results</b>
+- <b>Lost updates</b>
+- <b>Inconsistent data</b>
+- <b>Unexpected application behavior</b>
+
+Race conditions usually occur when:
+1. Multiple <b>threads</b> are running concurrently.
+2. Threads share the same <b>mutable data</b>.
+3. At least one thread <b>modifies</b> that shared data.
+4. The operation is not properly <b>synchronized</b>.
+
+In Python, <b>threading.Lock()</b> can be used to protect shared
+resources from race conditions.
+            `,
+
+                    text1: `
+<b>Important Terms</b>
+<b>1. Shared Resource</b>
+A <b>shared resource</b> is data or an object that can be accessed
+by multiple threads.
+
+Examples:
+- <b>Variable</b>
+- <b>List</b>
+- <b>Dictionary</b>
+- <b>File</b>
+- <b>Database record</b>
+- <b>Cache</b>
+
+<b>2. Critical Section</b>
+A <b>critical section</b> is the part of the code where a shared
+resource is accessed or modified.
+
+<b>3. Race Condition</b>
+A <b>race condition</b> occurs when multiple threads access shared
+data concurrently without proper synchronization.
+
+<b>4. Lock</b>
+A <b>Lock</b> is a synchronization mechanism that allows only
+one thread at a time to execute a protected section of code.
+
+<b>5. Synchronization</b>
+<b>Synchronization</b> means coordinating multiple threads so that
+shared resources are accessed safely.
+
+<b>Basic Flow</b>
+Thread 1 ─────┐
+              ├──> Shared Resource
+Thread 2 ─────┘
+
+Without synchronization:
+Thread 1 and Thread 2
+        ↓
+Access shared resource
+        ↓
+At the same time
+        ↓
+Race Condition
+With Lock:
+Thread 1 → 🔒 Lock → Access Resource → 🔓 Unlock
+Thread 2 → Wait → 🔒 Lock → Access Resource → 🔓 Unlock
+            `,
+
+                    code1: `
+// ================================================================
+// <b>----------------- Ex : 1 -----------------</b>
+// <b>Simple Race Condition Concept</b>
+// ================================================================
+
+import threading
+counter = 0
+
+def increment():
+    global counter
+
+    for _ in range(100000):
+        counter += 1
+
+
+thread1 = threading.Thread(target=increment)
+thread2 = threading.Thread(target=increment)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print("Final counter:", counter)
+
+
+<b>Expected:</b>
+Final counter: 200000
+
+<b>Important:</b>
+The statement:
+
+counter += 1
+
+should not be treated as a synchronization mechanism.
+When correctness depends on a shared-state update, use
+appropriate synchronization.
+
+
+// ================================================================
+// <b>----------------- Ex : 2 -----------------</b>
+// <b>How Race Condition Happens</b>
+// ================================================================
+
+Suppose:
+counter = 10
+Two threads execute:
+counter += 1
+
+
+<b>Conceptually:</b>
+Thread 1:
+    Read counter → 10
+
+Thread 2:
+    Read counter → 10
+
+Thread 1:
+    Calculate → 11
+
+Thread 2:
+    Calculate → 11
+
+Thread 1:
+    Write → 11
+
+Thread 2:
+    Write → 11
+
+
+<b>Final Result:</b>
+11
+<b>Expected Result:</b>
+12
+The update made by one thread can be lost because both threads
+read the same old value.
+
+This is called a <b>Lost Update</b>.
+
+
+// ================================================================
+// <b>----------------- Ex : 3 -----------------</b>
+// <b>Critical Section</b>
+// ================================================================
+
+import threading
+
+counter = 0
+lock = threading.Lock()
+
+def increment():
+
+    global counter
+
+    for _ in range(100000):
+
+        with lock:
+
+            # Critical Section
+            counter += 1
+
+
+thread1 = threading.Thread(target=increment)
+thread2 = threading.Thread(target=increment)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print("Final counter:", counter)
+
+
+<b>Output:</b>
+
+Final counter: 200000
+
+
+<b>Critical Section:</b>
+
+with lock:
+    counter += 1
+
+
+Only <b>one thread at a time</b> can execute the protected section.
+
+
+// ================================================================
+// <b>----------------- Ex : 4 -----------------</b>
+// <b>Creating a Lock</b>
+// ================================================================
+
+import threading
+
+lock = threading.Lock()
+
+print(lock)
+
+
+<b>Output:</b>
+
+<unlocked _thread.lock object ...>
+
+
+<b>threading.Lock()</b> creates a Lock object.
+
+The Lock is used to provide <b>mutual exclusion</b>.
+
+<b>Mutual Exclusion</b> means only one thread can enter the
+protected section at a time.
+
+
+// ================================================================
+// <b>----------------- Ex : 5 -----------------</b>
+// <b>Using acquire() and release()</b>
+// ================================================================
+
+import threading
+
+counter = 0
+lock = threading.Lock()
+
+
+def increment():
+
+    global counter
+
+    for _ in range(100000):
+
+        lock.acquire()
+
+        try:
+
+            counter += 1
+
+        finally:
+
+            lock.release()
+
+
+thread1 = threading.Thread(target=increment)
+thread2 = threading.Thread(target=increment)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print("Final counter:", counter)
+
+
+<b>Output:</b>
+
+Final counter: 200000
+
+
+<b>Flow:</b>
+
+lock.acquire()
+      ↓
+Enter Critical Section
+      ↓
+Modify Shared Resource
+      ↓
+lock.release()
+
+
+<b>acquire()</b>
+
+Acquires the lock.
+
+If another thread already owns the lock, the current thread waits.
+
+<b>release()</b>
+
+Releases the lock so another waiting thread can acquire it.
+
+
+<b>Important:</b>
+
+Use <b>try/finally</b> to ensure that the lock is released even
+when an exception occurs.
+
+
+// ================================================================
+// <b>----------------- Ex : 6 -----------------</b>
+// <b>Using with lock</b>
+// ================================================================
+
+import threading
+
+counter = 0
+lock = threading.Lock()
+
+
+def increment():
+
+    global counter
+
+    for _ in range(100000):
+
+        with lock:
+
+            counter += 1
+
+
+thread1 = threading.Thread(target=increment)
+thread2 = threading.Thread(target=increment)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print("Final counter:", counter)
+
+
+<b>Output:</b>
+
+Final counter: 200000
+
+
+<b>with lock:</b>
+
+The <b>with</b> statement automatically:
+
+1. Acquires the lock.
+2. Executes the protected code.
+3. Releases the lock.
+
+Therefore:
+
+with lock:
+    counter += 1
+
+is generally preferred over manually using:
+
+lock.acquire()
+lock.release()
+
+
+<b>Recommended:</b>
+
+with lock:
+    # Critical Section
+
+
+// ================================================================
+// <b>----------------- Ex : 7 -----------------</b>
+// <b>Bank Account Example</b>
+// ================================================================
+
+import threading
+
+balance = 1000
+lock = threading.Lock()
+
+
+def withdraw(amount):
+
+    global balance
+
+    with lock:
+
+        if balance >= amount:
+
+            balance -= amount
+
+            print("Withdrawn:", amount)
+            print("Remaining balance:", balance)
+
+        else:
+
+            print("Insufficient balance")
+
+
+thread1 = threading.Thread(
+    target=withdraw,
+    args=(800,)
+)
+
+thread2 = threading.Thread(
+    target=withdraw,
+    args=(500,)
+)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+
+<b>Possible Output:</b>
+
+Withdrawn: 800
+Remaining balance: 200
+
+Insufficient balance
+
+
+The lock protects both:
+
+1. <b>Balance check</b>
+2. <b>Balance update</b>
+
+These two operations should be treated as one
+<b>atomic logical operation</b>.
+
+
+// ================================================================
+// <b>----------------- Ex : 8 -----------------</b>
+// <b>Shared List and Compound Operation</b>
+// ================================================================
+
+import threading
+
+items = []
+lock = threading.Lock()
+
+
+def add_item(item):
+
+    with lock:
+
+        if item not in items:
+
+            items.append(item)
+
+
+thread1 = threading.Thread(
+    target=add_item,
+    args=("Apple",)
+)
+
+thread2 = threading.Thread(
+    target=add_item,
+    args=("Apple",)
+)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print(items)
+
+
+<b>Output:</b>
+
+['Apple']
+
+
+The lock protects the complete operation:
+
+if item not in items:
+    items.append(item)
+
+
+This is a <b>compound operation</b> because it contains:
+
+1. Check
+2. Decision
+3. Modification
+
+
+These operations need to be synchronized when correctness depends
+on them being performed together.
+
+
+// ================================================================
+// <b>----------------- Ex : 9 -----------------</b>
+// <b>Multiple Threads Updating a Dictionary</b>
+// ================================================================
+
+import threading
+
+data = {
+    "count": 0
+}
+
+lock = threading.Lock()
+
+
+def update_data():
+
+    for _ in range(10000):
+
+        with lock:
+
+            data["count"] += 1
+
+
+threads = []
+
+for _ in range(5):
+    thread = threading.Thread(
+        target=update_data
+    )
+    threads.append(thread)
+    thread.start()
+for thread in threads:
+    thread.join()
+print(data["count"])
+
+<b>Output:</b>
+50000
+
+<b>Calculation:</b>
+5 threads × 10000 updates = 50000
+The lock protects the shared dictionary update.
+
+
+// ================================================================
+// <b>----------------- Ex : 10 -----------------</b>
+// <b>Lock with Shared File</b>
+// ================================================================
+
+import threading
+
+lock = threading.Lock()
+
+def write_file(thread_name):
+
+    with lock:
+
+        with open("output.txt", "a") as file:
+
+            file.write(
+                f"{thread_name} is writing\\n"
+            )
+
+
+thread1 = threading.Thread(
+    target=write_file,
+    args=("Thread 1",)
+)
+
+thread2 = threading.Thread(
+    target=write_file,
+    args=("Thread 2",)
+)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print("File writing completed")
+
+
+<b>Output:</b>
+
+File writing completed
+
+
+The lock protects the <b>file-writing critical section</b>.
+
+
+// ================================================================
+// <b>----------------- Ex : 11 -----------------</b>
+// <b>Shared Counter Class</b>
+// ================================================================
+
+import threading
+
+
+class Counter:
+
+    def __init__(self):
+
+        self.value = 0
+        self.lock = threading.Lock()
+
+
+    def increment(self):
+
+        with self.lock:
+
+            self.value += 1
+
+
+counter = Counter()
+
+
+def worker():
+
+    for _ in range(10000):
+
+        counter.increment()
+
+
+thread1 = threading.Thread(target=worker)
+thread2 = threading.Thread(target=worker)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print("Counter:", counter.value)
+
+
+<b>Output:</b>
+
+Counter: 20000
+
+
+The Lock belongs to the object and protects its
+<b>shared state</b>.
+
+
+// ================================================================
+// <b>----------------- Ex : 12 -----------------</b>
+// <b>Lock with timeout</b>
+// ================================================================
+
+import threading
+import time
+
+lock = threading.Lock()
+
+
+def worker():
+
+    acquired = lock.acquire(timeout=2)
+
+    if acquired:
+
+        try:
+
+            print("Lock acquired")
+
+            time.sleep(1)
+
+        finally:
+
+            lock.release()
+
+    else:
+
+        print("Could not acquire lock")
+
+
+thread = threading.Thread(target=worker)
+
+thread.start()
+thread.join()
+
+
+<b>Possible Output:</b>
+
+Lock acquired
+
+
+<b>timeout=2</b> means the thread waits for a maximum of
+2 seconds to acquire the lock.
+
+
+// ================================================================
+// <b>----------------- Ex : 13 -----------------</b>
+// <b>Non-blocking Lock</b>
+// ================================================================
+
+import threading
+
+lock = threading.Lock()
+
+
+def worker():
+
+    if lock.acquire(blocking=False):
+
+        try:
+
+            print("Lock acquired")
+
+        finally:
+
+            lock.release()
+
+    else:
+
+        print("Lock is already being used")
+
+
+thread = threading.Thread(target=worker)
+
+thread.start()
+thread.join()
+
+
+<b>Possible Output:</b>
+
+Lock acquired
+
+
+<b>blocking=False</b> means:
+
+Do not wait for the lock.
+
+If the lock is available:
+    Acquire it.
+
+If the lock is unavailable:
+    Continue immediately.
+
+
+// ================================================================
+// <b>----------------- Ex : 14 -----------------</b>
+// <b>Two Threads and One Lock</b>
+// ================================================================
+
+import threading
+import time
+
+lock = threading.Lock()
+
+
+def task(name):
+
+    print(name, "waiting for lock")
+
+    with lock:
+
+        print(name, "entered critical section")
+
+        time.sleep(2)
+
+        print(name, "leaving critical section")
+
+
+thread1 = threading.Thread(
+    target=task,
+    args=("Thread 1",)
+)
+
+thread2 = threading.Thread(
+    target=task,
+    args=("Thread 2",)
+)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+
+<b>Possible Output:</b>
+
+Thread 1 waiting for lock
+Thread 1 entered critical section
+Thread 2 waiting for lock
+Thread 1 leaving critical section
+Thread 2 entered critical section
+Thread 2 leaving critical section
+
+
+Thread 2 waits while Thread 1 owns the lock.
+
+
+// ================================================================
+// <b>----------------- Ex : 15 -----------------</b>
+// <b>Race Condition vs Thread-Safe Code</b>
+// ================================================================
+
+
+<b>Unsafe:</b>
+
+counter += 1
+
+
+<b>Safe:</b>
+
+with lock:
+
+    counter += 1
+
+
+<b>Unsafe Flow:</b>
+
+Thread 1 → Read → Modify → Write
+Thread 2 → Read → Modify → Write
+
+
+<b>Safe Flow:</b>
+
+Thread 1 → Lock → Read → Modify → Write → Unlock
+
+Thread 2 → Wait → Lock → Read → Modify → Write → Unlock
+
+
+The protected operation becomes effectively
+<b>one-at-a-time</b> with respect to that lock.
+
+
+// ================================================================
+// <b>----------------- Ex : 16 -----------------</b>
+// <b>Real-Time Example: Inventory</b>
+// ================================================================
+
+import threading
+
+stock = 1
+lock = threading.Lock()
+
+
+def purchase(customer):
+
+    global stock
+
+    with lock:
+
+        if stock > 0:
+
+            stock -= 1
+
+            print(customer, "purchased the product")
+
+        else:
+
+            print(customer, "product unavailable")
+
+
+thread1 = threading.Thread(
+    target=purchase,
+    args=("Customer 1",)
+)
+
+thread2 = threading.Thread(
+    target=purchase,
+    args=("Customer 2",)
+)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+
+<b>Possible Output:</b>
+
+Customer 1 purchased the product
+Customer 2 product unavailable
+
+
+The lock prevents both customers from purchasing the same
+<b>last available product</b>.
+
+
+// ================================================================
+// <b>----------------- Ex : 17 -----------------</b>
+// <b>Real-Time Example: Login Attempts</b>
+// ================================================================
+
+import threading
+
+login_attempts = 0
+lock = threading.Lock()
+
+
+def record_login():
+
+    global login_attempts
+
+    with lock:
+
+        login_attempts += 1
+
+
+threads = []
+
+
+for _ in range(10):
+
+    thread = threading.Thread(
+        target=record_login
+    )
+
+    threads.append(thread)
+
+    thread.start()
+
+
+for thread in threads:
+
+    thread.join()
+
+
+print("Login attempts:", login_attempts)
+
+
+<b>Output:</b>
+
+Login attempts: 10
+
+
+The Lock protects the shared <b>login_attempts</b> counter.
+
+
+// ================================================================
+// <b>----------------- Ex : 18 -----------------</b>
+// <b>Local Variables vs Shared Variables</b>
+// ================================================================
+
+import threading
+
+
+def worker():
+
+    counter = 0
+
+    for _ in range(10000):
+
+        counter += 1
+
+    print(counter)
+
+
+thread1 = threading.Thread(target=worker)
+thread2 = threading.Thread(target=worker)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+
+<b>Output:</b>
+
+10000
+10000
+
+
+<b>Why?</b>
+
+counter is a <b>local variable</b>.
+
+Each thread gets its own function execution and its own local
+variable.
+
+Therefore, the threads are not modifying the same counter.
+
+
+// ================================================================
+// <b>----------------- Ex : 19 -----------------</b>
+// <b>Shared Data vs Local Data</b>
+// ================================================================
+
+
+<b>Shared Data:</b>
+
+counter = 0
+
+
+def worker():
+
+    global counter
+
+    counter += 1
+
+
+Multiple threads can access the same variable.
+
+Therefore, synchronization may be required.
+
+
+<b>Local Data:</b>
+
+def worker():
+
+    counter = 0
+
+    counter += 1
+
+
+Each function execution has its own local variable.
+
+Therefore, the threads do not share that variable.
+
+
+// ================================================================
+// <b>----------------- Ex : 20 -----------------</b>
+// <b>Keep the Critical Section Small</b>
+// ================================================================
+
+import threading
+import time
+
+lock = threading.Lock()
+
+
+def worker():
+
+    # Do work outside the lock
+
+    time.sleep(1)
+
+    with lock:
+
+        # Only shared-state operation
+        print("Updating shared data")
+
+
+<b>Good Practice:</b>
+
+Do not put unnecessary work inside the lock.
+
+<b>Prefer:</b>
+
+Do work
+    ↓
+Acquire Lock
+    ↓
+Update Shared Data
+    ↓
+Release Lock
+
+
+instead of:
+
+Acquire Lock
+    ↓
+Do lots of work
+    ↓
+Update Shared Data
+    ↓
+Release Lock
+
+A smaller critical section usually allows better concurrency.
+
+// ================================================================
+// <b>----------------- Ex : 21 -----------------</b>
+// <b>Common Causes of Race Conditions</b>
+// ================================================================
+
+
+<b>Cause 1: Shared Mutable Variable</b>
+counter = 0
+
+
+<b>Cause 2: Multiple Threads</b>
+thread1
+thread2
+thread3
+
+
+<b>Cause 3: Concurrent Modification</b>
+counter += 1
+
+<b>Cause 4: Check-Then-Act Operation</b>
+if item not in items:
+    items.append(item)
+
+<b>Cause 5: Missing Synchronization</b>
+Multiple threads access shared state
+without a Lock or another suitable synchronization mechanism.
+
+// ================================================================
+// <b>----------------- Ex : 22 -----------------</b>
+// <b>How to Prevent Race Conditions</b>
+// ================================================================
+
+<b>Method 1: Use Lock</b>
+lock = threading.Lock()
+with lock:
+    shared_data += 1
+
+
+<b>Method 2: Avoid Shared Mutable State</b>
+Prefer local variables where possible.
+
+
+<b>Method 3: Use Thread-Safe Design</b>
+Minimize shared state and clearly define ownership of data.
+
+
+<b>Method 4: Use Appropriate Synchronization Tools</b>
+Depending on the problem, Python provides:
+
+- Lock
+- RLock
+- Semaphore
+- Event
+- Condition
+- Queue
+
+// ================================================================
+// <b>----------------- Ex : 23 -----------------</b>
+// <b>Race Condition in AI / LangChain Applications</b>
+// ================================================================
+
+Race conditions can occur in AI applications when multiple
+threads or workers update the same shared resource.
+
+<b>Examples:</b>
+1. Shared conversation state
+2. Shared memory
+3. Shared cache
+4. Token / request counters
+5. Shared files
+6. Application configuration
+7. Shared database state
+
+<b>Example:</b>
+conversation_history = []
+
+Multiple threads:
+Thread 1 → Add user message
+Thread 2 → Add AI response
+Thread 3 → Read conversation history
+
+If multiple operations must happen in a particular order,
+appropriate synchronization may be required.
+
+<b>Important:</b>
+Do not put a Lock around every AI operation.
+
+Identify the actual <b>shared mutable state</b> and protect only
+the critical section that requires synchronization.
+
+
+// ================================================================
+// <b>----------------- Ex : 24 -----------------</b>
+// <b>Deadlock Warning</b>
+// ================================================================
+
+
+Locks prevent race conditions, but incorrect use of multiple
+locks can cause a <b>deadlock</b>.
+
+<b>Deadlock:</b>
+Thread 1 holds Lock A
+        ↓
+Waits for Lock B
+
+Thread 2 holds Lock B
+        ↓
+Waits for Lock A
+
+Both threads wait forever.
+
+<b>Concept:</b>
+Thread 1:
+    Lock A → Wait for Lock B
+
+Thread 2:
+    Lock B → Wait for Lock A
+
+<b>Best Practice:</b>
+- Keep locking simple.
+- Keep critical sections small.
+- Acquire multiple locks in a consistent order.
+- Avoid unnecessary nested locks.
+
+// ================================================================
+// <b>----------------- Ex : 25 -----------------</b>
+// <b>Race Condition Summary</b>
+// ================================================================
+
+
+<b>Race Condition:</b>
+Multiple Threads
+        ↓
+Shared Mutable Resource
+        ↓
+Concurrent Access
+        ↓
+No Proper Synchronization
+        ↓
+Unexpected / Incorrect Result
+
+
+<b>Solution:</b>
+
+Multiple Threads
+        ↓
+Shared Resource
+        ↓
+Lock
+        ↓
+One Thread at a Time
+        ↓
+Consistent Result
+
+<b>Most Important Pattern:</b>
+import threading
+lock = threading.Lock()
+
+
+with lock:
+    # Critical Section
+    shared_data += 1
+
+
+<b>Key Points:</b>
+
+1. <b>Race conditions</b> happen when multiple threads interact
+   with shared mutable state without appropriate synchronization.
+2. A <b>critical section</b> is the code that accesses or modifies
+   shared state.
+3. <b>threading.Lock()</b> provides mutual exclusion.
+4. Only one thread can hold a particular Lock at a time.
+5. Prefer:
+
+       with lock:
+           ...
+   over manually managing:
+
+       lock.acquire()
+       lock.release()
+
+6. Keep the <b>critical section small</b>.
+7. Protect the <b>complete logical operation</b>, not just an
+   arbitrary single line.
+8. Avoid unnecessary shared mutable state.
+9. A Lock can prevent race conditions, but excessive locking
+   can reduce concurrency.
+10. Incorrect use of multiple locks can cause <b>deadlocks</b>.
+11. Race conditions can occur with:
+
+    - Variables
+    - Lists
+    - Dictionaries
+    - Files
+    - Caches
+    - Counters
+    - Database state
+    - Application state
+    - AI conversation state
+    - Shared memory
+
+12. In AI/LangChain applications, pay particular attention to
+    <b>shared conversation state</b>, <b>memory</b>, <b>caches</b>,
+    <b>counters</b>, and other shared mutable objects.
+            `
                 }
             ]
         },
@@ -12875,28 +14394,1698 @@ print("Main thread completed")
             title: "Locks / Synchronization",
             note: [
                 {
-                    text1: `Dies when the main thread ends`,
-                    code1: ``
+                    definition: `
+<b>Lock</b> is a synchronization mechanism used to control access
+to a <b>shared resource</b> when multiple threads are running
+concurrently.
+
+A Lock ensures that only <b>one thread at a time</b> can execute
+a protected section of code.
+
+<b>Synchronization</b> is the process of coordinating multiple
+threads so that they safely access and modify shared resources.
+
+Locks are mainly used to prevent <b>race conditions</b>.
+
+<b>Basic Concept:</b>
+
+Multiple Threads
+        ↓
+Shared Resource
+        ↓
+Synchronization
+        ↓
+Lock
+        ↓
+One Thread at a Time
+        ↓
+Safe Shared-State Access
+
+
+<b>Python Lock:</b>
+
+threading.Lock()
+
+
+<b>Main Purpose:</b>
+
+- Prevent <b>race conditions</b>
+- Protect <b>shared resources</b>
+- Protect <b>critical sections</b>
+- Maintain <b>data consistency</b>
+- Coordinate concurrent threads
+            `,
+
+                    text1: `
+<b>Important Terms</b>
+<b>1. Lock</b>
+A <b>Lock</b> allows only one thread to enter a protected
+section at a time.
+
+Example:
+lock = threading.Lock()
+
+
+<b>2. Synchronization</b>
+<b>Synchronization</b> means coordinating multiple threads so
+that shared data is accessed safely.
+
+
+<b>3. Shared Resource</b>
+A <b>shared resource</b> is data that can be accessed by
+multiple threads.
+
+Examples:
+- <b>Variable</b>
+- <b>List</b>
+- <b>Dictionary</b>
+- <b>File</b>
+- <b>Database record</b>
+- <b>Cache</b>
+- <b>Application state</b>
+
+
+<b>4. Critical Section</b>
+A <b>critical section</b> is the portion of code where a
+shared resource is accessed or modified.
+
+Example:
+
+with lock:
+    counter += 1
+
+Here:
+counter += 1
+
+is the <b>critical section</b>.
+
+<b>5. Mutual Exclusion</b>
+<b>Mutual exclusion</b> means only one thread can execute a
+particular protected section at a time.
+
+<b>6. Thread Safety</b>
+Code is <b>thread-safe</b> when it behaves correctly even when
+multiple threads execute concurrently.
+
+<b>7. Race Condition</b>
+A <b>race condition</b> occurs when multiple threads access
+shared mutable data concurrently and the result depends on
+the timing/order of execution.
+
+<b>8. Lock Owner</b>
+The thread that successfully acquires a Lock becomes the
+thread currently holding that Lock.
+
+<b>9. Blocking</b>
+If a thread tries to acquire a Lock that is already held by
+another thread, it normally <b>waits</b> until the Lock becomes
+available.
+
+<b>Basic Lock Flow:</b>
+Thread 1
+   ↓
+lock.acquire()
+   ↓
+Critical Section
+   ↓
+lock.release()
+
+
+Thread 2
+   ↓
+lock.acquire()
+   ↓
+Wait if Lock is unavailable
+   ↓
+Critical Section
+   ↓
+lock.release()
+            `,
+
+                    code1: `
+// ================================================================
+// <b>----------------- Ex : 1 -----------------</b>
+// <b>Creating a Lock</b>
+// ================================================================
+
+import threading
+
+lock = threading.Lock()
+
+print(lock)
+
+
+<b>Possible Output:</b>
+
+<unlocked _thread.lock object ...>
+
+
+<b>threading.Lock()</b> creates a Lock object.
+
+Initially, the Lock is <b>unlocked</b>.
+
+
+// ================================================================
+// <b>----------------- Ex : 2 -----------------</b>
+// <b>Basic Lock Example</b>
+// ================================================================
+
+import threading
+
+lock = threading.Lock()
+
+
+def task():
+
+    lock.acquire()
+
+    try:
+
+        print("Inside critical section")
+
+    finally:
+
+        lock.release()
+
+
+thread = threading.Thread(target=task)
+
+thread.start()
+thread.join()
+
+
+<b>Output:</b>
+
+Inside critical section
+
+
+<b>Flow:</b>
+
+acquire()
+   ↓
+Critical Section
+   ↓
+release()
+
+
+// ================================================================
+// <b>----------------- Ex : 3 -----------------</b>
+// <b>Using with Lock</b>
+// ================================================================
+
+import threading
+
+lock = threading.Lock()
+
+
+def task():
+
+    with lock:
+
+        print("Inside critical section")
+
+
+thread = threading.Thread(target=task)
+
+thread.start()
+thread.join()
+
+
+<b>Output:</b>
+
+Inside critical section
+
+
+<b>Recommended Approach:</b>
+
+with lock:
+    # Critical Section
+
+
+The <b>with</b> statement automatically:
+
+1. Acquires the Lock.
+2. Executes the protected code.
+3. Releases the Lock.
+
+
+// ================================================================
+// <b>----------------- Ex : 4 -----------------</b>
+// <b>Multiple Threads Using One Lock</b>
+// ================================================================
+
+import threading
+import time
+
+lock = threading.Lock()
+
+
+def task(name):
+
+    with lock:
+
+        print(name, "entered")
+
+        time.sleep(2)
+
+        print(name, "leaving")
+
+
+thread1 = threading.Thread(
+    target=task,
+    args=("Thread 1",)
+)
+
+thread2 = threading.Thread(
+    target=task,
+    args=("Thread 2",)
+)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+
+<b>Possible Output:</b>
+
+Thread 1 entered
+Thread 1 leaving
+Thread 2 entered
+Thread 2 leaving
+
+
+<b>Important:</b>
+
+Thread 2 cannot enter the protected section while Thread 1
+is holding the Lock.
+
+
+// ================================================================
+// <b>----------------- Ex : 5 -----------------</b>
+// <b>Protecting a Shared Counter</b>
+// ================================================================
+
+import threading
+
+counter = 0
+lock = threading.Lock()
+
+
+def increment():
+
+    global counter
+
+    for _ in range(100000):
+
+        with lock:
+
+            counter += 1
+
+
+thread1 = threading.Thread(target=increment)
+thread2 = threading.Thread(target=increment)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print("Final counter:", counter)
+
+
+<b>Output:</b>
+
+Final counter: 200000
+
+
+The Lock protects the shared variable:
+
+counter
+
+
+The update:
+
+counter += 1
+
+is inside the <b>critical section</b>.
+
+
+// ================================================================
+// <b>----------------- Ex : 6 -----------------</b>
+// <b>acquire() and release()</b>
+// ================================================================
+
+import threading
+
+lock = threading.Lock()
+
+
+def task():
+
+    lock.acquire()
+
+    try:
+
+        print("Lock acquired")
+        print("Doing work")
+
+    finally:
+
+        lock.release()
+
+        print("Lock released")
+
+
+thread = threading.Thread(target=task)
+
+thread.start()
+thread.join()
+
+
+<b>Output:</b>
+
+Lock acquired
+Doing work
+Lock released
+
+
+<b>acquire()</b>
+
+Acquires the Lock.
+
+If another thread already holds the Lock, the current thread
+waits by default.
+
+
+<b>release()</b>
+
+Releases the Lock.
+
+Another waiting thread can then acquire it.
+
+
+// ================================================================
+// <b>----------------- Ex : 7 -----------------</b>
+// <b>Why try/finally is Important</b>
+// ================================================================
+
+import threading
+
+lock = threading.Lock()
+
+
+def task():
+
+    lock.acquire()
+
+    try:
+
+        print("Doing work")
+
+        # Some operation
+
+    finally:
+
+        lock.release()
+
+
+<b>Important:</b>
+
+The finally block ensures that the Lock is released even if
+an exception occurs inside the critical section.
+
+
+<b>Without proper release:</b>
+
+Thread 1
+   ↓
+Acquires Lock
+   ↓
+Exception occurs
+   ↓
+Lock remains held
+   ↓
+Other threads may wait indefinitely
+
+
+This can lead to a <b>deadlock</b> or blocked execution.
+
+
+// ================================================================
+// <b>----------------- Ex : 8 -----------------</b>
+// <b>with Lock vs acquire/release</b>
+// ================================================================
+
+
+<b>Manual Approach:</b>
+
+lock.acquire()
+
+try:
+
+    # Critical Section
+
+finally:
+
+    lock.release()
+
+
+<b>Recommended Approach:</b>
+
+with lock:
+
+    # Critical Section
+
+
+The <b>with</b> approach is simpler and safer for normal Lock usage.
+
+
+// ================================================================
+// <b>----------------- Ex : 9 -----------------</b>
+// <b>Non-Blocking Lock</b>
+// ================================================================
+
+import threading
+
+lock = threading.Lock()
+
+
+def task():
+
+    if lock.acquire(blocking=False):
+
+        try:
+
+            print("Lock acquired")
+
+        finally:
+
+            lock.release()
+
+    else:
+
+        print("Lock is currently unavailable")
+
+
+thread = threading.Thread(target=task)
+
+thread.start()
+thread.join()
+
+
+<b>Possible Output:</b>
+
+Lock acquired
+
+
+<b>blocking=False</b> means the thread does not wait for the Lock.
+
+If the Lock is available:
+
+    Acquire it.
+
+If the Lock is unavailable:
+
+    Continue immediately.
+
+
+// ================================================================
+// <b>----------------- Ex : 10 -----------------</b>
+// <b>Lock with timeout</b>
+// ================================================================
+
+import threading
+import time
+
+lock = threading.Lock()
+
+
+def task():
+
+    acquired = lock.acquire(timeout=2)
+
+    if acquired:
+
+        try:
+
+            print("Lock acquired")
+
+            time.sleep(1)
+
+        finally:
+
+            lock.release()
+
+    else:
+
+        print("Could not acquire Lock")
+
+
+thread = threading.Thread(target=task)
+
+thread.start()
+thread.join()
+
+
+<b>Possible Output:</b>
+
+Lock acquired
+
+
+<b>timeout=2</b> means the thread waits for a maximum of
+2 seconds to acquire the Lock.
+
+
+// ================================================================
+// <b>----------------- Ex : 11 -----------------</b>
+// <b>Bank Account Synchronization</b>
+// ================================================================
+
+import threading
+
+balance = 1000
+lock = threading.Lock()
+
+
+def withdraw(amount):
+
+    global balance
+
+    with lock:
+
+        if balance >= amount:
+
+            balance -= amount
+
+            print(
+                "Withdrawn:",
+                amount
+            )
+
+            print(
+                "Balance:",
+                balance
+            )
+
+        else:
+
+            print("Insufficient balance")
+
+
+thread1 = threading.Thread(
+    target=withdraw,
+    args=(800,)
+)
+
+thread2 = threading.Thread(
+    target=withdraw,
+    args=(500,)
+)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+
+<b>Possible Output:</b>
+
+Withdrawn: 800
+Balance: 200
+
+Insufficient balance
+
+
+The Lock protects the complete logical operation:
+
+<b>Check balance</b>
++
+<b>Update balance</b>
+
+
+This prevents two threads from making decisions based on the
+same outdated balance.
+
+
+// ================================================================
+// <b>----------------- Ex : 12 -----------------</b>
+// <b>Shared List Synchronization</b>
+// ================================================================
+
+import threading
+
+items = []
+lock = threading.Lock()
+
+
+def add_item(item):
+
+    with lock:
+
+        if item not in items:
+
+            items.append(item)
+
+
+thread1 = threading.Thread(
+    target=add_item,
+    args=("Apple",)
+)
+
+thread2 = threading.Thread(
+    target=add_item,
+    args=("Apple",)
+)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print(items)
+
+
+<b>Output:</b>
+
+['Apple']
+
+
+The Lock protects the complete <b>check-then-act</b> operation.
+
+
+// ================================================================
+// <b>----------------- Ex : 13 -----------------</b>
+// <b>Shared Dictionary Synchronization</b>
+// ================================================================
+
+import threading
+
+data = {
+    "count": 0
+}
+
+lock = threading.Lock()
+
+
+def update():
+
+    for _ in range(10000):
+
+        with lock:
+
+            data["count"] += 1
+
+
+threads = []
+
+
+for _ in range(5):
+
+    thread = threading.Thread(
+        target=update
+    )
+
+    threads.append(thread)
+
+    thread.start()
+
+
+for thread in threads:
+
+    thread.join()
+
+
+print(data["count"])
+
+
+<b>Output:</b>
+
+50000
+
+
+<b>Calculation:</b>
+
+5 threads × 10000 = 50000
+
+
+The Lock protects the shared dictionary update.
+
+
+// ================================================================
+// <b>----------------- Ex : 14 -----------------</b>
+// <b>Protecting File Access</b>
+// ================================================================
+
+import threading
+
+lock = threading.Lock()
+
+
+def write_file(name):
+
+    with lock:
+
+        with open("output.txt", "a") as file:
+
+            file.write(
+                f"{name} is writing\\n"
+            )
+
+
+thread1 = threading.Thread(
+    target=write_file,
+    args=("Thread 1",)
+)
+
+thread2 = threading.Thread(
+    target=write_file,
+    args=("Thread 2",)
+)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+
+<b>Output:</b>
+
+The file is updated by both threads.
+
+
+The Lock ensures that the protected file-writing operation
+is coordinated between threads.
+
+
+// ================================================================
+// <b>----------------- Ex : 15 -----------------</b>
+// <b>Locking Only the Critical Section</b>
+// ================================================================
+
+import threading
+import time
+
+lock = threading.Lock()
+
+
+def task():
+
+    # Work outside Lock
+    time.sleep(1)
+
+    with lock:
+
+        # Critical Section
+        print("Updating shared data")
+
+
+<b>Good Practice:</b>
+
+Do not hold a Lock while performing unnecessary work.
+
+<b>Preferred:</b>
+
+Do independent work
+        ↓
+Acquire Lock
+        ↓
+Update shared resource
+        ↓
+Release Lock
+
+
+A smaller <b>critical section</b> generally allows better
+concurrency.
+
+
+// ================================================================
+// <b>----------------- Ex : 16 -----------------</b>
+// <b>Two Different Locks</b>
+// ================================================================
+
+import threading
+
+lock1 = threading.Lock()
+lock2 = threading.Lock()
+
+
+def task1():
+
+    with lock1:
+
+        print("Task 1 using resource 1")
+
+
+def task2():
+
+    with lock2:
+
+        print("Task 2 using resource 2")
+
+
+thread1 = threading.Thread(target=task1)
+thread2 = threading.Thread(target=task2)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+
+<b>Concept:</b>
+
+Different shared resources can sometimes use different Locks.
+
+Resource 1 → Lock 1
+
+Resource 2 → Lock 2
+
+
+This can allow more concurrency than using one global Lock
+for every resource.
+
+
+// ================================================================
+// <b>----------------- Ex : 17 -----------------</b>
+// <b>Deadlock Concept</b>
+// ================================================================
+
+import threading
+import time
+
+lock1 = threading.Lock()
+lock2 = threading.Lock()
+
+
+def task1():
+
+    with lock1:
+
+        time.sleep(0.1)
+
+        with lock2:
+
+            print("Task 1")
+
+
+def task2():
+
+    with lock2:
+
+        time.sleep(0.1)
+
+        with lock1:
+
+            print("Task 2")
+
+
+<b>Possible Situation:</b>
+
+Thread 1:
+    Holds Lock 1
+    ↓
+    Waits for Lock 2
+
+
+Thread 2:
+    Holds Lock 2
+    ↓
+    Waits for Lock 1
+
+
+Both threads wait for each other.
+
+
+This situation is called a <b>Deadlock</b>.
+
+
+<b>How to Avoid:</b>
+
+Acquire multiple Locks in a <b>consistent order</b>.
+
+For example:
+
+Thread 1:
+    Lock 1 → Lock 2
+
+Thread 2:
+    Lock 1 → Lock 2
+
+
+Both follow the same order.
+
+
+// ================================================================
+// <b>----------------- Ex : 18 -----------------</b>
+// <b>RLock - Reentrant Lock</b>
+// ================================================================
+
+import threading
+
+lock = threading.RLock()
+
+
+def outer():
+
+    with lock:
+
+        print("Outer")
+
+        inner()
+
+
+def inner():
+
+    with lock:
+
+        print("Inner")
+
+
+outer()
+
+
+<b>Output:</b>
+
+Outer
+Inner
+
+
+<b>RLock</b> means <b>Reentrant Lock</b>.
+
+The same thread can acquire the same RLock multiple times.
+
+This is useful when methods/functions call other methods/functions
+that need to acquire the same Lock.
+
+
+// ================================================================
+// <b>----------------- Ex : 19 -----------------</b>
+// <b>Lock vs RLock</b>
+// ================================================================
+
+
+<b>Lock:</b>
+
+lock = threading.Lock()
+
+
+The same thread should not attempt to acquire the same Lock again
+before releasing it.
+
+
+<b>RLock:</b>
+
+lock = threading.RLock()
+
+
+The same thread can acquire the RLock multiple times.
+
+It must release the RLock the corresponding number of times.
+
+
+<b>Simple Rule:</b>
+
+Use <b>Lock</b> by default.
+
+Use <b>RLock</b> when the same thread needs to re-enter
+the protected code.
+
+
+// ================================================================
+// <b>----------------- Ex : 20 -----------------</b>
+// <b>Semaphore for Synchronization</b>
+// ================================================================
+
+import threading
+import time
+
+semaphore = threading.Semaphore(2)
+
+
+def task(name):
+
+    with semaphore:
+
+        print(name, "entered")
+
+        time.sleep(2)
+
+        print(name, "leaving")
+
+
+threads = []
+
+
+for i in range(5):
+
+    thread = threading.Thread(
+        target=task,
+        args=(f"Thread {i}",)
+    )
+
+    threads.append(thread)
+
+    thread.start()
+
+
+for thread in threads:
+
+    thread.join()
+
+
+<b>Concept:</b>
+Semaphore(2) allows up to <b>2 threads</b> to enter the
+protected section at the same time.
+
+Lock:
+    Maximum 1 thread
+
+
+Semaphore(2):
+    Maximum 2 threads
+
+
+// ================================================================
+// <b>----------------- Ex : 21 -----------------</b>
+// <b>Queue for Thread Synchronization</b>
+// ================================================================
+
+import threading
+import queue
+
+q = queue.Queue()
+
+def producer():
+
+    for i in range(5):
+
+        q.put(i)
+
+
+def consumer():
+    while True:
+        item = q.get()
+        if item is None:
+            break
+        print("Consumed:", item)
+
+        q.task_done()
+
+
+producer_thread = threading.Thread(
+    target=producer
+)
+
+consumer_thread = threading.Thread(
+    target=consumer
+)
+
+consumer_thread.start()
+producer_thread.start()
+
+producer_thread.join()
+
+q.put(None)
+consumer_thread.join()
+
+
+<b>Output:</b>
+Consumed: 0
+Consumed: 1
+Consumed: 2
+Consumed: 3
+Consumed: 4
+
+
+<b>queue.Queue</b> provides built-in thread-safe operations
+for common producer/consumer patterns.
+
+It can reduce the need to manually protect a shared collection
+with a Lock.
+
+
+// ================================================================
+// <b>----------------- Ex : 22 -----------------</b>
+// <b>Synchronization Tools in Python</b>
+// ================================================================
+
+Python's threading module provides several synchronization
+mechanisms.
+
+
+<b>1. Lock</b>
+threading.Lock()
+Allows one thread at a time.
+
+
+<b>2. RLock</b>
+threading.RLock()
+Allows the same thread to acquire the Lock multiple times.
+
+
+<b>3. Semaphore</b>
+threading.Semaphore(n)
+Allows a limited number of threads to enter a section.
+
+
+<b>4. Event</b>
+threading.Event()
+Allows threads to communicate using a set/clear event state.
+
+
+<b>5. Condition</b>
+threading.Condition()
+Allows threads to wait for and be notified about a condition.
+
+
+<b>6. Barrier</b>
+threading.Barrier(n)
+Allows a group of threads to wait until all required threads
+reach the same point.
+
+
+<b>7. Queue</b>
+queue.Queue()
+Provides thread-safe producer/consumer communication.
+
+
+// ================================================================
+// <b>----------------- Ex : 23 -----------------</b>
+// <b>Synchronization vs Concurrency</b>
+// ================================================================
+
+
+<b>Concurrency:</b>
+
+Multiple tasks make progress during overlapping periods.
+
+
+<b>Synchronization:</b>
+
+Coordinates those tasks when they interact with shared state.
+
+
+<b>Example:</b>
+
+Thread 1 → Processing
+Thread 2 → Processing
+Thread 3 → Processing
+
+All can run concurrently.
+
+But:
+
+Thread 1
+   ↓
+Update shared resource
+
+Thread 2
+   ↓
+Update same resource
+
+Synchronization may be required.
+
+
+<b>Important:</b>
+
+Synchronization does not mean that all threads stop working.
+
+It means shared resources are accessed in a controlled way.
+
+
+// ================================================================
+// <b>----------------- Ex : 24 -----------------</b>
+// <b>Locks and Python GIL</b>
+// ================================================================
+
+
+<b>GIL</b> means <b>Global Interpreter Lock</b> in CPython.
+
+The GIL and a <b>threading.Lock</b> are different concepts.
+
+
+<b>GIL:</b>
+
+A CPython implementation mechanism that affects execution of
+Python bytecode across threads.
+
+
+<b>threading.Lock:</b>
+
+An application-level synchronization primitive used by your
+program to protect shared state.
+
+
+<b>Important:</b>
+
+Do not assume that the GIL makes your application's shared
+state automatically thread-safe.
+
+Use appropriate synchronization when multiple threads
+access shared mutable state.
+
+
+// ================================================================
+// <b>----------------- Ex : 25 -----------------</b>
+// <b>Locks in AI / LangChain Applications</b>
+// ================================================================
+
+
+Locks can be useful in AI applications when multiple threads
+or workers access the same mutable resource.
+
+
+<b>Examples:</b>
+
+- <b>Conversation state</b>
+- <b>Shared memory</b>
+- <b>Cache</b>
+- <b>Request counters</b>
+- <b>Token counters</b>
+- <b>Shared files</b>
+- <b>Application state</b>
+- <b>Database-related shared state</b>
+
+
+<b>Example:</b>
+
+conversation_history = []
+
+lock = threading.Lock()
+
+
+def add_message(message):
+
+    with lock:
+
+        conversation_history.append(message)
+
+
+Multiple threads can safely coordinate access to the shared
+conversation history.
+
+
+<b>Important:</b>
+
+Do not use a Lock around every AI/LLM operation.
+
+Identify the actual <b>shared mutable state</b> and protect
+the smallest critical section that needs synchronization.
+
+
+// ================================================================
+// <b>----------------- Ex : 26 -----------------</b>
+// <b>Lock Best Practices</b>
+// ================================================================
+
+
+<b>1. Keep Critical Sections Small</b>
+
+with lock:
+
+    # Only required shared-state operations
+
+
+<b>2. Use with lock</b>
+
+Prefer:
+
+with lock:
+    ...
+
+
+instead of manually managing:
+
+lock.acquire()
+lock.release()
+
+
+<b>3. Avoid Unnecessary Locks</b>
+
+Do not lock code that does not access shared state.
+
+
+<b>4. Avoid Long Operations Inside Locks</b>
+
+Avoid:
+
+with lock:
+
+    network_call()
+
+    time.sleep(10)
+
+    expensive_operation()
+
+
+Prefer doing independent work outside the Lock whenever possible.
+
+
+<b>5. Protect the Complete Logical Operation</b>
+
+For example:
+
+with lock:
+
+    if balance >= amount:
+        balance -= amount
+
+
+Protect both the <b>check</b> and the <b>update</b>.
+
+
+<b>6. Be Careful with Multiple Locks</b>
+
+Always acquire multiple Locks in a consistent order to reduce
+the risk of <b>deadlocks</b>.
+
+
+<b>7. Minimize Shared Mutable State</b>
+
+Less shared state generally means fewer synchronization problems.
+
+
+// ================================================================
+// <b>----------------- Ex : 27 -----------------</b>
+// <b>Lock / Synchronization Summary</b>
+// ================================================================
+
+<b>Without Synchronization:</b>
+
+Thread 1 ─────┐
+              ├──> Shared Resource
+Thread 2 ─────┘
+
+Possible:
+    Race Condition
+    Lost Update
+    Inconsistent State
+
+<b>With Lock:</b>
+
+Thread 1
+    ↓
+Acquire Lock
+    ↓
+Critical Section
+    ↓
+Release Lock
+    ↓
+Thread 2
+
+
+<b>Core Pattern:</b>
+import threading
+lock = threading.Lock()
+
+with lock:
+    # Critical Section
+    shared_data += 1
+
+
+<b>Key Points:</b>
+1. <b>Lock</b> protects shared resources.
+2. <b>Synchronization</b> coordinates concurrent threads.
+3. <b>Critical Section</b> is the code that accesses shared state.
+4. <b>Mutual Exclusion</b> allows only one thread at a time into
+   a Lock-protected section.
+5. <b>threading.Lock()</b> is the basic Lock in Python.
+6. <b>acquire()</b> obtains the Lock.
+7. <b>release()</b> releases the Lock.
+8. <b>with lock:</b> is the recommended simple pattern.
+9. <b>RLock</b> allows the same thread to acquire the same Lock
+   multiple times.
+10. <b>Semaphore</b> can allow a limited number of threads
+    simultaneously.
+11. <b>Queue</b> provides thread-safe communication for common
+    producer/consumer scenarios.
+12. Locks help prevent <b>race conditions</b>.
+13. Incorrect use of multiple Locks can cause <b>deadlocks</b>.
+14. Keep the <b>critical section small</b>.
+15. Avoid unnecessary shared mutable state.
+16. The <b>GIL</b> is not a replacement for application-level
+    synchronization.
+17. In AI/LangChain applications, Locks can be useful for
+    protecting shared <b>memory</b>, <b>conversation state</b>,
+    <b>caches</b>, <b>counters</b>, and other mutable resources.
+            `
                 }
             ]
         },
+{
+    id: 1,
+    title: "Thread-safe Code",
+    note: [
         {
-            id: 1,
-            title: "Thread-safe Code",
-            note: [
-                {
-                    text1: `Dies when the main thread ends`,
-                    code1: ``
-                }
-            ]
-        },
+            definition: `
+                <b>Thread-safe code</b> is code that can be safely executed by <b>multiple threads</b>
+                at the same time without causing <b>race conditions</b>, incorrect results, or corrupted data.
+                Thread safety is usually achieved using <b>Locks</b>, <b>Synchronization</b>, or
+                thread-safe data structures.
+            `,
+
+            text1: `
+                <b>Key idea:</b> When multiple threads access <b>shared data</b>, only one thread
+                should modify the critical section at a time.
+                <b>Thread-safe:</b> Multiple threads can safely use the code.
+                <b>Not thread-safe:</b> Multiple threads can interfere with each other.
+                <b>Shared resource:</b> Data accessed by multiple threads.
+                <b>Critical section:</b> Code that accesses or modifies shared data.
+            `,
+
+            code1: `// -------------------------- Ex : 1 ----------------
+// Not Thread-safe
+
+import threading
+
+counter = 0
+
+def increment():
+    global counter
+
+    for _ in range(100000):
+        counter += 1
+
+threads = [
+    threading.Thread(target=increment),
+    threading.Thread(target=increment)
+]
+
+for thread in threads:
+    thread.start()
+
+for thread in threads:
+    thread.join()
+
+print("Counter:", counter)
+
+// Expected:
+// Counter: 200000
+
+// In concurrent code, shared data can potentially be
+// accessed/modified by multiple threads at the same time.
+
+
+
+// -------------------------- Ex : 2 ----------------
+// Thread-safe using Lock
+
+import threading
+
+counter = 0
+lock = threading.Lock()
+
+def increment():
+    global counter
+
+    for _ in range(100000):
+        with lock:
+            counter += 1
+
+threads = [
+    threading.Thread(target=increment),
+    threading.Thread(target=increment)
+]
+
+for thread in threads:
+    thread.start()
+
+for thread in threads:
+    thread.join()
+
+print("Counter:", counter)
+
+// Output:
+// Counter: 200000
+
+// The Lock ensures that only one thread at a time
+// can execute the critical section.
+
+
+
+// -------------------------- Ex : 3 ----------------
+// Thread-safe code with a shared list
+
+import threading
+
+items = []
+lock = threading.Lock()
+
+def add_items():
+    for i in range(5):
+        with lock:
+            items.append(i)
+
+threads = [
+    threading.Thread(target=add_items),
+    threading.Thread(target=add_items)
+]
+
+for thread in threads:
+    thread.start()
+
+for thread in threads:
+    thread.join()
+
+print("Items:", items)
+
+// Output:
+// Items: [0, 1, 2, 3, 4, 0, 1, 2, 3, 4]
+
+// The Lock protects access to the shared resource: items.
+
+
+
+// -------------------------- Ex : 4 ----------------
+// Thread-safe function
+
+import threading
+
+lock = threading.Lock()
+balance = 1000
+
+def withdraw(amount):
+    global balance
+
+    with lock:
+        if balance >= amount:
+            balance -= amount
+            print("Withdrawn:", amount)
+        else:
+            print("Insufficient balance")
+
+threads = [
+    threading.Thread(target=withdraw, args=(700,)),
+    threading.Thread(target=withdraw, args=(500,))
+]
+
+for thread in threads:
+    thread.start()
+
+for thread in threads:
+    thread.join()
+
+print("Final balance:", balance)
+
+// Possible Output:
+// Withdrawn: 700
+// Insufficient balance
+// Final balance: 300
+
+// Because the balance check and update are protected
+// by the same Lock, the operation is thread-safe.`
+        }
+    ]
+},
         {
             id: 1,
             title: "Timers",
             note: [
                 {
-                    text1: `Dies when the main thread ends`,
-                    code1: ``
+                    definition: `<b>Timers</b> are used to execute a function after a specified amount of time or repeatedly at fixed time intervals.`,
+                    text1: `<b>Python</b> provides the <b>threading.Timer</b> class to schedule a function to run after a delay. The timer runs the function in a <b>separate thread</b>.`,
+                    code1: `// -------------------------- Ex : 1 ----------------
+import threading
+import time
+
+def say_hello():
+    print("Hello!")
+
+timer = threading.Timer(3, say_hello)
+timer.start()
+
+print("Timer started...")
+time.sleep(4)
+
+// Output:
+// Timer started...
+// Hello!
+
+
+// -------------------------- Ex : 2 ----------------
+// Timer with arguments
+
+import threading
+
+def greet(name):
+    print(f"Hello, {name}!")
+
+timer = threading.Timer(2, greet, args=("Anand",))
+timer.start()
+
+// Output:
+// Hello, Anand!
+
+
+// -------------------------- Ex : 3 ----------------
+// Cancel a timer before it executes
+
+import threading
+import time
+
+def task():
+    print("Task executed")
+
+timer = threading.Timer(5, task)
+timer.start()
+
+time.sleep(2)
+
+timer.cancel()
+
+print("Timer cancelled")
+
+// Output:
+// Timer cancelled
+
+
+// -------------------------- Ex : 4 ----------------
+// Repeating timer
+
+import threading
+
+def task():
+    print("Task executed")
+
+    timer = threading.Timer(2, task)
+    timer.start()
+
+timer = threading.Timer(2, task)
+timer.start()
+
+// Output:
+// Task executed
+// Task executed
+// Task executed
+// ...
+// The task executes approximately every 2 seconds.`
                 }
             ]
         },
@@ -12905,41 +16094,1228 @@ print("Main thread completed")
             title: "ThreadPoolExecutor",
             note: [
                 {
-                    text1: `Dies when the main thread ends`,
-                    code1: ``
-                }
-            ]
-        },
-        {
-            id: 1,
-            title: "Multithreading vs Multiprocessing",
-            note: [
+                    definition: `<b>Definition:</b> <b>ThreadPoolExecutor</b> is a high-level API provided by Python's <b>concurrent.futures</b> module. It manages a pool of worker threads and allows multiple tasks to execute concurrently. It is especially useful for <b>I/O-bound operations</b> such as API calls, file operations, database operations, and network requests.`,
+
+                    text1: `<b>Why ThreadPoolExecutor?</b>
+            Instead of manually creating, starting, and joining individual threads using <b>threading.Thread</b>, ThreadPoolExecutor manages the worker threads for us.
+            We mainly use:
+            • <b>submit()</b> → submit individual tasks
+            • <b>map()</b> → execute the same function for multiple values
+            • <b>Future</b> → represents the result of an asynchronous task
+            • <b>as_completed()</b> → process results as tasks finish
+            • <b>max_workers</b> → controls the maximum number of worker threads`,
+
+                    code1: `
+// -------------------------- Ex : 1 ----------------
+// Basic ThreadPoolExecutor
+
+from concurrent.futures import ThreadPoolExecutor
+
+def task(number):
+    print(f"Processing task {number}")
+
+with ThreadPoolExecutor(max_workers=3) as executor:
+    for number in range(5):
+        executor.submit(task, number)
+
+print("All tasks submitted")`
+                },
+
                 {
-                    text1: `Dies when the main thread ends`,
-                    code1: ``
-                }
-            ]
-        },
-        {
-            id: 1,
-            title: "Queues in Multithreading",
-            note: [
+                    definition: `<b>Definition:</b> <b>max_workers</b> specifies the maximum number of worker threads that can execute tasks concurrently.`,
+
+                    text1: `<b>How max_workers works:</b>
+            If there are 10 tasks and <b>max_workers=3</b>, only 3 worker threads execute tasks at the same time. When one thread finishes, it takes another pending task.
+            You do not need to create 10 threads manually.`,
+
+                    code1: `// -------------------------- Ex : 2 ----------------
+
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+def task(number):
+    print(f"Task {number} started")
+    time.sleep(2)
+    print(f"Task {number} completed")
+
+with ThreadPoolExecutor(max_workers=3) as executor:
+    for number in range(1, 7):
+        executor.submit(task, number)
+
+print("Executor finished")`
+                },
+
                 {
-                    text1: `Dies when the main thread ends`,
-                    code1: ``
-                }
-            ]
-        },
-        {
-            id: 1,
-            title: "Deadlock & Avoidance",
-            note: [
+                    definition: `<b>Definition:</b> <b>submit()</b> schedules a callable to be executed by a worker thread and immediately returns a <b>Future</b> object.`,
+
+                    text1: `<b>submit(function, *args)</b>
+            The function does not execute directly on the main thread. It is submitted to the executor, which assigns it to an available worker thread.`,
+
+                    code1: `// -------------------------- Ex : 3 ----------------
+
+from concurrent.futures import ThreadPoolExecutor
+
+def add(a, b):
+    return a + b
+
+with ThreadPoolExecutor(max_workers=2) as executor:
+
+    future = executor.submit(add, 10, 20)
+
+    print("Task submitted")
+
+    result = future.result()
+
+    print("Result:", result)`
+                },
+
                 {
-                    text1: `Dies when the main thread ends`,
-                    code1: ``
+                    definition: `<b>Definition:</b> A <b>Future</b> represents the eventual result of a task that has been submitted to an executor.`,
+
+                    text1: `<b>Future</b> allows us to:
+            • Get the result using <b>result()</b>
+            • Check completion using <b>done()</b>
+            • Check whether it was cancelled using <b>cancelled()</b>
+            • Handle exceptions raised by the task`,
+
+                    code1: `// -------------------------- Ex : 4 ----------------
+
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+def task():
+    time.sleep(2)
+    return "Task completed"
+
+with ThreadPoolExecutor(max_workers=1) as executor:
+
+    future = executor.submit(task)
+
+    print("Done:", future.done())
+
+    result = future.result()
+
+    print("Result:", result)
+
+    print("Done:", future.done())`
+                },
+
+                {
+                    definition: `<b>Definition:</b> <b>map()</b> executes a function concurrently for each item in an iterable and returns an iterator containing the results.`,
+
+                    text1: `<b>map()</b> is useful when the same function needs to be executed for many values.
+            It is similar to Python's normal <b>map()</b>, but ThreadPoolExecutor's <b>map()</b> executes the function using worker threads.`,
+
+                    code1: `// -------------------------- Ex : 5 ----------------
+
+from concurrent.futures import ThreadPoolExecutor
+
+def square(number):
+    return number * number
+
+numbers = [1, 2, 3, 4, 5]
+
+with ThreadPoolExecutor(max_workers=3) as executor:
+
+    results = executor.map(square, numbers)
+
+    for result in results:
+        print(result)`
+                },
+
+                {
+                    definition: `<b>Definition:</b> <b>as_completed()</b> returns futures as soon as their corresponding tasks finish.`,
+
+                    text1: `<b>Important difference:</b>
+            <b>map()</b> generally gives results according to the input order.
+            <b>as_completed()</b> gives results according to the order in which tasks actually complete.`,
+
+                    code1: `// -------------------------- Ex : 6 ----------------
+
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
+import random
+
+def task(number):
+    delay = random.uniform(1, 3)
+    time.sleep(delay)
+
+    return f"Task {number} completed in {delay:.2f}s"
+
+with ThreadPoolExecutor(max_workers=3) as executor:
+
+    futures = [
+        executor.submit(task, number)
+        for number in range(1, 6)
+    ]
+
+    for future in as_completed(futures):
+        print(future.result())`
+                },
+
+                {
+                    definition: `<b>Definition:</b> ThreadPoolExecutor can execute multiple <b>I/O-bound operations</b> concurrently, making it useful for tasks that spend significant time waiting for external resources.`,
+
+                    text1: `<b>Common I/O-bound use cases:</b>
+            • REST API calls
+            • Database queries
+            • File operations
+            • Network requests
+            • Downloading files
+            • Calling external services`,
+
+                    code1: `// -------------------------- Ex : 7 ----------------
+// Simulating multiple API calls
+
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+def fetch_user(user_id):
+    print(f"Fetching user {user_id}")
+
+    time.sleep(2)
+
+    return f"User {user_id} data"
+
+user_ids = [101, 102, 103, 104, 105]
+
+with ThreadPoolExecutor(max_workers=3) as executor:
+
+    results = executor.map(fetch_user, user_ids)
+
+    for result in results:
+        print(result)`
+                },
+
+                {
+                    definition: `<b>Definition:</b> ThreadPoolExecutor can be used to process multiple files concurrently when the operation is primarily I/O-bound.`,
+
+                    text1: `<b>Real-time example:</b> Suppose an application needs to process several uploaded files. Instead of processing each file sequentially, multiple files can be processed concurrently using a thread pool.`,
+
+                    code1: `// -------------------------- Ex : 8 ----------------
+
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+def process_file(filename):
+
+    print(f"Processing {filename}")
+
+    time.sleep(2)
+
+    return f"{filename} processed successfully"
+
+files = [
+    "customer.csv",
+    "orders.csv",
+    "payments.csv",
+    "products.csv"
+]
+
+with ThreadPoolExecutor(max_workers=2) as executor:
+
+    results = executor.map(process_file, files)
+
+    for result in results:
+        print(result)`
+                },
+
+                {
+                    definition: `<b>Definition:</b> Exceptions raised inside a worker thread can be retrieved through the corresponding <b>Future</b>. Calling <b>future.result()</b> raises the exception in the calling thread.`,
+
+                    text1: `<b>Exception handling with submit()</b>
+            This is one reason <b>submit()</b> is useful when individual task results or errors need to be handled separately.`,
+
+                    code1: `// -------------------------- Ex : 9 ----------------
+
+from concurrent.futures import ThreadPoolExecutor
+
+def divide(a, b):
+    return a / b
+
+with ThreadPoolExecutor(max_workers=2) as executor:
+
+    future1 = executor.submit(divide, 10, 2)
+    future2 = executor.submit(divide, 10, 0)
+
+    try:
+        print("Result 1:", future1.result())
+        print("Result 2:", future2.result())
+
+    except ZeroDivisionError:
+        print("Cannot divide by zero")`
+                },
+
+                {
+                    definition: `<b>Definition:</b> <b>executor.shutdown()</b> tells the executor that no more tasks will be submitted and allows the worker threads to finish.`,
+
+                    text1: `When using a <b>with ThreadPoolExecutor(...)</b> block, Python automatically performs the necessary cleanup. Therefore, using <b>with</b> is generally the preferred approach.`,
+
+                    code1: `// -------------------------- Ex : 10 ----------------
+
+from concurrent.futures import ThreadPoolExecutor
+
+def task():
+    print("Task executed")
+
+with ThreadPoolExecutor(max_workers=2) as executor:
+
+    executor.submit(task)
+    executor.submit(task)
+
+# Executor is automatically cleaned up here`
+                },
+
+                {
+                    definition: `<b>Definition:</b> ThreadPoolExecutor can receive multiple arguments for a function when using <b>submit()</b>.`,
+
+                    text1: `<b>Passing multiple arguments:</b>
+            The first argument to <b>submit()</b> is the function. The remaining arguments are passed to that function.`,
+
+                    code1: `// -------------------------- Ex : 11 ----------------
+
+from concurrent.futures import ThreadPoolExecutor
+
+def calculate(price, quantity):
+    return price * quantity
+
+orders = [
+    (100, 2),
+    (250, 3),
+    (500, 1),
+    (150, 4)
+]
+
+with ThreadPoolExecutor(max_workers=3) as executor:
+
+    futures = [
+        executor.submit(calculate, price, quantity)
+        for price, quantity in orders
+    ]
+
+    for future in futures:
+        print("Total:", future.result())`
+                },
+
+                {
+                    definition: `<b>Definition:</b> ThreadPoolExecutor can be used to execute independent tasks concurrently and collect their results.`,
+
+                    text1: `<b>Real-time example: Customer dashboard</b>
+            Imagine a frontend/backend system where a customer dashboard needs data from multiple independent services:
+            • Customer service
+            • Account service
+            • Transaction service
+            • Rewards service
+            These independent calls can be executed concurrently.`,
+
+                    code1: `// -------------------------- Ex : 12 ----------------
+
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+def get_customer():
+    time.sleep(2)
+    return "Customer information"
+
+def get_accounts():
+    time.sleep(2)
+    return "Account information"
+
+def get_transactions():
+    time.sleep(2)
+    return "Transaction information"
+
+def get_rewards():
+    time.sleep(2)
+    return "Rewards information"
+
+with ThreadPoolExecutor(max_workers=4) as executor:
+
+    futures = {
+        "customer": executor.submit(get_customer),
+        "accounts": executor.submit(get_accounts),
+        "transactions": executor.submit(get_transactions),
+        "rewards": executor.submit(get_rewards)
+    }
+
+    for name, future in futures.items():
+        print(name, ":", future.result())`
+                },
+
+                {
+                    definition: `<b>Definition:</b> A thread pool reuses a limited number of worker threads to execute many tasks instead of creating a new thread for every task.`,
+
+                    text1: `<b>Thread Pool Concept</b>
+            Suppose there are 100 tasks and <b>max_workers=5</b>.
+            Python creates a pool with up to 5 worker threads. The 100 tasks are placed into the executor's work queue. As a worker becomes available, it picks up another task.
+            This avoids creating 100 separate threads.`,
+
+                    code1: `// -------------------------- Ex : 13 ----------------
+
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+def task(number):
+    print(f"Processing {number}")
+    time.sleep(1)
+
+with ThreadPoolExecutor(max_workers=5) as executor:
+
+    for number in range(1, 101):
+        executor.submit(task, number)
+
+print("All 100 tasks completed")`
+                },
+
+                {
+                    definition: `<b>Definition:</b> ThreadPoolExecutor is generally most useful for <b>I/O-bound tasks</b>, not CPU-bound calculations.`,
+
+                    text1: `<b>I/O-bound:</b> The program spends time waiting for something external, such as a network response or file operation. Threads can be useful here.
+            <b>CPU-bound:</b> The program spends most of its time performing CPU calculations. Python's GIL generally prevents multiple Python threads from executing Python bytecode simultaneously, so <b>ProcessPoolExecutor</b> may be more appropriate for CPU-bound work.`,
+
+                    code1: `// -------------------------- Ex : 14 ----------------
+
+// I/O-bound → ThreadPoolExecutor
+
+from concurrent.futures import ThreadPoolExecutor
+
+with ThreadPoolExecutor(max_workers=5) as executor:
+    results = executor.map(fetch_data, urls)
+
+
+// CPU-bound → ProcessPoolExecutor
+
+from concurrent.futures import ProcessPoolExecutor
+
+with ProcessPoolExecutor(max_workers=5) as executor:
+    results = executor.map(calculate, numbers)`
+                },
+
+                {
+                    definition: `<b>Definition:</b> <b>ThreadPoolExecutor</b> provides a convenient way to manage concurrent execution using a fixed or limited pool of worker threads.`,
+
+                    text1: `<b>Important methods to remember:</b>
+            <b>ThreadPoolExecutor(max_workers=n)</b> → creates the thread pool
+            <b>submit()</b> → submits one task
+            <b>map()</b> → applies one function to multiple inputs
+            <b>Future.result()</b> → gets the task result
+            <b>Future.done()</b> → checks whether the task completed
+            <b>as_completed()</b> → processes futures as they finish
+            <b>shutdown()</b> → shuts down the executor
+            <b>Best practice:</b> Prefer the <b>with</b> statement so the executor is cleaned up automatically.`,
+
+                    code1: `// -------------------------- Ex : 15 ----------------
+// Complete practical pattern
+
+from concurrent.futures import (
+    ThreadPoolExecutor,
+    as_completed
+)
+
+def process_item(item):
+
+    # I/O-bound operation
+    return f"Processed {item}"
+
+items = [1, 2, 3, 4, 5]
+
+with ThreadPoolExecutor(max_workers=3) as executor:
+
+    futures = [
+        executor.submit(process_item, item)
+        for item in items
+    ]
+
+    for future in as_completed(futures):
+
+        try:
+            result = future.result()
+            print(result)
+
+        except Exception as error:
+            print("Task failed:", error)
+
+print("All tasks completed")`
                 }
             ]
         },
+{
+    id: 1,
+    title: "Multithreading vs Multiprocessing",
+    note: [
+        {
+            definition: `<b>Multithreading</b> means running multiple <b>threads</b> within the same <b>process</b>.
+<b>Multiprocessing</b> means running multiple <b>processes</b>, where each process has its own memory space and Python interpreter.
+The main difference is that <b>multithreading</b> is useful mainly for <b>I/O-bound tasks</b>, while <b>multiprocessing</b> is useful mainly for <b>CPU-bound tasks</b>.`,
+
+            text1: `<b>Multithreading</b>
+• Multiple threads share the same process memory.
+• Threads are lightweight and faster to create.
+• Best for <b>I/O-bound tasks</b> such as API calls, file operations, database queries and network requests.
+• In CPython, the <b>GIL (Global Interpreter Lock)</b> prevents multiple threads from executing Python bytecode simultaneously.
+
+<b>Multiprocessing</b>
+• Multiple processes run independently.
+• Each process has its own memory space and Python interpreter.
+• Processes are heavier than threads.
+• Best for <b>CPU-bound tasks</b> such as calculations, image processing and data processing.
+• Each process can execute Python code on a different CPU core.
+
+<b>Simple rule:</b>
+<b>I/O-bound → Multithreading</b>
+<b>CPU-bound → Multiprocessing</b>`,
+
+            code1: `// ========================== Ex : 1 ==========================
+// Multithreading - I/O-bound task
+
+import threading
+import time
+
+def download_file(file_name):
+    print(f"Downloading {file_name}...")
+    time.sleep(2)  # Simulates I/O operation
+    print(f"{file_name} downloaded")
+
+thread1 = threading.Thread(
+    target=download_file,
+    args=("file1.txt",)
+)
+
+thread2 = threading.Thread(
+    target=download_file,
+    args=("file2.txt",)
+)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print("All downloads completed")
+
+// Output:
+// Downloading file1.txt...
+// Downloading file2.txt...
+// file1.txt downloaded
+// file2.txt downloaded
+// All downloads completed
+
+
+// ========================== Ex : 2 ==========================
+// Multiprocessing - CPU-bound task
+
+from multiprocessing import Process
+
+def calculate():
+    total = 0
+
+    for i in range(10_000_000):
+        total += i
+
+    print("Calculation completed")
+
+process1 = Process(target=calculate)
+process2 = Process(target=calculate)
+
+process1.start()
+process2.start()
+
+process1.join()
+process2.join()
+
+print("All calculations completed")
+
+// Output:
+// Calculation completed
+// Calculation completed
+// All calculations completed
+
+
+// ========================== Ex : 3 ==========================
+// Comparing the basic idea
+
+// Multithreading:
+// Process
+//   ├── Thread 1
+//   ├── Thread 2
+//   └── Thread 3
+//
+// Threads share memory.
+
+
+// Multiprocessing:
+// Process 1 → Own memory
+// Process 2 → Own memory
+// Process 3 → Own memory
+//
+// Processes have separate memory spaces.
+
+
+// ========================== Ex : 4 ==========================
+// Real-world examples
+
+// Multithreading:
+// 1. Calling multiple REST APIs
+// 2. Downloading multiple files
+// 3. Reading multiple files
+// 4. Database/network requests
+// 5. Web scraping
+
+// Multiprocessing:
+// 1. Image processing
+// 2. Video processing
+// 3. Large mathematical calculations
+// 4. Machine learning data preprocessing
+// 5. CPU-intensive data processing
+
+
+// ========================== Ex : 5 ==========================
+// Multithreading with ThreadPoolExecutor
+
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+def fetch_data(api_name):
+    print(f"Calling {api_name}")
+    time.sleep(2)
+    return f"{api_name} response"
+
+with ThreadPoolExecutor(max_workers=3) as executor:
+
+    results = executor.map(
+        fetch_data,
+        ["API-1", "API-2", "API-3"]
+    )
+
+    for result in results:
+        print(result)
+
+// Output:
+// Calling API-1
+// Calling API-2
+// Calling API-3
+// API-1 response
+// API-2 response
+// API-3 response
+
+
+// ========================== Ex : 6 ==========================
+// Multiprocessing with ProcessPoolExecutor
+
+from concurrent.futures import ProcessPoolExecutor
+
+def calculate_square(number):
+    return number * number
+
+if __name__ == "__main__":
+
+    with ProcessPoolExecutor(max_workers=3) as executor:
+
+        results = executor.map(
+            calculate_square,
+            [2, 4, 6, 8]
+        )
+
+        print(list(results))
+
+// Output:
+// [4, 16, 36, 64]
+
+
+// ========================== Ex : 7 ==========================
+// Quick comparison
+
+// Multithreading
+// -----------------------------
+// Unit          : Thread
+// Memory        : Shared
+// Overhead      : Low
+// Best for      : I/O-bound
+// GIL           : Important in CPython
+// Example       : API calls
+
+// Multiprocessing
+// -----------------------------
+// Unit          : Process
+// Memory        : Separate
+// Overhead      : Higher
+// Best for      : CPU-bound
+// GIL           : Each process has its own interpreter
+// Example       : Image processing`
+        }
+    ]
+},
+{
+    id: 1,
+    title: "Queues in Multithreading",
+    note: [
+        {
+            definition: `<b>Queue</b> is a thread-safe data structure used to safely <b>exchange data between multiple threads</b>.
+            Python provides the <b>queue</b> module for creating queues that can be safely accessed by multiple threads.
+            A queue normally follows <b>FIFO (First In, First Out)</b> order.`,
+
+            text1: `<b>Why use Queue in multithreading?</b>
+            When multiple threads share data, directly accessing a common list can cause <b>race conditions</b>.
+            A <b>Queue</b> provides built-in <b>thread synchronization</b>, so multiple threads can safely add and remove items.
+
+            <b>Common Queue methods:</b>
+            • <b>put()</b> → Add an item to the queue
+            • <b>get()</b> → Remove and return an item
+            • <b>task_done()</b> → Indicate that a queued task is completed
+            • <b>join()</b> → Wait until all queued tasks are completed
+            • <b>qsize()</b> → Return approximate queue size
+            • <b>empty()</b> → Check whether the queue is empty
+
+            <b>Important:</b> <b>Queue</b> is thread-safe, so you normally do not need to manually use a <b>Lock</b> when putting or getting items.`,
+
+            code1: `import threading
+import queue
+import time
+
+q = queue.Queue()
+
+def producer():
+    for i in range(1, 6):
+        print(f"Produced: {i}")
+        q.put(i)
+        time.sleep(0.5)
+
+def consumer():
+    while True:
+        item = q.get()
+
+        if item is None:
+            break
+
+        print(f"Consumed: {item}")
+        q.task_done()
+
+producer_thread = threading.Thread(target=producer)
+consumer_thread = threading.Thread(target=consumer)
+
+producer_thread.start()
+consumer_thread.start()
+
+producer_thread.join()
+
+# Tell consumer that there are no more items
+q.put(None)
+
+consumer_thread.join()
+
+print("All work completed")`,
+
+            output1: `Produced: 1
+Consumed: 1
+Produced: 2
+Consumed: 2
+Produced: 3
+Consumed: 3
+Produced: 4
+Consumed: 4
+Produced: 5
+Consumed: 5
+All work completed`
+        },
+
+        {
+            definition: `<b>Producer-Consumer Pattern</b> is a common multithreading pattern where:
+            <b>Producer</b> → Creates or produces data and puts it into the queue.
+            <b>Consumer</b> → Gets data from the queue and processes it.
+            The <b>Queue</b> acts as a safe communication channel between the threads.`,
+
+            text1: `<b>Flow:</b>
+            Producer Thread → <b>put()</b> → Queue → <b>get()</b> → Consumer Thread
+
+            This is useful when the <b>producer and consumer work at different speeds</b>.
+
+            <b>Real-time examples:</b>
+            • Web server request processing
+            • Background job processing
+            • Email/message processing
+            • Logging systems
+            • File processing
+            • Task scheduling
+            • Image/video processing`,
+
+            code1: `import queue
+import threading
+import time
+
+tasks = queue.Queue()
+
+def producer():
+    for task in ["Task 1", "Task 2", "Task 3"]:
+        print(f"Adding: {task}")
+        tasks.put(task)
+
+def consumer():
+    while True:
+        task = tasks.get()
+
+        if task is None:
+            tasks.task_done()
+            break
+
+        print(f"Processing: {task}")
+        time.sleep(1)
+        tasks.task_done()
+
+producer_thread = threading.Thread(target=producer)
+consumer_thread = threading.Thread(target=consumer)
+
+producer_thread.start()
+consumer_thread.start()
+
+producer_thread.join()
+
+tasks.put(None)
+
+tasks.join()
+consumer_thread.join()
+
+print("Finished")`,
+
+            output1: `Adding: Task 1
+Adding: Task 2
+Adding: Task 3
+Processing: Task 1
+Processing: Task 2
+Processing: Task 3
+Finished`
+        },
+
+        {
+            definition: `<b>Queue Types in Python</b>
+            Python's <b>queue</b> module provides different queue implementations.`,
+
+            text1: `<b>1. Queue</b> → FIFO (First In, First Out)
+            <b>2. LifoQueue</b> → LIFO (Last In, First Out)
+            <b>3. PriorityQueue</b> → Items are processed according to priority
+
+            <b>FIFO example:</b>
+            Put: A → B → C
+            Get: A → B → C
+
+            <b>LIFO example:</b>
+            Put: A → B → C
+            Get: C → B → A`,
+
+            code1: `import queue
+
+q = queue.Queue()
+
+q.put("A")
+q.put("B")
+q.put("C")
+
+print(q.get())
+print(q.get())
+print(q.get())
+
+stack = queue.LifoQueue()
+
+stack.put("A")
+stack.put("B")
+stack.put("C")
+
+print(stack.get())
+print(stack.get())
+print(stack.get())`,
+
+            output1: `A
+B
+C
+C
+B
+A`
+        },
+
+        {
+            definition: `<b>PriorityQueue</b> allows threads to process items based on <b>priority</b> instead of insertion order.
+            The item with the <b>lowest priority number</b> is returned first.`,
+
+            text1: `<b>PriorityQueue syntax:</b>
+            <b>queue.PriorityQueue()</b>
+
+            Items are commonly stored as:
+            <b>(priority, data)</b>
+
+            Example:
+            <b>(1, "High Priority")</b>
+            <b>(2, "Medium Priority")</b>
+            <b>(3, "Low Priority")</b>`,
+
+            code1: `import queue
+
+q = queue.PriorityQueue()
+
+q.put((3, "Low Priority"))
+q.put((1, "High Priority"))
+q.put((2, "Medium Priority"))
+
+print(q.get())
+print(q.get())
+print(q.get())`,
+
+            output1: `(1, 'High Priority')
+(2, 'Medium Priority')
+(3, 'Low Priority')`
+        },
+
+        {
+            definition: `<b>Key Point:</b> A <b>Queue</b> is especially useful when one thread produces work and another thread consumes that work.`,
+
+            text1: `<b>Remember:</b>
+            • <b>queue.Queue</b> → FIFO
+            • <b>queue.LifoQueue</b> → LIFO
+            • <b>queue.PriorityQueue</b> → Priority-based processing
+            • <b>put()</b> → Add item
+            • <b>get()</b> → Remove item
+            • <b>task_done()</b> → Mark task completed
+            • <b>join()</b> → Wait for all tasks
+            • Queue provides built-in <b>thread safety</b>
+            • Common pattern → <b>Producer → Queue → Consumer</b>`,
+
+            code1: `# Basic Queue example
+
+import queue
+
+q = queue.Queue()
+
+q.put("Apple")
+q.put("Banana")
+q.put("Orange")
+
+while not q.empty():
+    print(q.get())`,
+
+            output1: `Apple
+Banana
+Orange`
+        }
+    ]
+},
+{
+    id: 1,
+    title: "Deadlock & Avoidance",
+    note: [
+        {
+            definition: `<b>Deadlock</b> is a situation in <b>multithreading</b> where two or more threads are waiting for each other to release resources, so <b>none of the threads can continue</b>.
+            In Python, deadlocks commonly happen when multiple threads acquire <b>Locks</b> in a different order.`,
+
+            text1: `<b>Simple example:</b>
+            Thread 1 has <b>Lock A</b> and waits for <b>Lock B</b>.
+            Thread 2 has <b>Lock B</b> and waits for <b>Lock A</b>.
+
+            <b>Thread 1:</b> Lock A → waiting for Lock B
+            <b>Thread 2:</b> Lock B → waiting for Lock A
+
+            Both threads keep waiting forever.
+
+            <b>Deadlock = Threads are stuck waiting for each other.</b>`,
+
+            code1: `import threading
+import time
+
+lock_a = threading.Lock()
+lock_b = threading.Lock()
+
+def thread1():
+    with lock_a:
+        print("Thread 1 acquired Lock A")
+
+        time.sleep(1)
+
+        print("Thread 1 waiting for Lock B")
+
+        with lock_b:
+            print("Thread 1 acquired Lock B")
+
+def thread2():
+    with lock_b:
+        print("Thread 2 acquired Lock B")
+
+        time.sleep(1)
+
+        print("Thread 2 waiting for Lock A")
+
+        with lock_a:
+            print("Thread 2 acquired Lock A")
+
+t1 = threading.Thread(target=thread1)
+t2 = threading.Thread(target=thread2)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print("Finished")`,
+
+            output1: `Thread 1 acquired Lock A
+Thread 2 acquired Lock B
+Thread 1 waiting for Lock B
+Thread 2 waiting for Lock A
+
+# Program gets stuck here.
+# Neither thread can continue.`
+        },
+
+        {
+            definition: `<b>Four Conditions for Deadlock</b>
+            A deadlock can occur when these <b>four conditions</b> exist at the same time.`,
+
+            text1: `<b>1. Mutual Exclusion</b>
+            Only one thread can use a resource at a time.
+
+            <b>2. Hold and Wait</b>
+            A thread holds one resource while waiting for another resource.
+
+            <b>3. No Preemption</b>
+            A resource cannot be forcibly taken from a thread; the thread must release it.
+
+            <b>4. Circular Wait</b>
+            Threads form a circular chain where each thread waits for a resource held by another thread.
+
+            <b>Important:</b> Breaking <b>any one</b> of these conditions can prevent deadlock.`,
+
+            code1: `# Circular wait example
+
+Thread 1:
+    Lock A → waits for Lock B
+
+Thread 2:
+    Lock B → waits for Lock A
+
+# Circular dependency:
+#
+# Thread 1 → Lock B
+#      ↑        ↓
+#    Lock A ← Thread 2`,
+
+            output1: `Thread 1 waits for Thread 2
+Thread 2 waits for Thread 1
+
+Result:
+Deadlock`
+        },
+
+        {
+            definition: `<b>Deadlock Avoidance</b> means designing the program so that threads do not get permanently stuck waiting for locks.`,
+
+            text1: `<b>Common ways to avoid deadlocks:</b>
+
+            <b>1. Acquire locks in a consistent order</b>
+            Always acquire <b>Lock A before Lock B</b> in every thread.
+
+            <b>2. Use timeout</b>
+            Use <b>acquire(timeout=...)</b> so a thread does not wait forever.
+
+            <b>3. Release locks properly</b>
+            Use <b>with lock:</b> so the lock is automatically released.
+
+            <b>4. Avoid unnecessary locks</b>
+            Lock only the section of code that actually needs synchronization.
+
+            <b>5. Keep lock scope small</b>
+            Do not hold a lock while performing slow operations such as network or file operations.`,
+
+            code1: `import threading
+
+lock_a = threading.Lock()
+lock_b = threading.Lock()
+
+def thread1():
+    with lock_a:
+        print("Thread 1 acquired Lock A")
+
+        with lock_b:
+            print("Thread 1 acquired Lock B")
+
+def thread2():
+    # Same lock order: A → B
+    with lock_a:
+        print("Thread 2 acquired Lock A")
+
+        with lock_b:
+            print("Thread 2 acquired Lock B")
+
+t1 = threading.Thread(target=thread1)
+t2 = threading.Thread(target=thread2)
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print("Finished")`,
+
+            output1: `Thread 1 acquired Lock A
+Thread 1 acquired Lock B
+Thread 2 acquired Lock A
+Thread 2 acquired Lock B
+Finished
+
+# Both threads use the same lock order:
+# Lock A → Lock B
+#
+# Therefore, circular waiting is avoided.`
+        },
+
+        {
+            definition: `<b>Using Lock Timeout</b> allows a thread to stop waiting if a lock cannot be acquired within a specified amount of time.`,
+
+            text1: `<b>Syntax:</b>
+            <b>lock.acquire(timeout=seconds)</b>
+
+            It returns:
+            <b>True</b> → Lock was acquired
+            <b>False</b> → Lock could not be acquired within the timeout
+
+            This prevents a thread from <b>waiting forever</b>.`,
+
+            code1: `import threading
+import time
+
+lock = threading.Lock()
+
+def worker():
+    acquired = lock.acquire(timeout=2)
+
+    if acquired:
+        try:
+            print("Lock acquired")
+        finally:
+            lock.release()
+    else:
+        print("Could not acquire lock")
+
+lock.acquire()
+
+t = threading.Thread(target=worker)
+t.start()
+
+time.sleep(1)
+
+lock.release()
+
+t.join()
+
+print("Finished")`,
+
+            output1: `Lock acquired
+Finished`
+        },
+
+        {
+            definition: `<b>Using with lock:</b> is the preferred way to manage locks because Python automatically releases the lock when the block finishes, even if an exception occurs.`,
+
+            text1: `<b>Without with:</b>
+            You must manually call <b>acquire()</b> and <b>release()</b>.
+
+            <b>With with:</b>
+            Python automatically handles acquiring and releasing the lock.
+
+            <b>Recommended:</b>
+            Use <b>with lock:</b> whenever possible.`,
+
+            code1: `import threading
+
+lock = threading.Lock()
+
+def worker():
+    with lock:
+        print("Thread is using the shared resource")
+
+thread = threading.Thread(target=worker)
+
+thread.start()
+thread.join()
+
+print("Finished")`,
+
+            output1: `Thread is using the shared resource
+Finished`
+        },
+
+        {
+            definition: `<b>Deadlock vs Race Condition</b>
+            Both are multithreading problems, but they are different.`,
+
+            text1: `<b>Race Condition</b>
+            Multiple threads access shared data at the same time and the final result depends on the timing/order of execution.
+
+            <b>Deadlock</b>
+            Multiple threads wait for each other indefinitely and cannot continue.
+
+            <b>Race Condition:</b> Wrong/unexpected result
+            <b>Deadlock:</b> Program gets stuck
+
+            <b>Lock</b> can help prevent race conditions, but <b>incorrect lock usage can itself cause deadlocks</b>.`,
+
+            code1: `# Race Condition
+
+counter = counter + 1
+
+# Two threads may execute this at the same time.
+
+# Deadlock
+
+Thread 1:
+    Lock A
+    wait for Lock B
+
+Thread 2:
+    Lock B
+    wait for Lock A`,
+
+            output1: `Race Condition:
+Unexpected or incorrect value
+
+Deadlock:
+Threads remain blocked`
+        },
+
+        {
+            definition: `<b>Deadlock Prevention Checklist</b> helps identify and avoid common deadlock situations in multithreaded programs.`,
+
+            text1: `<b>Best practices:</b>
+            ✓ Always acquire multiple locks in the <b>same order</b>.
+            ✓ Use <b>with lock:</b> whenever possible.
+            ✓ Use <b>timeout</b> when appropriate.
+            ✓ Keep <b>critical sections small</b>.
+            ✓ Avoid holding locks during <b>slow operations</b>.
+            ✓ Avoid unnecessary nested locks.
+            ✓ Release manually acquired locks using <b>try/finally</b>.
+
+            <b>Key interview point:</b>
+            The most common simple strategy is to establish a <b>global lock ordering</b> and make every thread acquire multiple locks in that same order.`,
+
+            code1: `# Safe lock ordering
+
+with lock_a:
+    with lock_b:
+        # Critical section
+        pass
+
+# Always:
+# Lock A → Lock B
+#
+# Never:
+# Lock B → Lock A`,
+
+            output1: `Consistent lock ordering
+        ↓
+No circular waiting
+        ↓
+Deadlock avoided`
+        }
+    ]
+},
         {
             id: 1,
             section: `Synchronization`,
