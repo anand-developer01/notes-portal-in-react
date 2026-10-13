@@ -6176,167 +6176,167 @@ export const EnglishList = {
             ],
         },
         {
-    id: 11,
-    topic: "Keep + verb-ing",
-    explain: '“Keep + verb-ing” means to continue doing something. It is commonly used to encourage someone to continue an action.',
-    formation: 'Subject + keep/keeps + verb-ing',
-    content: [
-        {
-            id: 1,
-            eng: "Keep going. You are doing well.",
-            tel: "కొనసాగించు. నువ్వు బాగా చేస్తున్నావు.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 2,
-            eng: "Keep moving. We are getting late.",
-            tel: "కదులుతూనే ఉండు. మనకు ఆలస్యం అవుతోంది.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 3,
-            eng: "Keep asking questions if you have any doubts.",
-            tel: "నీకు ఏమైనా సందేహాలు ఉంటే ప్రశ్నలు అడుగుతూనే ఉండు.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 4,
-            eng: "Keep practicing English every day.",
-            tel: "ప్రతిరోజూ ఇంగ్లీష్ ప్రాక్టీస్ చేస్తూ ఉండు.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 5,
-            eng: "Keep trying. You will get it eventually.",
-            tel: "ప్రయత్నిస్తూనే ఉండు. చివరికి నీకు అర్థమవుతుంది / నువ్వు సాధిస్తావు.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 6,
-            eng: "She keeps asking the same question.",
-            tel: "ఆమె అదే ప్రశ్నను పదేపదే అడుగుతూనే ఉంటుంది.",
-            tense: "Present Simple",
-            type: "Declarative Sentence"
-        },
-        {
-            id: 7,
-            eng: "He keeps making the same mistake.",
-            tel: "అతను అదే తప్పును పదేపదే చేస్తూనే ఉంటాడు.",
-            tense: "Present Simple",
-            type: "Declarative Sentence"
-        },
-        {
-            id: 8,
-            eng: "They kept working until the issue was fixed.",
-            tel: "సమస్య పరిష్కారం అయ్యే వరకు వారు పని చేస్తూనే ఉన్నారు.",
-            tense: "Past Simple",
-            type: "Declarative Sentence"
-        },
-        {
-            id: 9,
-            eng: "I will keep working on this story until it is completed.",
-            tel: "ఈ స్టోరీ పూర్తయ్యే వరకు నేను దీనిపై పని చేస్తూనే ఉంటాను.",
-            tense: "Future Simple",
-            type: "Declarative Sentence"
-        },
-        {
-            id: 10,
-            eng: "If you keep practicing, your English will improve.",
-            tel: "నువ్వు ప్రాక్టీస్ చేస్తూనే ఉంటే, నీ ఇంగ్లీష్ మెరుగుపడుతుంది.",
-            tense: "First Conditional",
-            type: "Conditional Sentence"
-        },
-        {
             id: 11,
-            eng: "Please keep me updated.",
-            tel: "దయచేసి నాకు ఎప్పటికప్పుడు సమాచారం అందిస్తూ ఉండండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
+            topic: "Keep + verb-ing",
+            explain: '“Keep + verb-ing” means to continue doing something. It is commonly used to encourage someone to continue an action.',
+            formation: 'Subject + keep/keeps + verb-ing',
+            content: [
+                {
+                    id: 1,
+                    eng: "Keep going. You are doing well.",
+                    tel: "కొనసాగించు. నువ్వు బాగా చేస్తున్నావు.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 2,
+                    eng: "Keep moving. We are getting late.",
+                    tel: "కదులుతూనే ఉండు. మనకు ఆలస్యం అవుతోంది.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 3,
+                    eng: "Keep asking questions if you have any doubts.",
+                    tel: "నీకు ఏమైనా సందేహాలు ఉంటే ప్రశ్నలు అడుగుతూనే ఉండు.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 4,
+                    eng: "Keep practicing English every day.",
+                    tel: "ప్రతిరోజూ ఇంగ్లీష్ ప్రాక్టీస్ చేస్తూ ఉండు.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 5,
+                    eng: "Keep trying. You will get it eventually.",
+                    tel: "ప్రయత్నిస్తూనే ఉండు. చివరికి నీకు అర్థమవుతుంది / నువ్వు సాధిస్తావు.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 6,
+                    eng: "She keeps asking the same question.",
+                    tel: "ఆమె అదే ప్రశ్నను పదేపదే అడుగుతూనే ఉంటుంది.",
+                    tense: "Present Simple",
+                    type: "Declarative Sentence"
+                },
+                {
+                    id: 7,
+                    eng: "He keeps making the same mistake.",
+                    tel: "అతను అదే తప్పును పదేపదే చేస్తూనే ఉంటాడు.",
+                    tense: "Present Simple",
+                    type: "Declarative Sentence"
+                },
+                {
+                    id: 8,
+                    eng: "They kept working until the issue was fixed.",
+                    tel: "సమస్య పరిష్కారం అయ్యే వరకు వారు పని చేస్తూనే ఉన్నారు.",
+                    tense: "Past Simple",
+                    type: "Declarative Sentence"
+                },
+                {
+                    id: 9,
+                    eng: "I will keep working on this story until it is completed.",
+                    tel: "ఈ స్టోరీ పూర్తయ్యే వరకు నేను దీనిపై పని చేస్తూనే ఉంటాను.",
+                    tense: "Future Simple",
+                    type: "Declarative Sentence"
+                },
+                {
+                    id: 10,
+                    eng: "If you keep practicing, your English will improve.",
+                    tel: "నువ్వు ప్రాక్టీస్ చేస్తూనే ఉంటే, నీ ఇంగ్లీష్ మెరుగుపడుతుంది.",
+                    tense: "First Conditional",
+                    type: "Conditional Sentence"
+                },
+                {
+                    id: 11,
+                    eng: "Please keep me updated.",
+                    tel: "దయచేసి నాకు ఎప్పటికప్పుడు సమాచారం అందిస్తూ ఉండండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 12,
+                    eng: "Keep me posted if you get any updates.",
+                    tel: "ఏదైనా అప్‌డేట్ వస్తే నాకు తెలియజేస్తూ ఉండండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 13,
+                    eng: "Keep me posted on the server issue until it is resolved.",
+                    tel: "సర్వర్ ఇష్యూ పరిష్కారం అయ్యే వరకు నాకు ఎప్పటికప్పుడు నవీకరణ తెలుపుతూనే ఉండండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 14,
+                    eng: "Please keep me updated on the deployment status.",
+                    tel: "డిప్లాయ్‌మెంట్ స్థితిని గురించి నాకు ఎప్పటికప్పుడు నవీకరించండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 15,
+                    eng: "Keep working on the bug fix while I review the logs.",
+                    tel: "నేను లాగ్‌లను పరిశీలిస్తున్నప్పుడు బగ్ ఫిక్స్‌పై పని చేస్తూనే ఉండండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 16,
+                    eng: "Keep working on it; we will review the results after testing.",
+                    tel: "దీనిపై పని చేస్తూనే ఉండండి; టెస్టింగ్ తర్వాత ఫలితాలను పరిశీలిస్తాము.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 17,
+                    eng: "Keep me informed if the API response time changes.",
+                    tel: "API ప్రతిస్పందన సమయం మారితే నాకు తెలియజేస్తూ ఉండండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 18,
+                    eng: "Please keep me informed about the database performance issue.",
+                    tel: "డేటాబేస్ పనితీరుకు సంబంధించిన సమస్య గురించి నాకు ఎప్పటికప్పుడు తెలియజేయండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 19,
+                    eng: "Keep the team posted on the client incident and any updates.",
+                    tel: "క్లైంట్ ఇన్‌సిడెంట్ మరియు ఏవైనా అప్‌డేట్‌ల గురించి టీమ్‌కు తెలియజేస్తూ ఉండండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 20,
+                    eng: "Keep me updated on the test run results.",
+                    tel: "టెస్ట్ రన్ ఫలితాల గురించి నాకు ఎప్పటికప్పుడు నవీకరణ ఇవ్వండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 21,
+                    eng: "Keep me posted on the outage status and root cause analysis.",
+                    tel: "ఆవుటేజ్ స్థితి మరియు రూట్ కాజ్ అనాలిసిస్ గురించి నాకు ఎప్పటికప్పుడు తెలియజేస్తూ ఉండండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                },
+                {
+                    id: 22,
+                    eng: "We are still working on it, but keep me informed if anything changes.",
+                    tel: "మేము ఇప్పటికీ దీనిపై పని చేస్తున్నాము, కానీ ఏదైనా మారితే నాకు తెలియజేస్తూ ఉండండి.",
+                    tense: "Imperative",
+                    type: "Imperative Sentence"
+                }
+            ]
         },
-        {
-            id: 12,
-            eng: "Keep me posted if you get any updates.",
-            tel: "ఏదైనా అప్‌డేట్ వస్తే నాకు తెలియజేస్తూ ఉండండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 13,
-            eng: "Keep me posted on the server issue until it is resolved.",
-            tel: "సర్వర్ ఇష్యూ పరిష్కారం అయ్యే వరకు నాకు ఎప్పటికప్పుడు నవీకరణ తెలుపుతూనే ఉండండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 14,
-            eng: "Please keep me updated on the deployment status.",
-            tel: "డిప్లాయ్‌మెంట్ స్థితిని గురించి నాకు ఎప్పటికప్పుడు నవీకరించండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 15,
-            eng: "Keep working on the bug fix while I review the logs.",
-            tel: "నేను లాగ్‌లను పరిశీలిస్తున్నప్పుడు బగ్ ఫిక్స్‌పై పని చేస్తూనే ఉండండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 16,
-            eng: "Keep working on it; we will review the results after testing.",
-            tel: "దీనిపై పని చేస్తూనే ఉండండి; టెస్టింగ్ తర్వాత ఫలితాలను పరిశీలిస్తాము.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 17,
-            eng: "Keep me informed if the API response time changes.",
-            tel: "API ప్రతిస్పందన సమయం మారితే నాకు తెలియజేస్తూ ఉండండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 18,
-            eng: "Please keep me informed about the database performance issue.",
-            tel: "డేటాబేస్ పనితీరుకు సంబంధించిన సమస్య గురించి నాకు ఎప్పటికప్పుడు తెలియజేయండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 19,
-            eng: "Keep the team posted on the client incident and any updates.",
-            tel: "క్లైంట్ ఇన్‌సిడెంట్ మరియు ఏవైనా అప్‌డేట్‌ల గురించి టీమ్‌కు తెలియజేస్తూ ఉండండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 20,
-            eng: "Keep me updated on the test run results.",
-            tel: "టెస్ట్ రన్ ఫలితాల గురించి నాకు ఎప్పటికప్పుడు నవీకరణ ఇవ్వండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 21,
-            eng: "Keep me posted on the outage status and root cause analysis.",
-            tel: "ఆవుటేజ్ స్థితి మరియు రూట్ కాజ్ అనాలిసిస్ గురించి నాకు ఎప్పటికప్పుడు తెలియజేస్తూ ఉండండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        },
-        {
-            id: 22,
-            eng: "We are still working on it, but keep me informed if anything changes.",
-            tel: "మేము ఇప్పటికీ దీనిపై పని చేస్తున్నాము, కానీ ఏదైనా మారితే నాకు తెలియజేస్తూ ఉండండి.",
-            tense: "Imperative",
-            type: "Imperative Sentence"
-        }
-    ]
-},
         {
             id: 11,
             topic: "",
@@ -6349,6 +6349,384 @@ export const EnglishList = {
                     tel: '',
                     tense: ''
                 },
+
+            ],
+        },
+        {
+            id: 11,
+            topic: "areas for improvement",
+            explain: '',
+            formation: '',
+            content: [
+                // 1. Sentence Formation
+                {
+                    id: 1,
+                    eng: "I was trying to explain the issue, but I couldn't find the right words.",
+                    tel: "నేను సమస్యను వివరించడానికి ప్రయత్నిస్తున్నాను, కానీ సరైన పదాలు దొరకలేదు.",
+                    tense: "Past Continuous + Simple Past",
+                    type: "Compound Sentence"
+                },
+                {
+                    id: 2,
+                    eng: "I know what I want to say, but I don't know how to express it in English.",
+                    tel: "నేను ఏమి చెప్పాలనుకుంటున్నానో నాకు తెలుసు, కానీ దానిని ఇంగ్లీష్‌లో ఎలా వ్యక్తపరచాలో తెలియదు.",
+                    tense: "Simple Present",
+                    type: "Compound Sentence"
+                },
+                {
+                    id: 3,
+                    eng: "I couldn't explain my point clearly during the meeting.",
+                    tel: "మీటింగ్‌లో నా అభిప్రాయాన్ని స్పష్టంగా వివరించలేకపోయాను.",
+                    tense: "Simple Past",
+                    type: "Negative Sentence"
+                },
+                {
+                    id: 4,
+                    eng: "I understand the concept, but I'm struggling to explain it in my own words.",
+                    tel: "నాకు ఆ కాన్సెప్ట్ అర్థమైంది, కానీ నా సొంత మాటల్లో వివరించడానికి ఇబ్బంది పడుతున్నాను.",
+                    tense: "Simple Present + Present Continuous",
+                    type: "Compound Sentence"
+                },
+                {
+                    id: 5,
+                    eng: "I started explaining the problem, but I forgot what I wanted to say next.",
+                    tel: "నేను సమస్యను వివరించడం ప్రారంభించాను, కానీ తర్వాత ఏమి చెప్పాలనుకున్నానో మర్చిపోయాను.",
+                    tense: "Simple Past",
+                    type: "Compound Sentence"
+                },
+
+                // 2. Spoken Fluency
+                {
+                    id: 6,
+                    eng: "Let me explain what happened yesterday.",
+                    tel: "నిన్న ఏమి జరిగిందో వివరిస్తాను.",
+                    tense: "Simple Present",
+                    type: "Declarative Sentence"
+                },
+                {
+                    id: 7,
+                    eng: "What I meant to say was that the deployment had failed.",
+                    tel: "నేను చెప్పాలనుకున్నది ఏమిటంటే, డిప్లాయ్‌మెంట్ విఫలమైంది.",
+                    tense: "Simple Past + Past Perfect",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 8,
+                    eng: "I was about to explain the issue when someone interrupted me.",
+                    tel: "నేను సమస్యను వివరించబోతుండగా ఎవరో నన్ను మధ్యలో ఆపారు.",
+                    tense: "Past Continuous + Simple Past",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 9,
+                    eng: "I need a moment to organize my thoughts before I answer.",
+                    tel: "సమాధానం చెప్పే ముందు నా ఆలోచనలను క్రమబద్ధీకరించుకోవడానికి నాకు కొంత సమయం కావాలి.",
+                    tense: "Simple Present",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 10,
+                    eng: "I couldn't explain everything at once, so I explained it step by step.",
+                    tel: "నేను అన్నింటినీ ఒకేసారి వివరించలేకపోయాను, కాబట్టి దశలవారీగా వివరించాను.",
+                    tense: "Simple Past",
+                    type: "Compound Sentence"
+                },
+
+                // 3. Grammar and Tenses
+                {
+                    id: 11,
+                    eng: "I've been working on this story for the past three days.",
+                    tel: "నేను గత మూడు రోజులుగా ఈ స్టోరీపై పని చేస్తున్నాను.",
+                    tense: "Present Perfect Continuous",
+                    type: "Declarative Sentence"
+                },
+                {
+                    id: 12,
+                    eng: "I've completed the code changes, but I haven't raised the pull request yet.",
+                    tel: "నేను కోడ్ మార్పులను పూర్తి చేశాను, కానీ ఇంకా పుల్ రిక్వెస్ట్‌ను క్రియేట్ చేయలేదు.",
+                    tense: "Present Perfect",
+                    type: "Compound Sentence"
+                },
+                {
+                    id: 13,
+                    eng: "I was investigating the issue when my teammate shared a possible solution.",
+                    tel: "నా టీమ్‌మేట్ ఒక సాధ్యమైన పరిష్కారాన్ని షేర్ చేసినప్పుడు నేను సమస్యను పరిశీలిస్తున్నాను.",
+                    tense: "Past Continuous + Simple Past",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 14,
+                    eng: "If I had received the confirmation earlier, I would have deployed the changes yesterday.",
+                    tel: "నాకు ముందుగానే నిర్ధారణ వచ్చి ఉంటే, నిన్ననే మార్పులను డిప్లాయ్ చేసి ఉండేవాడిని.",
+                    tense: "Third Conditional",
+                    type: "Conditional Sentence"
+                },
+                {
+                    id: 15,
+                    eng: "I've already checked the logs, but I haven't identified the root cause yet.",
+                    tel: "నేను ఇప్పటికే లాగ్స్‌ను తనిఖీ చేశాను, కానీ ఇంకా అసలు కారణాన్ని గుర్తించలేదు.",
+                    tense: "Present Perfect",
+                    type: "Compound Sentence"
+                },
+
+                // 4. Workplace Communication
+                {
+                    id: 16,
+                    eng: "I'm currently investigating the issue, and I'll share an update once I identify the root cause.",
+                    tel: "నేను ప్రస్తుతం సమస్యను పరిశీలిస్తున్నాను. అసలు కారణాన్ని గుర్తించిన తర్వాత అప్‌డేట్ ఇస్తాను.",
+                    tense: "Present Continuous + Simple Present + Simple Future",
+                    type: "Compound-Complex Sentence"
+                },
+                {
+                    id: 17,
+                    eng: "The code has been deployed to E3SL, and the testing team is validating the changes.",
+                    tel: "కోడ్‌ను E3SLకు డిప్లాయ్ చేశారు, ప్రస్తుతం టెస్టింగ్ టీమ్ మార్పులను వాలిడేట్ చేస్తోంది.",
+                    tense: "Present Perfect Passive + Present Continuous",
+                    type: "Compound Sentence"
+                },
+                {
+                    id: 18,
+                    eng: "I couldn't proceed with the deployment because I was waiting for confirmation from the team.",
+                    tel: "టీమ్ నుంచి నిర్ధారణ కోసం ఎదురుచూస్తున్నందున నేను డిప్లాయ్‌మెంట్‌ను కొనసాగించలేకపోయాను.",
+                    tense: "Simple Past + Past Continuous",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 19,
+                    eng: "I've fixed the reported issues, and I'm waiting for the tester to validate the changes.",
+                    tel: "నేను నివేదించిన సమస్యలను పరిష్కరించాను, ఇప్పుడు టెస్టర్ మార్పులను వాలిడేట్ చేయడం కోసం ఎదురుచూస్తున్నాను.",
+                    tense: "Present Perfect + Present Continuous",
+                    type: "Compound Sentence"
+                },
+                {
+                    id: 20,
+                    eng: "Could you please clarify whether we should deploy the latest version or the existing tag?",
+                    tel: "మనం తాజా వెర్షన్‌ను డిప్లాయ్ చేయాలా లేదా ఇప్పటికే ఉన్న ట్యాగ్‌ను ఉపయోగించాలా అనేది దయచేసి స్పష్టం చేయగలరా?",
+                    tense: "Modal Verb",
+                    type: "Interrogative Sentence"
+                },
+
+                // 5. Vocabulary in Context
+                {
+                    id: 21,
+                    eng: "I'm trying to figure out why the API is returning a 500 error.",
+                    tel: "API ఎందుకు 500 ఎర్రర్ ఇస్తోందో తెలుసుకోవడానికి ప్రయత్నిస్తున్నాను.",
+                    tense: "Present Continuous",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 22,
+                    eng: "I'll look into the issue and get back to you with an update.",
+                    tel: "నేను సమస్యను పరిశీలించి, అప్‌డేట్‌తో మీకు తిరిగి తెలియజేస్తాను.",
+                    tense: "Simple Future",
+                    type: "Compound Sentence"
+                },
+                {
+                    id: 23,
+                    eng: "We need to sort out the version conflict before proceeding with the deployment.",
+                    tel: "డిప్లాయ్‌మెంట్‌ను కొనసాగించే ముందు వెర్షన్ సమస్యను పరిష్కరించాలి.",
+                    tense: "Simple Present",
+                    type: "Declarative Sentence"
+                },
+                {
+                    id: 24,
+                    eng: "The reviewer pointed out a few issues that I hadn't noticed earlier.",
+                    tel: "నేను ఇంతకుముందు గమనించని కొన్ని సమస్యలను రివ్యూవర్ గుర్తించి తెలియజేశారు.",
+                    tense: "Simple Past + Past Perfect",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 25,
+                    eng: "I'll follow up with the team if I don't receive a response by tomorrow.",
+                    tel: "రేపటిలోగా నాకు సమాధానం రాకపోతే, టీమ్‌ను మళ్లీ సంప్రదిస్తాను.",
+                    tense: "Simple Future + Simple Present",
+                    type: "Conditional Sentence"
+                },
+
+                // 6. Confidence and Expressing Opinions
+                {
+                    id: 26,
+                    eng: "I understand the requirement, but I'm not completely sure about the expected behavior.",
+                    tel: "నాకు రిక్వైర్‌మెంట్ అర్థమైంది, కానీ ఆశించిన విధానం గురించి నాకు పూర్తిగా స్పష్టత లేదు.",
+                    tense: "Simple Present",
+                    type: "Compound Sentence"
+                },
+                {
+                    id: 27,
+                    eng: "From my understanding, this change should not affect the existing functionality.",
+                    tel: "నాకు అర్థమైనంతవరకు, ఈ మార్పు ప్రస్తుతం ఉన్న ఫంక్షనాలిటీపై ప్రభావం చూపకూడదు.",
+                    tense: "Simple Present + Modal Verb",
+                    type: "Declarative Sentence"
+                },
+                {
+                    id: 28,
+                    eng: "I may be missing something, but I think we need to verify the configuration first.",
+                    tel: "నేను ఏదైనా విషయాన్ని గమనించకపోయి ఉండవచ్చు, కానీ మనం ముందుగా కాన్ఫిగరేషన్‌ను తనిఖీ చేయాలని అనుకుంటున్నాను.",
+                    tense: "Modal Verbs + Simple Present",
+                    type: "Compound-Complex Sentence"
+                },
+                {
+                    id: 29,
+                    eng: "I wasn't able to explain my concern clearly, so I'd like to clarify it now.",
+                    tel: "నా ఆందోళనను స్పష్టంగా వివరించలేకపోయాను, కాబట్టి ఇప్పుడు దాన్ని స్పష్టం చేయాలనుకుంటున్నాను.",
+                    tense: "Simple Past + Would Like",
+                    type: "Compound Sentence"
+                },
+                {
+                    id: 30,
+                    eng: "Although I understand the technical details, I sometimes struggle to explain them clearly in English.",
+                    tel: "నాకు సాంకేతిక వివరాలు అర్థమైనప్పటికీ, వాటిని ఇంగ్లీష్‌లో స్పష్టంగా వివరించడానికి కొన్నిసార్లు ఇబ్బంది పడతాను.",
+                    tense: "Simple Present",
+                    type: "Complex Sentence"
+                }
+            ]
+        },
+        {
+            id: 11,
+            topic: "Direct and Indirect Speech",
+            explain: '',
+            formation: '',
+            content: [
+                {
+                    id: 1,
+                    eng: "Ben said that I could proceed with version 1.7.0.",
+                    tel: "నేను వెర్షన్ 1.7.0తో ముందుకు వెళ్లవచ్చని బెన్ చెప్పాడు.",
+                    tense: "Indirect Speech + Modal Verb",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 2,
+                    eng: "Vinay said that he had fixed the deployment issue.",
+                    tel: "తాను డిప్లాయ్‌మెంట్ సమస్యను పరిష్కరించానని వినయ్ చెప్పాడు.",
+                    tense: "Indirect Speech + Past Perfect",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 3,
+                    eng: "Maria asked me to check the API response.",
+                    tel: "API రెస్పాన్స్‌ను తనిఖీ చేయమని మరియా నన్ను అడిగింది.",
+                    tense: "Indirect Speech + Infinitive",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 4,
+                    eng: "Priyanka mentioned that the deployment process was still unclear.",
+                    tel: "డిప్లాయ్‌మెంట్ ప్రక్రియ ఇంకా స్పష్టంగా లేదని ప్రియాంక తెలిపింది.",
+                    tense: "Indirect Speech + Simple Past",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 5,
+                    eng: "He said that he was working on the story.",
+                    tel: "తాను ఆ స్టోరీపై పని చేస్తున్నానని అతను చెప్పాడు.",
+                    tense: "Indirect Speech + Past Continuous",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 6,
+                    eng: "The developer said that the application uses React.",
+                    tel: "అప్లికేషన్ Reactను ఉపయోగిస్తుందని డెవలపర్ చెప్పాడు.",
+                    tense: "Indirect Speech + Simple Present",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 7,
+                    eng: "Ben mentioned that the version had been updated.",
+                    tel: "వెర్షన్ అప్‌డేట్ చేయబడిందని బెన్ తెలిపాడు.",
+                    tense: "Indirect Speech + Past Perfect Passive",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 8,
+                    eng: "Maria asked me to check the issue.",
+                    tel: "ఆ సమస్యను తనిఖీ చేయమని మరియా నన్ను అడిగింది.",
+                    tense: "Indirect Speech + Infinitive",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 9,
+                    eng: "Priyanka explained that the deployment process was unclear.",
+                    tel: "డిప్లాయ్‌మెంట్ ప్రక్రియ స్పష్టంగా లేదని ప్రియాంక వివరించింది.",
+                    tense: "Indirect Speech + Simple Past",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 10,
+                    eng: "Vinay confirmed that the changes had been deployed.",
+                    tel: "మార్పులు డిప్లాయ్ చేయబడ్డాయని వినయ్ ధృవీకరించాడు.",
+                    tense: "Indirect Speech + Past Perfect Passive",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 11,
+                    eng: "I asked Derek whether he could help me resolve the issue.",
+                    tel: "ఆ సమస్యను పరిష్కరించడంలో అతను నాకు సహాయం చేయగలడా అని నేను డెరెక్‌ను అడిగాను.",
+                    tense: "Indirect Speech + Modal Verb",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 12,
+                    eng: "She asked me whether I had completed the task.",
+                    tel: "నేను ఆ పనిని పూర్తి చేశానా అని ఆమె నన్ను అడిగింది.",
+                    tense: "Indirect Speech + Past Perfect",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 13,
+                    eng: "He asked me when I would deploy the changes.",
+                    tel: "నేను మార్పులను ఎప్పుడు డిప్లాయ్ చేస్తానని అతను నన్ను అడిగాడు.",
+                    tense: "Indirect Speech + Modal Verb",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 14,
+                    eng: "My lead told me to raise a pull request after fixing the issue.",
+                    tel: "సమస్యను పరిష్కరించిన తర్వాత పుల్ రిక్వెస్ట్‌ను సృష్టించమని నా లీడ్ నాకు చెప్పాడు.",
+                    tense: "Indirect Speech + Infinitive",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 15,
+                    eng: "The tester said that the API was returning a 500 error.",
+                    tel: "API 500 ఎర్రర్‌ను తిరిగి ఇస్తోందని టెస్టర్ చెప్పాడు.",
+                    tense: "Indirect Speech + Past Continuous",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 16,
+                    eng: "My manager asked me why the deployment had failed.",
+                    tel: "డిప్లాయ్‌మెంట్ ఎందుకు విఫలమైందని నా మేనేజర్ నన్ను అడిగాడు.",
+                    tense: "Indirect Speech + Past Perfect",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 17,
+                    eng: "The developer explained that the issue had occurred because the configuration was missing.",
+                    tel: "కాన్ఫిగరేషన్ లేకపోవడం వల్ల సమస్య ఏర్పడిందని డెవలపర్ వివరించాడు.",
+                    tense: "Indirect Speech + Past Perfect",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 18,
+                    eng: "Ben advised me to check the latest version before deploying the changes.",
+                    tel: "మార్పులను డిప్లాయ్ చేసే ముందు తాజా వెర్షన్‌ను తనిఖీ చేయాలని బెన్ నాకు సూచించాడు.",
+                    tense: "Indirect Speech + Infinitive",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 19,
+                    eng: "She said that she would validate the changes after the deployment.",
+                    tel: "డిప్లాయ్‌మెంట్ తర్వాత మార్పులను ధృవీకరిస్తానని ఆమె చెప్పింది.",
+                    tense: "Indirect Speech + Modal Verb",
+                    type: "Complex Sentence"
+                },
+                {
+                    id: 20,
+                    eng: "I informed my lead that all the issues seemed to be fixed.",
+                    tel: "అన్ని సమస్యలు పరిష్కరించబడినట్లు కనిపిస్తున్నాయని నేను నా లీడ్‌కు తెలియజేశాను.",
+                    tense: "Indirect Speech + Simple Past",
+                    type: "Complex Sentence"
+                }
 
             ],
         },
