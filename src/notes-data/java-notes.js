@@ -20,6 +20,252 @@ export const javaData = {
                 }
             ]
         },
+
+        {
+            id: 1,
+            title: "JDK, JRE, JVM",
+            note: [
+                {
+                    definition: `<b>Interview definition:</b> The <b>JDK</b> is the software development kit used to compile, package, and diagnose Java applications; it provides development tools and a Java runtime. The <b>JRE</b> is the runtime environment—conceptually, the <b>JVM</b> plus the standard libraries and supporting files required to run an application. The <b>JVM</b> loads, verifies, and executes Java bytecode, managing runtime services such as memory and garbage collection. In short: <b>the JDK develops, the JRE provides the runtime, and the JVM executes bytecode</b>.`,
+                    text1: `<b>JVM (Java Virtual Machine)</b>
+The JVM is the program that runs Java <b>bytecode</b> (compiled .class files). It loads classes, verifies bytecode, manages memory and garbage collection, and executes the instructions. It may interpret bytecode and use a <b>JIT compiler</b> to compile frequently used code into native machine code at runtime.
+
+The JVM is platform-specific: Windows, Linux, and macOS need compatible JVM implementations. Java source is compiled to bytecode, which allows the same compiled program to run on different platforms when a compatible runtime is available.
+
+<b>JRE (Java Runtime Environment)</b>
+The JRE is the runtime environment needed to run Java applications. Conceptually, it contains a <b>JVM plus the Java class libraries and supporting runtime files</b>. It provides what an application needs to execute, but traditionally does not include development tools such as the Java compiler.
+
+<b>JDK (Java Development Kit)</b>
+The JDK is the development kit used to build Java applications. It includes a <b>Java compiler (javac), the runtime needed to run Java programs, and developer tools</b> such as jar, javadoc, and jshell. In the traditional model, the JDK contains the JRE, and the JRE contains the JVM.
+
+<b>Easy way to remember</b>
+JVM = runs bytecode
+JRE = JVM + libraries and files needed to run applications
+JDK = runtime + tools needed to develop Java applications
+
+<b>How they work together</b>
+1. A developer writes source code in a .java file.
+2. The JDK compiler, javac, compiles it into bytecode in a .class file.
+3. The Java runtime starts a JVM, which loads and executes that bytecode.
+
+<b>Real-world example</b>
+During development, a developer installs a JDK to compile and test an application. In a deployment environment, the application needs a compatible Java runtime to run. A build server or CI pipeline needs a JDK if it compiles the source code there.
+
+<b>Important modern-Java note</b>
+JRE is still a useful concept for explaining runtime components, but many current JDK distributions are installed as a single JDK and do not provide a separate JRE download. A custom runtime image can also be created for an application with tools such as jlink.
+
+<b>Interview summary</b>
+The <b>JDK develops</b>, the <b>runtime environment runs</b>, and the <b>JVM executes bytecode</b>. Java's portability comes from compiling source into platform-independent bytecode; each operating system still needs a compatible JVM implementation.`,
+                    code1: `// Compile Hello.java with the JDK compiler:
+javac Hello.java
+
+// This creates Hello.class containing Java bytecode.
+
+// Run the compiled class with the Java runtime:
+java Hello
+
+// The java launcher starts a JVM, which loads and executes Hello.class.`
+                },
+                {
+definition: `<b>JDK (Java Development Kit)</b> is a software development kit that provides all the tools required to <b>develop, compile, debug, and run Java applications.</b> It includes the JRE (or runtime components in modern JDK distributions), development tools such as the Java compiler (javac), debugger (jdb), and the Java runtime environment.`,
+text1: `<b>JDK (Java Development Kit)</b> <b>In simple terms:</b> JDK is required when you want to develop Java applications. It provides the compiler to convert Java source code (.java) into bytecode (.class), along with tools required for development and execution.
+
+<b>Important JDK tools:</b>
+1. <b>javac:</b> Compiles Java source code (.java) into bytecode (.class).
+2. <b>java:</b> Launches the Java application using the JVM.
+3. <b>jdb:</b> Used to debug Java applications.
+4. <b>jar:</b> Used to create and manage JAR files.
+5. <b>javadoc:</b> Generates documentation from Java source code.
+6. <b>jshell:</b> Provides an interactive environment to execute Java code.
+<b>Real-time example:</b>
+
+When a developer creates a Spring Boot application, they write Java code, compile it, debug it, and run it. The JDK provides the tools needed for these development activities.
+
+<b>Interview point:</b> Without a JDK, you cannot use the standard Java development compiler (javac) to compile Java source code.`,
+code1: `// --------------- Ex1 : JDK ---------------
+
+// HelloWorld.java
+
+public class HelloWorld {
+public static void main(String[] args) {
+System.out.println("Hello Java");
+}
+}
+
+// Step 1: Compile Java source code using JDK compiler.
+
+// Command:
+javac HelloWorld.java
+
+// Output:
+// HelloWorld.class
+
+// Step 2: Execute the compiled class.
+
+// Command:
+java HelloWorld
+
+// Output:
+// Hello Java
+
+// Explanation:
+// javac is the Java compiler provided by the JDK.
+// It converts .java source code into .class bytecode.
+// The java launcher starts the application using the JVM.`
+},
+                                {
+definition: `<b>JRE (Java Runtime Environment)</b> is the runtime environment required to execute Java applications. It provides the JVM and the supporting class libraries and runtime components required by Java applications.`,
+text1: `<b>JRE (Java Runtime Environment)</b> <b>In simple terms:</b> JRE provides the environment required to run Java applications. It contains the JVM, Java class libraries, and other supporting runtime components.
+
+<b>Major components of JRE:</b>
+1. <b>JVM:</b> Executes Java bytecode.
+2. <b>Java Class Libraries:</b> Provide predefined classes and APIs such as String, ArrayList, HashMap, and File.
+3. <b>Supporting Runtime Components:</b> Provide the functionality required for application execution.
+<b>Real-time example:</b>
+
+Suppose a developer has developed a banking application and compiled it into bytecode.
+
+Another employee wants to execute that application on their machine. They need a compatible Java runtime environment to execute it.
+
+Traditionally, installing a JRE was sufficient to run Java applications without installing the complete development kit.
+
+<b>Important interview point:</b>
+
+JRE is primarily responsible for running Java applications, whereas JDK provides the tools required to develop Java applications.
+
+<b>Version clarification:</b> Starting with Java 9, Oracle stopped distributing a separate traditional JRE as part of its standard JDK distribution. Modern Java installations commonly use a JDK or a custom runtime image created using jlink. Therefore, the traditional JDK → JRE → JVM relationship is a conceptual explanation rather than a strict description of every modern Java installation.`,
+code1: `// --------------- Ex2 : JRE ---------------
+
+// Consider a banking application.
+
+// BankApplication.java
+
+public class BankApplication {
+
+public static void main(String[] args) {
+
+    String customerName = "Anand";
+    double balance = 50000;
+
+    System.out.println("Customer: " + customerName);
+    System.out.println("Balance: " + balance);
+}
+
+}
+
+// After compilation:
+
+// BankApplication.class
+
+// This .class file contains Java bytecode.
+
+// When we execute:
+
+java BankApplication
+
+// The Java runtime environment provides:
+// 1. JVM to execute bytecode.
+// 2. Java class libraries.
+// 3. Supporting runtime components.
+
+// Output:
+// Customer: Anand
+// Balance: 50000`
+                },
+                {
+definition:     `<b>JVM (Java Virtual Machine)</b> is an abstract virtual machine that provides the runtime environment to execute Java bytecode. It loads, verifies, and executes bytecode by interpreting instructions and using Just-In-Time (JIT) compilation to optimize frequently executed code into native machine code.`,
+text1: `<b>JVM (Java Virtual Machine)</b>  <b>In simple terms:</b> JVM is responsible for executing Java bytecode. It acts as an intermediary between Java bytecode and the underlying operating system and hardware.
+
+<b>Major responsibilities of JVM:</b>
+1. <b>Class Loading:</b> Loads the required .class files into memory.
+2. <b>Bytecode Verification:</b> Verifies bytecode to ensure it follows JVM rules and is structurally valid.
+3. <b>Execution:</b> Executes bytecode using the interpreter and JIT compiler.
+4. <b>Memory Management:</b> Allocates and manages memory for Java applications.
+5. <b>Garbage Collection:</b> Automatically identifies and reclaims memory occupied by objects that are no longer reachable.
+6. <b>Exception Handling:</b> Manages exceptions during program execution.
+<b>Important JVM memory areas:</b>
+1. <b>Heap:</b> Stores objects and arrays. It is shared among threads.
+2. <b>Java Stack:</b> Stores method frames, local variables, and intermediate calculations. Each thread has its own stack.
+3. <b>Method Area:</b> Stores class-level structures such as runtime constant pools and method information. Its implementation in HotSpot JVM includes Metaspace.
+4. <b>PC Register:</b> Stores the current JVM instruction position for each thread.
+5. <b>Native Method Stack:</b> Supports execution of native methods.
+<b>How JVM executes Java code:</b>
+1. The Class Loader loads the required class files.
+2. The Bytecode Verifier verifies the bytecode.
+3. The JVM Runtime Data Areas provide memory for execution.
+4. The Execution Engine executes bytecode.
+5. The Interpreter executes bytecode instructions.
+6. The JIT Compiler optimizes frequently executed code by compiling it into native machine code.
+7. The Garbage Collector manages unused objects in memory.
+<b>Real-time example:</b>
+
+Consider a banking application running on Windows, Linux, and macOS.
+
+The same Java bytecode can run on these operating systems, provided a compatible JVM is available for each platform.
+
+The JVM implementation translates or executes the bytecode according to the underlying platform.
+
+<b>Interview point:</b> JVM is platform-dependent because JVM implementations are specific to operating systems and hardware architectures. Java bytecode is platform-independent, provided a compatible JVM is available.`,
+code1: `// --------------- Ex3 : JVM ---------------
+
+// HelloWorld.java
+
+public class HelloWorld {
+public static void main(String[] args) {
+
+    int amount = 1000;
+    int tax = 100;
+
+    int total = amount + tax;
+
+    System.out.println("Total Amount: " + total);
+}
+}
+
+// Step 1: Compile source code.
+
+// Command:
+javac HelloWorld.java
+
+// Generated file:
+// HelloWorld.class
+
+// Step 2: Execute the application.
+
+// Command:
+java HelloWorld
+
+// JVM execution process:
+
+// 1. Class Loader
+//    Loads HelloWorld.class.
+
+// 2. Bytecode Verifier
+//    Verifies the bytecode.
+
+// 3. Runtime Data Areas
+//    Allocates memory for execution.
+
+// 4. Execution Engine
+//    Executes bytecode.
+
+// 5. Interpreter
+//    Executes bytecode instructions.
+
+// 6. JIT Compiler
+//    Optimizes frequently executed code.
+
+// 7. Garbage Collector
+//    Reclaims memory occupied by unreachable objects.
+
+// Output:
+// Total Amount: 1100
+// `
+                },
+
+            ]
+        },
+
         {
             id: 1,
             title: "compile time and run time",
@@ -134,6 +380,1164 @@ String s = 'A';   // ❌ ERROR (char used instead of String)`,
                 }
             ]
         },
+        {
+            id: 1,
+            title: "length, length() and size()",
+            note: [
+                {
+                    definition: `In Java, length, length() and size() are used to find the number of elements or characters. However, they are used with different data types.`,
+
+                    text1: `1. length:
+Used with arrays to get the total number of elements. It is a property, not a method.
+
+2. length():
+Used with String to get the total number of characters. It is a method.
+
+3. size():
+Used with Collections such as ArrayList, HashSet and HashMap to get the total number of elements. It is a method.`,
+
+                    code1: `// ---------------- Ex : 1 (Array - length) -------------
+
+int[] numbers = {10, 20, 30, 40, 50};
+
+System.out.println(numbers.length);
+
+// Output: 5
+
+// Array can store primitive and non-primitive elements.
+
+String[] names = {"Anand", "Rahul", "John"};
+
+System.out.println(names.length);
+
+// Output: 3`,
+
+                },
+                {
+                    definition: `1. Arrays use length`,
+                    text1: `Use <b>array.length</b> to get the number of elements the array can hold. length is a field, not a method, so do not write parentheses.
+
+An array's length is fixed when it is created. You can change the value in a slot, but you cannot grow or shrink that array. Arrays can hold primitive values, such as int, or references to objects, such as String.`,
+                    code1: `// ---------------- Ex : 1 (Primitive Array) -------------
+
+int[] numbers = {10, 20, 30, 40, 50};
+
+System.out.println(numbers.length);
+
+// Output: 5
+
+
+// ---------------- Ex : 2 (Non-Primitive Array) -------------
+
+String[] names = {"Anand", "Rahul", "John"};
+
+System.out.println(names.length);
+
+// Output: 3
+
+// The length is the number of slots, even when the array is empty.
+int[] empty = new int[0];
+System.out.println(empty.length);
+// Output: 0`
+                },
+                {
+                    definition: `2. Strings use length()`,
+                    text1: `Use string.length() to get the length of a String. Because length() is a method, the parentheses are required.
+
+For ordinary text, the result is usually the number of characters you expect. Technically, Java counts UTF-16 code units, so some Unicode characters (including many emoji) count as 2. For most beginner examples, length() is the method to remember.`,
+                    code1: `// ---------------- Ex : 3 (String) -------------
+
+String name = "Anand";
+
+System.out.println(name.length());
+
+// Output: 5
+
+
+String message = "Hello Java";
+
+System.out.println(message.length());
+
+// Output: 10
+
+String emoji = "😊";
+System.out.println(emoji.length());
+// Output: 2 (UTF-16 code units)
+System.out.println(emoji.codePointCount(0, emoji.length()));
+// Output: 1 Unicode code point`
+                },
+                {
+                    definition: `3. Collections and Maps use size()`,
+                    text1: `Use collection.size() or map.size() to find how many items are currently stored. size() is a method, so include parentheses.
+
+- A List counts every element, including duplicates.
+- A Set counts distinct elements; adding the same value again does not increase its size.
+- A Map counts key-value pairs. Adding a value for a key that already exists replaces that key's value, so the number of pairs stays the same.
+
+Unlike arrays, collections and maps can grow or shrink. They store objects, so use wrapper types such as Integer instead of primitive int. A Map has a size() method, but it is not a Collection.`,
+                    code1: `// ---------------- Ex : 4 (ArrayList) -------------
+
+import java.util.ArrayList;
+
+ArrayList<String> employees = new ArrayList<>();
+
+employees.add("Anand");
+employees.add("Rahul");
+employees.add("John");
+
+System.out.println(employees.size());
+
+// Output: 3
+
+
+// ---------------- Ex : 5 (HashSet) -------------
+
+import java.util.HashSet;
+
+HashSet<Integer> numbers = new HashSet<>();
+
+numbers.add(10);
+numbers.add(20);
+numbers.add(30);
+numbers.add(30); // Duplicate: the set remains unchanged.
+
+System.out.println(numbers.size());
+
+// Output: 3
+
+
+// ---------------- Ex : 6 (HashMap) -------------
+
+import java.util.HashMap;
+
+HashMap<Integer, String> employees = new HashMap<>();
+
+employees.put(101, "Anand");
+employees.put(102, "Rahul");
+employees.put(103, "John");
+
+System.out.println(employees.size());
+
+// Output: 3`
+                },
+                {
+                    definition: `Remember`,
+                    text1: `Array      -> array.length
+String     -> string.length()
+Collection -> collection.size()
+Map        -> map.size()
+
+Quick check:
+- numbers.length   // Correct for an array
+- name.length()    // Correct for a String
+- list.size()      // Correct for a collection
+
+Common mistakes are adding parentheses to an array's length (numbers.length()) or leaving them off a method (name.length). Pick the form that matches the variable's type.`
+                }
+            ]
+        },
+{
+    id: 1,
+    title: "String Constant Pool",
+    note: [
+        {
+            definition: `
+                <b>What is String Constant Pool (SCP)?</b>
+
+                <b>Definition:</b>
+
+                String Constant Pool (SCP) is a special memory area within the Java Heap where JVM maintains and reuses String objects having the same content to optimize memory usage.
+
+                Whenever we create a String using a String literal, JVM checks whether an equivalent String already exists in the String Constant Pool.
+
+                - If the String already exists, JVM returns the reference to the existing pooled String.
+                - If the String does not exist, JVM adds a String to the pool and returns its reference.
+
+                <b>Why is String Constant Pool required?</b>
+
+                Consider an application where thousands of employees belong to the same department, such as "IT".
+
+                Creating separate String objects for every occurrence of "IT" may consume unnecessary memory.
+
+                String Constant Pool helps reuse the same String object instead of creating duplicate pooled objects.
+
+                <b>Key Benefits:</b>
+
+                1. <b>Memory Optimization:</b> Reduces duplicate String objects.
+                2. <b>Object Reusability:</b> Multiple references can point to the same pooled String.
+                3. <b>Performance:</b> Avoids unnecessary object creation for repeated literals.
+                4. <b>Thread Safety:</b> Multiple threads can safely share String objects because Strings are immutable.
+            `,
+            text1: `
+                <b>Important Points:</b>
+
+                1. String Constant Pool is maintained by JVM.
+                2. It is part of Java Heap memory.
+                3. String literals are automatically pooled.
+                4. Equivalent pooled Strings share a canonical reference.
+                5. String objects are immutable.
+                6. Not every String object is automatically pooled.
+                7. We can use the intern() method to obtain the pooled reference of a String.
+
+                <b>Interview Point:</b>
+
+                String Constant Pool is not a separate memory area outside Heap. It is maintained within Java Heap memory.
+            `,
+            code1: `// --------------- Ex1 : String Literal ---------------
+
+String s1 = "Java";
+String s2 = "Java";
+String s3 = "Java";
+
+System.out.println(s1 == s2); // true
+System.out.println(s2 == s3); // true
+System.out.println(s1 == s3); // true
+
+/*
+Explanation:
+
+1. JVM checks whether "Java" exists in SCP.
+2. Since it does not exist, JVM creates it in SCP.
+3. s1 refers to the pooled String.
+
+4. When s2 = "Java" executes, JVM finds the existing String.
+5. s2 refers to the same object.
+
+6. Similarly, s3 also refers to the same object.
+
+Memory Representation:
+
+String Constant Pool
+--------------------
+       "Java"
+         ↑
+    ┌────┼────┐
+    s1   s2   s3
+
+Output:
+true
+true
+true
+
+== compares object references.
+*/`
+        },
+        {
+            definition: `
+                <b>String Constant Pool vs Heap Memory</b>
+
+                Both String Constant Pool and normal object storage are part of Java Heap memory.
+
+                <b>String Constant Pool:</b>
+
+                - Maintains pooled String objects.
+                - Reuses equivalent String objects.
+                - String literals are automatically pooled.
+                - Provides memory optimization.
+
+                <b>Normal Heap Memory:</b>
+
+                - Stores objects created using the new keyword.
+                - Stores String objects that are not pooled.
+                - Stores other Java objects.
+
+                <b>Important Interview Point:</b>
+
+                When we create a String using the new keyword, JVM creates a separate String object in the Heap, even if the same String value already exists in SCP.
+
+                However, the String literal used as an argument to the constructor can refer to an existing pooled String.
+            `,
+            text1: `
+                <b>How does JVM handle String creation?</b>
+
+                <b>Using String Literal:</b>
+
+                JVM checks the String Constant Pool and reuses an equivalent pooled String if available.
+
+                <b>Using new Keyword:</b>
+
+                JVM creates a separate String object in Heap.
+
+                <b>Important Difference:</b>
+
+                String literal creation focuses on reusing pooled Strings, whereas new String() explicitly creates a separate String object.
+            `,
+            code1: `// --------------- Ex2 : String Literal vs new Keyword ---------------
+
+String s1 = "Java";
+
+String s2 = new String("Java");
+
+System.out.println(s1 == s2);      // false
+System.out.println(s1.equals(s2)); // true
+
+/*
+Explanation:
+
+1. "Java" is available in SCP.
+2. s1 refers to the pooled String.
+3. new String("Java") creates a separate String object in Heap.
+4. s2 refers to the newly created Heap object.
+
+Memory Representation:
+
+String Constant Pool
+--------------------
+       "Java"
+         ↑
+         s1
+
+Heap Memory
+-----------
+       "Java"
+         ↑
+         s2
+
+Output:
+false
+true
+
+==       : Compares references.
+equals() : Compares String content.
+*/`
+        },
+        {
+            definition: `
+                <b>How many String objects are created using new String()?</b>
+
+                <b>Definition:</b>
+
+                When we create a String using new String("Java"), JVM creates a separate String object in Heap.
+
+                If the literal "Java" does not already exist in SCP, the literal also needs to be pooled.
+
+                Therefore, two String objects are created in total:
+
+                1. One pooled String object for the literal "Java".
+                2. One separate String object created using new String().
+
+                If "Java" already exists in SCP, only one new String object is created by this statement.
+
+                <b>Important Interview Point:</b>
+
+                Do not blindly answer that new String("Java") always creates two new objects. The count depends on whether the literal already exists in SCP.
+            `,
+            text1: `
+                <b>Remember:</b>
+
+                The constructor argument "Java" is a String literal.
+
+                Therefore, JVM checks the String Constant Pool for that literal independently of creating the new String object.
+            `,
+            code1: `// --------------- Ex3 : String Object Creation ---------------
+
+String s1 = new String("Java");
+
+/*
+Case 1: "Java" does not exist in SCP.
+
+String Constant Pool
+--------------------
+       "Java"
+
+Heap Memory
+-----------
+       "Java"
+         ↑
+         s1
+
+Total newly created String objects: 2
+
+
+Case 2: "Java" already exists in SCP.
+
+String Constant Pool
+--------------------
+       "Java"
+
+Heap Memory
+-----------
+       "Java"
+         ↑
+         s1
+
+Total newly created String objects: 1
+*/`
+        },
+        {
+            definition: `
+                <b>What is intern() Method in Java?</b>
+
+                <b>Definition:</b>
+
+                The intern() method returns the canonical (pooled) representation of a String.
+
+                If an equivalent String already exists in the String Constant Pool, intern() returns its reference.
+
+                Otherwise, the String is added to the pool and its pooled reference is returned.
+
+                <b>Why do we use intern()?</b>
+
+                In real-time applications, duplicate String values may come from:
+
+                - Database records.
+                - REST API responses.
+                - User input.
+                - Configuration files.
+
+                If there is a good reason to canonicalize frequently repeated Strings, intern() can help reuse references.
+            `,
+            text1: `
+                <b>Important Points:</b>
+
+                1. intern() does not modify the original String.
+                2. It returns a String reference.
+                3. If the pooled String already exists, it returns the existing reference.
+                4. Otherwise, it adds the String to the pool.
+                5. The original String object continues to exist if it is still reachable.
+                6. Excessive interning can introduce memory and performance overhead.
+
+                <b>Interview Point:</b>
+
+                intern() does not mean that the original String object is moved into the pool. It returns the canonical pooled reference.
+            `,
+            code1: `// --------------- Ex4 : intern() Method ---------------
+
+String s1 = "Java";
+
+String s2 = new String("Java");
+
+String s3 = s2.intern();
+
+System.out.println(s1 == s2); // false
+System.out.println(s1 == s3); // true
+System.out.println(s2 == s3); // false
+
+/*
+Explanation:
+
+1. s1 refers to the pooled "Java".
+2. s2 refers to a separate Heap object.
+3. s2.intern() returns the pooled reference.
+4. s3 refers to the same object as s1.
+
+Memory Representation:
+
+String Constant Pool
+--------------------
+       "Java"
+        ↑  ↑
+        s1 s3
+
+Heap Memory
+-----------
+       "Java"
+         ↑
+         s2
+
+Output:
+false
+true
+false
+*/`
+        },
+        {
+            definition: `
+                <b>What is String Immutability?</b>
+
+                <b>Definition:</b>
+
+                String is immutable in Java. It means once a String object is created, its content cannot be changed.
+
+                Whenever we perform operations such as concatenation, replacement, or converting to uppercase, Java returns a new String if the resulting content is different.
+
+                <b>Why is String Immutable?</b>
+
+                1. <b>String Pooling:</b> Multiple references can safely share the same String object.
+                2. <b>Security:</b> Strings are commonly used for file paths, usernames, URLs, and configuration values.
+                3. <b>Thread Safety:</b> Immutable objects can be shared between multiple threads without synchronization for their contents.
+                4. <b>HashCode Caching:</b> String hash codes can be cached because the content does not change.
+
+                <b>Important Interview Point:</b>
+
+                If Strings were mutable, modifying a shared pooled String through one reference could affect every other reference pointing to that object.
+            `,
+            text1: `
+                <b>What happens when we modify a String?</b>
+
+                String methods such as concat(), replace(), and toUpperCase() do not modify the original String object.
+
+                If the resulting content is different, they return a new String.
+
+                Assigning that result back to the same variable changes the variable's reference, not the original object's content.
+            `,
+            code1: `// --------------- Ex5 : String Immutability ---------------
+
+String s1 = "Java";
+String s2 = "Java";
+
+s1 = s1.concat(" Programming");
+
+System.out.println(s1); // Java Programming
+System.out.println(s2); // Java
+
+/*
+Initially:
+
+String Constant Pool
+--------------------
+       "Java"
+        ↑  ↑
+        s1 s2
+
+
+After concat():
+
+String Constant Pool
+--------------------
+       "Java"
+         ↑
+         s2
+
+New String Object
+-----------------
+       "Java Programming"
+                ↑
+                s1
+
+Explanation:
+
+1. Initially, s1 and s2 refer to the same pooled String.
+2. concat() creates a new String with the resulting content.
+3. s1 now refers to the new String.
+4. s2 still refers to the original String.
+
+Important:
+The original String object is not modified.
+*/`
+        },
+        {
+            definition: `
+                <b>Compile-Time vs Runtime String Concatenation</b>
+
+                Java handles String concatenation differently depending on whether the expression is a compile-time constant expression or a runtime expression.
+
+                <b>Compile-Time Concatenation:</b>
+
+                When String concatenation contains only compile-time constant values, the Java compiler evaluates the expression at compile time.
+
+                The resulting String behaves like a String literal and is pooled.
+
+                <b>Runtime Concatenation:</b>
+
+                When concatenation involves variables whose values are determined at runtime, the resulting String is generally created as a separate String object.
+
+                <b>Important Interview Points:</b>
+
+                - String literals are pooled.
+                - Compile-time constant expressions are evaluated at compile time.
+                - Runtime concatenation does not automatically guarantee a pooled reference.
+                - Use intern() when you explicitly need the canonical pooled reference.
+            `,
+            text1: `
+                <b>What is a Compile-Time Constant Variable?</b>
+
+                A variable declared using final and initialized with a compile-time constant expression can be treated as a constant variable.
+
+                For example:
+
+                final String s1 = "Java";
+
+                final String s2 = "Script";
+
+                Since both are compile-time constants, s1 + s2 is evaluated at compile time.
+
+                <b>Important:</b>
+
+                A final variable is not automatically a compile-time constant. Its initializer must also be a constant expression.
+            `,
+            code1: `// --------------- Ex6 : Compile-Time Concatenation ---------------
+
+String s1 = "Java";
+String s2 = "Script";
+
+String s3 = "Java" + "Script";
+
+String s4 = s1 + s2;
+
+System.out.println(s3 == "JavaScript"); // true
+System.out.println(s4 == "JavaScript"); // false
+
+/*
+Explanation:
+
+1. "Java" + "Script" contains only String literals.
+2. Compiler evaluates the expression at compile time.
+3. s3 refers to the pooled "JavaScript".
+
+4. s1 + s2 involves variables.
+5. Concatenation happens at runtime.
+6. s4 refers to a separate String object.
+
+Output:
+true
+false
+*/
+
+
+// --------------- Ex7 : Compile-Time Constant Variables ---------------
+
+final String s5 = "Java";
+final String s6 = "Script";
+
+String s7 = s5 + s6;
+
+System.out.println(s7 == "JavaScript"); // true
+
+/*
+Explanation:
+
+1. s5 and s6 are final variables.
+2. Both are initialized using constant expressions.
+3. Therefore, they are compile-time constants.
+4. The compiler evaluates s5 + s6.
+5. The result is pooled.
+
+Output:
+true
+*/`
+        },
+        {
+            definition: `
+                <b>String Concatenation Using + Operator</b>
+
+                The + operator is used to concatenate two or more Strings.
+
+                When concatenation happens at runtime, Java creates a resulting String object.
+
+                Modern Java compilers may use invokedynamic-based String concatenation internally.
+
+                <b>Important:</b>
+
+                Do not assume that every + operation creates a separate object in every situation. Compile-time constant expressions can be evaluated and pooled.
+            `,
+            text1: `
+                <b>Real-Time Understanding:</b>
+
+                Consider an application that dynamically creates a welcome message using a user's name.
+
+                Since the username is determined at runtime, the resulting String is created at runtime.
+
+                The resulting String is not automatically guaranteed to be pooled.
+            `,
+            code1: `// --------------- Ex8 : Runtime Concatenation ---------------
+
+String name = "Anand";
+
+String result = "Welcome " + name;
+
+System.out.println(result);
+
+// Welcome Anand
+
+System.out.println(result == "Welcome Anand");
+
+// false
+
+/*
+Explanation:
+
+1. name is a variable.
+2. The concatenation is evaluated at runtime.
+3. The resulting String is generally a separate object.
+4. "Welcome Anand" in the comparison is a String literal.
+
+Therefore, == returns false.
+*/`
+        },
+        {
+            definition: `
+                <b>Real-Time Applications of String Constant Pool</b>
+
+                String Constant Pool can be useful in applications where the same String literals are repeatedly used.
+
+                <b>Example 1: Employee Management System</b>
+
+                Department names such as IT, HR, Finance, and Operations can repeat across employee records.
+
+                <b>Example 2: Banking Application</b>
+
+                Transaction statuses such as SUCCESS, FAILED, PENDING, and CANCELLED are commonly used.
+
+                <b>Example 3: E-commerce Application</b>
+
+                Product categories such as Electronics, Clothing, Furniture, and Books may appear repeatedly.
+
+                <b>Real-Time Benefits:</b>
+
+                - Reduces duplicate String instances.
+                - Helps optimize memory consumption.
+                - Allows repeated literal values to share references.
+
+                <b>Important:</b>
+
+                Database values and API response values are not automatically guaranteed to be pooled. String literals are automatically pooled, whereas dynamically created Strings require intern() if explicit pooling is desired.
+            `,
+            text1: `
+                <b>Practical Interview Scenario:</b>
+
+                Imagine an Employee Management System with 10,000 employees.
+
+                Several employees belong to the IT department.
+
+                When the department value is represented by the same String literal, JVM can reuse the pooled String object.
+
+                This demonstrates how String Constant Pool helps avoid duplicate literal objects.
+
+                <b>Note:</b>
+
+                In real-world applications, do not assume that all repeated database values automatically share references. They may be separate String objects depending on how they are created.
+            `,
+            code1: `// --------------- Ex9 : Employee Management System ---------------
+
+class Employee {
+
+    String name;
+    String department;
+
+    Employee(String name, String department) {
+        this.name = name;
+        this.department = department;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Employee e1 = new Employee("Anand", "IT");
+        Employee e2 = new Employee("Rahul", "HR");
+        Employee e3 = new Employee("Kiran", "IT");
+
+        System.out.println(e1.department == e3.department);
+        // true
+
+        System.out.println(e1.department == e2.department);
+        // false
+
+        System.out.println(e1.department.equals(e3.department));
+        // true
+    }
+}
+
+/*
+Explanation:
+
+e1.department = "IT"
+e2.department = "HR"
+e3.department = "IT"
+
+"IT" is a String literal.
+
+Both e1.department and e3.department
+refer to the same pooled String.
+
+Therefore:
+e1.department == e3.department returns true.
+
+Real-time application:
+Employee management system.
+*/`
+        },
+        {
+            definition: `
+                <b>String Constant Pool: Java 6 vs Java 7 and Above</b>
+
+                The location of the String Constant Pool changed in Java 7.
+
+                <b>Before Java 7:</b>
+
+                - String Constant Pool was maintained in the Permanent Generation (PermGen).
+                - PermGen was a separate memory area from the normal Java Heap.
+
+                <b>Java 7 and Above:</b>
+
+                - String Constant Pool was moved to Java Heap memory.
+                - Pooled Strings can be garbage collected when they are no longer reachable.
+
+                <b>Why was it moved?</b>
+
+                Moving the String Pool to Heap memory allowed String objects to benefit from normal Heap memory management and garbage collection.
+
+                <b>Interview Point:</b>
+
+                From Java 7 onwards, String Constant Pool is part of Java Heap memory, not PermGen.
+            `,
+            text1: `
+                <b>JVM Memory Understanding:</b>
+
+                Before Java 7:
+
+                String Constant Pool was associated with PermGen.
+
+                Java 7 and above:
+
+                String Constant Pool is maintained in Java Heap.
+
+                <b>Important Clarification:</b>
+
+                The Runtime Constant Pool and String Constant Pool are related concepts, but they are not the same thing.
+
+                The Runtime Constant Pool is associated with class and interface runtime information. The String Constant Pool maintains canonical String references.
+            `,
+            code1: `// --------------- Ex10 : String Pool Memory Location ---------------
+
+/*
+Before Java 7:
+
+JVM Memory
+|
+|-- Heap Memory
+|     |-- Objects
+|
+|-- PermGen
+      |-- String Constant Pool
+
+
+Java 7 and Above:
+
+JVM Memory
+|
+|-- Heap Memory
+|     |-- String Constant Pool
+|     |-- Normal Objects
+|
+|-- Metaspace (Java 8 onwards)
+      |-- Class Metadata
+
+Important:
+
+1. String Constant Pool moved to Heap in Java 7.
+2. PermGen was removed in Java 8.
+3. Metaspace replaced PermGen for class metadata.
+
+*/`
+        },
+        {
+            definition: `
+                <b>Difference Between String, StringBuilder and StringBuffer</b>
+
+                <b>String:</b>
+
+                - Immutable.
+                - String modifications create new String results.
+                - Suitable when String content does not change frequently.
+
+                <b>StringBuilder:</b>
+
+                - Mutable.
+                - Modifies its internal character sequence.
+                - Not thread-safe.
+                - Suitable for frequent String modifications in single-threaded operations.
+
+                <b>StringBuffer:</b>
+
+                - Mutable.
+                - Thread-safe because its methods are synchronized.
+                - Suitable when synchronized mutable String operations are required.
+
+                <b>Interview Point:</b>
+
+                StringBuilder and StringBuffer are not automatically stored in the String Constant Pool. They are separate mutable objects.
+            `,
+            text1: `
+                <b>When should we use each one?</b>
+
+                <b>String:</b>
+
+                When the content does not change frequently.
+
+                <b>StringBuilder:</b>
+
+                When frequent String modifications are required and thread safety is not needed.
+
+                <b>StringBuffer:</b>
+
+                When synchronized mutable String operations are required.
+
+                <b>Important:</b>
+
+                StringBuilder and StringBuffer do not provide String pooling in the same way as String literals.
+            `,
+            code1: `// --------------- Ex11 : String vs StringBuilder vs StringBuffer ---------------
+
+// String - Immutable
+
+String s1 = "Java";
+
+s1.concat(" Programming");
+
+System.out.println(s1); // Java
+
+
+// StringBuilder - Mutable
+
+StringBuilder sb = new StringBuilder("Java");
+
+sb.append(" Programming");
+
+System.out.println(sb); // Java Programming
+
+
+// StringBuffer - Mutable and Thread-Safe
+
+StringBuffer sf = new StringBuffer("Java");
+
+sf.append(" Programming");
+
+System.out.println(sf); // Java Programming
+
+/*
+String:
+Original object is not modified.
+
+StringBuilder:
+Original object is modified.
+
+StringBuffer:
+Original object is modified using synchronized methods.
+*/`
+        },
+        {
+            definition: `
+                <b>Frequently Asked String Constant Pool Interview Questions</b>
+
+                <b>Q1. What is String Constant Pool?</b>
+
+                It is a special memory area within Java Heap where JVM maintains and reuses pooled String objects.
+
+                <b>Q2. Where is String Constant Pool located?</b>
+
+                It is located in Java Heap memory from Java 7 onwards.
+
+                <b>Q3. Why is String Constant Pool used?</b>
+
+                To reduce duplicate String objects and optimize memory usage.
+
+                <b>Q4. Are all String objects stored in SCP?</b>
+
+                No. String literals are pooled automatically. Objects created using new are initially separate Heap objects.
+
+                <b>Q5. What happens when we create a String using new?</b>
+
+                JVM creates a separate String object in Heap, even if an equivalent pooled String already exists.
+
+                <b>Q6. What is the purpose of intern()?</b>
+
+                It returns the canonical pooled reference of a String.
+
+                <b>Q7. Can we modify a String stored in SCP?</b>
+
+                No. String is immutable.
+
+                <b>Q8. Why is String immutable in Java?</b>
+
+                Immutability supports safe sharing, String pooling, security, and thread safety.
+
+                <b>Q9. What is the difference between == and equals()?</b>
+
+                == compares references, whereas equals() compares String content.
+
+                <b>Q10. Is String Constant Pool part of Stack or Heap?</b>
+
+                It is part of Heap memory, not Stack memory.
+
+                <b>Q11. Does intern() always create a new object?</b>
+
+                No. It returns the existing pooled reference if an equivalent String already exists. Otherwise, it adds the String to the pool and returns its reference.
+
+                <b>Q12. Can two different String variables refer to the same object?</b>
+
+                Yes. When both variables refer to the same pooled String literal, they share the same object.
+
+                <b>Q13. What happens to the original object after calling intern()?</b>
+
+                The original String object is not modified or automatically replaced. It can be garbage collected when it becomes unreachable.
+
+                <b>Q14. Is String Constant Pool thread-safe?</b>
+
+                JVM manages the String pool internally. Sharing pooled Strings between threads is safe because String objects are immutable.
+
+                <b>Q15. Can StringBuilder or StringBuffer use String Constant Pool?</b>
+
+                They are mutable objects and are not automatically pooled like String literals.
+            `,
+            text1: `
+                <b>Additional Interview Questions:</b>
+
+                <b>Q16. What happens if two Strings have the same content but are different objects?</b>
+
+                equals() returns true, but == returns false.
+
+                <b>Q17. Can we explicitly add a String to the String Constant Pool?</b>
+
+                Yes. We can use intern() to obtain its canonical pooled representation.
+
+                <b>Q18. Can pooled Strings be garbage collected?</b>
+
+                Yes. Pooled Strings can be garbage collected when they are no longer reachable, subject to JVM garbage collection.
+
+                <b>Q19. Is String Constant Pool the same as Runtime Constant Pool?</b>
+
+                No. They are related but different concepts.
+
+                <b>Q20. Does final make every String variable a compile-time constant?</b>
+
+                No. It must be initialized with a compile-time constant expression.
+            `,
+            code1: `// --------------- Ex12 : Interview Output-Based Questions ---------------
+
+String s1 = "Java";
+
+String s2 = "Java";
+
+String s3 = new String("Java");
+
+String s4 = new String("Java").intern();
+
+String s5 = "Ja" + "va";
+
+String s6 = s1 + s2;
+
+System.out.println(s1 == s2); // true
+
+System.out.println(s1 == s3); // false
+
+System.out.println(s1 == s4); // true
+
+System.out.println(s3 == s4); // false
+
+System.out.println(s1 == s5); // true
+
+System.out.println(s1 == s6); // false
+
+/*
+Explanation:
+
+s1 and s2:
+Both refer to the same pooled String.
+
+s3:
+Refers to a separate Heap object.
+
+s4:
+intern() returns the pooled reference.
+
+s5:
+"Ja" + "va" is a compile-time constant expression.
+It is evaluated and pooled.
+
+s6:
+s1 + s2 involves variables.
+It is evaluated at runtime and creates a separate String result.
+
+Output:
+
+true
+false
+true
+false
+true
+false
+*/`
+        },
+        {
+            definition: `
+                <b>String Constant Pool - Final Interview Summary</b>
+
+                <b>Most Important Concepts:</b>
+
+                1. <b>SCP:</b> Special area within Java Heap memory.
+                2. <b>String Literal:</b> Automatically pooled.
+                3. <b>new String():</b> Creates a separate String object.
+                4. <b>intern():</b> Returns the canonical pooled reference.
+                5. <b>String Immutability:</b> String content cannot be modified after creation.
+                6. <b>==:</b> Compares object references.
+                7. <b>equals():</b> Compares String content.
+                8. <b>Compile-Time Concatenation:</b> Constant expressions are evaluated and pooled.
+                9. <b>Runtime Concatenation:</b> Generally creates a separate String result.
+                10. <b>Java 7:</b> String Constant Pool moved from PermGen to Heap.
+
+                <b>Most Important Interview Question:</b>
+
+                Why did Java introduce String Constant Pool?
+
+                <b>Answer:</b>
+
+                Java introduced String Constant Pool to optimize memory consumption by reusing String objects that contain the same value. Whenever we create a String using a literal, JVM checks the pool. If an equivalent String already exists, JVM reuses its reference; otherwise, it adds a new String to the pool. This reduces unnecessary duplicate object creation and improves memory utilization.
+            `,
+            text1: `
+                <b>Interview Preparation Priority:</b>
+
+                <b>High Priority:</b>
+
+                1. String Literal vs new String().
+                2. String Constant Pool vs Heap.
+                3. intern() method.
+                4. String Immutability.
+                5. Compile-Time vs Runtime Concatenation.
+                6. == vs equals().
+
+                <b>Medium Priority:</b>
+
+                1. Java 6 vs Java 7 memory changes.
+                2. String vs StringBuilder vs StringBuffer.
+                3. Real-time applications of String Pool.
+
+                <b>Interview Tip:</b>
+
+                Always explain the memory references step by step when answering String Constant Pool output-based questions.
+            `,
+            code1: `// --------------- Ex13 : Final Revision ---------------
+
+String a = "Java";
+String b = "Java";
+String c = new String("Java");
+String d = c.intern();
+
+System.out.println(a == b);      // true
+System.out.println(a == c);      // false
+System.out.println(a == d);      // true
+
+System.out.println(a.equals(c)); // true
+System.out.println(a.equals(d)); // true
+
+/*
+Final Memory Representation:
+
+String Constant Pool
+--------------------
+       "Java"
+        ↑  ↑  ↑
+        a  b  d
+
+Heap Memory
+-----------
+       "Java"
+         ↑
+         c
+
+Remember:
+
+==       -> Reference comparison
+equals() -> Content comparison
+intern() -> Pooled reference
+String   -> Immutable
+SCP      -> Java Heap
+*/`
+        }
+    ]
+},
         {
             id: 1,
             section: 'Java Collections Framework',
@@ -4049,4 +5453,3 @@ The standard way to perform a shallow copy is by implementing the <b>Cloneable</
 }
 
 export default javaData;
-

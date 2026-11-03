@@ -325,6 +325,330 @@ export const EnglishList = {
             ],
         },
         {
+            id: 11,
+            topic: "Difference Between CAN and CAN BE",
+            explain: "CAN is used to express ability, permission, or possibility. (CAN అనేది ఒక వ్యక్తి ఏదైనా పని చేయగల సామర్థ్యం, అనుమతి లేదా అవకాశం ఉందని చెప్పడానికి ఉపయోగిస్తాము.) CAN BE is used to express a possible state, condition, identity, or an action in passive voice. (CAN BE అనేది ఒక వ్యక్తి లేదా వస్తువు ఏదైనా స్థితిలో ఉండవచ్చు, ఏదైనా లక్షణం కలిగి ఉండవచ్చు లేదా ఒక పని చేయబడవచ్చు అని చెప్పడానికి ఉపయోగిస్తాము.) Remember that CAN is followed by V1, whereas CAN BE can be followed by an adjective, noun, or V3. (CAN తర్వాత ఎప్పుడూ Verb యొక్క మొదటి రూపం (V1) వస్తుంది. కానీ CAN BE తర్వాత Adjective, Noun లేదా Verb యొక్క మూడవ రూపం (V3) రావచ్చు.)",
+            formation: `
+        1. CAN + V1 (Ability / Permission / Possibility)
+           Structure: Subject + can + V1 + Object
+           Telugu: Subject ఏదైనా పని చేయగలడు / చేయగలను / చేయవచ్చు.
+
+        2. CAN BE + Adjective (State / Condition)
+           Structure: Subject + can be + Adjective
+           Telugu: Subject ఒక నిర్దిష్ట స్థితిలో ఉండవచ్చు లేదా ఒక లక్షణాన్ని కలిగి ఉండవచ్చు.
+
+        3. CAN BE + Noun (Identity / Possibility)
+           Structure: Subject + can be + Noun
+           Telugu: Subject ఒక వ్యక్తి / వస్తువు / విషయం కావచ్చు.
+
+        4. CAN BE + V3 (Passive Voice)
+           Structure: Subject + can be + V3 + (by someone)
+           Telugu: ఒక పనిని చేయవచ్చు / చేయబడవచ్చు.
+    `,
+            content: [
+                {
+                    id: 1,
+                    eng: "I can speak English.",
+                    tel: "నేను ఇంగ్లీష్ మాట్లాడగలను.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 2,
+                    eng: "He can drive a car.",
+                    tel: "అతను కారు నడపగలడు.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 3,
+                    eng: "We can complete this task today.",
+                    tel: "మనం ఈ పనిని ఈరోజు పూర్తి చేయగలం.",
+                    tense: "Can + V1 (Possibility)"
+                },
+                {
+                    id: 4,
+                    eng: "I can help you with this issue.",
+                    tel: "ఈ సమస్య విషయంలో నేను నీకు సహాయం చేయగలను.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 5,
+                    eng: "He can be busy right now.",
+                    tel: "అతను ప్రస్తుతం బిజీగా ఉండవచ్చు.",
+                    tense: "Can be + Adjective"
+                },
+                {
+                    id: 6,
+                    eng: "This issue can be serious.",
+                    tel: "ఈ సమస్య తీవ్రంగా ఉండవచ్చు.",
+                    tense: "Can be + Adjective"
+                },
+                {
+                    id: 7,
+                    eng: "It can be a problem.",
+                    tel: "ఇది ఒక సమస్య కావచ్చు.",
+                    tense: "Can be + Noun"
+                },
+                {
+                    id: 8,
+                    eng: "He can be a good developer.",
+                    tel: "అతను మంచి డెవలపర్ కావచ్చు.",
+                    tense: "Can be + Noun"
+                },
+                {
+                    id: 9,
+                    eng: "The issue can be fixed.",
+                    tel: "ఈ సమస్యను పరిష్కరించవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 10,
+                    eng: "The changes can be deployed today.",
+                    tel: "మార్పులను ఈరోజు డిప్లాయ్ చేయవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 11,
+                    eng: "The configuration can be verified.",
+                    tel: "కాన్ఫిగరేషన్‌ను వెరిఫై చేయవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 12,
+                    eng: "The API response can be checked.",
+                    tel: "API response ను చెక్ చేయవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 13,
+                    eng: "He can become rich if he wins the lottery.",
+                    tel: "అతను లాటరీ గెలిస్తే ధనవంతుడిగా మారవచ్చు.",
+                    tense: "Can + V1 (Become)"
+                },
+                {
+                    id: 14,
+                    eng: "A laptop can be expensive.",
+                    tel: "ల్యాప్‌టాప్ ఖరీదైనదిగా ఉండవచ్చు.",
+                    tense: "Can be + Adjective"
+                },
+                {
+                    id: 15,
+                    eng: "It can cost around fifty thousand rupees.",
+                    tel: "దాని ధర సుమారు యాభై వేల రూపాయలు ఉండవచ్చు.",
+                    tense: "Can + V1 (Possibility)"
+                },
+                {
+                    id: 16,
+                    eng: "The payment can be successful.",
+                    tel: "చెల్లింపు విజయవంతం కావచ్చు.",
+                    tense: "Can be + Adjective"
+                },
+                {
+                    id: 17,
+                    eng: "We can resolve this issue.",
+                    tel: "మనం ఈ సమస్యను పరిష్కరించగలం.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 18,
+                    eng: "This issue can be resolved.",
+                    tel: "ఈ సమస్యను పరిష్కరించవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 19,
+                    eng: "Tomorrow can be a good day.",
+                    tel: "రేపు మంచి రోజు కావచ్చు.",
+                    tense: "Can be + Noun"
+                },
+                {
+                    id: 20,
+                    eng: "You can purchase a laptop online.",
+                    tel: "నువ్వు ఆన్‌లైన్‌లో ల్యాప్‌టాప్ కొనుగోలు చేయవచ్చు.",
+                    tense: "Can + V1 (Possibility)"
+                },
+                {
+                    id: 21,
+                    eng: "I can fix this issue.",
+                    tel: "నేను ఈ సమస్యను పరిష్కరించగలను.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 22,
+                    eng: "This issue can be fixed with a small code change.",
+                    tel: "చిన్న కోడ్ మార్పుతో ఈ సమస్యను పరిష్కరించవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 23,
+                    eng: "We can deploy these changes today.",
+                    tel: "మనం ఈ మార్పులను ఈరోజు డిప్లాయ్ చేయగలం.",
+                    tense: "Can + V1 (Possibility)"
+                },
+                {
+                    id: 24,
+                    eng: "The deployment can be completed by tonight.",
+                    tel: "డిప్లాయ్‌మెంట్‌ను ఈరోజు రాత్రికి పూర్తి చేయవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 25,
+                    eng: "I can check the API response.",
+                    tel: "నేను API response ను చెక్ చేయగలను.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 26,
+                    eng: "The API response can be incorrect.",
+                    tel: "API response తప్పుగా ఉండవచ్చు.",
+                    tense: "Can be + Adjective"
+                },
+                {
+                    id: 27,
+                    eng: "We can integrate this API into the React application.",
+                    tel: "మనం ఈ API ను React అప్లికేషన్‌లో ఇంటిగ్రేట్ చేయగలం.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 28,
+                    eng: "This API can be integrated into multiple applications.",
+                    tel: "ఈ API ను అనేక అప్లికేషన్లలో ఇంటిగ్రేట్ చేయవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 29,
+                    eng: "I can create a reusable React component.",
+                    tel: "నేను తిరిగి ఉపయోగించగల React component ను రూపొందించగలను.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 30,
+                    eng: "This component can be reused across multiple modules.",
+                    tel: "ఈ component ను అనేక modules లో తిరిగి ఉపయోగించవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 31,
+                    eng: "The application can be slow sometimes.",
+                    tel: "అప్లికేషన్ కొన్నిసార్లు నెమ్మదిగా ఉండవచ్చు.",
+                    tense: "Can be + Adjective"
+                },
+                {
+                    id: 32,
+                    eng: "We can improve the application performance.",
+                    tel: "మనం అప్లికేషన్ పనితీరును మెరుగుపరచగలం.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 33,
+                    eng: "The performance can be improved by optimizing API calls.",
+                    tel: "API calls ను ఆప్టిమైజ్ చేయడం ద్వారా పనితీరును మెరుగుపరచవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 34,
+                    eng: "I can investigate this production issue.",
+                    tel: "నేను ఈ production సమస్యను పరిశీలించగలను.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 35,
+                    eng: "This issue can be related to missing configuration.",
+                    tel: "ఈ సమస్య configuration లేకపోవడంతో సంబంధం కలిగి ఉండవచ్చు.",
+                    tense: "Can be + Adjective"
+                },
+                {
+                    id: 36,
+                    eng: "We can verify the changes in the E3SL environment.",
+                    tel: "మనం E3SL environment లో మార్పులను వెరిఫై చేయగలం.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 37,
+                    eng: "The changes can be verified in the E3SL environment.",
+                    tel: "మార్పులను E3SL environment లో వెరిఫై చేయవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 38,
+                    eng: "I can raise a pull request after testing.",
+                    tel: "టెస్టింగ్ చేసిన తర్వాత నేను pull request ను raise చేయగలను.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 39,
+                    eng: "The pull request can be reviewed by the code owners.",
+                    tel: "Pull request ను code owners review చేయవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 40,
+                    eng: "The build can fail because of missing dependencies.",
+                    tel: "Dependencies లేకపోవడం వల్ల build fail కావచ్చు.",
+                    tense: "Can + V1 (Possibility)"
+                },
+                {
+                    id: 41,
+                    eng: "The build can be successful after fixing the dependencies.",
+                    tel: "Dependencies ను సరిచేసిన తర్వాత build విజయవంతం కావచ్చు.",
+                    tense: "Can be + Adjective"
+                },
+                {
+                    id: 42,
+                    eng: "I can write unit test cases for this component.",
+                    tel: "నేను ఈ component కోసం unit test cases రాయగలను.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 43,
+                    eng: "These test cases can be executed automatically.",
+                    tel: "ఈ test cases ను ఆటోమేటిక్‌గా execute చేయవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 44,
+                    eng: "We can resolve the merge conflicts.",
+                    tel: "మనం merge conflicts ను పరిష్కరించగలం.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 45,
+                    eng: "The merge conflicts can be resolved manually.",
+                    tel: "Merge conflicts ను మాన్యువల్‌గా పరిష్కరించవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 46,
+                    eng: "I can update the country-specific JSON files.",
+                    tel: "నేను country-specific JSON files ను update చేయగలను.",
+                    tense: "Can + V1 (Ability)"
+                },
+                {
+                    id: 47,
+                    eng: "The JSON configuration can be different for each country.",
+                    tel: "ప్రతి దేశానికి JSON configuration భిన్నంగా ఉండవచ్చు.",
+                    tense: "Can be + Adjective"
+                },
+                {
+                    id: 48,
+                    eng: "We can complete the remaining modules this week.",
+                    tel: "మనం మిగిలిన modules ను ఈ వారంలో పూర్తి చేయగలం.",
+                    tense: "Can + V1 (Possibility)"
+                },
+                {
+                    id: 49,
+                    eng: "The remaining modules can be deployed separately.",
+                    tel: "మిగిలిన modules ను విడివిడిగా deploy చేయవచ్చు.",
+                    tense: "Can be + V3 (Passive Voice)"
+                },
+                {
+                    id: 50,
+                    eng: "I can discuss this requirement with the product owner.",
+                    tel: "నేను ఈ requirement గురించి product owner తో చర్చించగలను.",
+                    tense: "Can + V1 (Ability)"
+                }
+            ],
+        },
+        {
             id: 9,
             topic: 'Could (చేయగలిగిన పనులు)',
 
@@ -4404,7 +4728,14 @@ export const EnglishList = {
         {
             id: 6,
             topic: "Past Continuous Tense",
-            explain: 'Past Continuous Tense అంటే గతంలో ఒక నిర్దిష్ట సమయం లేదా సందర్భంలో కొనసాగుతున్న పనిను సూచిస్తుంది. English లో ఇది was / were + verb-ing రూపంలో ఉంటుంది.',
+            explain: `Past Continuous Tense అంటే గతంలో ఒక నిర్దిష్ట సమయం లేదా సందర్భంలో కొనసాగుతున్న పనిను సూచిస్తుంది. English లో ఇది was / were + verb-ing రూపంలో ఉంటుంది.
+            ----------------------
+            Rule 1: ఒక పని Past Time లో ఒక నిర్దిష్ట సమయంలో జరుగుతూ ఉన్నదని తెలియజేయడానికి Past Continuous Tense ఉపయోగిస్తాము.
+        ఈ Tense లో Subject తర్వాత 'was' లేదా 'were' అనే helping verb ఉపయోగించి, Main Verb కు 'ing' చేర్చాలి.
+        Rule 2: గతంలో ఒక పని జరుగుతూ ఉన్నప్పుడు, అదే సమయంలో మరొక పని జరిగినట్లు చెప్పడానికి Past Continuous Tense ను Simple Past Tense తో కలిపి ఉపయోగిస్తాము.
+        సాధారణంగా 'When' లేదా 'While' ఉపయోగిస్తాము.
+        When: ఒక పని జరుగుతున్న సమయంలో మరొక పని జరిగినప్పుడు ఉపయోగిస్తాము.
+        While: ఒక పని జరుగుతున్న సమయంలో మరొక పని జరిగినప్పుడు ఉపయోగిస్తాము. సాధారణంగా While తర్వాత Continuous action వస్తుంది.`,
             formation: '=> Positive: Subject + was/were + verb-ing + rest => Negative: Subject + was/were + not + verb-ing + rest => Interrogative: Was/Were + subject + verb-ing + rest? => Negative Interrogative: Was/Were + subject + not + verb-ing + rest?',
             content: [
                 {
@@ -4562,6 +4893,180 @@ export const EnglishList = {
                     eng: "Wasn’t he studying for the exam all night?",
                     tel: "అతను రాత్రంతా పరీక్ష కోసం చదువుతున్నట్లేదా?",
                     tense: "Negative Interrogative"
+                },
+                {
+                    id: 1,
+                    eng: "I was watching a movie at/b this time yesterday.",
+                    tel: "నేను నిన్న ఈ సమయానికి సినిమా చూస్తున్నాను.",
+                    tense: "Past Continuous"
+                },
+                {
+                    id: 2,
+                    eng: "When I was going to Poorna Market, I lost my purse.",
+                    tel: "నేను పూర్ణా మార్కెట్‌కు వెళ్తున్నప్పుడు నా పర్సు పోయింది.",
+                    tense: "Past Continuous + Simple Past"
+                },
+                {
+                    id: 3,
+                    eng: "I lost my purse when I was going to Poorna Market.",
+                    tel: "నేను పూర్ణా మార్కెట్‌కు వెళ్తున్నప్పుడు నా పర్సు పోయింది.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 4,
+                    eng: "While we were watching TV, the power went out.",
+                    tel: "మేము టీవీ చూస్తుండగా కరెంట్ పోయింది.",
+                    tense: "Past Continuous + Simple Past"
+                },
+                {
+                    id: 5,
+                    eng: "The power went out while we were watching TV.",
+                    tel: "మేము టీవీ చూస్తుండగా కరెంట్ పోయింది.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 6,
+                    eng: "While I was studying for my M.A., I got this job.",
+                    tel: "నేను ఎం.ఏ. చదువుతున్నప్పుడు నాకు ఈ ఉద్యోగం వచ్చింది.",
+                    tense: "Past Continuous + Simple Past"
+                },
+                {
+                    id: 7,
+                    eng: "I got this job while I was studying for my M.A.",
+                    tel: "నేను ఎం.ఏ. చదువుతున్నప్పుడు నాకు ఈ ఉద్యోగం వచ్చింది.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 8,
+                    eng: "When he was ill, his wife took great care of him.",
+                    tel: "అతను అనారోగ్యంతో ఉన్నప్పుడు అతని భార్య అతనికి ఎంతో సేవ చేసింది.",
+                    tense: "Past Continuous + Simple Past"
+                },
+                {
+                    id: 9,
+                    eng: "His wife took great care of him when he was ill.",
+                    tel: "అతను అనారోగ్యంతో ఉన్నప్పుడు అతని భార్య అతనికి ఎంతో సేవ చేసింది.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 10,
+                    eng: "She was watching TV when I met her.",
+                    tel: "నేను ఆమెను కలిసినప్పుడు ఆమె టీవీ చూస్తున్నది.",
+                    tense: "Past Continuous + Simple Past"
+                },
+                {
+                    id: 11,
+                    eng: "She was crying when I saw her.",
+                    tel: "ఆమె ఏడుస్తుండగా నేను ఆమెను చూశాను.",
+                    tense: "Past Continuous + Simple Past"
+                },
+                {
+                    id: 12,
+                    eng: "He died while he was working in the office.",
+                    tel: "అతను ఆఫీసులో పని చేస్తుండగా చనిపోయాడు.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 13,
+                    eng: "She went away while I was calling her.",
+                    tel: "నేను ఆమెను పిలుస్తుండగా ఆమె వెళ్లిపోయింది.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 14,
+                    eng: "The thieves stole all their belongings while they were sleeping.",
+                    tel: "వాళ్లు నిద్రపోతుండగా దొంగలు వాళ్ల ఆస్తినంతా దొంగిలించారు.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 15,
+                    eng: "The accident happened while I was coming from Jagadamba Junction.",
+                    tel: "నేను జగదాంబ జంక్షన్ నుండి వస్తుండగా ఆ ప్రమాదం జరిగింది.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 15,
+                    eng: "The incident took place while I was coming from Jagadamba Junction.",
+                    tel: "నేను జగదాంబ జంక్షన్ నుండి వస్తుండగా ఆ సంఘటన జరిగింది.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 16,
+                    eng: "He jumped off the bus while it was moving.",
+                    tel: "బస్సు వెళ్తుండగా అతను దూకేశాడు.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 17,
+                    eng: "She fell asleep while she was reading.",
+                    tel: "ఆమె చదువుతూ ఉండగా నిద్రపోయింది.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 18,
+                    eng: "It started to rain while we were playing.",
+                    tel: "మేము ఆడుతుండగా వర్షం ప్రారంభమైంది.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 19,
+                    eng: "He received many awards while he was working in Hyderabad.",
+                    tel: "అతను హైదరాబాద్‌లో పని చేస్తున్నప్పుడు చాలా అవార్డులు పొందాడు.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 20,
+                    eng: "They were talking to me at this time yesterday.",
+                    tel: "నిన్న ఈ సమయానికి వాళ్లు నాతో మాట్లాడుతున్నారు.",
+                    tense: "Past Continuous"
+                },
+                {
+                    id: 21,
+                    eng: "I was travelling to Tirupati last Sunday.",
+                    tel: "గత ఆదివారం నేను తిరుపతికి ప్రయాణిస్తున్నాను.",
+                    tense: "Past Continuous"
+                },
+                {
+                    id: 22,
+                    eng: "She was studying B.Sc. at/by that time yesterday.",
+                    tel: "నిన్న ఆ సమయంలో ఆమె బి.ఎస్సీ. చదువుతున్నది.",
+                    tense: "Past Continuous"
+                },
+                {
+                    id: 23,
+                    eng: "He was doing a computer course at/by that time.",
+                    tel: "ఆ సమయంలో అతను కంప్యూటర్ కోర్సు చేస్తున్నాడు.",
+                    tense: "Past Continuous"
+                },
+                {
+                    id: 24,
+                    eng: "You were sleeping when I came.",
+                    tel: "నేను వచ్చినప్పుడు నువ్వు నిద్రపోతున్నావు.",
+                    tense: "Past Continuous + Simple Past"
+                },
+                {
+                    id: 25,
+                    eng: "When you were sleeping, I came.",
+                    tel: "నువ్వు నిద్రపోతున్నప్పుడు నేను వచ్చాను.",
+                    tense: "Past Continuous + Simple Past"
+                },
+                {
+                    id: 26,
+                    eng: "I came when you were sleeping.",
+                    tel: "నువ్వు నిద్రపోతున్నప్పుడు నేను వచ్చాను.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 27,
+                    eng: "When I went there, they were talking.",
+                    tel: "నేను అక్కడికి వెళ్లినప్పుడు వాళ్లు మాట్లాడుకుంటున్నారు.",
+                    tense: "Simple Past + Past Continuous"
+                },
+                {
+                    id: 28,
+                    eng: "They were talking when I went there.",
+                    tel: "నేను అక్కడికి వెళ్లినప్పుడు వాళ్లు మాట్లాడుకుంటున్నారు.",
+                    tense: "Past Continuous + Simple Past"
                 }
 
             ],
