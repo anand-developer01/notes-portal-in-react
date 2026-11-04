@@ -1381,7 +1381,120 @@ equals() -> Content comparison
 intern() -> Pooled reference
 String   -> Immutable
 SCP      -> Java Heap
-*/`}]},{id:1,section:`Java Collections Framework`,title:`Java Collections Framework`,note:[{text1:`The <b>Java Collections Framework (JCF)</b> is a <b>set of interfaces, classes, and algorithms</b> used to <b>store, manipulate, and process groups of objects</b> efficiently.
+*/`}]},{id:1,title:`Does concat() method change the string in java(mutrable)`,note:[{definition:`<b>No. concat() never changes the original String.</b> In Java, <b>String is immutable</b>, so once a String object is created its content cannot be modified. <b>concat(String str)</b> creates and returns a <b>new String object</b> (original + str) and leaves the original object untouched. If you do not store the returned value, the result is lost.`,text1:`<b>Interview Definition :</b><br>
+<b>public String concat(String str)</b> appends the specified string to the end of the current string and <b>returns a new String</b>. The current object (this) is never modified.<br><br>
+
+<b>Why is String immutable? (Most asked follow-up)</b><br>
+1. <b>String Pool (security + memory) :</b> many references can share one pooled literal safely. If it was mutable, changing it through one reference would affect all the others.<br>
+2. <b>Security :</b> Strings are used for DB URLs, usernames, passwords and file paths, and they must not change after validation.<br>
+3. <b>Thread safety :</b> immutable objects are automatically thread-safe.<br>
+4. <b>hashCode caching :</b> the hash is calculated once and cached, so String is a very fast HashMap key.<br>
+5. <b>Class loading :</b> class names are passed as Strings, and they must be safe from modification.<br><br>
+
+<b>Key Points of concat() :</b><br>
+1. <b>Return type is String</b>, so you must assign the result: <b>s = s.concat("x");</b><br>
+2. <b>Original object stays same</b>, and the new object is created in the <b>heap</b> (not in the String Pool).<br>
+3. <b>Special case :</b> if the argument is an <b>empty string ""</b>, concat() returns the <b>same object (this)</b> and no new object is created.<br>
+4. <b>concat(null)</b> throws <b>NullPointerException</b>.<br>
+5. <b>concat() accepts only String</b> (not int, char or Object), whereas <b>+</b> accepts anything.<br><br>
+
+<b>concat() vs + operator vs StringBuilder.append() :</b><br>
+<b>concat()</b> : accepts only String, throws NPE for null, returns a new object, slightly faster for a single join of two strings.<br>
+<b>+ operator</b> : accepts any type, treats null as the text "null", the compiler converts it internally to StringBuilder, and compile-time constants are joined at compile time and stored in the pool.<br>
+<b>StringBuilder / StringBuffer append()</b> : <b>MUTABLE</b>, changes the same object, and is best inside loops. <b>StringBuffer</b> is thread-safe, <b>StringBuilder</b> is faster but not thread-safe.<br><br>
+
+<b>Real-time examples :</b><br>
+1. <b>Email generation :</b> username.concat("@gmail.com") gives a new string, and username remains the same.<br>
+2. <b>Greeting message :</b> "Hello ".concat(name) builds a message without touching the stored name.<br>
+3. <b>Building file path / URL :</b> baseUrl.concat("/api/users") returns a new URL, and baseUrl can be reused for other endpoints.<br>
+4. <b>Loop performance :</b> concat() or + inside a loop of 100000 iterations creates 100000 objects (slow, heavy GC). Use <b>StringBuilder</b> instead.<br><br>
+
+<b>Common Interview Questions :</b><br>
+Q1. Does concat() modify the original string? <b>No, it returns a new String.</b><br>
+Q2. Why does s.concat("x"); alone print the old value? <b>The returned object is not assigned to any variable.</b><br>
+Q3. How many objects are created in String s = "Java".concat("World");? <b>3 objects in total</b>: "Java" (pool), "World" (pool) and the result "JavaWorld" (heap). Only the result is created by concat().<br>
+Q4. Is s1.concat("") == s1? <b>true</b>, because the same object is returned.<br>
+Q5. concat() vs +? <b>concat() works only with String and throws NPE on null, while + works with any type.</b><br>
+Q6. Which one for loops? <b>StringBuilder</b>.<br>
+Q7. Is StringBuilder.append() mutating? <b>Yes, it changes the same object.</b>`,code1:`// --------------- Ex1 : concat() does NOT change original string ---------------
+String s1 = "Java";
+s1.concat(" Programming");          // result is ignored (lost)
+System.out.println(s1);             // Java   (original unchanged)
+
+// --------------- Ex2 : Store the returned value ---------------
+String s2 = "Java";
+String s3 = s2.concat(" Programming");
+System.out.println(s2);             // Java
+System.out.println(s3);             // Java Programming
+System.out.println(s2 == s3);       // false (different objects)
+
+// --------------- Ex3 : Reassigning the same reference ---------------
+String s4 = "Hello";
+s4 = s4.concat(" World");           // s4 now points to the NEW object
+System.out.println(s4);             // Hello World
+// The old object "Hello" is NOT modified, it just has no reference from s4 now.
+
+// --------------- Ex4 : concat with empty string returns SAME object ---------------
+String s5 = "Java";
+String s6 = s5.concat("");
+System.out.println(s5 == s6);       // true  (same object, no new object)
+
+String s7 = s5.concat("A");
+System.out.println(s5 == s7);       // false (new object)
+
+// --------------- Ex5 : Heap object vs String Pool ---------------
+String a = "Java";
+String b = a.concat("Script");      // new object in heap
+String c = "JavaScript";            // pool literal
+System.out.println(b == c);         // false (heap vs pool)
+System.out.println(b.equals(c));    // true  (content same)
+System.out.println(b.intern() == c);// true  (intern gives pool reference)
+
+// --------------- Ex6 : concat(null) vs + null ---------------
+String name = null;
+String r1 = "Hi ".concat(name);     // NullPointerException
+String r2 = "Hi " + name;           // Hi null  (no exception)
+
+// --------------- Ex7 : concat accepts only String ---------------
+String id = "ID-";
+// id.concat(101);                  // Compile error (int not allowed)
+String id1 = id.concat(String.valueOf(101));   // ID-101
+String id2 = id + 101;                         // ID-101
+
+// --------------- Ex8 : Real time example (email + URL) ---------------
+String username = "anand";
+String email = username.concat("@gmail.com");
+System.out.println(username);       // anand (unchanged, reusable)
+System.out.println(email);          // anand@gmail.com
+
+String baseUrl = "https://myapp.com";
+String usersApi = baseUrl.concat("/api/users");
+String ordersApi = baseUrl.concat("/api/orders");
+System.out.println(baseUrl);        // https://myapp.com (still safe to reuse)
+
+// --------------- Ex9 : Mutable alternative (StringBuilder) ---------------
+StringBuilder sb = new StringBuilder("Java");
+sb.append(" Programming");          // SAME object is modified
+System.out.println(sb);             // Java Programming
+
+StringBuilder sb2 = sb;
+sb2.append("!");
+System.out.println(sb);             // Java Programming!  (sb also changed, same object)
+
+// --------------- Ex10 : Loop performance (interview point) ---------------
+// BAD : creates a new String object in every iteration
+String bad = "";
+for (int i = 0; i < 5; i++) {
+    bad = bad.concat(String.valueOf(i));
+}
+
+// GOOD : only one mutable object
+StringBuilder good = new StringBuilder();
+for (int i = 0; i < 5; i++) {
+    good.append(i);
+}
+System.out.println(bad);            // 01234
+System.out.println(good);           // 01234`}]},{id:1,section:`Java Collections Framework`,title:`Java Collections Framework`,note:[{text1:`The <b>Java Collections Framework (JCF)</b> is a <b>set of interfaces, classes, and algorithms</b> used to <b>store, manipulate, and process groups of objects</b> efficiently.
           
           Java Collection Framework (JCF) is a set of classes and interfaces that provide ready-made data structures to store and manipulate groups of objects efficiently.
 
@@ -4378,7 +4491,178 @@ Protected members are available outside the class.
 <b>4. Default (no keyword — package-private)</b>
 Accessible only within the same package
 Used when no specifier is written
-`,code1:``}]},{id:1,title:`Difference between String, String Builder, and String Buffer.`,note:[{text1:``,code1:``}]},{id:1,title:`Difference between Abstract class and Interface.`,note:[{text1:`The differences between Abstract Class and Interface are as follows: 
+`,code1:``}]},{id:1,title:`Difference between String, String Builder, and String Buffer.`,note:[{text1:``,code1:``}]},{id:1,title:`Difference between Abstract class and Interface.`,note:[{definition:`An <b>abstract class</b> is a class declared with the abstract keyword that <b>cannot be instantiated and can hold both implemented methods and abstract (unimplemented) methods, plus state (fields) and constructors</b>. An <b>interface</b> is a <b>contract that declares what a class can do, without saying how</b>, and a class can implement many interfaces. Use an abstract class for an <b>"is-a" relationship with shared code and state</b>, and an interface for a <b>"can-do" capability</b>.`,text1:`<b>Quick comparison</b>
+1. <b>Keyword</b>: abstract class is extended (extends). Interface is implemented (implements).
+2. <b>Multiple inheritance</b>: a class can extend <b>only one</b> abstract class, but can implement <b>many</b> interfaces. An interface can also extend multiple interfaces.
+3. <b>Methods</b>: abstract class can have abstract and normal (concrete) methods. Interface methods are abstract by default, and since <b>Java 8</b> can also have <b>default</b> and <b>static</b> methods, and since <b>Java 9</b> <b>private</b> methods.
+4. <b>Variables</b>: abstract class can have normal instance fields (any type, mutable). Interface variables are always <b>public static final</b> (constants).
+5. <b>Constructor</b>: abstract class <b>can have constructors</b> (called via super). Interface <b>cannot have constructors</b>.
+6. <b>Access modifiers</b>: abstract class members can be private, protected, public or default. Interface methods are <b>public</b> by default.
+7. <b>State</b>: abstract class can hold <b>object state</b>. Interface cannot hold instance state.
+8. <b>Relationship</b>: abstract class means <b>"is-a"</b> (Car is a Vehicle). Interface means <b>"can-do"</b> (Car can be Insurable).
+9. <b>Instantiation</b>: neither can be instantiated directly with new. You create an object of a concrete subclass or implementing class (or an anonymous class / lambda for functional interfaces).
+
+<b>When to use abstract class</b>
+Use it when related classes share <b>common code, common fields, or need a constructor</b>. Example: PaymentMethod holds the common amount, a common validate() method, and forces each child (UPI, Card) to implement its own pay().
+
+<b>When to use interface</b>
+Use it when <b>unrelated classes</b> must follow the same contract, or you need <b>multiple inheritance of type</b>. Example: Refundable and Notifiable can be implemented by UPI, Card, and even a Wallet class that has no common parent.
+
+<b>Key terms</b>
+<b>Abstract method</b>: a method with no body, declared with the abstract keyword. The child class <b>must</b> override it (unless the child is also abstract).
+<b>Default method</b>: an interface method with a body, added in Java 8 so interfaces can evolve <b>without breaking existing implementing classes</b>.
+<b>Functional interface</b>: an interface with <b>exactly one abstract method</b>, usable with lambdas (Runnable, Comparator).
+<b>Diamond problem</b>: ambiguity when two parents provide the same method. Java avoids it for classes (single inheritance). For interfaces with the same default method, the implementing class <b>must override</b> and can pick one using InterfaceName.super.method().
+
+<b>Important points to remember</b>
+<b>An abstract class does not need to have any abstract method</b>. It can be abstract just to stop instantiation.
+<b>A class that has even one abstract method must be declared abstract.</b>
+<b>Abstract methods cannot be private, final, or static</b>, because the child has to override them.
+A class can <b>extend one class and implement many interfaces</b> together: class UPI extends PaymentMethod implements Refundable, Notifiable.
+<b>Since Java 8 the gap has narrowed</b>, but interfaces still <b>cannot have instance fields or constructors</b>, so abstract class is still needed when you need state.
+<b>Rule of thumb</b>: start with an interface for flexibility. Move to (or add) an abstract class only when you need shared state or shared code.`,code1:`// --------------- Ex1 : Abstract class + Interface working together ---------------
+// Zomato style payment methods
+
+// INTERFACE: capability (can-do)
+interface Refundable {
+    int MAX_REFUND_DAYS = 7;            // public static final automatically
+
+    void refund(double amount);         // public abstract automatically
+
+    default void printRefundPolicy() {  // default method (Java 8+)
+        System.out.println("Refund allowed within " + MAX_REFUND_DAYS + " days");
+    }
+
+    static boolean isValidAmount(double amount) {   // static method (Java 8+)
+        return amount > 0;
+    }
+}
+
+// INTERFACE: another capability
+interface Notifiable {
+    void sendNotification(String message);
+}
+
+// ABSTRACT CLASS: common state + common code + forced contract (is-a)
+abstract class PaymentMethod {
+    protected String orderId;           // instance field (state)
+    protected double amount;
+
+    PaymentMethod(String orderId, double amount) {   // constructor
+        this.orderId = orderId;
+        this.amount = amount;
+    }
+
+    // concrete method: shared by all children
+    void validate() {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Invalid amount");
+        }
+        System.out.println("Order " + orderId + " validated for Rs." + amount);
+    }
+
+    // abstract method: every child MUST implement it
+    abstract void pay();
+}
+
+// CHILD: extends ONE abstract class, implements MANY interfaces
+class UpiPayment extends PaymentMethod implements Refundable, Notifiable {
+    private String upiId;
+
+    UpiPayment(String orderId, double amount, String upiId) {
+        super(orderId, amount);          // abstract class constructor
+        this.upiId = upiId;
+    }
+
+    @Override
+    void pay() {
+        validate();                      // inherited concrete method
+        System.out.println("Paid Rs." + amount + " using UPI id " + upiId);
+        sendNotification("Payment successful for " + orderId);
+    }
+
+    @Override
+    public void refund(double refundAmount) {
+        if (Refundable.isValidAmount(refundAmount)) {
+            System.out.println("Refunded Rs." + refundAmount + " to " + upiId);
+        }
+    }
+
+    @Override
+    public void sendNotification(String message) {
+        System.out.println("Notification: " + message);
+    }
+}
+
+class CashOnDelivery extends PaymentMethod {   // not Refundable, only the abstract class
+    CashOnDelivery(String orderId, double amount) {
+        super(orderId, amount);
+    }
+
+    @Override
+    void pay() {
+        validate();
+        System.out.println("Collect Rs." + amount + " in cash at the door");
+    }
+}
+
+public class AbstractVsInterfaceDemo {
+    public static void main(String[] args) {
+        // PaymentMethod p = new PaymentMethod("ZOM1", 100);   // ERROR: abstract, cannot instantiate
+        // Refundable r = new Refundable();                    // ERROR: interface, cannot instantiate
+
+        UpiPayment upi = new UpiPayment("ZOM123", 450, "anand@upi");
+        upi.pay();
+        upi.refund(450);
+        upi.printRefundPolicy();         // default method from the interface
+
+        PaymentMethod cod = new CashOnDelivery("ZOM124", 300);   // parent reference
+        cod.pay();                       // polymorphism
+
+        Refundable refundable = upi;     // interface reference
+        refundable.refund(100);
+    }
+}
+
+
+// --------------- Ex2 : Abstract class with NO abstract method + default method conflict ---------------
+// abstract class Utility {                  // abstract just to block new Utility()
+//     static int add(int a, int b) { return a + b; }
+// }
+//
+// interface A { default void show() { System.out.println("A"); } }
+// interface B { default void show() { System.out.println("B"); } }
+//
+// class C implements A, B {
+//     @Override
+//     public void show() {                  // MUST override to resolve the conflict
+//         A.super.show();                   // choose A's version (or B.super.show())
+//     }
+// }
+
+
+// --------------- Ex3 : Functional interface with lambda ---------------
+// @FunctionalInterface
+// interface Discount {
+//     double apply(double price);           // exactly one abstract method
+// }
+//
+// public class LambdaDemo {
+//     public static void main(String[] args) {
+//         Discount tenPercent = price -> price * 0.90;
+//         System.out.println(tenPercent.apply(450));   // 405.0
+//     }
+// }
+//
+// Expected output of Ex1:
+// Order ZOM123 validated for Rs.450.0
+// Paid Rs.450.0 using UPI id anand@upi
+// Notification: Payment successful for ZOM123
+// Refunded Rs.450.0 to anand@upi
+// Refund allowed within 7 days
+// Order ZOM124 validated for Rs.300.0
+// Collect Rs.300.0 in cash at the door
+// Refunded Rs.100.0 to anand@upi`},{text1:`The differences between Abstract Class and Interface are as follows: 
 <b>Abstract Class</b>: 
 • Abstract classes have a default constructor and it is called whenever the concrete subclass is instantiated. 
 • It contains Abstract methods as well as Non-Abstract methods. 
@@ -4700,7 +4984,223 @@ public class Main {
     // Sending Notification started by: Thread-1
     // Order Processing completed by: Thread-0
     // Sending Notification completed by: Thread-1
-`}]},{id:1,title:`Wrapper classes`,note:[{text1:`In Java, Wrapper classes are a set of classes that allow you to treat primitive data types (<b>like int, char, boolean</b>) as objects.
+`}]},{id:1,title:`race condition`,note:[{definition:`A <b>race condition</b> happens when <b>two or more threads access shared mutable data at the same time, and the final result depends on the unpredictable order (timing) in which the threads run</b>. At least one thread modifies the data, and nothing makes the access safe, so the outcome can be wrong, different on every run, and very hard to reproduce.`,text1:`A <b>race condition</b> occurs when multiple threads access and modify the same shared resource simultaneously, and the final result depends on the order in which the threads execute.
+
+  <b>Why it happens</b>
+An operation like count++ looks like one step, but it is really <b>three steps: read, add 1, write back</b>. This is not <b>atomic</b>. If two threads interleave between these steps, one update overwrites the other and is <b>lost</b>.
+
+<b>Example of lost update (count = 5)</b>
+1. Thread A reads 5.
+2. Thread B reads 5 (before A has written).
+3. Thread A writes 6.
+4. Thread B writes 6.
+Expected 7, got 6. One increment vanished.
+
+<b>Two common types of race condition</b>
+1. <b>Read-modify-write</b>: count++, balance = balance + amount. Threads overwrite each other's result.
+2. <b>Check-then-act</b>: if (stock > 0) { stock--; }. Another thread can change the value between the check and the act. Zomato example: only <b>1 biryani left</b>, two users click Order at the same moment, both see stock = 1, both pass the check, and stock becomes -1 (oversold).
+
+<b>Key terms</b>
+<b>Shared mutable state</b>: data that more than one thread can read and change. It is the root cause. If data is immutable or not shared, there is no race.
+<b>Critical section</b>: the block of code that touches shared data and must run by only one thread at a time.
+<b>Atomic operation</b>: an operation that completes fully or not at all, with no other thread seeing a half-done state.
+<b>Visibility</b>: without proper synchronization, one thread may not even see the latest value written by another thread.
+
+<b>How to fix it in Java</b>
+1. <b>synchronized</b> (method or block): only one thread can enter the critical section at a time, and it also guarantees visibility.
+2. <b>AtomicInteger / AtomicLong</b>: lock-free atomic operations like incrementAndGet(), good for simple counters.
+3. <b>ReentrantLock</b> (java.util.concurrent.locks): explicit lock and unlock, with more control (tryLock, timeouts). Always unlock in a finally block.
+4. <b>volatile</b>: gives visibility only. It does <b>NOT</b> make count++ atomic, so it does not fix read-modify-write races.
+5. <b>Thread-safe collections</b> such as ConcurrentHashMap instead of HashMap.
+6. <b>Avoid sharing</b>: use immutable objects, local variables, or ThreadLocal.
+
+<b>Important points to remember</b>
+<b>Race conditions do not throw exceptions.</b> The program runs and silently gives wrong results.
+<b>Bugs are intermittent.</b> It may work 100 times and fail on the 101st, so tests can pass while production fails.
+Keep the <b>synchronized block as small as possible</b>, since big locks reduce performance.
+Do the <b>check and the act inside the same lock</b>, otherwise the check-then-act race remains.
+Race condition is different from <b>deadlock</b> (threads waiting on each other forever) and from <b>data race</b> (unsynchronized access to the same variable, which is one specific cause of race conditions).`,code1:`// ----- Imagine a bank account has ₹1,000. Two threads try to withdraw ₹700 simultaneously. ----
+  class BankAccount {
+
+    int balance = 1000;
+
+    public void withdraw(int amount) {
+
+        if (balance >= amount) {
+
+            System.out.println(Thread.currentThread().getName()
+                    + " is processing withdrawal");
+
+            balance = balance - amount;
+
+            System.out.println(Thread.currentThread().getName()
+                    + " remaining balance: " + balance);
+        }
+    }
+}
+
+public class RaceConditionExample {
+
+    public static void main(String[] args) {
+
+        BankAccount account = new BankAccount();
+
+        Thread t1 = new Thread(() -> account.withdraw(700), "Thread-1");
+
+        Thread t2 = new Thread(() -> account.withdraw(700), "Thread-2");
+
+        t1.start();
+        t2.start();
+    }
+}
+
+// Expected Behaviour
+// - Initial balance = ₹1,000.
+// - Thread-1 withdraws ₹700.
+// - Remaining balance = ₹300.
+// - Thread-2 should not be allowed to withdraw ₹700 because only ₹300 is available.
+//----------------------
+// Step 1: Thread-1 checks the balance
+// - Thread-1 reads the current balance (₹1,000).
+// - It checks whether 1000 >= 700.
+// - Condition is true, so it proceeds with the withdrawal.
+// Step 2: Thread-2 checks the balance
+// - Before Thread-1 updates the balance, Thread-2 reads the balance (₹1,000).
+// - It checks whether 1000 >= 700.
+// - Condition is true, so it also proceeds with the withdrawal.
+// Step 3: Thread-1 calculates the remaining balance
+// - Thread-1 calculates 1000 - 700.
+// - Result = ₹300.
+// - The calculated result is ready to be assigned to balance.
+// Step 4: Thread-2 calculates the remaining balance
+// - Thread-2 also calculates 1000 - 700.
+// - Result = ₹300.
+// - It also prepares to update the balance.
+// Step 5: Thread-1 updates the balance
+// - Thread-1 assigns ₹300 to the shared balance variable.
+// - Current balance = ₹300.
+// Step 6: Thread-2 updates the balance
+// - Thread-2 also assigns ₹300 to the shared balance variable.
+// - Current balance = ₹300.
+
+// ----- What went wrong? ----
+// - Both threads read the same initial balance (₹1,000).
+// - Both threads independently checked the withdrawal condition.
+// - Both threads calculated the remaining balance using the same old value.
+// - Both threads updated the same shared variable.
+// - As a result, the balance is ₹300 instead of the expected -₹400 if both withdrawals were allowed.
+
+
+
+  // --------------- Ex1 : Lost update (read-modify-write race) ---------------
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class RaceConditionDemo {
+
+    static int unsafeCount = 0;                         // shared, NOT protected
+    static int syncCount = 0;                           // protected by synchronized
+    static AtomicInteger atomicCount = new AtomicInteger(0); // protected by atomics
+
+    static void unsafeIncrement() {
+        unsafeCount++;           // read -> add -> write (3 steps, not atomic)
+    }
+
+    static synchronized void syncIncrement() {
+        syncCount++;             // only one thread at a time
+    }
+
+    // Runs the task 100000 times in each of 2 threads and waits for both
+    static void runTwoThreads(Runnable task) throws InterruptedException {
+        Runnable loop = () -> {
+            for (int i = 0; i < 100000; i++) {
+                task.run();
+            }
+        };
+        Thread t1 = new Thread(loop, "Thread-A");
+        Thread t2 = new Thread(loop, "Thread-B");
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+    }
+
+    public static void main(String[] args) throws Exception {
+        runTwoThreads(RaceConditionDemo::unsafeIncrement);
+        runTwoThreads(RaceConditionDemo::syncIncrement);
+        runTwoThreads(() -> atomicCount.incrementAndGet());
+
+        System.out.println("Expected          : 200000");
+        System.out.println("Unsafe (race)     : " + unsafeCount);   // usually LESS than 200000, changes every run
+        System.out.println("synchronized      : " + syncCount);     // always 200000
+        System.out.println("AtomicInteger     : " + atomicCount.get()); // always 200000
+    }
+}
+
+
+// --------------- Ex2 : Check-then-act race (Zomato last biryani) ---------------
+// class BiryaniStock {
+//     private int stock = 1;
+//
+//     // UNSAFE: two threads can both pass the check before either decrements
+//     public boolean orderUnsafe(String user) throws InterruptedException {
+//         if (stock > 0) {                  // CHECK
+//             Thread.sleep(10);             // simulates delay, makes the race easy to see
+//             stock--;                      // ACT
+//             System.out.println(user + " got the biryani, stock = " + stock);
+//             return true;
+//         }
+//         return false;
+//     }
+//
+//     // SAFE: check and act happen together inside one lock
+//     public synchronized boolean orderSafe(String user) throws InterruptedException {
+//         if (stock > 0) {
+//             Thread.sleep(10);
+//             stock--;
+//             System.out.println(user + " got the biryani, stock = " + stock);
+//             return true;
+//         }
+//         System.out.println(user + " : sold out");
+//         return false;
+//     }
+//
+//     public static void main(String[] args) throws Exception {
+//         BiryaniStock shop = new BiryaniStock();
+//         Thread u1 = new Thread(() -> { try { shop.orderUnsafe("User1"); } catch (Exception e) {} });
+//         Thread u2 = new Thread(() -> { try { shop.orderUnsafe("User2"); } catch (Exception e) {} });
+//         u1.start(); u2.start();
+//         u1.join(); u2.join();
+//         // Unsafe output: both users get it and stock becomes -1 (oversold)
+//         // Replace orderUnsafe with orderSafe: one user gets it, the other sees "sold out"
+//     }
+// }
+
+
+// --------------- Ex3 : ReentrantLock version of the fix ---------------
+// import java.util.concurrent.locks.ReentrantLock;
+//
+// class SafeCounter {
+//     private int count = 0;
+//     private final ReentrantLock lock = new ReentrantLock();
+//
+//     public void increment() {
+//         lock.lock();
+//         try {
+//             count++;
+//         } finally {
+//             lock.unlock();   // ALWAYS unlock in finally
+//         }
+//     }
+//
+//     public int get() {
+//         lock.lock();
+//         try {
+//             return count;
+//         } finally {
+//             lock.unlock();
+//         }
+//     }
+// }`}]},{id:1,title:`Wrapper classes`,note:[{text1:`In Java, Wrapper classes are a set of classes that allow you to treat primitive data types (<b>like int, char, boolean</b>) as objects.
 
 Since Java is an object-oriented language, many features (such as Collections like <b>ArrayList, HashMap, or Generics</b>) only work with objects. Wrapper classes bridge the gap between the primitive world and the object world.
 
@@ -4834,7 +5334,446 @@ A deep copy creates a new object and recursively copies all objects found in the
 The standard way to perform a shallow copy is by implementing the <b>Cloneable</b> interface and overriding the <b>clone()</b> method. By default, <b>super.clone()</b> performs a shallow copy.
 
 <a href="https://github.com/anand-developer01/java-programs/blob/main/ShallowCopyVsDeepCopy.java" target="_blank">Shallow Copy Vs Deep Copy</a>
-    `,code1:``}]}]},ir={reactNote:[{id:5,title:`new topic`,note:[{text1:``,code1:``}]},{id:5,title:`new topic`,note:[{text1:``,code1:``},{text1:``,code1:``},{text1:``,code1:``}]},{id:2,title:`intro`,note:[{text1:`<b> create-react-app and react-scripts </b> 
+    `,code1:``}]},{id:1,title:`What is Webhook in Java, how does it work (Interview Level)`,note:[{definition:`<b>A Webhook is an HTTP callback.</b> It is a mechanism where <b>one system (provider) automatically sends an HTTP POST request to a URL of another system (consumer)</b> the moment an <b>event</b> happens, so the consumer does not need to keep asking "is there any update?". It is also called <b>"Reverse API"</b> or <b>"Push-based API"</b> : instead of you calling the API, the API calls you. In Java, the consumer side is usually a <b>REST endpoint (Spring Boot @RestController)</b>, and the sender side uses <b>HttpClient / RestTemplate / WebClient</b>.`,text1:`<b>Interview Definition :</b><br>
+<b>Webhook = Event + HTTP POST + Callback URL.</b> You register a <b>public callback URL</b> with the provider (Razorpay, Stripe, GitHub, PayPal, Twilio, Slack). When an event occurs (payment success, code pushed, SMS delivered), the provider sends a <b>JSON payload</b> to your URL. Your Java application receives it, <b>verifies it</b>, <b>processes it</b> and replies with <b>HTTP 2xx</b> quickly.<br><br>
+
+<b>Polling vs Webhook (Most asked) :</b><br>
+<b>Polling (Pull) :</b> client calls the server every few seconds asking for status. Wastes requests and has delay.<br>
+<b>Webhook (Push) :</b> server calls the client only when something happens. <b>Real time, fewer calls, less load.</b><br>
+<b>Webhook vs API :</b> in a normal API <b>you are the client</b>, in a webhook <b>you are the server</b> and the provider is the client.<br>
+<b>Webhook vs WebSocket :</b> webhook is a <b>one time HTTP request per event</b> (server to server, no open connection). WebSocket is a <b>persistent two way connection</b> (usually browser to server).<br><br>
+
+<b>How does it work? (Step by step flow)</b><br>
+1. <b>Register :</b> you give your callback URL (for example https://myapp.com/webhooks/payment) and a <b>secret key</b> to the provider dashboard.<br>
+2. <b>Event happens :</b> customer completes the payment on the provider side.<br>
+3. <b>Provider sends HTTP POST :</b> JSON body + headers (event id, <b>signature</b>) to your URL.<br>
+4. <b>Your endpoint receives :</b> reads the <b>raw body</b> and the signature header.<br>
+5. <b>Verify signature :</b> calculate <b>HMAC-SHA256</b> of the raw body using the shared secret and compare it with the header. Reject with <b>401</b> if it does not match.<br>
+6. <b>Check idempotency :</b> if this <b>event id</b> was already processed, ignore it (providers can send the same event more than once).<br>
+7. <b>Respond fast with 200 OK</b> and process the heavy work <b>asynchronously</b> (update order, send email, generate invoice).<br>
+8. <b>Retry :</b> if you return non-2xx or time out, the provider <b>retries</b> with exponential backoff (for example after 1 min, 5 min, 30 min ...), so your logic must be safe for duplicates.<br><br>
+
+<b>Webhook Receiver in Java (Spring Boot) - Key Points :</b><br>
+1. Create a <b>@PostMapping</b> endpoint that is <b>publicly reachable</b> (use <b>ngrok</b> for local testing).<br>
+2. Read the body as <b>raw String (@RequestBody String)</b> for signature verification. If you let Spring convert it to an object first, the raw bytes change and the signature will not match.<br>
+3. <b>Always verify the signature</b> (HMAC), otherwise anybody can call your URL and fake a "payment success".<br>
+4. Use <b>MessageDigest.isEqual()</b> for comparison (constant time) to avoid timing attacks.<br>
+5. Make the handler <b>idempotent</b> (store processed event ids in DB with a unique constraint).<br>
+6. <b>Return 200 quickly</b> (within a few seconds) and push the heavy work to <b>@Async / queue (Kafka, RabbitMQ)</b>.<br>
+7. <b>Use HTTPS</b> only, and keep the secret in <b>environment variables / vault</b>, never in code.<br>
+8. <b>Log the event id and payload</b> for debugging and replay.<br><br>
+
+<b>Webhook Sender in Java - Key Points (when your system is the provider) :</b><br>
+1. Store subscriber URLs + secret in DB.<br>
+2. When the event happens, build JSON, <b>sign it</b> (HMAC) and send POST with <b>java.net.http.HttpClient</b> (Java 11+) or <b>WebClient</b>.<br>
+3. Set <b>connect and read timeouts</b>, and <b>retry with backoff</b> on failure.<br>
+4. After max retries move the event to a <b>dead letter / failed table</b> for manual replay.<br><br>
+
+<b>Real-time examples :</b><br>
+1. <b>Payment gateway (Razorpay / Stripe / PayPal) :</b> user pays, the browser may close before returning to your site, but the gateway still sends <b>payment.success</b> webhook, so your order is marked PAID reliably.<br>
+2. <b>GitHub :</b> on every push, GitHub calls your Jenkins / CI server URL, which starts the build automatically (CI/CD trigger).<br>
+3. <b>Twilio / SMS :</b> delivery status (delivered / failed) is posted to your URL.<br>
+4. <b>Slack / Teams alerts :</b> your Java app posts a JSON message to an incoming webhook URL to send alerts to a channel (here you are the sender).<br>
+5. <b>E-commerce shipping :</b> courier service sends "out for delivery" and "delivered" events to update the order status page.<br><br>
+
+<b>Common Problems and Solutions :</b><br>
+<b>Duplicate events</b> : use event id + unique DB constraint (idempotency).<br>
+<b>Out of order events</b> : check the event timestamp / status before updating.<br>
+<b>Slow endpoint causing retries</b> : respond 200 first, process async.<br>
+<b>Fake calls</b> : verify HMAC signature (and optionally allow only provider IPs).<br>
+<b>Lost events when your server is down</b> : provider retries, and you can also use the provider's "resend event" option or a reconciliation job.<br><br>
+
+<b>Common Interview Questions :</b><br>
+Q1. What is a webhook? <b>An HTTP callback where the provider POSTs event data to your URL when something happens.</b><br>
+Q2. Webhook vs polling? <b>Webhook is push based and real time, polling is pull based and wasteful.</b><br>
+Q3. How do you secure a webhook? <b>HTTPS + HMAC signature verification + secret in vault + optional IP allow list + replay protection with timestamp.</b><br>
+Q4. How do you handle duplicate webhook calls? <b>Idempotency using the unique event id.</b><br>
+Q5. What status code should you return? <b>200 / 2xx on success. Non-2xx or timeout triggers a retry.</b><br>
+Q6. Why return 200 quickly and process later? <b>To avoid provider timeouts and retries, so use @Async or a message queue.</b><br>
+Q7. How to test locally? <b>ngrok / localtunnel to expose localhost, or Postman / curl to send a sample payload.</b><br>
+Q8. Webhook vs WebSocket? <b>Webhook is a one time server to server HTTP call, WebSocket is a persistent two way connection.</b><br>
+Q9. Why read the raw body? <b>The signature is calculated on the exact raw bytes, any re-serialization changes it.</b><br>
+Q10. Which Java classes are used? <b>Spring: @RestController, @PostMapping, @RequestHeader, @Async. Sender: HttpClient, WebClient, RestTemplate. Security: Mac (HmacSHA256), MessageDigest.isEqual.</b>`,code1:`// --------------- Ex1 : Polling vs Webhook (concept) ---------------
+// POLLING (bad) : client keeps asking
+// while (true) {
+//     status = callApi("/payments/1001/status");   // every 5 seconds
+//     if (status.equals("PAID")) break;
+//     Thread.sleep(5000);
+// }
+//
+// WEBHOOK (good) : provider calls us once when payment is done
+// POST https://myapp.com/webhooks/payment
+// Header : X-Signature: 9f2c...
+// Body   : {"eventId":"evt_101","type":"payment.success","orderId":"ORD-1001","amount":499}
+
+
+// --------------- Ex2 : Webhook receiver (Spring Boot controller) ---------------
+@RestController
+@RequestMapping("/webhooks")
+public class PaymentWebhookController {
+
+    private final WebhookService webhookService;
+
+    public PaymentWebhookController(WebhookService webhookService) {
+        this.webhookService = webhookService;
+    }
+
+    @PostMapping("/payment")
+    @ResponseStatus(HttpStatus.OK)
+    public void receive(@RequestBody String rawPayload,
+                        @RequestHeader("X-Signature") String signature) throws Exception {
+
+        // 1. verify signature using RAW body
+        if (!SignatureUtil.isValid(rawPayload, signature, System.getenv("WEBHOOK_SECRET"))) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid signature");
+        }
+
+        // 2. hand over to async processing and return 200 immediately
+        webhookService.process(rawPayload);
+    }
+}
+
+
+// --------------- Ex3 : HMAC SHA256 signature verification ---------------
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.util.HexFormat;
+
+public class SignatureUtil {
+
+    public static boolean isValid(String payload, String receivedSignature, String secret) throws Exception {
+        Mac mac = Mac.getInstance("HmacSHA256");
+        mac.init(new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), "HmacSHA256"));
+
+        byte[] hash = mac.doFinal(payload.getBytes(StandardCharsets.UTF_8));
+        String expected = HexFormat.of().formatHex(hash);          // Java 17+
+
+        // constant time comparison (prevents timing attack)
+        return MessageDigest.isEqual(
+                expected.getBytes(StandardCharsets.UTF_8),
+                receivedSignature.getBytes(StandardCharsets.UTF_8));
+    }
+}
+
+
+// --------------- Ex4 : Idempotent + asynchronous processing ---------------
+@Service
+public class WebhookService {
+
+    private final ProcessedEventRepository eventRepo;
+    private final OrderService orderService;
+
+    public WebhookService(ProcessedEventRepository eventRepo, OrderService orderService) {
+        this.eventRepo = eventRepo;
+        this.orderService = orderService;
+    }
+
+    @Async                                  // needs @EnableAsync on the main class
+    public void process(String rawPayload) {
+        // parse JSON (Jackson ObjectMapper) -> eventId, type, orderId
+        String eventId = "evt_101";
+        String type = "payment.success";
+        String orderId = "ORD-1001";
+
+        // idempotency : provider may send the same event again (retry)
+        if (eventRepo.existsById(eventId)) {
+            return;                         // already processed, ignore
+        }
+
+        if (type.equals("payment.success")) {
+            orderService.markAsPaid(orderId);       // update DB
+            // send email, generate invoice, reduce stock ...
+        }
+
+        eventRepo.save(new ProcessedEvent(eventId));   // unique key on eventId
+    }
+}
+
+
+// --------------- Ex5 : Webhook sender using java.net.http.HttpClient (Java 11+) ---------------
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.Duration;
+
+public class WebhookSender {
+
+    private static final HttpClient client = HttpClient.newBuilder()
+            .connectTimeout(Duration.ofSeconds(5))
+            .build();
+
+    public static int send(String url, String json, String secret) throws Exception {
+        String signature = SignatureUtil.sign(json, secret);   // same HMAC logic, returns hex
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(url))
+                .timeout(Duration.ofSeconds(10))
+                .header("Content-Type", "application/json")
+                .header("X-Signature", signature)
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        return response.statusCode();             // 2xx = delivered
+    }
+
+    public static void main(String[] args) throws Exception {
+        String json = """
+                {"eventId":"evt_101","type":"payment.success","orderId":"ORD-1001","amount":499}
+                """;
+        int status = send("https://myapp.com/webhooks/payment", json, "my_secret");
+        System.out.println("Delivery status : " + status);
+    }
+}
+
+
+// --------------- Ex6 : Retry with exponential backoff (sender side) ---------------
+public static boolean sendWithRetry(String url, String json, String secret) throws Exception {
+    int maxAttempts = 5;
+    long delayMs = 1000;                          // 1 sec
+
+    for (int attempt = 1; attempt <= maxAttempts; attempt++) {
+        try {
+            int status = WebhookSender.send(url, json, secret);
+            if (status >= 200 && status < 300) {
+                return true;                      // delivered
+            }
+        } catch (Exception e) {
+            System.out.println("Attempt " + attempt + " failed : " + e.getMessage());
+        }
+        Thread.sleep(delayMs);
+        delayMs = delayMs * 2;                    // 1s, 2s, 4s, 8s, 16s
+    }
+    return false;                                 // save to failed table / dead letter for manual replay
+}
+
+
+// --------------- Ex7 : Sending alert to Slack incoming webhook (real time) ---------------
+String slackUrl = System.getenv("SLACK_WEBHOOK_URL");
+String message = """
+        {"text":"Order ORD-1001 payment failed. Please check."}
+        """;
+
+HttpRequest slackRequest = HttpRequest.newBuilder()
+        .uri(URI.create(slackUrl))
+        .header("Content-Type", "application/json")
+        .POST(HttpRequest.BodyPublishers.ofString(message))
+        .build();
+
+HttpClient.newHttpClient().send(slackRequest, HttpResponse.BodyHandlers.ofString());
+// Slack posts the message into the channel. Here OUR app is the webhook sender.
+
+
+// --------------- Ex8 : Local testing with curl (ngrok exposes localhost) ---------------
+// ngrok http 8080   -> gives https://abc123.ngrok.io (use this as callback URL in provider dashboard)
+//
+// curl -X POST http://localhost:8080/webhooks/payment
+//      -H "Content-Type: application/json"
+//      -H "X-Signature: <calculated-hmac>"
+//      -d '{"eventId":"evt_101","type":"payment.success","orderId":"ORD-1001","amount":499}'
+//
+// Expected : 200 OK for valid signature, 401 for wrong signature`},{definition:`A webhook is an HTTP callback: instead of your server repeatedly asking a service "has it happened yet?" (polling), the service calls a URL on your server the moment the event happens. In a Zomato UPI payment, the payment gateway (Razorpay, PayU, etc.) is the sender and Zomato's backend is the receiver.`,text1:`Scenario: you order biryani for Rs.450 on Zomato and pay with UPI.
+1. Zomato creates an order (ZOM123) with status PAYMENT_PENDING and asks the gateway to start a Rs.450 payment.
+2. The gateway sends a UPI request to your app (GPay/PhonePe) and you approve it with your UPI PIN.
+3. Your bank debits the money and NPCI tells the gateway. This can take a few seconds, or longer if the bank is slow. Meanwhile, Zomato's server doesn't know if you paid, failed, or closed the app.
+4. The gateway sends an HTTP POST (the webhook) to Zomato's registered URL, e.g. /webhooks/payment, with event "payment.captured".
+5. Zomato verifies the signature, marks the order PAID, notifies the restaurant, assigns a rider and pushes "Order confirmed!" to your app.
+Why webhook over polling: no wasted requests, near real-time, and it works even if you closed the app after paying.
+
+Rules for a real implementation: 
+(a) verify the HMAC signature so fake "success" calls are rejected, 
+(b) be idempotent because gateways retry and the same event can arrive 2-3 times, 
+(c) return 200 quickly and do heavy work on a background thread pool or queue, 
+(d) don't trust event order, so check the current order state before changing it, 
+(e) run a reconciliation job for orders stuck in PAYMENT_PENDING because webhooks can be lost. The webhook is the source of truth for money, the app redirect is only for UX.
+Java notes: ConcurrentHashMap.newKeySet() gives a thread-safe set for idempotency (add() returns false for duplicates), ExecutorService runs the heavy jobs off the request thread, and MessageDigest.isEqual compares signatures in constant time.`,code1:`// --------------- Ex1 : ---------------
+// Zomato backend receiving a UPI payment webhook (Java 17+, no external libraries)
+
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpServer;
+
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import java.net.InetSocketAddress;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.util.HexFormat;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ZomatoWebhookServer {
+
+    private static final String WEBHOOK_SECRET = "shared_secret_from_gateway";
+    private static final char QUOTE = '"';
+
+    static class Order {
+        String status;
+        long amount; // in paise
+        Order(String status, long amount) {
+            this.status = status;
+            this.amount = amount;
+        }
+    }
+
+    // In-memory stores (use a DB / Redis in real life)
+    private static final Map<String, Order> orders = new ConcurrentHashMap<>();
+    private static final Set<String> processedEvents = ConcurrentHashMap.newKeySet();
+
+    // Background workers: heavy work happens here, not in the request thread
+    private static final ExecutorService jobPool = Executors.newFixedThreadPool(3);
+
+    public static void main(String[] args) throws Exception {
+        orders.put("ZOM123", new Order("PAYMENT_PENDING", 45000));
+
+        HttpServer server = HttpServer.create(new InetSocketAddress(3000), 0);
+        server.createContext("/webhooks/payment", ZomatoWebhookServer::handleWebhook);
+        server.start();
+        System.out.println("Zomato server on 3000");
+    }
+
+    private static void handleWebhook(HttpExchange exchange) {
+        try {
+            if (!"POST".equals(exchange.getRequestMethod())) {
+                reply(exchange, 405);
+                return;
+            }
+
+            String rawBody = new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8);
+            String signature = exchange.getRequestHeaders().getFirst("x-signature");
+
+            // 1. Verify signature (reject fake calls)
+            String expected = hmacSha256Hex(rawBody, WEBHOOK_SECRET);
+            boolean valid = signature != null && MessageDigest.isEqual(
+                    expected.getBytes(StandardCharsets.UTF_8),
+                    signature.getBytes(StandardCharsets.UTF_8));
+            if (!valid) {
+                reply(exchange, 400);
+                return;
+            }
+
+            String eventId = field(rawBody, "event_id");
+            String eventType = field(rawBody, "event");
+            String orderId = field(rawBody, "order_id");
+            long amount = Long.parseLong(field(rawBody, "amount"));
+
+            // 2. Idempotency: add() returns false if we already saw this event
+            if (!processedEvents.add(eventId)) {
+                reply(exchange, 200);
+                return;
+            }
+
+            // 3. Respond fast, do the rest after
+            reply(exchange, 200);
+
+            // 4. Check current state before applying the change
+            Order order = orders.get(orderId);
+            if (order == null) return;
+
+            synchronized (order) {
+                if (!"PAYMENT_PENDING".equals(order.status)) return;
+
+                if ("payment.captured".equals(eventType) && amount == order.amount) {
+                    order.status = "PAID";
+                    queueJob("notify-restaurant", orderId);
+                    queueJob("assign-rider", orderId);
+                    queueJob("push-notification", orderId);
+                    System.out.println("Order " + orderId + " marked PAID");
+                } else if ("payment.failed".equals(eventType)) {
+                    order.status = "PAYMENT_FAILED";
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            reply(exchange, 500);
+        }
+    }
+
+    private static void queueJob(String name, String orderId) {
+        // Replace with a real queue (Kafka, SQS, RabbitMQ, etc.)
+        jobPool.submit(() ->
+            System.out.println("Job " + name + " done for " + orderId
+                    + " on " + Thread.currentThread().getName()));
+    }
+
+    private static String hmacSha256Hex(String data, String secret) throws Exception {
+        Mac mac = Mac.getInstance("HmacSHA256");
+        mac.init(new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), "HmacSHA256"));
+        return HexFormat.of().formatHex(mac.doFinal(data.getBytes(StandardCharsets.UTF_8)));
+    }
+
+    private static void reply(HttpExchange exchange, int code) {
+        try {
+            exchange.sendResponseHeaders(code, -1);
+        } catch (Exception ignored) {
+        } finally {
+            exchange.close();
+        }
+    }
+
+    // Tiny JSON field reader for this demo (use Jackson/Gson in real projects)
+    private static String field(String json, String key) {
+        String marker = QUOTE + key + QUOTE;
+        int k = json.indexOf(marker);
+        if (k < 0) return null;
+        int start = json.indexOf(':', k + marker.length()) + 1;
+        while (json.charAt(start) == ' ') start++;
+        int end;
+        if (json.charAt(start) == QUOTE) {
+            start++;
+            end = json.indexOf(QUOTE, start);
+        } else {
+            end = start;
+            while (end < json.length() && ",} ".indexOf(json.charAt(end)) < 0) end++;
+        }
+        return json.substring(start, end);
+    }
+}
+
+
+// ---- Fake gateway (separate file: FakeGateway.java) to simulate the webhook ----
+// import javax.crypto.Mac;
+// import javax.crypto.spec.SecretKeySpec;
+// import java.net.URI;
+// import java.net.http.HttpClient;
+// import java.net.http.HttpRequest;
+// import java.net.http.HttpResponse;
+// import java.nio.charset.StandardCharsets;
+// import java.util.HexFormat;
+//
+// public class FakeGateway {
+//     public static void main(String[] args) throws Exception {
+//         String q = String.valueOf('"');
+//         String payload = "{" + q + "event_id" + q + ":" + q + "evt_001" + q + ","
+//                 + q + "event" + q + ":" + q + "payment.captured" + q + ","
+//                 + q + "payment_id" + q + ":" + q + "pay_9xK2" + q + ","
+//                 + q + "order_id" + q + ":" + q + "ZOM123" + q + ","
+//                 + q + "amount" + q + ":45000}";
+//
+//         Mac mac = Mac.getInstance("HmacSHA256");
+//         mac.init(new SecretKeySpec("shared_secret_from_gateway".getBytes(StandardCharsets.UTF_8), "HmacSHA256"));
+//         String signature = HexFormat.of().formatHex(mac.doFinal(payload.getBytes(StandardCharsets.UTF_8)));
+//
+//         HttpRequest request = HttpRequest.newBuilder()
+//                 .uri(URI.create("http://localhost:3000/webhooks/payment"))
+//                 .header("Content-Type", "application/json")
+//                 .header("x-signature", signature)
+//                 .POST(HttpRequest.BodyPublishers.ofString(payload))
+//                 .build();
+//
+//         HttpClient client = HttpClient.newHttpClient();
+//         for (int i = 1; i <= 2; i++) { // send twice to see idempotency
+//             HttpResponse<String> res = client.send(request, HttpResponse.BodyHandlers.ofString());
+//             System.out.println("Attempt " + i + " -> HTTP " + res.statusCode());
+//         }
+//     }
+// }
+// Expected server output: "Order ZOM123 marked PAID" once, then 3 job lines. The second send is ignored.`}]}]},ir={reactNote:[{id:5,title:`new topic`,note:[{text1:``,code1:``}]},{id:5,title:`new topic`,note:[{text1:``,code1:``},{text1:``,code1:``},{text1:``,code1:``}]},{id:2,title:`intro`,note:[{text1:`<b> create-react-app and react-scripts </b> 
           react-scripts is a set of scripts from the create-react-app starter pack. create-react-app helps you kick off projects without configuring, so you do not have to setup your project by yourself.
 
 react-scripts start sets up the development environment and starts a server, as well as hot module reloading. 
