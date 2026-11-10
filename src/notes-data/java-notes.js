@@ -67,7 +67,11 @@ java Hello
 // The java launcher starts a JVM, which loads and executes Hello.class.`
                 },
                 {
-                    definition: `<b>JDK (Java Development Kit)</b> is a software development kit that provides all the tools required to <b>develop, compile, debug, and run Java applications.</b> It includes the JRE (or runtime components in modern JDK distributions), development tools such as the Java compiler (javac), debugger (jdb), and the Java runtime environment.`,
+                    definition: `<b>JDK (Java Development Kit)</b> is a software development kit that provides all the tools required to <b>develop, compile, debug, and run Java applications.</b> It includes the JRE (or runtime components in modern JDK distributions), development tools such as the Java compiler (javac), debugger (jdb), and the Java runtime environment.
+                    or 
+                    JDK is a software development kit that provides all the tools required to develop, compile, debug, and run Java applications.
+
+Think of JDK as a complete toolbox for Java developers.`,
                     text1: `<b>JDK (Java Development Kit)</b> <b>In simple terms:</b> JDK is required when you want to develop Java applications. It provides the compiler to convert Java source code (.java) into bytecode (.class), along with tools required for development and execution.
 
 <b>Important JDK tools:</b>
@@ -78,10 +82,9 @@ java Hello
 5. <b>javadoc:</b> Generates documentation from Java source code.
 6. <b>jshell:</b> Provides an interactive environment to execute Java code.
 <b>Real-time example:</b>
-
 When a developer creates a Spring Boot application, they write Java code, compile it, debug it, and run it. The JDK provides the tools needed for these development activities.
-
-<b>Interview point:</b> Without a JDK, you cannot use the standard Java development compiler (javac) to compile Java source code.`,
+<b>Interview point:</b> Without a JDK, you cannot use the standard Java development compiler (javac) to compile Java source code.
+`,
                     code1: `// --------------- Ex1 : JDK ---------------
 
 // HelloWorld.java
@@ -114,7 +117,12 @@ java HelloWorld
 // The java launcher starts the application using the JVM.`
                 },
                 {
-                    definition: `<b>JRE (Java Runtime Environment)</b> is the runtime environment required to execute Java applications. It provides the JVM and the supporting class libraries and runtime components required by Java applications.`,
+                    definition: `<b>JRE (Java Runtime Environment)</b> is the runtime environment required to execute Java applications. It provides the JVM and the supporting class libraries and runtime components required by Java applications.
+                    or
+                    JRE provides the environment required to run Java applications.
+
+Think of JRE as a complete environment containing the JVM and supporting libraries required to run Java applications.
+                    `,
                     text1: `<b>JRE (Java Runtime Environment)</b> <b>In simple terms:</b> JRE provides the environment required to run Java applications. It contains the JVM, Java class libraries, and other supporting runtime components.
 
 <b>Major components of JRE:</b>
@@ -122,18 +130,34 @@ java HelloWorld
 2. <b>Java Class Libraries:</b> Provide predefined classes and APIs such as String, ArrayList, HashMap, and File.
 3. <b>Supporting Runtime Components:</b> Provide the functionality required for application execution.
 <b>Real-time example:</b>
-
 Suppose a developer has developed a banking application and compiled it into bytecode.
-
 Another employee wants to execute that application on their machine. They need a compatible Java runtime environment to execute it.
-
 Traditionally, installing a JRE was sufficient to run Java applications without installing the complete development kit.
 
 <b>Important interview point:</b>
-
 JRE is primarily responsible for running Java applications, whereas JDK provides the tools required to develop Java applications.
 
-<b>Version clarification:</b> Starting with Java 9, Oracle stopped distributing a separate traditional JRE as part of its standard JDK distribution. Modern Java installations commonly use a JDK or a custom runtime image created using jlink. Therefore, the traditional JDK → JRE → JVM relationship is a conceptual explanation rather than a strict description of every modern Java installation.`,
+<b>Version clarification:</b> Starting with Java 9, Oracle stopped distributing a separate traditional JRE as part of its standard JDK distribution. Modern Java installations commonly use a JDK or a custom runtime image created using jlink. Therefore, the traditional JDK → JRE → JVM relationship is a conceptual explanation rather than a strict description of every modern Java installation.
+
+// ----------------------    -----------------
+<b>What does JRE contain?</b>
+1. JVM
+2. Java class libraries
+3. Supporting runtime files
+
+<b>Example</b>:
+Suppose you download a Java application from the internet.
+You don't need to develop or compile that application.
+You just need an environment to run it.
+That's where JRE comes into the picture.
+
+Important interview points:
+- JRE provides the runtime environment.
+- JRE contains JVM.
+- JRE contains Java libraries required for execution.
+- Traditionally, JRE was distributed separately from JDK.
+- Modern Java distributions generally provide runtime images through JDK tools rather than a separate standard JRE download. 
+`,
                     code1: `// --------------- Ex2 : JRE ---------------
 
 // Consider a banking application.
@@ -172,6 +196,94 @@ java BankApplication
 // Customer: Anand
 // Balance: 50000`
                 },
+
+
+
+
+
+                {
+    definition: `<b>JVM (Java Virtual Machine):</b> JVM is a virtual machine that executes Java bytecode (.class files) and converts it into machine-understandable instructions. It acts as an execution engine for Java applications.`,
+    text1: `Think of JVM as an engine that runs your Java program.
+
+<b>How does JVM work?</b>
+Suppose you write the following Java program:
+<b>Step 1: Write Java source code (.java file)</b>
+You write a Java program using a text editor or IDE.
+<b>Step 2: Compile the Java file</b>
+The Java compiler (javac), which is part of JDK, converts Java source code into bytecode.
+<b>Step 3: Generate bytecode (.class file)</b>
+The compiler generates a .class file containing platform-independent bytecode.
+<b>Step 4: Execute bytecode using JVM</b>
+JVM loads, verifies, and executes the bytecode. It uses an interpreter and JIT compiler to execute instructions efficiently.
+<b>Step 5: Display the output</b>
+The Java program executes and displays the expected output.
+
+// ----------------- Important Interview Points -----------------
+1. JVM executes Java bytecode (.class files).
+2. JVM provides platform independence for Java bytecode.
+3. JVM manages memory during program execution.
+4. JVM performs Garbage Collection to remove unreachable objects.
+5. JVM provides runtime security through bytecode verification and other mechanisms.
+6. JVM uses an interpreter and JIT (Just-In-Time) compiler to execute bytecode efficiently.
+7. JVM is platform-dependent. Different operating systems have their own JVM implementations.
+8. JVM is responsible for loading, verifying, and executing Java bytecode.
+
+// ----------------- Remember -----------------
+JVM = Java Virtual Machine
+JVM is the execution engine that runs Java bytecode.
+Java bytecode is platform-independent, but JVM implementations are platform-dependent.`,
+    code1: `// ----------------- Example: JVM Execution -----------------
+
+// Hello.java
+
+public class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello Java");
+    }
+}
+
+// ----------------- Step 1: Compile Java File -----------------
+
+javac Hello.java
+
+// javac is the Java compiler.
+// It converts Hello.java into Hello.class.
+
+// ----------------- Step 2: Generated Bytecode File -----------------
+
+Hello.class
+
+// Hello.class contains Java bytecode.
+
+// ----------------- Step 3: Execute Java Program -----------------
+
+java Hello
+
+// The JVM loads and executes the bytecode.
+
+// Output:
+// Hello Java
+
+// ----------------- Execution Flow -----------------
+
+Hello.java
+    |
+    | javac (Java Compiler)
+    |
+    v
+Hello.class (Bytecode)
+    |
+    | JVM
+    |
+    v
+Machine Instructions
+    |
+    v
+Output: Hello Java
+`
+},
+
+
                 {
                     definition: `<b>JVM (Java Virtual Machine)</b> is an abstract virtual machine that provides the runtime environment to execute Java bytecode. It loads, verifies, and executes bytecode by interpreting instructions and using Just-In-Time (JIT) compilation to optimize frequently executed code into native machine code.`,
                     text1: `<b>JVM (Java Virtual Machine)</b>  <b>In simple terms:</b> JVM is responsible for executing Java bytecode. It acts as an intermediary between Java bytecode and the underlying operating system and hardware.
