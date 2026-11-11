@@ -3153,17 +3153,69 @@ export const EnglishList = {
         },
         {
             id: 11,
-            topic: "accent - (యాస)",
-            explain: '',
-            formation: '',
+            topic: "yet and not yet",
+            explain:
+                "'Yet' is used in negative sentences and questions to talk about something that is expected but has not happened so far. " +
+                "'Not yet' means 'it has not happened until now, but it may happen later'. " +
+                "'Yet' usually comes at the end of the sentence. " +
+                "'Have/has yet to + verb' is an affirmative way to say 'has not happened so far'. " +
+                "తెలుగులో: 'yet' అంటే 'ఇంకా / ఇప్పటికి / ఇప్పటికే'. 'Not yet' అంటే 'ఇంకా లేదు'.",
+            formation:
+                "Negative: Subject + have/has + not + V3 + yet → I haven't finished yet. | " +
+                "Question: Have/Has + Subject + V3 + yet? → Have you finished yet? | " +
+                "Short answer: Not yet. | " +
+                "Affirmative: Subject + have/has + yet to + V1 → We have yet to finish. | " +
+                "With 'be': Subject + is/are + not + adjective + yet → It isn't ready yet.",
             content: [
-                {
-                    id: 1,
-                    eng: "The book is on the table.",
-                    type: "Affirmative Sentence",
-                    tense: "Simple Present",
-                    tel: "పుస్తకం mejauపై ఉంది."
-                },
+                { id: 1, eng: "not yet completed", type: "Affirmative Sentence", tense: "Simple Present", tel: "ఇంకా పూర్తి కాలేదు" },
+
+                // ---------- Daily life ----------
+                { id: 2, eng: "I haven't had breakfast yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "నేను ఇంకా అల్పాహారం తినలేదు." },
+                { id: 3, eng: "Have you had lunch yet?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "నువ్వు ఇప్పటికే భోజనం చేశావా?" },
+                { id: 4, eng: "Not yet. I'm still cooking.", type: "Short Answer", tense: "Present Continuous", tel: "ఇంకా లేదు. నేను ఇంకా వంట చేస్తున్నాను." },
+                { id: 5, eng: "She hasn't come home yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "ఆమె ఇంకా ఇంటికి రాలేదు." },
+                { id: 6, eng: "Has the bus arrived yet?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "బస్సు ఇప్పటికే వచ్చిందా?" },
+                { id: 7, eng: "The rice isn't ready yet.", type: "Negative Sentence", tense: "Simple Present", tel: "అన్నం ఇంకా సిద్ధం కాలేదు." },
+                { id: 8, eng: "I haven't paid the electricity bill yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "నేను ఇంకా కరెంటు బిల్లు కట్టలేదు." },
+                { id: 9, eng: "Have the guests left yet?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "అతిథులు ఇప్పటికే వెళ్లిపోయారా?" },
+                { id: 10, eng: "It hasn't rained yet this month.", type: "Negative Sentence", tense: "Present Perfect", tel: "ఈ నెలలో ఇంకా వర్షం పడలేదు." },
+                { id: 11, eng: "My brother hasn't woken up yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "నా సోదరుడు ఇంకా నిద్ర లేవలేదు." },
+                { id: 12, eng: "Are you ready yet?", type: "Interrogative Sentence", tense: "Simple Present", tel: "నువ్వు ఇప్పటికి సిద్ధమయ్యావా?" },
+                { id: 13, eng: "Not yet, give me five more minutes.", type: "Short Answer", tense: "Simple Present", tel: "ఇంకా లేదు, నాకు ఇంకో ఐదు నిమిషాలు ఇవ్వు." },
+                { id: 14, eng: "I haven't decided what to wear yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "ఏం వేసుకోవాలో నేను ఇంకా నిర్ణయించుకోలేదు." },
+                { id: 15, eng: "The exam results haven't been announced yet.", type: "Negative Sentence", tense: "Present Perfect (Passive)", tel: "పరీక్ష ఫలితాలు ఇంకా ప్రకటించలేదు." },
+                { id: 16, eng: "I have yet to visit that temple.", type: "Affirmative Sentence", tense: "Present Perfect", tel: "నేను ఆ గుడిని ఇంకా దర్శించుకోవాల్సి ఉంది." },
+                { id: 17, eng: "The best is yet to come.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ఉత్తమమైనది ఇంకా రాబోతోంది." },
+                { id: 18, eng: "Have you booked the train tickets yet?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "నువ్వు ఇప్పటికే రైలు టికెట్లు బుక్ చేశావా?" },
+                { id: 19, eng: "They haven't replied to my message yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "వాళ్ళు నా సందేశానికి ఇంకా బదులివ్వలేదు." },
+                { id: 20, eng: "Hasn't the delivery come yet?", type: "Negative Interrogative", tense: "Present Perfect", tel: "డెలివరీ ఇంకా రాలేదా?" },
+
+                // ---------- IT / Office ----------
+                { id: 21, eng: "The build hasn't finished yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "బిల్డ్ ఇంకా పూర్తి కాలేదు." },
+                { id: 22, eng: "Have you pushed your code yet?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "నువ్వు ఇప్పటికే నీ కోడ్‌ను పుష్ చేశావా?" },
+                { id: 23, eng: "Not yet. I'm still testing it locally.", type: "Short Answer", tense: "Present Continuous", tel: "ఇంకా లేదు. నేను దాన్ని ఇంకా లోకల్‌గా టెస్ట్ చేస్తున్నాను." },
+                { id: 24, eng: "The pull request hasn't been reviewed yet.", type: "Negative Sentence", tense: "Present Perfect (Passive)", tel: "పుల్ రిక్వెస్ట్ ఇంకా రివ్యూ చేయలేదు." },
+                { id: 25, eng: "Has the server restarted yet?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "సర్వర్ ఇప్పటికే రీస్టార్ట్ అయిందా?" },
+                { id: 26, eng: "We haven't deployed to production yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "మేము ఇంకా ప్రొడక్షన్‌కు డిప్లాయ్ చేయలేదు." },
+                { id: 27, eng: "I haven't fixed this bug yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "నేను ఈ బగ్‌ను ఇంకా సరిచేయలేదు." },
+                { id: 28, eng: "Is the API ready yet?", type: "Interrogative Sentence", tense: "Simple Present", tel: "API ఇప్పటికే సిద్ధంగా ఉందా?" },
+                { id: 29, eng: "The database migration isn't complete yet.", type: "Negative Sentence", tense: "Simple Present", tel: "డేటాబేస్ మైగ్రేషన్ ఇంకా పూర్తి కాలేదు." },
+                { id: 30, eng: "Have you updated the documentation yet?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "నువ్వు ఇప్పటికే డాక్యుమెంటేషన్ అప్‌డేట్ చేశావా?" },
+                { id: 31, eng: "The tests haven't passed yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "టెస్టులు ఇంకా పాస్ కాలేదు." },
+                { id: 32, eng: "I haven't received the access credentials yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "నాకు యాక్సెస్ క్రెడెన్షియల్స్ ఇంకా అందలేదు." },
+                { id: 33, eng: "The client hasn't approved the design yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "క్లయింట్ డిజైన్‌ను ఇంకా ఆమోదించలేదు." },
+                { id: 34, eng: "Have you merged the branch yet?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "నువ్వు ఇప్పటికే బ్రాంచ్‌ను మెర్జ్ చేశావా?" },
+                { id: 35, eng: "The feature isn't live yet.", type: "Negative Sentence", tense: "Simple Present", tel: "ఆ ఫీచర్ ఇంకా లైవ్‌లోకి రాలేదు." },
+                { id: 36, eng: "We have yet to finalize the requirements.", type: "Affirmative Sentence", tense: "Present Perfect", tel: "మేము రిక్వైర్‌మెంట్లను ఇంకా ఖరారు చేయాల్సి ఉంది." },
+                { id: 37, eng: "The team has yet to decide on the tech stack.", type: "Affirmative Sentence", tense: "Present Perfect", tel: "టీమ్ టెక్ స్టాక్ గురించి ఇంకా నిర్ణయించాల్సి ఉంది." },
+                { id: 38, eng: "The page hasn't loaded yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "పేజీ ఇంకా లోడ్ కాలేదు." },
+                { id: 39, eng: "Has the ticket been assigned yet?", type: "Interrogative Sentence", tense: "Present Perfect (Passive)", tel: "టికెట్ ఇప్పటికే అసైన్ చేశారా?" },
+                { id: 40, eng: "I haven't joined the stand-up meeting yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "నేను స్టాండ్-అప్ మీటింగ్‌లో ఇంకా చేరలేదు." },
+                { id: 41, eng: "The software update hasn't been installed yet.", type: "Negative Sentence", tense: "Present Perfect (Passive)", tel: "సాఫ్ట్‌వేర్ అప్‌డేట్ ఇంకా ఇన్‌స్టాల్ కాలేదు." },
+                { id: 42, eng: "Have you backed up the files yet?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "నువ్వు ఇప్పటికే ఫైళ్లను బ్యాకప్ తీసుకున్నావా?" },
+                { id: 43, eng: "My laptop hasn't started yet.", type: "Negative Sentence", tense: "Present Perfect", tel: "నా ల్యాప్‌టాప్ ఇంకా స్టార్ట్ కాలేదు." },
+                { id: 44, eng: "The release date hasn't been confirmed yet.", type: "Negative Sentence", tense: "Present Perfect (Passive)", tel: "రిలీజ్ తేదీ ఇంకా నిర్ధారించలేదు." },
+                { id: 45, eng: "Is the deployment finished yet? Not yet.", type: "Question + Short Answer", tense: "Simple Present", tel: "డిప్లాయ్‌మెంట్ ఇప్పటికే పూర్తైందా? ఇంకా లేదు." },
             ],
         },
         {
@@ -7233,6 +7285,90 @@ export const EnglishList = {
                     type: "Complex Sentence"
                 }
 
+            ],
+        },
+        {
+            id: 12,
+            topic: "so far, for now, what now, as of now",
+            explain:
+                "'So far' means 'from the beginning until this moment' and is mostly used with the Present Perfect. " +
+                "'For now' means 'for the present time, maybe not forever' and is used for temporary decisions or plans. " +
+                "'What now?' is a question asked after something has happened, to ask what the next step is. " +
+                "'As of now' means 'at this moment / as things stand today' and is used to give the current status. " +
+                "తెలుగులో: 'so far' = ఇప్పటివరకు, 'for now' = ప్రస్తుతానికి, 'what now' = ఇప్పుడు ఏం చేద్దాం?, 'as of now' = ప్రస్తుతం / ఇప్పటికి.",
+            formation:
+                "So far: Subject + have/has + V3 + so far → I have finished three chapters so far. | " +
+                "For now: Subject + verb + for now → I'm fine for now. / Let's stop here for now. | " +
+                "What now: What now? / Sentence + What now? → The bus has left. What now? | " +
+                "As of now: As of now, + Subject + verb → As of now, the app works fine. | " +
+                "'So far' and 'for now' usually go at the end, 'as of now' usually goes at the start.",
+            content: [
+                // ---------- SO FAR (Daily life) ----------
+                { id: 1, eng: "So far, so good.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ఇప్పటివరకు అంతా బాగానే ఉంది." },
+                { id: 2, eng: "I have finished three chapters so far.", type: "Affirmative Sentence", tense: "Present Perfect", tel: "నేను ఇప్పటివరకు మూడు అధ్యాయాలు పూర్తి చేశాను." },
+                { id: 3, eng: "How many pages have you read so far?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "నువ్వు ఇప్పటివరకు ఎన్ని పేజీలు చదివావు?" },
+                { id: 4, eng: "We haven't faced any problems so far.", type: "Negative Sentence", tense: "Present Perfect", tel: "మేము ఇప్పటివరకు ఎలాంటి సమస్యలను ఎదుర్కోలేదు." },
+                { id: 5, eng: "She hasn't called me so far.", type: "Negative Sentence", tense: "Present Perfect", tel: "ఆమె ఇప్పటివరకు నాకు ఫోన్ చేయలేదు." },
+                { id: 6, eng: "It has been a great day so far.", type: "Affirmative Sentence", tense: "Present Perfect", tel: "ఇప్పటివరకు రోజు చాలా బాగా గడిచింది." },
+                { id: 7, eng: "How much money have you saved so far?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "నువ్వు ఇప్పటివరకు ఎంత డబ్బు పొదుపు చేశావు?" },
+                { id: 8, eng: "Nobody has complained so far.", type: "Negative Sentence", tense: "Present Perfect", tel: "ఇప్పటివరకు ఎవరూ ఫిర్యాదు చేయలేదు." },
+                { id: 9, eng: "I have watched five episodes so far.", type: "Affirmative Sentence", tense: "Present Perfect", tel: "నేను ఇప్పటివరకు ఐదు ఎపిసోడ్లు చూశాను." },
+                { id: 10, eng: "The traffic has been fine so far.", type: "Affirmative Sentence", tense: "Present Perfect", tel: "ఇప్పటివరకు ట్రాఫిక్ బాగానే ఉంది." },
+
+                // ---------- SO FAR (IT / Office) ----------
+                { id: 11, eng: "We have fixed ten bugs so far.", type: "Affirmative Sentence", tense: "Present Perfect", tel: "మేము ఇప్పటివరకు పది బగ్‌లను సరిచేశాము." },
+                { id: 12, eng: "The tests have passed so far.", type: "Affirmative Sentence", tense: "Present Perfect", tel: "టెస్టులు ఇప్పటివరకు పాస్ అయ్యాయి." },
+                { id: 13, eng: "How many features have you completed so far?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "నువ్వు ఇప్పటివరకు ఎన్ని ఫీచర్లు పూర్తి చేశావు?" },
+                { id: 14, eng: "No errors have been reported so far.", type: "Negative Sentence", tense: "Present Perfect (Passive)", tel: "ఇప్పటివరకు ఎలాంటి ఎర్రర్లు నివేదించబడలేదు." },
+                { id: 15, eng: "The server has been running without downtime so far.", type: "Affirmative Sentence", tense: "Present Perfect Continuous", tel: "సర్వర్ ఇప్పటివరకు డౌన్‌టైమ్ లేకుండా నడుస్తోంది." },
+                { id: 16, eng: "I haven't found the root cause so far.", type: "Negative Sentence", tense: "Present Perfect", tel: "నేను ఇప్పటివరకు అసలు కారణాన్ని కనుగొనలేదు." },
+
+                // ---------- FOR NOW (Daily life) ----------
+                { id: 17, eng: "Let's stop here for now.", type: "Imperative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి ఇక్కడ ఆపేద్దాం." },
+                { id: 18, eng: "I'm fine for now.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి నేను బాగానే ఉన్నాను." },
+                { id: 19, eng: "This is enough for now.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి ఇది చాలు." },
+                { id: 20, eng: "Goodbye for now.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి వీడ్కోలు." },
+                { id: 21, eng: "You can use my phone for now.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి నువ్వు నా ఫోన్ వాడుకోవచ్చు." },
+                { id: 22, eng: "Don't worry about it for now.", type: "Negative Imperative", tense: "Simple Present", tel: "ప్రస్తుతానికి దాని గురించి కంగారు పడకు." },
+                { id: 23, eng: "Let's keep it simple for now.", type: "Imperative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి దాన్ని సింపుల్‌గా ఉంచుదాం." },
+
+                // ---------- FOR NOW (IT / Office) ----------
+                { id: 24, eng: "Let's use a temporary fix for now.", type: "Imperative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి తాత్కాలిక పరిష్కారాన్ని వాడదాం." },
+                { id: 25, eng: "Hardcode the value for now.", type: "Imperative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి ఆ విలువను హార్డ్‌కోడ్ చేయి." },
+                { id: 26, eng: "We'll skip the unit tests for now.", type: "Affirmative Sentence", tense: "Simple Future", tel: "ప్రస్తుతానికి యూనిట్ టెస్టులను వదిలేద్దాం." },
+                { id: 27, eng: "Let's keep the old version for now.", type: "Imperative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి పాత వెర్షన్‌నే ఉంచుదాం." },
+                { id: 28, eng: "Disable this feature for now.", type: "Imperative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి ఈ ఫీచర్‌ను డిసేబుల్ చేయి." },
+                { id: 29, eng: "Ignore this warning for now.", type: "Imperative Sentence", tense: "Simple Present", tel: "ప్రస్తుతానికి ఈ వార్నింగ్‌ను పట్టించుకోకు." },
+
+                // ---------- WHAT NOW (Daily life) ----------
+                { id: 30, eng: "What now?", type: "Interrogative Sentence", tense: "Simple Present", tel: "ఇప్పుడు ఏం చేద్దాం?" },
+                { id: 31, eng: "The bus has left. What now?", type: "Interrogative Sentence", tense: "Present Perfect", tel: "బస్సు వెళ్లిపోయింది. ఇప్పుడు ఏం చేద్దాం?" },
+                { id: 32, eng: "I lost my keys. What now?", type: "Interrogative Sentence", tense: "Simple Past", tel: "నా తాళాలు పోయాయి. ఇప్పుడు ఏం చేయాలి?" },
+                { id: 33, eng: "The exam is over. What now?", type: "Interrogative Sentence", tense: "Simple Present", tel: "పరీక్ష అయిపోయింది. ఇప్పుడు ఏం చేద్దాం?" },
+                { id: 34, eng: "What do we do now?", type: "Interrogative Sentence", tense: "Simple Present", tel: "ఇప్పుడు మనం ఏం చేయాలి?" },
+                { id: 35, eng: "What now, boss?", type: "Interrogative Sentence", tense: "Simple Present", tel: "ఇప్పుడు ఏమిటి బాస్?" },
+
+                // ---------- WHAT NOW (IT / Office) ----------
+                { id: 36, eng: "The build failed. What now?", type: "Interrogative Sentence", tense: "Simple Past", tel: "బిల్డ్ ఫెయిల్ అయింది. ఇప్పుడు ఏం చేయాలి?" },
+                { id: 37, eng: "The server is down. What now?", type: "Interrogative Sentence", tense: "Simple Present", tel: "సర్వర్ డౌన్ అయింది. ఇప్పుడు ఏం చేయాలి?" },
+                { id: 38, eng: "I deleted the file by mistake. What now?", type: "Interrogative Sentence", tense: "Simple Past", tel: "నేను పొరపాటున ఫైల్‌ను డిలీట్ చేశాను. ఇప్పుడు ఏం చేయాలి?" },
+                { id: 39, eng: "The code is merged. What now?", type: "Interrogative Sentence", tense: "Simple Present (Passive)", tel: "కోడ్ మెర్జ్ అయింది. ఇప్పుడు ఏమిటి తర్వాతి పని?" },
+                { id: 40, eng: "The client rejected the design. What now?", type: "Interrogative Sentence", tense: "Simple Past", tel: "క్లయింట్ డిజైన్‌ను తిరస్కరించారు. ఇప్పుడు ఏం చేద్దాం?" },
+
+                // ---------- AS OF NOW (Daily life) ----------
+                { id: 41, eng: "As of now, I have no plans.", type: "Negative Sentence", tense: "Simple Present", tel: "ప్రస్తుతం నాకు ఎలాంటి ప్రణాళికలు లేవు." },
+                { id: 42, eng: "As of now, the shop is closed.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ప్రస్తుతం దుకాణం మూసి ఉంది." },
+                { id: 43, eng: "As of now, nothing has changed.", type: "Negative Sentence", tense: "Present Perfect", tel: "ప్రస్తుతం నాటికి ఏమీ మారలేదు." },
+                { id: 44, eng: "As of now, the ticket price is ₹500.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ప్రస్తుతం టికెట్ ధర ₹500." },
+                { id: 45, eng: "As of now, she is in the office.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ప్రస్తుతం ఆమె ఆఫీసులో ఉంది." },
+
+                // ---------- AS OF NOW (IT / Office) ----------
+                { id: 46, eng: "As of now, the app works fine.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ప్రస్తుతం యాప్ బాగానే పనిచేస్తోంది." },
+                { id: 47, eng: "As of now, there are no open bugs.", type: "Negative Sentence", tense: "Simple Present", tel: "ప్రస్తుతం ఓపెన్ బగ్‌లు ఏవీ లేవు." },
+                { id: 48, eng: "As of now, the release date is Friday.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ప్రస్తుతం రిలీజ్ తేదీ శుక్రవారం." },
+                { id: 49, eng: "As of now, we don't support dark mode.", type: "Negative Sentence", tense: "Simple Present", tel: "ప్రస్తుతం మేము డార్క్ మోడ్‌ను సపోర్ట్ చేయడం లేదు." },
+                { id: 50, eng: "As of now, the API is not available.", type: "Negative Sentence", tense: "Simple Present", tel: "ప్రస్తుతం API అందుబాటులో లేదు." },
+                { id: 51, eng: "As of now, the deployment is on hold.", type: "Affirmative Sentence", tense: "Simple Present", tel: "ప్రస్తుతం డిప్లాయ్‌మెంట్ ఆగిపోయి ఉంది." },
             ],
         },
 
